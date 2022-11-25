@@ -29,7 +29,29 @@ def get_main_data():
     print("Data should be six numbers, separated by commas")
     print("Example: 1,2,3,4,5,6\n")
 
-    data_str = input("Enter your data here")
+    data_str = input("Enter your data here: ")
     print(f"the data provided is {data_str}")
 
+    sales_data = data_str.split(",")
+    print(sales_data)
+    validate_data(sales_data)
+
+
+def validate_data(values):
+    """
+    Inside the validator:
+    Converts all string into integers
+    If not possible to convert raises ValueError
+    Data is checked for having 6 values only
+    """
+    try: 
+        if len(values) != 6:
+            raise ValueError(
+                f"Exactly 6 values requiered, you provided {len(values)}"
+            )
+    except ValueError as e:
+        print(f"iInvalid data: {e}, please try again \n")
+    print(values)
+
 get_main_data()
+
