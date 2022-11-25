@@ -25,16 +25,24 @@ def get_main_data():
     """
     Get main data figures input from user
     """
-    print("Please enter this DATA")
-    print("Data should be six numbers, separated by commas")
-    print("Example: 1,2,3,4,5,6\n")
+    while True:
+        print("Please enter this DATA")
+        print("Data should be six numbers, separated by commas")
+        print("Example: 1,2,3,4,5,6\n")
 
-    data_str = input("Enter your data here: ")
-    print(f"the data provided is {data_str}")
+        data_str = input("Enter your data here: ")
+        print(f"the data provided is {data_str}")
 
-    sales_data = data_str.split(",")
-    print(sales_data)
-    validate_data(sales_data)
+        sales_data = data_str.split(",")
+        print(sales_data)
+        validate_data(sales_data)
+
+
+        if validate_data(sales_data):
+            print("Data is valid!")
+            break
+    
+    return sales_data
 
 
 def validate_data(values):
@@ -53,7 +61,10 @@ def validate_data(values):
             )
     except ValueError as e:
         print(f"iInvalid data: {e}, please try again \n")
+        return False
+
+    return True
     
 
-get_main_data()
+data = get_main_data()
 
