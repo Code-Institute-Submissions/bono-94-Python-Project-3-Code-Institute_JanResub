@@ -44,6 +44,8 @@ def validate_data(values):
     If not possible to convert raises ValueError
     Data is checked for having 6 values only
     """
+    print(values)
+    [int(value) for value in values]
     try: 
         if len(values) != 6:
             raise ValueError(
@@ -51,7 +53,7 @@ def validate_data(values):
             )
     except ValueError as e:
         print(f"iInvalid data: {e}, please try again \n")
-    print(values)
+    
 
 get_main_data()
 
