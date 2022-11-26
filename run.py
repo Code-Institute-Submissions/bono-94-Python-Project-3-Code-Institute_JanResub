@@ -142,6 +142,24 @@ def get_last_5_entries():
     return columns
 
 
+def calculate_stock_data(data):
+
+    """
+    Calculae the average stock for each item type
+    add 10%
+    """    
+    print("Calculating stock data ... \n")
+    new_stock_data = []
+
+    for column in data:
+        int_column = [int(num) for num in column]
+        average = sum(int_column) / len(int_column)
+        stock_num = average * 1.1
+        new_stock_data.append(round(stock_num))
+    
+    return new_stock_data
+
+
 def main():
     """
     Run all program functions
@@ -157,6 +175,7 @@ def main():
     extra fo refractured code replace upper 2 update codes
         update_worksheet(sales_data, "sales")
         update_worksheet(new_surplus_data, "surplus")
+        update_worksheet(stock_data, "stock")
     """
 
 
@@ -164,3 +183,27 @@ print("Welcome to Life Data Automation")
 main()
 
 # get_last_5_entries()
+# stock data = calculate_stock_data(sales_columns)
+# print(stock_data)
+
+
+def get_stock_values(data):
+    """
+    Print out the calculated stock numbers for each sandwich type.
+    """
+    headings = SHEET.worksheet("stock").get_all_values()[0]
+
+    # headings = SHEET.worksheet('stock').row_values(1)
+
+    print("Make the following numbers of sandwiches for next market:\n")
+
+    # new_data = {}
+    # for heading, stock_num in zip(headings, data):
+    #     new_data[heading] = stock_num
+    # return new_data
+    
+    return {heading: data for heading, data in zip(headings, data)}
+    
+    
+stock_values = get_stock_values(stock_data)
+print(stock_values)
