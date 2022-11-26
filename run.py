@@ -66,7 +66,8 @@ def validate_data(values):
 
     return True
 
-def update_worksheet (data, worksheet):
+
+def update_worksheet(data, worksheet):
     """
     Receives list of integers to be inserted into a worksheet
     update specific worksheet with data provided
@@ -122,6 +123,25 @@ def calculate_surplus_data(sales_row):
     return surplus_data
 
 
+def get_last_5_entries():
+    """
+    Collects columns of data from sales worksheet
+    collecting the last 5 entries per column
+    returns data as a list of lists
+    """
+    sales = SHEET.worksheet("sales")
+    # column = sales.col_values(3)
+    # print(column)
+
+    columns = []
+    for ind in range(1, 7):
+        print(ind)
+        column = sales.col_values(ind)
+        columns.append(column[-5:])
+    
+    return columns
+
+
 def main():
     """
     Run all program functions
@@ -133,11 +153,14 @@ def main():
     new_surplus_data = calculate_surplus_data(sales_data)
     update_surplus_worksheet(new_surplus_data)
 
+    """
     extra fo refractured code replace upper 2 update codes
         update_worksheet(sales_data, "sales")
         update_worksheet(new_surplus_data, "surplus")
+    """
 
 
 print("Welcome to Life Data Automation")
 main()
 
+# get_last_5_entries()
