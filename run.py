@@ -207,3 +207,135 @@ def get_stock_values(data):
     
 stock_values = get_stock_values(stock_data)
 print(stock_values)
+
+
+
+
+#errors:
+raise SystemExit('You must be older than 18!')
+except ZeroDivisionError:
+    print("Please enter a valid denominator.")
+except ValueError:
+    print("Both values have to be integers.")
+except Exception:
+    print('Another error has occurred')
+
+
+Please enter only numbers
+Please enter only letters
+
+Value must be minimum 1,000,000,000
+
+
+#calculating analysis
+def division(numerator, denominator):
+    result = numerator / denominator
+    return result
+    def multiplication(num1, num2):
+    return num1 * num2
+
+result1 = multiplication(2, 3)
+print(result1)
+
+
+
+# inputs
+
+first_number = input("Input your first number:")
+second_number = input("Input your second number:")
+print(first_number + second_number)
+
+name = input("What's your name? ")
+age = input("What's your age: ")
+print(f"Hello {name}, you are {age} years old")
+
+number = int(input("Please enter a number:"))
+
+
+
+#Multistrings
+result = 40 + float("2.2")
+print(result)
+
+result_two = "The answer to the ultimate question is " + str(42)
+print(result_two)
+
+
+print(f"Hello {name}, you are {age} years old")
+
+concat_string = name + " is " + str(age)
+print(concat_string)
+f_string = f'{name} is {age}'
+print(f_string)
+
+
+
+#strings processing
+capitalize() - first letter
+upper() - all uppercase
+count() - counts how many time certain value occurs inthe string
+my_string = "HELLO WORLD"
+my_string_lower_case = my_string.lower()
+
+
+#if statements
+if a == b:
+	result_one = 'a has the same value as b' 
+    print(result_one)
+else:
+	result_two = 'a has not got the same value as b'
+    print(result_two)
+
+
+#countdown
+countdown_number = 10
+
+print("Initiating Countdown Sequence...")
+print("Lift Off Will Commence In...")
+
+while countdown_number >= 0:
+    print(f"{countdown_number} seconds...")
+    countdown_number -= 1
+
+print("And We Have Lift Off!")
+
+
+
+# Press button to continue
+
+while play_game:
+    continue_playing = input("Would you like to continue playing the game? y/n ")
+    
+    if continue_playing.lower() == "y":
+        print("You have decided to continue playing the game.")
+    elif continue_playing.lower() == "n":
+        print("Now closing the game...")
+        play_game = False
+    else:
+        print("That is not a valid option. Please try again.")
+
+print("Thanks for playing")
+
+
+#lists in the document
+inside the document since it are visual
+
+#adding values
+def add (a,b):
+    sum = a + b
+    return sum
+
+#personal information
+Please enter your name - string
+Please enter your age - int
+
+username = input("Type in your name and press return: ")
+age = int(input("Please enter your age: "))
+
+#date-time
+x=datetime.now()
+print(x)
+
+
+#running code 
+run.py
