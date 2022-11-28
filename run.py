@@ -1,3 +1,5 @@
+#running code 
+python3 run.py
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
@@ -87,6 +89,8 @@ def rules():
     print("- Only enter two values separated by comma")
     print("- Only select sub-categories from given list")
     print("- Tasks are custom by your experience with limit of 40 characters")
+    print("- If you do not remember or wish to leave no response, enter break task")
+
 
     while True:
         personal_info_input = input("Please input button x and press enter to continue: \n")
@@ -1215,6 +1219,21 @@ def input_results_twentythree():
         
     return results_data
 
+
+def validate_hourly_input_zero():
+    print("if entry isnt separated by comma, show error")
+    print("if we dont have only 2 entries, show error")
+    print("if tasks have more than 20 characters show error")
+    print("if sub-categories dont match options above, show error")
+
+    #maximum letters per task
+    if len(task_input) < 40:
+        True
+    else: 
+        False
+        return or print error
+
+
 def validate_input_data(values):
     """
     Inside the try, converts all string values into integers.
@@ -1233,19 +1252,65 @@ def validate_input_data(values):
 
     return True
 
+def data_uploaded_zero():
+    print("Processing request...")
+
+    print("00:00 hour has been uploaded successfully!")
+
+    print("Let's continue with the next hour of your day.")
+
+
+def all_results_uploaded_successful():
+    print("Loading...")
+
+    print("Upload completed.")
+
+    print("Your daily chedule is now completely updated!")
+
+    print("Please press any button to access the results report.")
+
 
 def retrieve_categories_results():
+    print("a")
+    #Returned data caps
+    returned_data = "all results"
+    print(returned_data.upper())
+
+    #returned data split at comma
+    returned_data_split = returned_data.split(",")
+    print(returned_data_split)
+
+    print("if first letter or all arent capitalized, show error")
+
+    #adding values
+    def add (a,b):
+        sum = a + b + c + d
+        return sum
+    
+    #strings processing
+    capitalize() - first letter
+    upper() - all uppercase
+    count() - counts how many time certain value occurs inthe string
+    my_string = "HELLO WORLD"
+    my_string_lower_case = my_string.lower()
+
 
 
 def retrieve_tasks_results():
+    print("a")
+    #Returned data caps
+    returned_data = "all results"
+    print(returned_data.upper())
 
+    #returned data split at comma
+    returned_data_split = returned_data.split(",")
+    print(returned_data_split)
+
+def convert_results():
+    print("A")
 
 def update_results():
-
-
-   
-
-
+    print("a")
 
 sales = SHEET.worksheet('dashboard')
 
@@ -1414,7 +1479,6 @@ def main():
 print("Welcome to Life Data Automation")
 main()
 
-#raiseSystemExit
 
 # get_last_5_entries()
 # stock data = calculate_stock_data(sales_columns)
@@ -1442,37 +1506,6 @@ def get_stock_values(data):
 stock_values = get_stock_values(stock_data)
 print(stock_values)
 
-
-
-
-#errors:
-raise SystemExit('You must be older than 18!')
-except ZeroDivisionError:
-    print("Please enter a valid denominator.")
-except ValueError:
-    print("Both values have to be integers.")
-except Exception:
-    print('Another error has occurred')
-
-
-Please enter only numbers
-Please enter only letters
-
-Value must be minimum 1,000,000,000
-
-
-#calculating analysis
-def division(numerator, denominator):
-    result = numerator / denominator
-    return result
-    def multiplication(num1, num2):
-    return num1 * num2
-
-result1 = multiplication(2, 3)
-print(result1)
-
-
-
 # inputs
 
 first_number = input("Input your first number:")
@@ -1488,14 +1521,9 @@ number = int(input("Please enter a number:"))
 
 
 #Multistrings
-result = 40 + float("2.2")
-print(result)
-
-result_two = "The answer to the ultimate question is " + str(42)
-print(result_two)
 
 
-print(f"Hello {name}, you are {age} years old")
+print(f"{subcategory_input}, you are {age} years old")
 
 concat_string = name + " is " + str(age)
 print(concat_string)
@@ -1503,86 +1531,37 @@ f_string = f'{name} is {age}'
 print(f_string)
 
 
+def export_results_analyzer():
+    print("Updating results to the analyzer...")
 
-#strings processing
-capitalize() - first letter
-upper() - all uppercase
-count() - counts how many time certain value occurs inthe string
-my_string = "HELLO WORLD"
-my_string_lower_case = my_string.lower()
+    print("Daily results have been successfully sent to the analyzer.")
 
+    print("Now you can access your daily worksheet with detailed visual analysis.")
 
-#if statements
-if a == b:
-	result_one = 'a has the same value as b' 
-    print(result_one)
-else:
-	result_two = 'a has not got the same value as b'
-    print(result_two)
+    print("Please copy and follow this link: [https://bit.ly/life-tracker-sheet]")
+
+    print("Thank you for participating.")
+
+    print("See you tomorrow at the next tracking and analyzing mission!")
+
+    #input to exit
 
 
-#countdown
-countdown_number = 10
+def exit_screen():
+    print("-------------------------------------------------------------------------------")
+    print("Initiating Exit Sequence...")
+    print("Loading...")
 
-print("Initiating Countdown Sequence...")
-print("Lift Off Will Commence In...")
+    countdown = 10
 
-while countdown_number >= 0:
-    print(f"{countdown_number} seconds...")
-    countdown_number -= 1
+    while countdown >= 0:
+        print(f"{countdown} seconds...")
+        countdown -= 1
 
-print("And We Have Lift Off!")
-
-
-
-# Press button to continue
-
-while play_game:
-    continue_playing = input("Would you like to continue playing the game? y/n ")
-    
-    if continue_playing.lower() == "y":
-        print("You have decided to continue playing the game.")
-    elif continue_playing.lower() == "n":
-        print("Now closing the game...")
-        play_game = False
-    else:
-        print("That is not a valid option. Please try again.")
-
-print("Thanks for playing")
-
-
-#lists in the document
-inside the document since it are visual
-
-#adding values
-def add (a,b):
-    sum = a + b
-    return sum
-
-#personal information
-Please enter your name - string
-Please enter your age - int
-
-username = input("Type in your name and press return: ")
-age = int(input("Please enter your age: "))
+    raise SystemExit("Exiting...")
+    print("-------------------------------------------------------------------------------")
 
 
 
-#running code 
-run.py
-
-#maximum letters per task
-if len(task_input) < 40
-    True
-else 
-    False
-    return or print error
 
 
-#Returned data caps
-returned_data = "all results"
-print(returned_data.upper())
-
-#returned data split at comma
-returned_data_split = returned_data.split(",")
-print(returned_data_split)
