@@ -44,20 +44,19 @@ def introduction():
         rules_input = input("Please input button x and press enter to continue: \n")
 
         if validate_rules_data(rules_input):
-            print("Data is valid!")
+            print("Loading...")
             break
 
     return rules_input
-
     print("-------------------------------------------------------------------------------")
 
 
 def validate_rules_data(values):
     """
-    Raises ValueError if string does not match letter "x" 
+    Raises ValueError if string does not match letter "x".
     Raises ValueError if user has inputted more than one letter.
     """
-    if len(values) != "x":
+    if values != "x":
         raise ValueError(
             "Invalid letter, please input letter x then and try again."
         )
@@ -72,19 +71,118 @@ def validate_rules_data(values):
 
 
 def rules():
-
+    """
+    Rules section allows users to get familiar with important rules.
+    At the end, user is asked to input the letter x in order to continue.
+    """
+    print("-------------------------------------------------------------------------------")
     print("RULES")
-    print("- Following the introduction, you will proceed to the rules section")
-    print("- After covering the rules, users will be asked to provide personal information")
-    print("- Next you will be asked to input your daily events per each hour")
-    print("- Your results will be exported to an online Google Sheet")
-    print("- Once the data is in, program will retrieve next results")
-    print("- Those are noted as daily duration of each category and task")
-    print("- Once that is reported to you, it will be exported to again")
-    personal_info_input = input("Results:\n")
-def personal_info():
+    
+    print("- In order for program to function correctly, please respect the instructions ")
+    print("- When asked to input letter x to proceed, please do not enter any other letter")
+    print("- When asked to input letter x, please enter only one character")
+    
+    print("- When inputting subcategories and tasks, please follow rules precisely")
+    print("- Do not enter any numbers")
+    print("- Only enter two values separated by comma")
+    print("- Only select sub-categories from given list")
+    print("- Tasks are custom by your experience with limit of 40 characters")
 
- print("Both values have to be integers.")
+    while True:
+        personal_info_input = input("Please input button x and press enter to continue: \n")
+
+        if validate_personal_data(personal_info_input):
+            print("Loading...")
+            break
+
+    return personal_info_input
+    print("-------------------------------------------------------------------------------")
+
+
+def validate_personal_data(values):
+    """
+    Raises ValueError if string does not match letter "x" 
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid letter, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
+
+
+def personal_info():
+    print("-------------------------------------------------------------------------------")
+    print("Please enter your name and identification number.")
+
+    print("If you did not requested ID yet, you can enter any number above 1000.")
+
+    while True:
+        name_input = input("Please enter your first name: \n")
+
+        reference_input = input("Please enter your identification number: \n")
+
+        if validate_name_data(name_input):
+            print("Data is valid!")
+            break
+
+        if validate_id_data(id_input):
+            print("Data is valid!")
+            break
+
+    return name_input
+
+    return id_input
+
+    print(f"Thank you {name_input}")
+
+    print("Starting the program...")
+    print("-------------------------------------------------------------------------------")
+
+def validate_name_data(values):
+    """
+    Raises ValueError if name is an integer instead of a string.
+    Raises ValueError if name is longer than 50 characters.
+    """
+    if name_input.isdigit():
+        raise ValueError(
+            "Invalid name, please do not use any numbers and try again."
+        )
+        return False
+    elif len(values) >= 50:
+        raise ValueError(
+            "Too many letters, please enter the name under 50 letters and try again."
+        )
+        return False
+    else:
+        return True
+
+
+def validate_id_data(values):
+    """
+    Raises ValueError if ID number is a string instead of an integer.
+    Raises ValueError if the number is less than 1000.
+    """
+    if id_input.isalpha():
+        raise ValueError(
+            "Invalid ID number, please only use numbers"
+        )
+        return False
+    elif len(values) <= 1000:
+        raise ValueError(
+            "Please enter a number above 1000 and then try again."
+        )
+        return False
+    else:
+        return True
+
 
 def input_results_zero():
     """
@@ -1315,6 +1413,8 @@ def main():
 
 print("Welcome to Life Data Automation")
 main()
+
+#raiseSystemExit
 
 # get_last_5_entries()
 # stock data = calculate_stock_data(sales_columns)
