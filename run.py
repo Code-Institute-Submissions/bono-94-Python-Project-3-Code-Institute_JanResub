@@ -1,5 +1,3 @@
-#running code 
-python3 run.py
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
@@ -18,10 +16,10 @@ SHEET = GSPREAD_CLIENT.open('life_tracker')
 
 def introduction():
     """
-    This introduction serves to purpose of welcoming user to the program.
+    This introduction welcomes users to the program.
     First of, user is presented with current date and time.
-    Then a short welcome message followed by next steps explanation.
-    Once user has finished reading section how it work, input button that sends user to the rules section is presented.
+    Then a short welcome message followed by explanation of next steps.
+    Once user has finished reading section of how it works, input that sends user to the rules section is presented.
     """
     print("-------------------------------------------------------------------------------")
     live_timestamp = datetime.now()
@@ -33,12 +31,12 @@ def introduction():
 
     print("How it works?")
     print("- Following the introduction, you will proceed to the rules section")
-    print("- After covering the rules, users will be asked to provide personal information")
+    print("- After covering the rules, you will be asked to provide personal information")
     print("- Next you will be asked to input your daily events per each hour")
     print("- Your results will be exported to an online Google Sheet")
     print("- Once the data is in, program will retrieve next results")
     print("- Those are noted as daily duration of each category and task")
-    print("- Once that is reported to you, it will be exported to again")
+    print("- Once that is reported to you, it will be exported again")
     print("- This time,to the analysis worksheet")
     print("- Following the link, you will be able to see visual analysis through graphs")
    
@@ -80,7 +78,7 @@ def rules():
     print("-------------------------------------------------------------------------------")
     print("RULES")
     
-    print("- In order for program to function correctly, please respect the instructions ")
+    print("- In order for program to function correctly, please respect the instructions")
     print("- When asked to input letter x to proceed, please do not enter any other letter")
     print("- When asked to input letter x, please enter only one character")
     
@@ -90,7 +88,6 @@ def rules():
     print("- Only select sub-categories from given list")
     print("- Tasks are custom by your experience with limit of 40 characters")
     print("- If you do not remember or wish to leave no response, enter break task")
-
 
     while True:
         personal_info_input = input("Please input button x and press enter to continue: \n")
@@ -145,7 +142,7 @@ def personal_info():
 
     return id_input
 
-    print(f"Thank you {name_input}")
+    print(f"Thank you {name_input}, {id_input}.")
 
     print("Starting the program...")
     print("-------------------------------------------------------------------------------")
@@ -219,6 +216,10 @@ def input_results_zero():
 
         print("Please enter one sub-category from above and a custom task separated by a comma")
         print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+
+        sub_category_input = input("Input your first number:")
+        task_input = input("Input your second number:")
+        print(f" {sub_category_input} - {task_input}")
 
         results_input = input("Results:\n")
 
@@ -1506,30 +1507,6 @@ def get_stock_values(data):
 stock_values = get_stock_values(stock_data)
 print(stock_values)
 
-# inputs
-
-first_number = input("Input your first number:")
-second_number = input("Input your second number:")
-print(first_number + second_number)
-
-name = input("What's your name? ")
-age = input("What's your age: ")
-print(f"Hello {name}, you are {age} years old")
-
-number = int(input("Please enter a number:"))
-
-
-
-#Multistrings
-
-
-print(f"{subcategory_input}, you are {age} years old")
-
-concat_string = name + " is " + str(age)
-print(concat_string)
-f_string = f'{name} is {age}'
-print(f_string)
-
 
 def export_results_analyzer():
     print("Updating results to the analyzer...")
@@ -1544,12 +1521,40 @@ def export_results_analyzer():
 
     print("See you tomorrow at the next tracking and analyzing mission!")
 
-    #input to exit
+    while True:
+        exit_input = input("Please input button x and press enter to exit: \n")
+
+        if validate_exit_data(rules_input):
+            print("Loading...")
+            break
+
+    return rules_input
+    print("-------------------------------------------------------------------------------")
+
+
+def validate_exit_data(values):
+    """
+    Raises ValueError if string does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid letter, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def exit_screen():
     print("-------------------------------------------------------------------------------")
     print("Initiating Exit Sequence...")
+
     print("Loading...")
 
     countdown = 10
