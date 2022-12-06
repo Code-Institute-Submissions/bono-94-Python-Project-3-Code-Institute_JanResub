@@ -1603,7 +1603,6 @@ def retrieve_tasks_results():
     return zero_row_count
 
 
-
 def retrieve_categories_results():
     print("a")
     #Returned data caps
@@ -1639,12 +1638,6 @@ def retrieve_tasks_results():
     #returned data split at comma
     returned_data_split = returned_data.split(",")
     print(returned_data_split)
-
-def convert_results():
-    print("A")
-
-def update_results():
-    print("a")
 
 sales = SHEET.worksheet('dashboard')
 
