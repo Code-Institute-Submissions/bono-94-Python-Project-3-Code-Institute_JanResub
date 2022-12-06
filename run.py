@@ -46,10 +46,10 @@ def introduction():
         if validate_rules_data(rules_input):
             print("Loading...")
             break
-
-    return rules_input
     print("-------------------------------------------------------------------------------")
 
+    return rules_input
+   
 
 def validate_rules_data(values):
     """
@@ -97,9 +97,10 @@ def rules():
             print("Loading...")
             break
 
-    return personal_info_input
     print("-------------------------------------------------------------------------------")
 
+    return personal_info_input
+   
 
 def validate_personal_data(values):
     """
@@ -135,8 +136,6 @@ def personal_info():
             print("Data is valid!")
             break
 
-    return name_input
-
     while True:
         
         id_input = input("Please enter your identification number: \n")
@@ -145,13 +144,13 @@ def personal_info():
             print("Data is valid!")
             break
 
-    return id_input
-
     print(f"Thank you {name_input}, #{id_input}.")
 
     print("Starting the program...")
     print("-------------------------------------------------------------------------------")
 
+    return name_input
+    return id_input
 
 def validate_name_data(values):
     """
@@ -228,8 +227,6 @@ def input_results_zero():
             print("Submission accepted!")
             break
 
-    return zero_sub_input
-
     while True:   
         zero_task_input = input("Please enter your task here: \n")
 
@@ -237,10 +234,11 @@ def input_results_zero():
             print("Submission accepted!")
             break
 
-    return zero_task_input
-
     print(f"Your input was: {zero_sub_input} - {zero_task_input}")
     print("-------------------------------------------------------------------------------")
+    
+    return zero_sub_input
+    return zero_task_input
 
 
 def validate_zero_sub_data(values):
@@ -284,12 +282,21 @@ def validate_zero_task_data(values):
         return True
     else: 
         raise ValueError(
-            "Please enter a task with maximum 40 characters and letters only."
+            "Please enter letters only task with maximum 40 characters."
         )
         return False
 
 
 def data_uploaded_zero():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    """
+    update_worksheet_zero = SHEET.worksheet(tracker)
+    
+    update_worksheet_zero.update('B2', zero_sub_input)
+
+    update_worksheet_zero.update('B3', zero_task_input)
+
     print("Processing request...")
 
     print("00:00 - 01:00 hour has been successfully uploaded!")
@@ -302,10 +309,10 @@ def data_uploaded_zero():
         if validate_zero_next_data(zero_next_input):
             print("Loading...")
             break
-
-    return zero_next_input
-
+    
     print("-------------------------------------------------------------------------------")
+    
+    return zero_next_input
 
 
 def validate_zero_next_data(values):
@@ -1557,6 +1564,50 @@ def validate_input_data(values):
     return True
 
 
+def retrieve_subcategories_results():
+    """
+    Function retrieves subcategories results and counts items repetitions.
+    """
+    subcategories_list = worksheet.col_values(2)
+
+    body_system_count = 0
+    for item in subcategories_list:
+        if item == 'Body System Care':
+            body_system_count +=1
+    return body_system_count
+
+    soul_spirit_count = 0
+    for item in subcategories_list:
+        if item == 'Soul & Spirit':
+            soul_spirit_count +=1
+    return soul_spirit_count
+
+    fitness_count = 0
+    for item in subcategories_list:
+        if item == 'Fitness':
+            fitness_count +=1
+    return fitness_count
+
+    meditation_count = 0
+    for item in subcategories_list:
+        if item == 'Meditation':
+           fitness_count +=1
+    return fitness_count
+
+    print(f"Body System Care - [{body_system_count}] hours")
+    print(f"Body System Care - [{soul_spirit_count}] hours")
+    print(f"Body System Care - [{fitness_count}] hours")
+
+    zero_row_count = 0
+    for item in subcategories_list:
+        if item == zero_task_input:
+            zero_row_count +=1
+    return zero_row_count
+
+    print(f"{zero_task_input} - [{zero_row_count}] hours")
+
+
+
 def retrieve_categories_results():
     print("a")
     #Returned data caps
@@ -1790,7 +1841,13 @@ def get_stock_values(data):
 stock_values = get_stock_values(stock_data)
 print(stock_values)
 
-
+def retrieve_tasks_results():
+    """
+    Function requests list of all tasks inputted in the column.
+    Then it converts it in the alphabetically ordered list with hours spent.
+    Hours spent are calculated by how many times task strings repeat itself.
+    """
+    print("These are your daily results in hours spent ")
 
 
 def export_results_analyzer():
