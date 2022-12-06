@@ -371,8 +371,6 @@ def input_results_one():
             print("Submission accepted!")
             break
 
-    return one_sub_input
-
     while True:   
         one_task_input = input("Please enter your task here: \n")
 
@@ -380,10 +378,11 @@ def input_results_one():
             print("Submission accepted!")
             break
 
-    return one_task_input
-
     print(f"Your input was: {one_sub_input} - {one_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return one_sub_input
+    return one_task_input
 
 
 def input_results_two():
@@ -423,8 +422,6 @@ def input_results_two():
             print("Submission accepted!")
             break
 
-    return two_sub_input
-
     while True:   
         two_task_input = input("Please enter your task here: \n")
 
@@ -432,10 +429,11 @@ def input_results_two():
             print("Submission accepted!")
             break
 
-    return two_task_input
-
     print(f"Your input was: {two_sub_input} - {two_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return two_sub_input
+    return two_task_input
 
 
 def input_results_three():
@@ -475,8 +473,6 @@ def input_results_three():
             print("Submission accepted!")
             break
 
-    return three_sub_input
-
     while True:   
         three_task_input = input("Please enter your task here: \n")
 
@@ -484,10 +480,11 @@ def input_results_three():
             print("Submission accepted!")
             break
 
-    return three_task_input
-
     print(f"Your input was: {three_sub_input} - {three_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return three_sub_input
+    return three_task_input
 
 
 def input_results_four():
@@ -527,8 +524,6 @@ def input_results_four():
             print("Submission accepted!")
             break
 
-    return four_sub_input
-
     while True:   
         four_task_input = input("Please enter your task here: \n")
 
@@ -536,10 +531,11 @@ def input_results_four():
             print("Submission accepted!")
             break
 
-    return four_task_input
-
     print(f"Your input was: {four_sub_input} - {four_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return four_sub_input
+    return four_task_input
 
 
 def input_results_five():
@@ -579,8 +575,6 @@ def input_results_five():
             print("Submission accepted!")
             break
 
-    return five_sub_input
-
     while True:   
         five_task_input = input("Please enter your task here: \n")
 
@@ -588,10 +582,11 @@ def input_results_five():
             print("Submission accepted!")
             break
 
-    return five_task_input
-
     print(f"Your input was: {five_sub_input} - {five_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return five_sub_input
+    return five_task_input
 
 
 def input_results_six():
@@ -631,8 +626,6 @@ def input_results_six():
             print("Submission accepted!")
             break
 
-    return six_sub_input
-
     while True:   
         six_task_input = input("Please enter your task here: \n")
 
@@ -640,10 +633,11 @@ def input_results_six():
             print("Submission accepted!")
             break
 
-    return six_task_input
-
     print(f"Your input was: {six_sub_input} - {six_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return six_sub_input
+    return six_task_input
 
 
 def input_results_seven():
@@ -683,8 +677,6 @@ def input_results_seven():
             print("Submission accepted!")
             break
 
-    return seven_sub_input
-
     while True:   
         seven_task_input = input("Please enter your task here: \n")
 
@@ -692,10 +684,11 @@ def input_results_seven():
             print("Submission accepted!")
             break
 
-    return seven_task_input
-
     print(f"Your input was: {seven_sub_input} - {seven_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return seven_sub_input
+    return seven_task_input
 
 
 def input_results_eight():
@@ -735,8 +728,6 @@ def input_results_eight():
             print("Submission accepted!")
             break
 
-    return eight_sub_input
-
     while True:   
         eight_task_input = input("Please enter your task here: \n")
 
@@ -744,10 +735,11 @@ def input_results_eight():
             print("Submission accepted!")
             break
 
-    return eight_task_input
-
     print(f"Your input was: {eight_sub_input} - {eight_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return eight_sub_input
+    return eight_task_input
 
 
 def input_results_nine():
@@ -787,8 +779,6 @@ def input_results_nine():
             print("Submission accepted!")
             break
 
-    return nine_sub_input
-
     while True:   
         nine_task_input = input("Please enter your task here: \n")
 
@@ -796,10 +786,11 @@ def input_results_nine():
             print("Submission accepted!")
             break
 
-    return nine_task_input
-
     print(f"Your input was: {nine_sub_input} - {nine_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return nine_sub_input
+    return nine_task_input
 
 
 def input_results_ten():
@@ -839,8 +830,6 @@ def input_results_ten():
             print("Submission accepted!")
             break
 
-    return ten_sub_input
-
     while True:   
         ten_task_input = input("Please enter your task here: \n")
 
@@ -848,10 +837,11 @@ def input_results_ten():
             print("Submission accepted!")
             break
 
-    return ten_task_input
-
     print(f"Your input was: {ten_sub_input} - {ten_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return ten_sub_input
+    return ten_task_input
 
 
 def input_results_eleven():
@@ -891,8 +881,6 @@ def input_results_eleven():
             print("Submission accepted!")
             break
 
-    return eleven_sub_input
-
     while True:   
         eleven_task_input = input("Please enter your task here: \n")
 
@@ -900,10 +888,11 @@ def input_results_eleven():
             print("Submission accepted!")
             break
 
-    return eleven_task_input
-
     print(f"Your input was: {eleven_sub_input} - {eleven_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return eleven_sub_input
+    return eleven_task_input
 
 
 def input_results_twelve():
@@ -943,8 +932,6 @@ def input_results_twelve():
             print("Submission accepted!")
             break
 
-    return twelve_sub_input
-
     while True:   
         twelve_task_input = input("Please enter your task here: \n")
 
@@ -952,10 +939,11 @@ def input_results_twelve():
             print("Submission accepted!")
             break
 
-    return twelve_task_input
-
     print(f"Your input was: {twelve_sub_input} - {twelve_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return twelve_sub_input
+    return twelve_task_input
 
 
 def input_results_thirteen():
@@ -995,8 +983,6 @@ def input_results_thirteen():
             print("Submission accepted!")
             break
 
-    return thirteen_sub_input
-
     while True:   
         thirteen_task_input = input("Please enter your task here: \n")
 
@@ -1004,10 +990,11 @@ def input_results_thirteen():
             print("Submission accepted!")
             break
 
-    return thirteen_task_input
-
     print(f"Your input was: {thirteen_sub_input} - {thirteen_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return thirteen_sub_input
+    return thirteen_task_input
 
 
 def input_results_fourteen():
@@ -1047,8 +1034,6 @@ def input_results_fourteen():
             print("Submission accepted!")
             break
 
-    return fourteen_sub_input
-
     while True:   
         fourteen_task_input = input("Please enter your task here: \n")
 
@@ -1056,10 +1041,11 @@ def input_results_fourteen():
             print("Submission accepted!")
             break
 
-    return fourteen_task_input
-
     print(f"Your input was: {fourteen_sub_input} - {fourteen_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return fourteen_sub_input
+    return fourteen_task_input
 
 
 def input_results_fifteen():
@@ -1099,8 +1085,6 @@ def input_results_fifteen():
             print("Submission accepted!")
             break
 
-    return fifteen_sub_input
-
     while True:   
         fifteen_task_input = input("Please enter your task here: \n")
 
@@ -1108,10 +1092,11 @@ def input_results_fifteen():
             print("Submission accepted!")
             break
 
-    return fifteen_task_input
-
     print(f"Your input was: {fifteen_sub_input} - {fifteen_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return fifteen_sub_input
+    return fifteen_task_input
 
 
 def input_results_sixteen():
@@ -1151,8 +1136,6 @@ def input_results_sixteen():
             print("Submission accepted!")
             break
 
-    return sixteen_sub_input
-
     while True:   
         sixteen_task_input = input("Please enter your task here: \n")
 
@@ -1160,10 +1143,11 @@ def input_results_sixteen():
             print("Submission accepted!")
             break
 
-    return sixteen_task_input
-
     print(f"Your input was: {sixteen_sub_input} - {sixteen_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return sixteen_sub_input
+    return sixteen_task_input
 
 
 def input_results_seventeen():
@@ -1203,8 +1187,6 @@ def input_results_seventeen():
             print("Submission accepted!")
             break
 
-    return seventeen_sub_input
-
     while True:   
         seventeen_task_input = input("Please enter your task here: \n")
 
@@ -1212,10 +1194,11 @@ def input_results_seventeen():
             print("Submission accepted!")
             break
 
-    return seventeen_task_input
-
     print(f"Your input was: {seventeen_sub_input} - {seventeen_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return seventeen_sub_input
+    return seventeen_task_input
 
 
 def input_results_eighteen():
@@ -1255,8 +1238,6 @@ def input_results_eighteen():
             print("Submission accepted!")
             break
 
-    return eighteen_sub_input
-
     while True:   
         eighteen_task_input = input("Please enter your task here: \n")
 
@@ -1264,10 +1245,11 @@ def input_results_eighteen():
             print("Submission accepted!")
             break
 
-    return eighteen_task_input
-
     print(f"Your input was: {eighteen_sub_input} - {eighteen_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return eighteen_sub_input
+    return eighteen_task_input
 
 
 def input_results_nineteen():
@@ -1307,8 +1289,6 @@ def input_results_nineteen():
             print("Submission accepted!")
             break
 
-    return nineteen_sub_input
-
     while True:   
         nineteen_task_input = input("Please enter your task here: \n")
 
@@ -1316,10 +1296,11 @@ def input_results_nineteen():
             print("Submission accepted!")
             break
 
-    return nineteen_task_input
-
     print(f"Your input was: {nineteen_sub_input} - {nineteen_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return nineteen_sub_input
+    return nineteen_task_input
 
 
 def input_results_twenty():
@@ -1359,8 +1340,6 @@ def input_results_twenty():
             print("Submission accepted!")
             break
 
-    return twenty_sub_input
-
     while True:   
         twenty_task_input = input("Please enter your task here: \n")
 
@@ -1368,10 +1347,11 @@ def input_results_twenty():
             print("Submission accepted!")
             break
 
-    return twenty_task_input
-
     print(f"Your input was: {twenty_sub_input} - {twenty_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return twenty_sub_input
+    return twenty_task_input
 
 
 def input_results_twentyone():
@@ -1411,8 +1391,6 @@ def input_results_twentyone():
             print("Submission accepted!")
             break
 
-    return twentyone_sub_input
-
     while True:   
         twentyone_task_input = input("Please enter your task here: \n")
 
@@ -1420,10 +1398,11 @@ def input_results_twentyone():
             print("Submission accepted!")
             break
 
-    return twentyone_task_input
-
     print(f"Your input was: {twentyone_sub_input} - {twentyone_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return twentyone_sub_input
+    return twentyone_task_input
 
 
 def input_results_twentytwo():
@@ -1463,8 +1442,6 @@ def input_results_twentytwo():
             print("Submission accepted!")
             break
 
-    return twentytwo_sub_input
-
     while True:   
         twentytwo_task_input = input("Please enter your task here: \n")
 
@@ -1472,10 +1449,11 @@ def input_results_twentytwo():
             print("Submission accepted!")
             break
 
-    return twentytwo_task_input
-
     print(f"Your input was: {twentytwo_sub_input} - {twentytwo_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return twentytwo_sub_input
+    return twentytwo_task_input
 
 
 def input_results_twentythree():
@@ -1515,8 +1493,6 @@ def input_results_twentythree():
             print("Submission accepted!")
             break
 
-    return twentythree_sub_input
-
     while True:   
         twentythree_task_input = input("Please enter your task here: \n")
 
@@ -1524,10 +1500,11 @@ def input_results_twentythree():
             print("Submission accepted!")
             break
 
-    return twentythree_task_input
-
     print(f"Your input was: {twentythree_sub_input} - {twentythree_task_input}")
     print("-------------------------------------------------------------------------------")
+
+    return twentythree_sub_input
+    return twentythree_task_input
 
 
 def all_results_uploaded_successfully():
@@ -1542,26 +1519,35 @@ def all_results_uploaded_successfully():
 
     print("Your daily chedule is now successfully updated!")
 
-    print("Please press x button to access the results report.")
+    while True:
+        results_sub_input = input("Please type in letter x and press enter to acess the results reports: \n")
+
+        if validate_results_sub_data(results_sub_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return results_sub_input
 
 
-def validate_input_data(values):
+def validate_results_sub_data(values):
     """
-    Inside the try, converts all string values into integers.
-    Raises ValueError if strings cannot be converted into int,
-    or if there aren't exactly 6 values.
+    Raises ValueError if string does not match letter "x". 
+    Raises ValueError if user has inputted more than one letter.
     """
-    try:
-        [int(value) for value in values]
-        if len(values) != 6:
-            raise ValueError(
-                f"Exactly 6 values required, you provided {len(values)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    if values != "x":
+        raise ValueError(
+            "Invalid letter, please input letter x then and try again."
+        )
         return False
-
-    return True
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def retrieve_subcategories_results():
@@ -1574,37 +1560,47 @@ def retrieve_subcategories_results():
     for item in subcategories_list:
         if item == 'Body System Care':
             body_system_count +=1
-    return body_system_count
 
     soul_spirit_count = 0
     for item in subcategories_list:
         if item == 'Soul & Spirit':
             soul_spirit_count +=1
-    return soul_spirit_count
 
     fitness_count = 0
     for item in subcategories_list:
         if item == 'Fitness':
             fitness_count +=1
-    return fitness_count
 
     meditation_count = 0
     for item in subcategories_list:
         if item == 'Meditation':
-           fitness_count +=1
-    return fitness_count
+           meditation_count +=1
 
     print(f"Body System Care - [{body_system_count}] hours")
-    print(f"Body System Care - [{soul_spirit_count}] hours")
-    print(f"Body System Care - [{fitness_count}] hours")
+    print(f"Soul & Spirit - [{soul_spirit_count}] hours")
+    print(f"Fitness - [{fitness_count}] hours")
+    print(f"Meditation - [{meditation_count}] hours")
+
+    return body_system_count
+    return soul_spirit_count        
+    return fitness_count
+    return meditation_count
+
+
+def retrieve_tasks_results():
+    """
+    Function retrieves taks results and counts items repetitions.
+    """
+    tasks_list = worksheet.col_values(3)
 
     zero_row_count = 0
-    for item in subcategories_list:
+    for item in tasks_list:
         if item == zero_task_input:
             zero_row_count +=1
-    return zero_row_count
-
+    
     print(f"{zero_task_input} - [{zero_row_count}] hours")
+
+    return zero_row_count
 
 
 
@@ -1813,6 +1809,26 @@ def main():
     """
 
 main()
+
+
+
+def validate_input_data(values):
+    """
+    Inside the try, converts all string values into integers.
+    Raises ValueError if strings cannot be converted into int,
+    or if there aren't exactly 6 values.
+    """
+    try:
+        [int(value) for value in values]
+        if len(values) != 6:
+            raise ValueError(
+                f"Exactly 6 values required, you provided {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
 
 
 get_last_5_entries()
