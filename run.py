@@ -240,6 +240,7 @@ def input_results_zero():
     return zero_task_input
 
     print(f"Your input was: {zero_sub_input} - {zero_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def validate_zero_sub_data(values):
@@ -288,15 +289,42 @@ def validate_zero_task_data(values):
         return False
 
 
-
-
-
 def data_uploaded_zero():
     print("Processing request...")
 
-    print("00:00 hour has been uploaded successfully!")
+    print("00:00 - 01:00 hour has been successfully uploaded!")
 
     print("Let's continue with the next hour of your day.")
+
+    while True:
+        zero_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_zero_next_data(zero_next_input):
+            print("Loading...")
+            break
+
+    return zero_next_input
+
+    print("-------------------------------------------------------------------------------")
+
+
+def validate_zero_next_data(values):
+    """
+    Raises ValueError if string does not match letter "x". 
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid letter, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_one():
@@ -348,6 +376,7 @@ def input_results_one():
     return one_task_input
 
     print(f"Your input was: {one_sub_input} - {one_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_two():
@@ -399,6 +428,7 @@ def input_results_two():
     return two_task_input
 
     print(f"Your input was: {two_sub_input} - {two_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_three():
@@ -450,6 +480,7 @@ def input_results_three():
     return three_task_input
 
     print(f"Your input was: {three_sub_input} - {three_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_four():
@@ -501,6 +532,7 @@ def input_results_four():
     return four_task_input
 
     print(f"Your input was: {four_sub_input} - {four_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_five():
@@ -552,6 +584,7 @@ def input_results_five():
     return five_task_input
 
     print(f"Your input was: {five_sub_input} - {five_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_six():
@@ -603,6 +636,7 @@ def input_results_six():
     return six_task_input
 
     print(f"Your input was: {six_sub_input} - {six_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_seven():
@@ -654,6 +688,7 @@ def input_results_seven():
     return seven_task_input
 
     print(f"Your input was: {seven_sub_input} - {seven_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_eight():
@@ -705,6 +740,7 @@ def input_results_eight():
     return eight_task_input
 
     print(f"Your input was: {eight_sub_input} - {eight_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_nine():
@@ -756,6 +792,7 @@ def input_results_nine():
     return nine_task_input
 
     print(f"Your input was: {nine_sub_input} - {nine_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_ten():
@@ -807,6 +844,7 @@ def input_results_ten():
     return ten_task_input
 
     print(f"Your input was: {ten_sub_input} - {ten_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_eleven():
@@ -858,6 +896,7 @@ def input_results_eleven():
     return eleven_task_input
 
     print(f"Your input was: {eleven_sub_input} - {eleven_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_twelve():
@@ -909,6 +948,7 @@ def input_results_twelve():
     return twelve_task_input
 
     print(f"Your input was: {twelve_sub_input} - {twelve_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_thirteen():
@@ -960,6 +1000,7 @@ def input_results_thirteen():
     return thirteen_task_input
 
     print(f"Your input was: {thirteen_sub_input} - {thirteen_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_fourteen():
@@ -1011,6 +1052,7 @@ def input_results_fourteen():
     return fourteen_task_input
 
     print(f"Your input was: {fourteen_sub_input} - {fourteen_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_fifteen():
@@ -1062,6 +1104,7 @@ def input_results_fifteen():
     return fifteen_task_input
 
     print(f"Your input was: {fifteen_sub_input} - {fifteen_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_sixteen():
@@ -1113,6 +1156,7 @@ def input_results_sixteen():
     return sixteen_task_input
 
     print(f"Your input was: {sixteen_sub_input} - {sixteen_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_seventeen():
@@ -1164,6 +1208,7 @@ def input_results_seventeen():
     return seventeen_task_input
 
     print(f"Your input was: {seventeen_sub_input} - {seventeen_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_eighteen():
@@ -1215,6 +1260,7 @@ def input_results_eighteen():
     return eighteen_task_input
 
     print(f"Your input was: {eighteen_sub_input} - {eighteen_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_nineteen():
@@ -1266,6 +1312,7 @@ def input_results_nineteen():
     return nineteen_task_input
 
     print(f"Your input was: {nineteen_sub_input} - {nineteen_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_twenty():
@@ -1317,6 +1364,7 @@ def input_results_twenty():
     return twenty_task_input
 
     print(f"Your input was: {twenty_sub_input} - {twenty_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_twentyone():
@@ -1368,6 +1416,7 @@ def input_results_twentyone():
     return twentyone_task_input
 
     print(f"Your input was: {twentyone_sub_input} - {twentyone_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_twentytwo():
@@ -1419,6 +1468,7 @@ def input_results_twentytwo():
     return twentytwo_task_input
 
     print(f"Your input was: {twentytwo_sub_input} - {twentytwo_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def input_results_twentythree():
@@ -1470,6 +1520,7 @@ def input_results_twentythree():
     return twentythree_task_input
 
     print(f"Your input was: {twentythree_sub_input} - {twentythree_task_input}")
+    print("-------------------------------------------------------------------------------")
 
 
 def all_results_uploaded_successfully():
