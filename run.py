@@ -84,10 +84,11 @@ def rules():
     
     print("- When inputting subcategories and tasks, please follow rules precisely")
     print("- Do not enter any numbers")
-    print("- Only enter two values separated by comma")
+    print("- Only enter values when asked for it")
     print("- Only select sub-categories from given list")
     print("- Tasks are custom by your experience with limit of 40 characters")
-    print("- If you do not remember or wish to leave no response, enter break task")
+    print("- Please do not leave any fields empty")
+    print("- During reporting sub-categories and tasks, time is in 24-hour format")
 
     while True:
         personal_info_input = input("Please input button x and press enter to continue: \n")
@@ -125,7 +126,6 @@ def personal_info():
     """
     print("-------------------------------------------------------------------------------")
     print("Please enter your name and identification number.")
-
     print("If you did not request ID yet, you can enter any number above 1000.")
 
     while True:
@@ -147,10 +147,11 @@ def personal_info():
 
     return id_input
 
-    print(f"Thank you {name_input}, {id_input}.")
+    print(f"Thank you {name_input}, #{id_input}.")
 
     print("Starting the program...")
     print("-------------------------------------------------------------------------------")
+
 
 def validate_name_data(values):
     """
@@ -192,1038 +193,1207 @@ def validate_id_data(values):
 
 def input_results_zero():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 00:00 and 01:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        sub_category_input = input("Input your first number:")
-        task_input = input("Input your second number:")
-        print(f" {sub_category_input} - {task_input}")
+    print("What have you done today between 00:00 and 01:00?")
 
-        results_input = input("Results:\n")
+    while True:   
+        zero_sub_input = input("Please enter your sub-category here: \n")
 
-        results_data = results_input.split(",")
-
-        if validate_input_data(results_data):
+        if validate_zero_sub_data(zero_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return zero_sub_input
+
+    while True:   
+        zero_task_input = input("Please enter your task here: \n")
+
+        if validate_zero_task_data(zero_task_input):
+            print("Submission accepted!")
+            break
+
+    return zero_task_input
+
+    print(f"Your input was: {zero_sub_input} - {zero_task_input}")
 
 
 def input_results_one():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 01:00 and 02:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 01:00 and 02:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        one_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_one_sub_data(one_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return one_sub_input
+
+    while True:   
+        one_task_input = input("Please enter your task here: \n")
+
+        if validate_one_task_data(one_task_input):
+            print("Submission accepted!")
+            break
+
+    return one_task_input
+
+    print(f"Your input was: {one_sub_input} - {one_task_input}")
 
 
 def input_results_two():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 02:00 and 03:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 02:00 and 03:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        two_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_two_sub_data(two_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return two_sub_input
+
+    while True:   
+        two_task_input = input("Please enter your task here: \n")
+
+        if validate_two_task_data(two_task_input):
+            print("Submission accepted!")
+            break
+
+    return two_task_input
+
+    print(f"Your input was: {two_sub_input} - {two_task_input}")
 
 
 def input_results_three():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 03:00 and 04:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 03:00 and 04:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        three_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_three_sub_data(three_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return three_sub_input
+
+    while True:   
+        three_task_input = input("Please enter your task here: \n")
+
+        if validate_three_task_data(three_task_input):
+            print("Submission accepted!")
+            break
+
+    return three_task_input
+
+    print(f"Your input was: {three_sub_input} - {three_task_input}")
 
 
 def input_results_four():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 04:00 and 05:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 04:00 and 05:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        four_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_four_sub_data(four_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return four_sub_input
+
+    while True:   
+        four_task_input = input("Please enter your task here: \n")
+
+        if validate_four_task_data(four_task_input):
+            print("Submission accepted!")
+            break
+
+    return four_task_input
+
+    print(f"Your input was: {four_sub_input} - {four_task_input}")
 
 
 def input_results_five():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 05:00 and 06:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 05:00 and 06:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        five_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_five_sub_data(five_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return five_sub_input
+
+    while True:   
+        five_task_input = input("Please enter your task here: \n")
+
+        if validate_five_task_data(five_task_input):
+            print("Submission accepted!")
+            break
+
+    return five_task_input
+
+    print(f"Your input was: {five_sub_input} - {five_task_input}")
 
 
 def input_results_six():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 06:00 and 07:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 06:00 and 07:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        six_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_six_sub_data(six_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return six_sub_input
+
+    while True:   
+        six_task_input = input("Please enter your task here: \n")
+
+        if validate_six_task_data(six_task_input):
+            print("Submission accepted!")
+            break
+
+    return six_task_input
+
+    print(f"Your input was: {six_sub_input} - {six_task_input}")
 
 
 def input_results_seven():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 07:00 and 08:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 07:00 and 08:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        seven_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_seven_sub_data(seven_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return seven_sub_input
+
+    while True:   
+        seven_task_input = input("Please enter your task here: \n")
+
+        if validate_seven_task_data(seven_task_input):
+            print("Submission accepted!")
+            break
+
+    return seven_task_input
+
+    print(f"Your input was: {seven_sub_input} - {seven_task_input}")
 
 
 def input_results_eight():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 08:00 and 09:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 08:00 and 09:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        eight_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_eight_sub_data(eight_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return eight_sub_input
+
+    while True:   
+        eight_task_input = input("Please enter your task here: \n")
+
+        if validate_eight_task_data(eight_task_input):
+            print("Submission accepted!")
+            break
+
+    return eight_task_input
+
+    print(f"Your input was: {eight_sub_input} - {eight_task_input}")
 
 
 def input_results_nine():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 09:00 and 10:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 09:00 and 10:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        nine_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_nine_sub_data(nine_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return nine_sub_input
+
+    while True:   
+        nine_task_input = input("Please enter your task here: \n")
+
+        if validate_nine_task_data(nine_task_input):
+            print("Submission accepted!")
+            break
+
+    return nine_task_input
+
+    print(f"Your input was: {nine_sub_input} - {nine_task_input}")
 
 
 def input_results_ten():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 10:00 and 11:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 10:00 and 11:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        ten_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_ten_sub_data(ten_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return ten_sub_input
+
+    while True:   
+        ten_task_input = input("Please enter your task here: \n")
+
+        if validate_ten_task_data(ten_task_input):
+            print("Submission accepted!")
+            break
+
+    return ten_task_input
+
+    print(f"Your input was: {ten_sub_input} - {ten_task_input}")
 
 
 def input_results_eleven():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 11:00 and 12:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 11:00 and 12:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        eleven_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_eleven_sub_data(eleven_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return eleven_sub_input
+
+    while True:   
+        eleven_task_input = input("Please enter your task here: \n")
+
+        if validate_eleven_task_data(eleven_task_input):
+            print("Submission accepted!")
+            break
+
+    return eleven_task_input
+
+    print(f"Your input was: {eleven_sub_input} - {eleven_task_input}")
 
 
 def input_results_twelve():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 12:00 and 13:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 12:00 and 13:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        twelve_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_twelve_sub_data(twelve_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return twelve_sub_input
+
+    while True:   
+        twelve_task_input = input("Please enter your task here: \n")
+
+        if validate_twelve_task_data(twelve_task_input):
+            print("Submission accepted!")
+            break
+
+    return twelve_task_input
+
+    print(f"Your input was: {twelve_sub_input} - {twelve_task_input}")
 
 
 def input_results_thirteen():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 13:00 and 14:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 13:00 and 14:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        thirteen_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_thirteen_sub_data(thirteen_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return thirteen_sub_input
+
+    while True:   
+        thirteen_task_input = input("Please enter your task here: \n")
+
+        if validate_thirteen_task_data(thirteen_task_input):
+            print("Submission accepted!")
+            break
+
+    return thirteen_task_input
+
+    print(f"Your input was: {thirteen_sub_input} - {thirteen_task_input}")
 
 
 def input_results_fourteen():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 14:00 and 15:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 14:00 and 15:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        fourteen_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_fourteen_sub_data(fourteen_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return fourteen_sub_input
+
+    while True:   
+        fourteen_task_input = input("Please enter your task here: \n")
+
+        if validate_fourteen_task_data(fourteen_task_input):
+            print("Submission accepted!")
+            break
+
+    return fourteen_task_input
+
+    print(f"Your input was: {fourteen_sub_input} - {fourteen_task_input}")
 
 
 def input_results_fifteen():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 15:00 and 16:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 15:00 and 16:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        fifteen_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_fifteen_sub_data(fifteen_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return fifteen_sub_input
+
+    while True:   
+        fifteen_task_input = input("Please enter your task here: \n")
+
+        if validate_fifteen_task_data(fifteen_task_input):
+            print("Submission accepted!")
+            break
+
+    return fifteen_task_input
+
+    print(f"Your input was: {fifteen_sub_input} - {fifteen_task_input}")
 
 
 def input_results_sixteen():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 16:00 and 17:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 16:00 and 17:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        sixteen_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_sixteen_sub_data(sixteen_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return sixteen_sub_input
+
+    while True:   
+        sixteen_task_input = input("Please enter your task here: \n")
+
+        if validate_sixteen_task_data(sixteen_task_input):
+            print("Submission accepted!")
+            break
+
+    return sixteen_task_input
+
+    print(f"Your input was: {sixteen_sub_input} - {sixteen_task_input}")
 
 
 def input_results_seventeen():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 17:00 and 18:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 17:00 and 18:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        seventeen_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_seventeen_sub_data(seventeen_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return seventeen_sub_input
+
+    while True:   
+        seventeen_task_input = input("Please enter your task here: \n")
+
+        if validate_seventeen_task_data(seventeen_task_input):
+            print("Submission accepted!")
+            break
+
+    return seventeen_task_input
+
+    print(f"Your input was: {seventeen_sub_input} - {seventeen_task_input}")
 
 
 def input_results_eighteen():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 18:00 and 19:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 18:00 and 19:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        eighteen_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_eighteen_sub_data(eighteen_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return eighteen_sub_input
+
+    while True:   
+        eighteen_task_input = input("Please enter your task here: \n")
+
+        if validate_eighteen_task_data(eighteen_task_input):
+            print("Submission accepted!")
+            break
+
+    return eighteen_task_input
+
+    print(f"Your input was: {eighteen_sub_input} - {eighteen_task_input}")
 
 
 def input_results_nineteen():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 19:00 and 20:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 19:00 and 20:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        nineteen_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_nineteen_sub_data(nineteen_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return nineteen_sub_input
+
+    while True:   
+        nineteen_task_input = input("Please enter your task here: \n")
+
+        if validate_nineteen_task_data(nineteen_task_input):
+            print("Submission accepted!")
+            break
+
+    return nineteen_task_input
+
+    print(f"Your input was: {nineteen_sub_input} - {nineteen_task_input}")
 
 
 def input_results_twenty():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 20:00 and 21:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 20:00 and 21:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        twenty_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_twenty_sub_data(twenty_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return twenty_sub_input
+
+    while True:   
+        twenty_task_input = input("Please enter your task here: \n")
+
+        if validate_twenty_task_data(twenty_task_input):
+            print("Submission accepted!")
+            break
+
+    return twenty_task_input
+
+    print(f"Your input was: {twenty_sub_input} - {twenty_task_input}")
 
 
 def input_results_twentyone():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 21:00 and 22:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 21:00 and 22:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        twentyone_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_twentyone_sub_data(twentyone_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return twentyone_sub_input
+
+    while True:   
+        twentyone_task_input = input("Please enter your task here: \n")
+
+        if validate_twentyone_task_data(twentyone_task_input):
+            print("Submission accepted!")
+            break
+
+    return twentyone_task_input
+
+    print(f"Your input was: {twentyone_sub_input} - {twentyone_task_input}")
 
 
 def input_results_twentytwo():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 22:00 and 23:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 22:00 and 23:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        twentytwo_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_twentytwo_sub_data(twentytwo_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return twentytwo_sub_input
+
+    while True:   
+        twentytwo_task_input = input("Please enter your task here: \n")
+
+        if validate_twentytwo_task_data(twentytwo_task_input):
+            print("Submission accepted!")
+            break
+
+    return twentytwo_task_input
+
+    print(f"Your input was: {twentytwo_sub_input} - {twentytwo_task_input}")
 
 
 def input_results_twentythree():
     """
-    Requests direct input from the user.
-    User is requested to input one sub-category and one task.
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    WHAT IT DOES AND HOW
-    RULES
-    """
-    while True:
-        print("What have you done today between 23:00 and 00:00?")
-        
-        print("GROWTH")
-        print("- Body System Care")
-        print("- Soul & Spirit")
-        print("- Fitness")
-        print("- Meditation")
+    """  
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
 
-        print("PROGRESS")
-        print("- Personal Progress")
-        print("- Global ProgresS")
-        print("- Education Progress")
-        print("- Business Progress")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global ProgresS")
+    print("- Education Progress")
+    print("- Business Progress")
 
-        print("FREEDOM")
-        print("- Adventures")
-        print("- Random Activity")
-        print("- Rest")
-        print("- Break")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break")
 
-        print("Please enter one sub-category from above and a custom task separated by a comma")
-        print("Example: [SUB-CATEGORY , TASK] - [Fitness , Stretch]")
+    print("- Please select one sub-category from the list above.")
+    print("- Please enter a custom task that best desribes chosen sub-category.")
 
-        results_input = input("Results:\n")
+    print("What have you done today between 23:00 and 00:00?")
 
-        results_data = results_input.split(",")
+    while True:   
+        twentythree_sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_input_data(results_data):
+        if validate_twentythree_sub_data(twentythree_sub_input):
             print("Submission accepted!")
             break
-        
-    return results_data
+
+    return twentythree_sub_input
+
+    while True:   
+        twentythree_task_input = input("Please enter your task here: \n")
+
+        if validate_twentythree_task_data(twentythree_task_input):
+            print("Submission accepted!")
+            break
+
+    return twentythree_task_input
+
+    print(f"Your input was: {twentythree_sub_input} - {twentythree_task_input}")
+
+
+
+
+
 
 
 def validate_hourly_input_zero():
