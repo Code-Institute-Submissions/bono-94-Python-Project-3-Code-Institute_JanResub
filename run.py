@@ -37,7 +37,7 @@ def introduction():
     print("- Once the data is in, program will retrieve next results")
     print("- Those are noted as daily duration of each category and task")
     print("- Once that is reported to you, it will be exported again")
-    print("- This time,to the analysis worksheet")
+    print("- This time, to the analysis worksheet")
     print("- Following the link, you will be able to see visual analysis through graphs")
    
     while True:
@@ -102,7 +102,7 @@ def rules():
 
 def validate_personal_data(values):
     """
-    Raises ValueError if string does not match letter "x" 
+    Raises ValueError if string does not match letter "x". 
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
@@ -120,25 +120,30 @@ def validate_personal_data(values):
 
 
 def personal_info():
+    """
+    This function allows users to enter their name and unique identification number.
+    """
     print("-------------------------------------------------------------------------------")
     print("Please enter your name and identification number.")
 
-    print("If you did not requested ID yet, you can enter any number above 1000.")
+    print("If you did not request ID yet, you can enter any number above 1000.")
 
     while True:
         name_input = input("Please enter your first name: \n")
-
-        reference_input = input("Please enter your identification number: \n")
 
         if validate_name_data(name_input):
             print("Data is valid!")
             break
 
+    return name_input
+
+    while True:
+        
+        id_input = input("Please enter your identification number: \n")
+
         if validate_id_data(id_input):
             print("Data is valid!")
             break
-
-    return name_input
 
     return id_input
 
@@ -149,7 +154,7 @@ def personal_info():
 
 def validate_name_data(values):
     """
-    Raises ValueError if name is an integer instead of a string.
+    Raises ValueError if name is a number instead of letters.
     Raises ValueError if name is longer than 50 characters.
     """
     if name_input.isdigit():
@@ -168,7 +173,7 @@ def validate_name_data(values):
 
 def validate_id_data(values):
     """
-    Raises ValueError if ID number is a string instead of an integer.
+    Raises ValueError if ID number contains letters instead of numbers.
     Raises ValueError if the number is less than 1000.
     """
     if id_input.isalpha():
@@ -1253,6 +1258,7 @@ def validate_input_data(values):
 
     return True
 
+
 def data_uploaded_zero():
     print("Processing request...")
 
@@ -1441,7 +1447,6 @@ def get_last_5_entries():
 
 
 def calculate_stock_data(data):
-
     """
     Calculae the average stock for each item type
     add 10%
@@ -1460,7 +1465,7 @@ def calculate_stock_data(data):
 
 def main():
     """
-    Run all program functions
+    Runs all functions inside the program
     """
     data = get_main_data()
     print(data)
@@ -1476,14 +1481,12 @@ def main():
         update_worksheet(stock_data, "stock")
     """
 
-
-print("Welcome to Life Data Automation")
 main()
 
 
-# get_last_5_entries()
-# stock data = calculate_stock_data(sales_columns)
-# print(stock_data)
+get_last_5_entries()
+stock data = calculate_stock_data(sales_columns)
+print(stock_data)
 
 
 def get_stock_values(data):
@@ -1492,14 +1495,14 @@ def get_stock_values(data):
     """
     headings = SHEET.worksheet("stock").get_all_values()[0]
 
-    # headings = SHEET.worksheet('stock').row_values(1)
+    headings = SHEET.worksheet('stock').row_values(1)
 
     print("Make the following numbers of sandwiches for next market:\n")
 
-    # new_data = {}
-    # for heading, stock_num in zip(headings, data):
-    #     new_data[heading] = stock_num
-    # return new_data
+    new_data = {}
+    for heading, stock_num in zip(headings, data):
+        new_data[heading] = stock_num
+    return new_data
     
     return {heading: data for heading, data in zip(headings, data)}
     
@@ -1508,7 +1511,14 @@ stock_values = get_stock_values(stock_data)
 print(stock_values)
 
 
+
+
 def export_results_analyzer():
+    """
+    Results gathered from the tracker and reported to program are being exported after processed.
+    Users receive a link to their sheet.
+    Users see outro message with input section that leads to exit the program sequence.
+    """
     print("Updating results to the analyzer...")
 
     print("Daily results have been successfully sent to the analyzer.")
@@ -1552,6 +1562,10 @@ def validate_exit_data(values):
 
 
 def exit_screen():
+    """
+    Informs the user that exit sequence is initiated.
+    Countdown of 10 seconds ends with exit message.
+    """
     print("-------------------------------------------------------------------------------")
     print("Initiating Exit Sequence...")
 
