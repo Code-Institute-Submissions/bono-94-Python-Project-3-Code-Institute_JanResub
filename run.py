@@ -157,7 +157,7 @@ def validate_name_data(values):
     Raises ValueError if name is a number instead of letters.
     Raises ValueError if name is longer than 50 characters.
     """
-    if name_input.isdigit():
+    if values.isdigit():
         raise ValueError(
             "Invalid name, please do not use any numbers and try again."
         )
@@ -176,7 +176,7 @@ def validate_id_data(values):
     Raises ValueError if ID number contains letters instead of numbers.
     Raises ValueError if the number is less than 1000.
     """
-    if id_input.isalpha():
+    if values.isalpha():
         raise ValueError(
             "Invalid ID number, please only use numbers"
         )
@@ -227,6 +227,11 @@ def input_results_zero():
             print("Submission accepted!")
             break
 
+    return zero_sub_input
+
+
+def input_task_zero():
+
     while True:   
         zero_task_input = input("Please enter your task here: \n")
 
@@ -237,7 +242,6 @@ def input_results_zero():
     print(f"Your input was: {zero_sub_input} - {zero_task_input}")
     print("-------------------------------------------------------------------------------")
     
-    return zero_sub_input
     return zero_task_input
 
 
@@ -245,29 +249,29 @@ def validate_zero_sub_data(values):
     """
     Raises ValueError if sub-categories do not match options.
     """
-    if zero_sub_input == "Body System Care":
+    if values == "Body System Care":
         return True
-    elif zero_sub_input == "Soul & Spirit":
+    elif values == "Soul & Spirit":
         return True
-    elif zero_sub_input == "Fitness":
+    elif values == "Fitness":
         return True
-    elif zero_sub_input == "Meditation":
+    elif values == "Meditation":
         return True
-    elif zero_sub_input == "Personal Progress":
+    elif values == "Personal Progress":
         return True
-    elif zero_sub_input == "Global Progress":
+    elif values == "Global Progress":
         return True
-    elif zero_sub_input == "Education Progress":
+    elif values == "Education Progress":
         return True
-    elif zero_sub_input == "Business Progress":
+    elif values == "Business Progress":
         return True
-    elif zero_sub_input == "Adventures":
+    elif values == "Adventures":
         return True
-    elif zero_sub_input == "Random Activity":
+    elif values == "Random Activity":
         return True
-    elif zero_sub_input == "Rest":
+    elif values == "Rest":
         return True
-    elif zero_sub_input == "Break":
+    elif values == "Break":
         return True        
     else:
         return False
@@ -278,7 +282,7 @@ def validate_zero_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if zero_task_input.isalpha() and len(zero_task_input) <= 40:
+    if values.isalpha() and len(values) <= 40:
         return True
     else: 
         raise ValueError(
