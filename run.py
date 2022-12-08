@@ -17,9 +17,10 @@ SHEET = GSPREAD_CLIENT.open('life_tracker')
 def introduction():
     """
     This introduction welcomes users to the program.
-    First of, user is presented with current date and time.
+    First, user is presented with current date and time.
     Then a short welcome message followed by explanation of next steps.
-    Once user has finished reading section of how it works, input that sends user to the rules section is presented.
+    Once user has finished reading section of how program works, 
+    input of letter x sends user to rules section.
     """
     print("-------------------------------------------------------------------------------")
     live_timestamp = datetime.now()
@@ -31,17 +32,17 @@ def introduction():
 
     print("How it works?")
     print("- Following the introduction, you will proceed to the rules section")
-    print("- After covering the rules, you will be asked to provide personal information")
+    print("- After covering the rules, you will be asked to enter personal identification")
     print("- Next you will be asked to input your daily events per each hour")
-    print("- Your results will be exported to an online Google Sheet")
-    print("- Once the data is in, program will retrieve next results")
+    print("- Your data will be exported to an external online Google Sheet")
+    print("- Once the data is in, program will retrieve your results")
     print("- Those are noted as daily duration of each category and task")
     print("- Once that is reported to you, it will be exported again")
-    print("- This time, to the analysis worksheet")
-    print("- Following the link, you will be able to see visual analysis through graphs")
+    print("- This time, to the second worksheet: analysis")
+    print("- You will be able to see visual analysis of your results")
    
     while True:
-        rules_input = input("Please input button x and press enter to continue: \n")
+        rules_input = input("Please type letter x and press enter to continue: \n")
 
         if validate_rules_data(rules_input):
             print("Loading...")
@@ -53,17 +54,18 @@ def introduction():
 
 def validate_rules_data(values):
     """
-    Raises ValueError if string does not match letter "x".
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
         raise ValueError(
-            "Invalid letter, please input letter x then and try again."
+            "Invalid letter, please type letter x then and try again."
         )
         return False
     elif len(values) != 1:
         raise ValueError(
-            "Too many letters, please input letter x then and try again."
+            "Too many letters, please type letter x then and try again."
         )
         return False
     else:
@@ -73,7 +75,7 @@ def validate_rules_data(values):
 def rules():
     """
     Rules section allows users to get familiar with important rules.
-    At the end, user is asked to input the letter x in order to continue.
+    At the end, user is asked to input the letter x to start the program.
     """
     print("-------------------------------------------------------------------------------")
     print("RULES")
@@ -83,7 +85,7 @@ def rules():
     print("- When asked to input letter x, please enter only one character")
     
     print("- When inputting subcategories and tasks, please follow rules precisely")
-    print("- Do not enter any numbers")
+    print("- Do not enter any numbers or symbols, only letters are allowed")
     print("- Only enter values when asked for it")
     print("- Only select sub-categories from given list")
     print("- Tasks are custom by your experience with limit of 40 characters")
@@ -91,7 +93,7 @@ def rules():
     print("- During reporting sub-categories and tasks, time is in 24-hour format")
 
     while True:
-        personal_info_input = input("Please input button x and press enter to continue: \n")
+        personal_info_input = input("Please type letter x and press enter to continue: \n")
 
         if validate_personal_data(personal_info_input):
             print("Loading...")
@@ -104,12 +106,13 @@ def rules():
 
 def validate_personal_data(values):
     """
-    Raises ValueError if string does not match letter "x". 
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
         raise ValueError(
-            "Invalid letter, please input letter x then and try again."
+            "Invalid data, please input letter x then and try again."
         )
         return False
     elif len(values) != 1:
@@ -121,39 +124,29 @@ def validate_personal_data(values):
         return True
 
 
-def personal_info():
+def personal_info_name():
     """
-    This function allows users to enter their name and unique identification number.
+    This function requests user to enter their personal information starting with name.
     """
     print("-------------------------------------------------------------------------------")
     print("Please enter your name and identification number.")
     print("If you did not request ID yet, you can enter any number above 1000.")
 
     while True:
-        name_input = input("Please enter your first name: \n")
+        name_input = input("Please enter your name: \n")
 
         if validate_name_data(name_input):
             print("Data is valid!")
             break
 
-    while True:
+    print(f"Thank you {name_input}!")
         
-        id_input = input("Please enter your identification number: \n")
-
-        if validate_id_data(id_input):
-            print("Data is valid!")
-            break
-
-    print(f"Thank you {name_input}, #{id_input}.")
-
-    print("Starting the program...")
-    print("-------------------------------------------------------------------------------")
-
     return name_input
-    return id_input
+
 
 def validate_name_data(values):
     """
+    Input validator function.
     Raises ValueError if name is a number instead of letters.
     Raises ValueError if name is longer than 50 characters.
     """
@@ -171,8 +164,27 @@ def validate_name_data(values):
         return True
 
 
+def personal_info_id():
+    """
+    This function requests user to enter their unique identification number.
+    """
+    while True:
+        
+        id_input = input("Please enter identification number: \n")
+
+        if validate_id_data(id_input):
+            print("Data is valid!")
+            break
+
+    print("Starting the program...")
+    print("-------------------------------------------------------------------------------")
+
+    return id_input
+
+
 def validate_id_data(values):
     """
+    Input validator function.
     Raises ValueError if ID number contains letters instead of numbers.
     Raises ValueError if the number is less than 1000.
     """
@@ -217,7 +229,7 @@ def input_results_zero():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -274,6 +286,9 @@ def validate_zero_sub_data(values):
     elif values == "Break":
         return True        
     else:
+        raise ValueError(
+            "Please enter letters only task with maximum 40 characters."
+        )
         return False
 
 
@@ -365,7 +380,7 @@ def input_results_one():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -416,7 +431,7 @@ def input_results_two():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -467,7 +482,7 @@ def input_results_three():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -518,7 +533,7 @@ def input_results_four():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -569,7 +584,7 @@ def input_results_five():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -620,7 +635,7 @@ def input_results_six():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -671,7 +686,7 @@ def input_results_seven():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -722,7 +737,7 @@ def input_results_eight():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -773,7 +788,7 @@ def input_results_nine():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -824,7 +839,7 @@ def input_results_ten():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -875,7 +890,7 @@ def input_results_eleven():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -926,7 +941,7 @@ def input_results_twelve():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -977,7 +992,7 @@ def input_results_thirteen():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1028,7 +1043,7 @@ def input_results_fourteen():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1079,7 +1094,7 @@ def input_results_fifteen():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1130,7 +1145,7 @@ def input_results_sixteen():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1181,7 +1196,7 @@ def input_results_seventeen():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1232,7 +1247,7 @@ def input_results_eighteen():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1283,7 +1298,7 @@ def input_results_nineteen():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1334,7 +1349,7 @@ def input_results_twenty():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1385,7 +1400,7 @@ def input_results_twentyone():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1436,7 +1451,7 @@ def input_results_twentytwo():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1487,7 +1502,7 @@ def input_results_twentythree():
     print("- Break")
 
     print("- Please select one sub-category from the list above.")
-    print("- Please enter a custom task that best desribes chosen sub-category.")
+    print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize first letter of sub-categories and tasks.")
 
     while True:   
@@ -1611,7 +1626,7 @@ def retrieve_categories_results():
     print("a")
     #Returned data caps
     returned_data = "all results"
-    print(returned_data.upper())
+    print(returned_data.pper())
 
     #returned data split at comma
     returned_data_split = returned_data.split(",")
@@ -1872,6 +1887,10 @@ def export_results_analyzer():
     print("Updating results to the analyzer...")
 
     print("Daily results have been successfully sent to the analyzer.")
+
+    live_timestamp = datetime.now()
+
+    print(live_timestamp)
 
     print("Now you can access your daily worksheet with detailed visual analysis.")
 
