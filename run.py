@@ -230,7 +230,7 @@ def input_results_zero():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         zero_sub_input = input("Please enter your sub-category here: \n")
@@ -242,23 +242,9 @@ def input_results_zero():
     return zero_sub_input
 
 
-def input_task_zero():
-
-    while True:   
-        zero_task_input = input("Please enter your task here: \n")
-
-        if validate_zero_task_data(zero_task_input):
-            print("Submission accepted!")
-            break
-
-    print(f"Your input was: {zero_sub_input} - {zero_task_input}")
-    print("-------------------------------------------------------------------------------")
-    
-    return zero_task_input
-
-
 def validate_zero_sub_data(values):
     """
+    Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
     if values == "Body System Care":
@@ -287,13 +273,29 @@ def validate_zero_sub_data(values):
         return True        
     else:
         raise ValueError(
-            "Please enter letters only task with maximum 40 characters."
+            "Please only enter sub-categories from the list of options."
         )
         return False
 
 
+def input_task_zero():
+
+    while True:   
+        zero_task_input = input("Please enter your task here: \n")
+
+        if validate_zero_task_data(zero_task_input):
+            print("Submission accepted!")
+            break
+
+    print(f"Your input was: {zero_sub_input} - {zero_task_input}")
+    print("-------------------------------------------------------------------------------")
+    
+    return zero_task_input
+
+
 def validate_zero_task_data(values):
     """
+    Input validator function.
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
@@ -301,7 +303,7 @@ def validate_zero_task_data(values):
         return True
     else: 
         raise ValueError(
-            "Please enter letters only task with maximum 40 characters."
+            "Please enter letters-only tasks with maximum 40 characters."
         )
         return False
 
@@ -309,6 +311,8 @@ def validate_zero_task_data(values):
 def data_uploaded_zero():
     """
     Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_zero = SHEET.worksheet(tracker)
     
@@ -336,12 +340,13 @@ def data_uploaded_zero():
 
 def validate_zero_next_data(values):
     """
-    Raises ValueError if string does not match letter "x". 
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
         raise ValueError(
-            "Invalid letter, please input letter x then and try again."
+            "Invalid data, please input letter x then and try again."
         )
         return False
     elif len(values) != 1:
@@ -381,7 +386,7 @@ def input_results_one():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         one_sub_input = input("Please enter your sub-category here: \n")
@@ -432,7 +437,7 @@ def input_results_two():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         two_sub_input = input("Please enter your sub-category here: \n")
@@ -483,7 +488,7 @@ def input_results_three():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         three_sub_input = input("Please enter your sub-category here: \n")
@@ -534,7 +539,7 @@ def input_results_four():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         four_sub_input = input("Please enter your sub-category here: \n")
@@ -585,7 +590,7 @@ def input_results_five():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         five_sub_input = input("Please enter your sub-category here: \n")
@@ -636,7 +641,7 @@ def input_results_six():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         six_sub_input = input("Please enter your sub-category here: \n")
@@ -687,7 +692,7 @@ def input_results_seven():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         seven_sub_input = input("Please enter your sub-category here: \n")
@@ -738,7 +743,7 @@ def input_results_eight():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         eight_sub_input = input("Please enter your sub-category here: \n")
@@ -789,7 +794,7 @@ def input_results_nine():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         nine_sub_input = input("Please enter your sub-category here: \n")
@@ -840,7 +845,7 @@ def input_results_ten():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         ten_sub_input = input("Please enter your sub-category here: \n")
@@ -891,7 +896,7 @@ def input_results_eleven():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         eleven_sub_input = input("Please enter your sub-category here: \n")
@@ -942,7 +947,7 @@ def input_results_twelve():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         twelve_sub_input = input("Please enter your sub-category here: \n")
@@ -993,7 +998,7 @@ def input_results_thirteen():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         thirteen_sub_input = input("Please enter your sub-category here: \n")
@@ -1044,7 +1049,7 @@ def input_results_fourteen():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         fourteen_sub_input = input("Please enter your sub-category here: \n")
@@ -1095,7 +1100,7 @@ def input_results_fifteen():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         fifteen_sub_input = input("Please enter your sub-category here: \n")
@@ -1146,7 +1151,7 @@ def input_results_sixteen():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         sixteen_sub_input = input("Please enter your sub-category here: \n")
@@ -1197,7 +1202,7 @@ def input_results_seventeen():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         seventeen_sub_input = input("Please enter your sub-category here: \n")
@@ -1248,7 +1253,7 @@ def input_results_eighteen():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         eighteen_sub_input = input("Please enter your sub-category here: \n")
@@ -1299,7 +1304,7 @@ def input_results_nineteen():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         nineteen_sub_input = input("Please enter your sub-category here: \n")
@@ -1350,7 +1355,7 @@ def input_results_twenty():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         twenty_sub_input = input("Please enter your sub-category here: \n")
@@ -1401,7 +1406,7 @@ def input_results_twentyone():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         twentyone_sub_input = input("Please enter your sub-category here: \n")
@@ -1452,7 +1457,7 @@ def input_results_twentytwo():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         twentytwo_sub_input = input("Please enter your sub-category here: \n")
@@ -1503,7 +1508,7 @@ def input_results_twentythree():
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize first letter of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks.")
 
     while True:   
         twentythree_sub_input = input("Please enter your sub-category here: \n")
