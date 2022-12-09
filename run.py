@@ -318,7 +318,7 @@ def data_uploaded_zero():
     
     update_worksheet_zero.update('B2', zero_sub_input)
 
-    update_worksheet_zero.update('B3', zero_task_input)
+    update_worksheet_zero.update('C2', zero_task_input)
 
     print("Processing request...")
 
@@ -395,6 +395,47 @@ def input_results_one():
             print("Submission accepted!")
             break
 
+    return one_sub_input
+
+
+def validate_one_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_one():
+
     while True:   
         one_task_input = input("Please enter your task here: \n")
 
@@ -404,9 +445,73 @@ def input_results_one():
 
     print(f"Your input was: {one_sub_input} - {one_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return one_sub_input
+    
     return one_task_input
+
+
+def validate_one_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_one():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_one = SHEET.worksheet(tracker)
+    
+    update_worksheet_one.update('B3', one_sub_input)
+
+    update_worksheet_one.update('C3', one_task_input)
+
+    print("Processing request...")
+
+    print("01:00 - 02:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        one_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_one_next_data(one_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return one_next_input
+
+
+def validate_one_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_two():
@@ -446,6 +551,47 @@ def input_results_two():
             print("Submission accepted!")
             break
 
+    return two_sub_input
+
+
+def validate_two_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_two():
+
     while True:   
         two_task_input = input("Please enter your task here: \n")
 
@@ -455,9 +601,73 @@ def input_results_two():
 
     print(f"Your input was: {two_sub_input} - {two_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return two_sub_input
+    
     return two_task_input
+
+
+def validate_two_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_two():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_two = SHEET.worksheet(tracker)
+    
+    update_worksheet_two.update('B4', two_sub_input)
+
+    update_worksheet_two.update('C4', two_task_input)
+
+    print("Processing request...")
+
+    print("02:00 - 03:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        two_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_two_next_data(two_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return two_next_input
+
+
+def validate_two_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_three():
@@ -497,6 +707,47 @@ def input_results_three():
             print("Submission accepted!")
             break
 
+    return three_sub_input
+
+
+def validate_three_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_three():
+
     while True:   
         three_task_input = input("Please enter your task here: \n")
 
@@ -506,9 +757,73 @@ def input_results_three():
 
     print(f"Your input was: {three_sub_input} - {three_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return three_sub_input
+    
     return three_task_input
+
+
+def validate_three_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_three():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_three = SHEET.worksheet(tracker)
+    
+    update_worksheet_three.update('B5', three_sub_input)
+
+    update_worksheet_three.update('C5', three_task_input)
+
+    print("Processing request...")
+
+    print("03:00 - 04:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        three_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_three_next_data(three_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return three_next_input
+
+
+def validate_three_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_four():
@@ -548,6 +863,47 @@ def input_results_four():
             print("Submission accepted!")
             break
 
+    return four_sub_input
+
+
+def validate_four_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_four():
+
     while True:   
         four_task_input = input("Please enter your task here: \n")
 
@@ -557,9 +913,73 @@ def input_results_four():
 
     print(f"Your input was: {four_sub_input} - {four_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return four_sub_input
+    
     return four_task_input
+
+
+def validate_four_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_four():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_four = SHEET.worksheet(tracker)
+    
+    update_worksheet_four.update('B6', four_sub_input)
+
+    update_worksheet_four.update('C6', four_task_input)
+
+    print("Processing request...")
+
+    print("04:00 - 05:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        four_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_four_next_data(four_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return four_next_input
+
+
+def validate_four_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_five():
@@ -599,6 +1019,47 @@ def input_results_five():
             print("Submission accepted!")
             break
 
+    return five_sub_input
+
+
+def validate_five_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_five():
+
     while True:   
         five_task_input = input("Please enter your task here: \n")
 
@@ -608,9 +1069,73 @@ def input_results_five():
 
     print(f"Your input was: {five_sub_input} - {five_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return five_sub_input
+    
     return five_task_input
+
+
+def validate_five_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_five():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_five = SHEET.worksheet(tracker)
+    
+    update_worksheet_five.update('B7', five_sub_input)
+
+    update_worksheet_five.update('C7', five_task_input)
+
+    print("Processing request...")
+
+    print("05:00 - 06:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        zero_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_zero_next_data(zero_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return zero_next_input
+
+
+def validate_five_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_six():
@@ -650,6 +1175,47 @@ def input_results_six():
             print("Submission accepted!")
             break
 
+    return six_sub_input
+
+
+def validate_six_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_six():
+
     while True:   
         six_task_input = input("Please enter your task here: \n")
 
@@ -659,9 +1225,73 @@ def input_results_six():
 
     print(f"Your input was: {six_sub_input} - {six_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return six_sub_input
+    
     return six_task_input
+
+
+def validate_six_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_six():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_six = SHEET.worksheet(tracker)
+    
+    update_worksheet_six.update('B8', six_sub_input)
+
+    update_worksheet_six.update('C8', six_task_input)
+
+    print("Processing request...")
+
+    print("06:00 - 07:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        six_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_six_next_data(six_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return six_next_input
+
+
+def validate_six_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_seven():
@@ -701,6 +1331,47 @@ def input_results_seven():
             print("Submission accepted!")
             break
 
+    return seven_sub_input
+
+
+def validate_seven_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_seven():
+
     while True:   
         seven_task_input = input("Please enter your task here: \n")
 
@@ -710,9 +1381,73 @@ def input_results_seven():
 
     print(f"Your input was: {seven_sub_input} - {seven_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return seven_sub_input
+    
     return seven_task_input
+
+
+def validate_seven_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_seven():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_seven = SHEET.worksheet(tracker)
+    
+    update_worksheet_seven.update('B9', seven_sub_input)
+
+    update_worksheet_seven.update('C9', seven_task_input)
+
+    print("Processing request...")
+
+    print("07:00 - 08:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        seven_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_seven_next_data(seven_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return seven_next_input
+
+
+def validate_seven_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_eight():
@@ -752,6 +1487,47 @@ def input_results_eight():
             print("Submission accepted!")
             break
 
+    return eight_sub_input
+
+
+def validate_eight_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_eight():
+
     while True:   
         eight_task_input = input("Please enter your task here: \n")
 
@@ -761,9 +1537,73 @@ def input_results_eight():
 
     print(f"Your input was: {eight_sub_input} - {eight_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return eight_sub_input
+    
     return eight_task_input
+
+
+def validate_eight_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_eight():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_eight = SHEET.worksheet(tracker)
+    
+    update_worksheet_eight.update('B10', eight_sub_input)
+
+    update_worksheet_eight.update('C10', eight_task_input)
+
+    print("Processing request...")
+
+    print("08:00 - 09:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        eight_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_eight_next_data(eight_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return eight_next_input
+
+
+def validate_eight_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_nine():
@@ -803,6 +1643,47 @@ def input_results_nine():
             print("Submission accepted!")
             break
 
+    return nine_sub_input
+
+
+def validate_nine_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_nine():
+
     while True:   
         nine_task_input = input("Please enter your task here: \n")
 
@@ -812,9 +1693,73 @@ def input_results_nine():
 
     print(f"Your input was: {nine_sub_input} - {nine_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return nine_sub_input
+    
     return nine_task_input
+
+
+def validate_nine_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_nine():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_nine = SHEET.worksheet(tracker)
+    
+    update_worksheet_nine.update('B11', nine_sub_input)
+
+    update_worksheet_nine.update('C11', nine_task_input)
+
+    print("Processing request...")
+
+    print("09:00 - 10:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        nine_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_nine_next_data(nine_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return nine_next_input
+
+
+def validate_nine_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_ten():
@@ -854,6 +1799,47 @@ def input_results_ten():
             print("Submission accepted!")
             break
 
+    return ten_sub_input
+
+
+def validate_ten_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_ten():
+
     while True:   
         ten_task_input = input("Please enter your task here: \n")
 
@@ -863,9 +1849,73 @@ def input_results_ten():
 
     print(f"Your input was: {ten_sub_input} - {ten_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return ten_sub_input
+    
     return ten_task_input
+
+
+def validate_ten_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_ten():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_ten = SHEET.worksheet(tracker)
+    
+    update_worksheet_ten.update('B12', ten_sub_input)
+
+    update_worksheet_ten.update('C12', ten_task_input)
+
+    print("Processing request...")
+
+    print("10:00 - 11:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        ten_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_ten_next_data(ten_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return ten_next_input
+
+
+def validate_ten_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_eleven():
@@ -905,6 +1955,47 @@ def input_results_eleven():
             print("Submission accepted!")
             break
 
+    return eleven_sub_input
+
+
+def validate_eleven_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_eleven():
+
     while True:   
         eleven_task_input = input("Please enter your task here: \n")
 
@@ -914,9 +2005,73 @@ def input_results_eleven():
 
     print(f"Your input was: {eleven_sub_input} - {eleven_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return eleven_sub_input
+    
     return eleven_task_input
+
+
+def validate_eleven_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_eleven():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_eleven = SHEET.worksheet(tracker)
+    
+    update_worksheet_eleven.update('B13', eleven_sub_input)
+
+    update_worksheet_eleven.update('C13', eleven_task_input)
+
+    print("Processing request...")
+
+    print("11:00 - 12:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        eleven_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_eleven_next_data(eleven_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return eleven_next_input
+
+
+def validate_eleven_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_twelve():
@@ -956,6 +2111,47 @@ def input_results_twelve():
             print("Submission accepted!")
             break
 
+    return twelve_sub_input
+
+
+def validate_twelve_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_twelve():
+
     while True:   
         twelve_task_input = input("Please enter your task here: \n")
 
@@ -965,9 +2161,73 @@ def input_results_twelve():
 
     print(f"Your input was: {twelve_sub_input} - {twelve_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return twelve_sub_input
+    
     return twelve_task_input
+
+
+def validate_twelve_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_twelve():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_twelve = SHEET.worksheet(tracker)
+    
+    update_worksheet_twelve.update('B14', twelve_sub_input)
+
+    update_worksheet_twelve.update('C14', twelve_task_input)
+
+    print("Processing request...")
+
+    print("12:00 - 13:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        twelve_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_twelve_next_data(twelve_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return twelve_next_input
+
+
+def validate_twelve_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_thirteen():
@@ -1007,6 +2267,47 @@ def input_results_thirteen():
             print("Submission accepted!")
             break
 
+    return thirteen_sub_input
+
+
+def validate_thirteen_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_thirteen():
+
     while True:   
         thirteen_task_input = input("Please enter your task here: \n")
 
@@ -1016,9 +2317,73 @@ def input_results_thirteen():
 
     print(f"Your input was: {thirteen_sub_input} - {thirteen_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return thirteen_sub_input
+    
     return thirteen_task_input
+
+
+def validate_thirteen_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_thirteen():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_thirteen = SHEET.worksheet(tracker)
+    
+    update_worksheet_thirteen.update('B15', thirteen_sub_input)
+
+    update_worksheet_thirteen.update('C15', thirteen_task_input)
+
+    print("Processing request...")
+
+    print("13:00 - 14:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        thirteen_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_thirteen_next_data(thirteen_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return thirteen_next_input
+
+
+def validate_thirteen_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_fourteen():
@@ -1058,6 +2423,47 @@ def input_results_fourteen():
             print("Submission accepted!")
             break
 
+    return fourteen_sub_input
+
+
+def validate_fourteen_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_fourteen():
+
     while True:   
         fourteen_task_input = input("Please enter your task here: \n")
 
@@ -1067,9 +2473,73 @@ def input_results_fourteen():
 
     print(f"Your input was: {fourteen_sub_input} - {fourteen_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return fourteen_sub_input
+    
     return fourteen_task_input
+
+
+def validate_fourteen_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_fourteen():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_fourteen = SHEET.worksheet(tracker)
+    
+    update_worksheet_fourteen.update('B16', fourteen_sub_input)
+
+    update_worksheet_fourteen.update('C16', fourteen_task_input)
+
+    print("Processing request...")
+
+    print("14:00 - 15:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        fourteen_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_fourteen_next_data(fourteen_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return fourteen_next_input
+
+
+def validate_fourteen_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_fifteen():
@@ -1109,6 +2579,47 @@ def input_results_fifteen():
             print("Submission accepted!")
             break
 
+    return fifteen_sub_input
+
+
+def validate_fifteen_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_fifteen():
+
     while True:   
         fifteen_task_input = input("Please enter your task here: \n")
 
@@ -1118,9 +2629,73 @@ def input_results_fifteen():
 
     print(f"Your input was: {fifteen_sub_input} - {fifteen_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return fifteen_sub_input
+    
     return fifteen_task_input
+
+
+def validate_fifteen_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_fifteen():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_fifteen = SHEET.worksheet(tracker)
+    
+    update_worksheet_fifteen.update('B17', fifteen_sub_input)
+
+    update_worksheet_fifteen.update('C17', fifteen_task_input)
+
+    print("Processing request...")
+
+    print("15:00 - 16:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        fifteen_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_fifteen_next_data(fifteen_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return fifteen_next_input
+
+
+def validate_fifteen_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_sixteen():
@@ -1160,6 +2735,47 @@ def input_results_sixteen():
             print("Submission accepted!")
             break
 
+    return sixteen_sub_input
+
+
+def validate_sixteen_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_sixteen():
+
     while True:   
         sixteen_task_input = input("Please enter your task here: \n")
 
@@ -1169,9 +2785,73 @@ def input_results_sixteen():
 
     print(f"Your input was: {sixteen_sub_input} - {sixteen_task_input}")
     print("-------------------------------------------------------------------------------")
+    
+    return zero_task_input
 
-    return sixteen_sub_input
-    return sixteen_task_input
+
+def validate_sixteen_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_sixteen():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_sixteen = SHEET.worksheet(tracker)
+    
+    update_worksheet_sixteen.update('B18', sixteen_sub_input)
+
+    update_worksheet_sixteen.update('C18', sixteen_task_input)
+
+    print("Processing request...")
+
+    print("16:00 - 17:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        sixteen_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_sixteen_next_data(sixteen_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return sixteen_next_input
+
+
+def validate_sixteen_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_seventeen():
@@ -1211,6 +2891,47 @@ def input_results_seventeen():
             print("Submission accepted!")
             break
 
+    return seventeen_sub_input
+
+
+def validate_seventeen_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_seventeen():
+
     while True:   
         seventeen_task_input = input("Please enter your task here: \n")
 
@@ -1220,9 +2941,73 @@ def input_results_seventeen():
 
     print(f"Your input was: {seventeen_sub_input} - {seventeen_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return seventeen_sub_input
+    
     return seventeen_task_input
+
+
+def validate_seventeen_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_seventeen():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_seventeen = SHEET.worksheet(tracker)
+    
+    update_worksheet_seventeen.update('B19', seventeen_sub_input)
+
+    update_worksheet_seventeen.update('C19', seventeen_task_input)
+
+    print("Processing request...")
+
+    print("17:00 - 18:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        seventeen_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_seventeen_next_data(seventeen_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return seventeen_next_input
+
+
+def validate_seventeen_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_eighteen():
@@ -1262,6 +3047,47 @@ def input_results_eighteen():
             print("Submission accepted!")
             break
 
+    return eighteen_sub_input
+
+
+def validate_eighteen_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_eighteen():
+
     while True:   
         eighteen_task_input = input("Please enter your task here: \n")
 
@@ -1271,9 +3097,73 @@ def input_results_eighteen():
 
     print(f"Your input was: {eighteen_sub_input} - {eighteen_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return eighteen_sub_input
+    
     return eighteen_task_input
+
+
+def validate_eighteen_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_eighteen():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_eighteen = SHEET.worksheet(tracker)
+    
+    update_worksheet_eighteen.update('B20', eighteen_sub_input)
+
+    update_worksheet_eighteen.update('C20', eighteen_task_input)
+
+    print("Processing request...")
+
+    print("18:00 - 19:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        eighteen_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_eighteen_next_data(eighteen_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return eighteen_next_input
+
+
+def validate_eighteen_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_nineteen():
@@ -1313,6 +3203,47 @@ def input_results_nineteen():
             print("Submission accepted!")
             break
 
+    return nineteen_sub_input
+
+
+def validate_nineteen_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_nineteen():
+
     while True:   
         nineteen_task_input = input("Please enter your task here: \n")
 
@@ -1322,9 +3253,73 @@ def input_results_nineteen():
 
     print(f"Your input was: {nineteen_sub_input} - {nineteen_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return nineteen_sub_input
+    
     return nineteen_task_input
+
+
+def validate_nineteen_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_nineteen():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_nineteen = SHEET.worksheet(tracker)
+    
+    update_worksheet_nineteen.update('B21', nineteen_sub_input)
+
+    update_worksheet_nineteen.update('C21', nineteen_task_input)
+
+    print("Processing request...")
+
+    print("19:00 - 20:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        nineteen_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_nineteen_next_data(nineteen_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return nineteen_next_input
+
+
+def validate_nineteen_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_twenty():
@@ -1364,6 +3359,47 @@ def input_results_twenty():
             print("Submission accepted!")
             break
 
+    return twenty_sub_input
+
+
+def validate_twenty_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_twenty():
+
     while True:   
         twenty_task_input = input("Please enter your task here: \n")
 
@@ -1373,9 +3409,73 @@ def input_results_twenty():
 
     print(f"Your input was: {twenty_sub_input} - {twenty_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return twenty_sub_input
+    
     return twenty_task_input
+
+
+def validate_twenty_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_twenty():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_twenty = SHEET.worksheet(tracker)
+    
+    update_worksheet_twenty.update('B22', twenty_sub_input)
+
+    update_worksheet_twenty.update('C22', twenty_task_input)
+
+    print("Processing request...")
+
+    print("20:00 - 21:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        twenty_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_twenty_next_data(twenty_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return twenty_next_input
+
+
+def validate_twenty_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_twentyone():
@@ -1415,6 +3515,47 @@ def input_results_twentyone():
             print("Submission accepted!")
             break
 
+    return twentyone_sub_input
+
+
+def validate_twentyone_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_twentyone():
+
     while True:   
         twentyone_task_input = input("Please enter your task here: \n")
 
@@ -1424,9 +3565,73 @@ def input_results_twentyone():
 
     print(f"Your input was: {twentyone_sub_input} - {twentyone_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return twentyone_sub_input
+    
     return twentyone_task_input
+
+
+def validate_twentyone_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_twentyone():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_twentyone = SHEET.worksheet(tracker)
+    
+    update_worksheet_twentyone.update('B23', twentyone_sub_input)
+
+    update_worksheet_twentyone.update('C23', twentyone_task_input)
+
+    print("Processing request...")
+
+    print("21:00 - 22:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        twentyone_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_twentyone_next_data(twentyone_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return twentyone_next_input
+
+
+def validate_twentyone_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_twentytwo():
@@ -1466,6 +3671,47 @@ def input_results_twentytwo():
             print("Submission accepted!")
             break
 
+    return twentytwo_sub_input
+
+
+def validate_twentytwo_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_twentytwo():
+
     while True:   
         twentytwo_task_input = input("Please enter your task here: \n")
 
@@ -1475,9 +3721,73 @@ def input_results_twentytwo():
 
     print(f"Your input was: {twentytwo_sub_input} - {twentytwo_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return twentytwo_sub_input
+    
     return twentytwo_task_input
+
+
+def validate_twentytwo_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_twentytwo():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_twentytwo = SHEET.worksheet(tracker)
+    
+    update_worksheet_twentytwo.update('B24', twentytwo_sub_input)
+
+    update_worksheet_twentytwo.update('C24', twentytwo_task_input)
+
+    print("Processing request...")
+
+    print("22:00 - 23:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        twentytwo_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_twentytwo_next_data(twentytwo_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return twentytwo_next_input
+
+
+def validate_twentytwo_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def input_results_twentythree():
@@ -1517,6 +3827,47 @@ def input_results_twentythree():
             print("Submission accepted!")
             break
 
+    return twentythree_sub_input
+
+
+def validate_twentythree_sub_data(values):
+    """
+    Input validator function.
+    Raises ValueError if sub-categories do not match options.
+    """
+    if values == "Body System Care":
+        return True
+    elif values == "Soul & Spirit":
+        return True
+    elif values == "Fitness":
+        return True
+    elif values == "Meditation":
+        return True
+    elif values == "Personal Progress":
+        return True
+    elif values == "Global Progress":
+        return True
+    elif values == "Education Progress":
+        return True
+    elif values == "Business Progress":
+        return True
+    elif values == "Adventures":
+        return True
+    elif values == "Random Activity":
+        return True
+    elif values == "Rest":
+        return True
+    elif values == "Break":
+        return True        
+    else:
+        raise ValueError(
+            "Please only enter sub-categories from the list of options."
+        )
+        return False
+
+
+def input_task_twentythree():
+
     while True:   
         twentythree_task_input = input("Please enter your task here: \n")
 
@@ -1526,9 +3877,73 @@ def input_results_twentythree():
 
     print(f"Your input was: {twentythree_sub_input} - {twentythree_task_input}")
     print("-------------------------------------------------------------------------------")
-
-    return twentythree_sub_input
+    
     return twentythree_task_input
+
+
+def validate_twentythree_task_data(values):
+    """
+    Input validator function.
+    Raises ValueError if task has more than 40 characters.
+    Raises ValueError if task contains any numbers.
+    """
+    if values.isalpha() and len(values) <= 40:
+        return True
+    else: 
+        raise ValueError(
+            "Please enter letters-only tasks with maximum 40 characters."
+        )
+        return False
+
+
+def data_uploaded_twentythree():
+    """
+    Function uploads both inputs to the correct row and column of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the document upload screen.
+    """
+    update_worksheet_twentythree = SHEET.worksheet(tracker)
+    
+    update_worksheet_twentythree.update('B25', twentythree_sub_input)
+
+    update_worksheet_twentythree.update('C25', twentythree_task_input)
+
+    print("Processing request...")
+
+    print("23:00 - 00:00 hour has been successfully uploaded!")
+
+    print("Let's continue with the next hour of your day.")
+
+    while True:
+        twentythree_next_input = input("Please type in letter x and press enter to continue: \n")
+
+        if validate_twentythree_next_data(twentythree_next_input):
+            print("Loading...")
+            break
+    
+    print("-------------------------------------------------------------------------------")
+    
+    return twentythree_next_input
+
+
+def validate_twentythree_next_data(values):
+    """
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
+    Raises ValueError if user has inputted more than one letter.
+    """
+    if values != "x":
+        raise ValueError(
+            "Invalid data, please input letter x then and try again."
+        )
+        return False
+    elif len(values) != 1:
+        raise ValueError(
+            "Too many letters, please input letter x then and try again."
+        )
+        return False
+    else:
+        return True
 
 
 def all_results_uploaded_successfully():
@@ -1536,7 +3951,6 @@ def all_results_uploaded_successfully():
     This function serves the purpose of updating user on the current upload status.
     It is used as communicative transition with entering a button to the next section.
     """
-
     print("Loading...")
 
     print("Upload completed.")
