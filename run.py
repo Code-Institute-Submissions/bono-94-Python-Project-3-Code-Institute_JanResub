@@ -3912,7 +3912,7 @@ def data_uploaded_twentythree():
 
     print("23:00 - 00:00 hour has been successfully uploaded!")
 
-    print("Let's continue with the next hour of your day.")
+    print("Let's continue to your daily results.")
 
     while True:
         twentythree_next_input = input("Please type in letter x and press enter to continue: \n")
@@ -3948,10 +3948,10 @@ def validate_twentythree_next_data(values):
 
 def all_results_uploaded_successfully():
     """
-    This function serves the purpose of updating user on the current upload status.
-    It is used as communicative transition with entering a button to the next section.
+    This function serves the purpose of updating user when all results are updated.
+    It is used as communicative transition to results report requesting user to typein letter 'x'.
     """
-    print("Loading...")
+    print("Updating sheet...")
 
     print("Upload completed.")
 
@@ -3971,12 +3971,13 @@ def all_results_uploaded_successfully():
 
 def validate_results_sub_data(values):
     """
-    Raises ValueError if string does not match letter "x". 
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
         raise ValueError(
-            "Invalid letter, please input letter x then and try again."
+            "Invalid data, please input letter x then and try again."
         )
         return False
     elif len(values) != 1:
@@ -4041,22 +4042,9 @@ def retrieve_tasks_results():
     return zero_row_count
 
 
-def retrieve_categories_results():
-    print("a")
-    #Returned data caps
-    returned_data = "all results"
-    print(returned_data.pper())
 
-    #returned data split at comma
-    returned_data_split = returned_data.split(",")
-    print(returned_data_split)
 
-    print("if first letter or all arent capitalized, show error")
-
-    #adding values
-    def add (a,b):
-        sum = a + b + c + d
-        return sum
+    
     
     #strings processing
     capitalize() - first letter
