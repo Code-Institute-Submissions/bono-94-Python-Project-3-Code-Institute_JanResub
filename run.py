@@ -3993,6 +3993,7 @@ def retrieve_subcategories_results():
     """
     Function retrieves subcategories results and counts items repetitions.
     """
+    calculate_sub_data_first= SHEET.worksheet(tracker)
     subcategories_list = worksheet.col_values(2)
 
     body_system_count = 0
@@ -4030,6 +4031,7 @@ def retrieve_tasks_results():
     """
     Function retrieves taks results and counts items repetitions.
     """
+    calculate_task_data_first= SHEET.worksheet('tracker')
     tasks_list = worksheet.col_values(3)
 
     zero_row_count = 0
@@ -4037,39 +4039,9 @@ def retrieve_tasks_results():
         if item == zero_task_input:
             zero_row_count +=1
     
-    print(f"{zero_task_input} - [{zero_row_count}] hours")
+    print(f"{zero_task_input.capitalize()} - [{zero_row_count}] hours")
 
-    return zero_row_count
-
-
-
-
-    
-    
-    #strings processing
-    capitalize() - first letter
-    upper() - all uppercase
-    count() - counts how many time certain value occurs inthe string
-    my_string = "HELLO WORLD"
-    my_string_lower_case = my_string.lower()
-
-
-
-def retrieve_tasks_results():
-    print("a")
-    #Returned data caps
-    returned_data = "all results"
-    print(returned_data.upper())
-
-    #returned data split at comma
-    returned_data_split = returned_data.split(",")
-    print(returned_data_split)
-
-sales = SHEET.worksheet('dashboard')
-
-data = sales.get_all_values()
-
-print(data)
+    return zero_row_count 
 
 
 def get_main_data():
