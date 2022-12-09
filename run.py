@@ -4031,8 +4031,7 @@ def retrieve_tasks_results():
     """
     Function retrieves taks results and counts items repetitions.
     """
-    calculate_task_data_first= SHEET.worksheet('tracker')
-    tasks_list = worksheet.col_values(3)
+    calculate_task_data_first= SHEET.worksheet('tracker').col_values(3)
 
     zero_row_count = 0
     for item in tasks_list:
@@ -4042,213 +4041,9 @@ def retrieve_tasks_results():
     print(f"{zero_task_input.capitalize()} - [{zero_row_count}] hours")
 
     return zero_row_count 
-
-
-def get_main_data():
-    """
-    Get main data figures input from user
-    run a while loop until collected data from terminal is categorized as valid
-    """
-    while True:
-        print("Please enter this DATA")
-        print("Data should be six numbers, separated by commas")
-        print("Example: 1,2,3,4,5,6\n")
-
-        data_str = input("Enter your data here: ")
-        print(f"the data provided is {data_str}")
-
-        sales_data = data_str.split(",")
-        print(sales_data)
-        validate_data(sales_data)
-
-        if validate_data(sales_data):
-            print("Data is valid!")
-            break
     
-    return sales_data
 
-
-def validate_data(values):
-    """
-    Inside the validator:
-    Converts all string into integers
-    If not possible to convert raises ValueError
-    Data is checked for having 6 values only
-    """
-    print(values)
-    [int(value) for value in values]
-    try: 
-        if len(values) != 6:
-            raise ValueError(
-                f"Exactly 6 values requiered, you provided {len(values)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again\n")
-        return False
-
-    return True
-
-
-def update_worksheet(data, worksheet):
-    """
-    Receives list of integers to be inserted into a worksheet
-    update specific worksheet with data provided
-    """
-    print(f"Updating {worksheet} worksheet ... \n")
-    worksheet_to_update = SHEET.worksheet(worksheet)
-    worksheet_to_update.append_row(data)
-    print(f"{worksheet} updated successfully \n")
-
-
-def update_sales_worksheet(data):
-    """
-    Updates sales worksheet, add new row with the list data provided
-    """
-    print("Updating sales worksheet...\n")
-    sales_worksheet = SHEET.worksheet("dashboard")
-    sales_worksheet.append_row(data)
-    print("Sales worksheet updated succesfully . \n")
-
-
-def update_surplus_worksheet(data):
-    """
-    Updates surplus worksheet, add new row with the list data provided
-    """
-    print("Updating surplus worksheet...\n")
-    surplus_worksheet = SHEET.worksheet("dashboard")
-    surplus_worksheet.append_row(data)
-    print("Surplus worksheet updated succesfully . \n")
-
-
-def calculate_surplus_data(sales_row):
-    """
-    Compare sales with stock
-    Calculate surplus
-
-    surplus is defined as sales subtracted from stock:
-    -positive incidactes waste
-    -negative indicates extra made when stock ran out
-    """
-    print("Calculating surplus data...\n")
-    stock = SHEET.worksheet("dashboard").get_all_values()
-    pprint(stock)
-    stock_row = stock[-1]
-    print(stock_row)
-    print(f"stock row: {stock_row}")
-    print(f"sales row: {sales_row}")
-
-    surplus_data = []
-    for stock, sales in zip(stock_row, sales_row):
-        surplus = int(stock) - sales
-        surplus_data.append(surplus)
-    print(surplus_data)
-    return surplus_data
-
-
-def get_last_5_entries():
-    """
-    Collects columns of data from sales worksheet
-    collecting the last 5 entries per column
-    returns data as a list of lists
-    """
-    sales = SHEET.worksheet("sales")
-    # column = sales.col_values(3)
-    # print(column)
-
-    columns = []
-    for ind in range(1, 7):
-        print(ind)
-        column = sales.col_values(ind)
-        columns.append(column[-5:])
-    
-    return columns
-
-
-def calculate_stock_data(data):
-    """
-    Calculae the average stock for each item type
-    add 10%
-    """    
-    print("Calculating stock data ... \n")
-    new_stock_data = []
-
-    for column in data:
-        int_column = [int(num) for num in column]
-        average = sum(int_column) / len(int_column)
-        stock_num = average * 1.1
-        new_stock_data.append(round(stock_num))
-    
-    return new_stock_data
-
-
-def main():
-    """
-    Runs all functions inside the program
-    """
-    data = get_main_data()
-    print(data)
-    sales_data = [int(num) for num in data]
-    update_sales_worksheet(sales_data)
-    new_surplus_data = calculate_surplus_data(sales_data)
-    update_surplus_worksheet(new_surplus_data)
-
-    """
-    extra fo refractured code replace upper 2 update codes
-        update_worksheet(sales_data, "sales")
-        update_worksheet(new_surplus_data, "surplus")
-        update_worksheet(stock_data, "stock")
-    """
-
-main()
-
-
-
-def validate_input_data(values):
-    """
-    Inside the try, converts all string values into integers.
-    Raises ValueError if strings cannot be converted into int,
-    or if there aren't exactly 6 values.
-    """
-    try:
-        [int(value) for value in values]
-        if len(values) != 6:
-            raise ValueError(
-                f"Exactly 6 values required, you provided {len(values)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-
-    return True
-
-
-get_last_5_entries()
-stock data = calculate_stock_data(sales_columns)
-print(stock_data)
-
-
-def get_stock_values(data):
-    """
-    Print out the calculated stock numbers for each sandwich type.
-    """
-    headings = SHEET.worksheet("stock").get_all_values()[0]
-
-    headings = SHEET.worksheet('stock').row_values(1)
-
-    print("Make the following numbers of sandwiches for next market:\n")
-
-    new_data = {}
-    for heading, stock_num in zip(headings, data):
-        new_data[heading] = stock_num
-    return new_data
-    
-    return {heading: data for heading, data in zip(headings, data)}
-    
-    
-stock_values = get_stock_values(stock_data)
-print(stock_values)
-
-def retrieve_tasks_results():
+def report_tasks_results():
     """
     Function requests list of all tasks inputted in the column.
     Then it converts it in the alphabetically ordered list with hours spent.
@@ -4329,6 +4124,19 @@ def exit_screen():
     print("-------------------------------------------------------------------------------")
 
 
+def main():
+    """
+    Runs all functions inside the program
+    """
+    data = get_main_data()
+    print(data)
+    sales_data = [int(num) for num in data]
+    update_sales_worksheet(sales_data)
+    new_surplus_data = calculate_surplus_data(sales_data)
+    update_surplus_worksheet(new_surplus_data)
+
+
+main()
 
 
 
