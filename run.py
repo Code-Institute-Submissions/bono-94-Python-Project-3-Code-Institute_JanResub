@@ -19,17 +19,14 @@ def introduction():
     This introduction welcomes users to the program.
     First, user is presented with current date and time.
     Then a short welcome message followed by explanation of next steps.
-    Once user has finished reading section of how program works, 
+    Once user has finished reading section of how program works,
     input of letter x sends user to rules section.
     """
     print("-------------------------------------------------------------------------------")
     live_timestamp = datetime.now()
     print(live_timestamp)
-
-    print("Welcome to the ultimate Life Tracker! (Daily Tasklist)! [v.1]")
-
-    print("The program serves the purpose synchronizing your daily journal with schedule.")
-
+    print("Welcome to the ultimate Life Tracker! (Daily Tasklist)! [v.1] \n")
+    print("The program serves the purpose synchronizing your daily journal with schedule. \n")
     print("How it works?")
     print("- Following the introduction, you will proceed to the rules section")
     print("- After covering the rules, you will be asked to enter personal identification")
@@ -39,8 +36,8 @@ def introduction():
     print("- Those are noted as daily duration of each category and task")
     print("- Once that is reported to you, it will be exported again")
     print("- This time, to the second worksheet: analysis")
-    print("- You will be able to see visual analysis of your results")
-   
+    print("- You will be able to see visual analysis of your results \n")
+
     while True:
         rules_input = input("Please type letter x and press enter to continue: \n")
 
@@ -50,7 +47,7 @@ def introduction():
     print("-------------------------------------------------------------------------------")
 
     return rules_input
-   
+
 
 def validate_rules_data(values):
     """
@@ -626,7 +623,7 @@ def data_uploaded_two():
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_two = SHEET.worksheet(tracker)
+    update_worksheet_two = SHEET.worksheet('tracker')
     
     update_worksheet_two.update('B4', two_sub_input)
 
@@ -4126,7 +4123,7 @@ def exit_screen():
 
 def main():
     """
-    Runs all functions inside the program
+    Runs all functions inside the program.
     """
     data = get_main_data()
     print(data)
@@ -4136,7 +4133,190 @@ def main():
     update_surplus_worksheet(new_surplus_data)
 
 
-main()
+def main():
+    """
+    Runs all introductory functions inside the program.
+    """
+    introduction()
+    rules()
+    personal_info_name()
+    personal_info_id()
+    
+    
+def data_inputs():    
+    """
+    Runs all data input functions inside the program.
+    """
+    input_results_zero()
+    validate_zero_sub_data(values)
+    input_task_zero()
+    validate_zero_task_data(values)
+    data_uploaded_zero()
+    validate_zero_next_data(values)
 
+    input_results_one()
+    validate_one_sub_data(values)
+    input_task_one()
+    validate_one_task_data(values)
+    data_uploaded_one()
+    validate_one_next_data(values)
+
+    input_results_two()
+    validate_two_sub_data(values)
+    input_task_two()
+    validate_two_task_data(values)
+    data_uploaded_two()
+    validate_two_next_data(values)
+
+    input_results_three()
+    validate_three_sub_data(values)
+    input_task_three()
+    validate_three_task_data(values)
+    data_uploaded_three()
+    validate_three_next_data(values)
+
+    input_results_four()
+    validate_four_sub_data(values)
+    input_task_four()
+    validate_four_task_data(values)
+    data_uploaded_four()
+    validate_four_next_data(values)
+
+    input_results_five()
+    validate_five_sub_data(values)
+    input_task_five()
+    validate_five_task_data(values)
+    data_uploaded_five()
+    validate_five_next_data(values)
+
+    input_results_six()
+    validate_six_sub_data(values)
+    input_task_six()
+    validate_six_task_data(values)
+    data_uploaded_six()
+    validate_six_next_data(values)
+
+    input_results_seven()
+    validate_seven_sub_data(values)
+    input_task_seven()
+    validate_seven_task_data(values)
+    data_uploaded_seven()
+    validate_seven_next_data(values)
+
+    input_results_eight()
+    validate_eight_sub_data(values)
+    input_task_eight()
+    validate_eight_task_data(values)
+    data_uploaded_eight()
+    validate_eight_next_data(values)
+
+    input_results_nine()
+    validate_nine_sub_data(values)
+    input_task_nine()
+    validate_nine_task_data(values)
+    data_uploaded_nine()
+    validate_nine_next_data(values)
+
+    input_results_ten()
+    validate_ten_sub_data(values)
+    input_task_ten()
+    validate_ten_task_data(values)
+    data_uploaded_ten()
+    validate_ten_next_data(values)
+
+    input_results_eleven()
+    validate_eleven_sub_data(values)
+    input_task_eleven()
+    validate_eleven_task_data(values)
+    data_uploaded_eleven()
+    validate_eleven_next_data(values)
+
+    input_results_twelve()
+    validate_twelve_sub_data(values)
+    input_task_twelve()
+    validate_twelve_task_data(values)
+    data_uploaded_twelve()
+    validate_twelve_next_data(values)
+
+    input_results_thirteen()
+    validate_thirteen_sub_data(values)
+    input_task_thirteen()
+    validate_thirteen_task_data(values)
+    data_uploaded_thirteen()
+    validate_thirteen_next_data(values)
+
+    input_results_fourteen()
+    validate_fourteen_sub_data(values)
+    input_task_fourteen()
+    validate_fourteen_task_data(values)
+    data_uploaded_fourteen()
+    validate_fourteen_next_data(values)
+
+    input_results_fifteen()
+    validate_fifteen_sub_data(values)
+    input_task_fifteen()
+    validate_fifteen_task_data(values)
+    data_uploaded_fifteen()
+    validate_fifteen_next_data(values)
+
+    input_results_sixteen()
+    validate_sixteen_sub_data(values)
+    input_task_sixteen()
+    validate_sixteen_task_data(values)
+    data_uploaded_sixteen()
+    validate_sixteen_next_data(values)
+
+    input_results_seventeen()
+    validate_seventeen_sub_data(values)
+    input_task_seventeen()
+    validate_seventeen_task_data(values)
+    data_uploaded_seventeen()
+    validate_seventeen_next_data(values)
+
+    input_results_eighteen()
+    validate_eighteen_sub_data(values)
+    input_task_eighteen()
+    validate_eighteen_task_data(values)
+    data_uploaded_eighteen()
+    validate_eighteen_next_data(values)
+
+    input_results_nineteen()
+    validate_nineteen_sub_data(values)
+    input_task_nineteen()
+    validate_nineteen_task_data(values)
+    data_uploaded_nineteen()
+    validate_nineteen_next_data(values)
+
+    input_results_twenty()
+    validate_twenty_sub_data(values)
+    input_task_twenty()
+    validate_twenty_task_data(values)
+    data_uploaded_twenty()
+    validate_twenty_next_data(values)
+
+    input_results_twentyone()
+    validate_twentyone_sub_data(values)
+    input_task_twentyone()
+    validate_twentyone_task_data(values)
+    data_uploaded_twentyone()
+    validate_twentyone_next_data(values)
+
+    input_results_twentytwo()
+    validate_twentytwo_sub_data(values)
+    input_task_twentytwo()
+    validate_twentytwo_task_data(values)
+    data_uploaded_twentytwo()
+    validate_twentytwo_next_data(values)
+
+    input_results_twentythree()
+    validate_twentythree_sub_data(values)
+    input_task_twentythree()
+    validate_twentythree_task_data(values)
+    data_uploaded_twentythree()
+    validate_twentythree_next_data(values)
+
+
+main()
+data_inputs()
 
 
