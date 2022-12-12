@@ -3980,7 +3980,7 @@ def main():
     update_surplus_worksheet(new_surplus_data)
 
 
-def main():
+def run_introduction():
     """
     Runs all introductory functions inside the program.
     """
@@ -3990,7 +3990,7 @@ def main():
     personal_info_id()
     
     
-def data_inputs():    
+def run_data_inputs():    
     """
     Runs all data input functions inside the program.
     """
@@ -3999,168 +3999,99 @@ def data_inputs():
     data_uploaded_zero()
 
     input_results_one()
-    validate_one_sub_data(values)
     input_task_one()
-    validate_one_task_data(values)
     data_uploaded_one()
-    validate_one_next_data(values)
 
     input_results_two()
-    validate_two_sub_data(values)
     input_task_two()
-    validate_two_task_data(values)
     data_uploaded_two()
-    validate_two_next_data(values)
 
     input_results_three()
-    validate_three_sub_data(values)
     input_task_three()
-    validate_three_task_data(values)
     data_uploaded_three()
-    validate_three_next_data(values)
 
     input_results_four()
-    validate_four_sub_data(values)
     input_task_four()
-    validate_four_task_data(values)
     data_uploaded_four()
-    validate_four_next_data(values)
 
     input_results_five()
-    validate_five_sub_data(values)
     input_task_five()
-    validate_five_task_data(values)
     data_uploaded_five()
-    validate_five_next_data(values)
 
     input_results_six()
-    validate_six_sub_data(values)
     input_task_six()
-    validate_six_task_data(values)
     data_uploaded_six()
-    validate_six_next_data(values)
 
     input_results_seven()
-    validate_seven_sub_data(values)
     input_task_seven()
-    validate_seven_task_data(values)
     data_uploaded_seven()
-    validate_seven_next_data(values)
 
     input_results_eight()
-    validate_eight_sub_data(values)
     input_task_eight()
-    validate_eight_task_data(values)
     data_uploaded_eight()
-    validate_eight_next_data(values)
 
     input_results_nine()
-    validate_nine_sub_data(values)
     input_task_nine()
-    validate_nine_task_data(values)
     data_uploaded_nine()
-    validate_nine_next_data(values)
 
     input_results_ten()
-    validate_ten_sub_data(values)
     input_task_ten()
-    validate_ten_task_data(values)
     data_uploaded_ten()
-    validate_ten_next_data(values)
 
     input_results_eleven()
-    validate_eleven_sub_data(values)
     input_task_eleven()
-    validate_eleven_task_data(values)
     data_uploaded_eleven()
-    validate_eleven_next_data(values)
 
     input_results_twelve()
-    validate_twelve_sub_data(values)
     input_task_twelve()
-    validate_twelve_task_data(values)
     data_uploaded_twelve()
-    validate_twelve_next_data(values)
 
     input_results_thirteen()
-    validate_thirteen_sub_data(values)
     input_task_thirteen()
-    validate_thirteen_task_data(values)
     data_uploaded_thirteen()
-    validate_thirteen_next_data(values)
 
     input_results_fourteen()
-    validate_fourteen_sub_data(values)
     input_task_fourteen()
-    validate_fourteen_task_data(values)
     data_uploaded_fourteen()
-    validate_fourteen_next_data(values)
 
     input_results_fifteen()
-    validate_fifteen_sub_data(values)
     input_task_fifteen()
-    validate_fifteen_task_data(values)
     data_uploaded_fifteen()
-    validate_fifteen_next_data(values)
 
     input_results_sixteen()
-    validate_sixteen_sub_data(values)
     input_task_sixteen()
-    validate_sixteen_task_data(values)
     data_uploaded_sixteen()
-    validate_sixteen_next_data(values)
 
     input_results_seventeen()
-    validate_seventeen_sub_data(values)
     input_task_seventeen()
-    validate_seventeen_task_data(values)
     data_uploaded_seventeen()
-    validate_seventeen_next_data(values)
 
     input_results_eighteen()
-    validate_eighteen_sub_data(values)
     input_task_eighteen()
-    validate_eighteen_task_data(values)
     data_uploaded_eighteen()
-    validate_eighteen_next_data(values)
 
     input_results_nineteen()
-    validate_nineteen_sub_data(values)
     input_task_nineteen()
-    validate_nineteen_task_data(values)
     data_uploaded_nineteen()
-    validate_nineteen_next_data(values)
 
     input_results_twenty()
-    validate_twenty_sub_data(values)
     input_task_twenty()
-    validate_twenty_task_data(values)
     data_uploaded_twenty()
-    validate_twenty_next_data(values)
 
     input_results_twentyone()
-    validate_twentyone_sub_data(values)
     input_task_twentyone()
-    validate_twentyone_task_data(values)
     data_uploaded_twentyone()
-    validate_twentyone_next_data(values)
 
     input_results_twentytwo()
-    validate_twentytwo_sub_data(values)
     input_task_twentytwo()
-    validate_twentytwo_task_data(values)
     data_uploaded_twentytwo()
-    validate_twentytwo_next_data(values)
 
     input_results_twentythree()
-    validate_twentythree_sub_data(values)
     input_task_twentythree()
-    validate_twentythree_task_data(values)
     data_uploaded_twentythree()
-    validate_twentythree_next_data(values)
 
 
-main()
-data_inputs()
+run_introduction()
+run_data_inputs()
 
 
