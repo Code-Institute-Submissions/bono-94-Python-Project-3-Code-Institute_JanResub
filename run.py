@@ -263,7 +263,7 @@ def validate_zero_sub_data(values):
         return False
 
 
-def input_task_zero(sub_input_zero, task_input_zero):
+def input_task_zero(sub_input_zero):
 
     while True:   
         zero_task_input = input("Please enter your task here: \n")
@@ -272,7 +272,7 @@ def input_task_zero(sub_input_zero, task_input_zero):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {sub_input_zero} - {task_input_zero}")
+    print(f"Your input was: {sub_input_zero} - {zero_task_input}")
     print("------------------------------------------------------------------")
     
     return zero_task_input
@@ -293,7 +293,7 @@ def validate_zero_task_data(values):
         return False
 
 
-def data_uploaded_zero():
+def data_uploaded_zero(sub_input_zero, task_input_zero):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
@@ -301,9 +301,9 @@ def data_uploaded_zero():
     """
     update_worksheet_zero = SHEET.worksheet("tracker")
     
-    update_worksheet_zero.update('B2', zero_sub_input)
+    update_worksheet_zero.update('B2', sub_input_zero)
 
-    update_worksheet_zero.update('C2', zero_task_zero)
+    update_worksheet_zero.update('C2', task_input_zero)
 
     print("Processing request...")
 
@@ -3937,10 +3937,10 @@ def run_data_inputs():
     Runs all data input functions inside the program.
     """
     sub_input_zero = input_results_zero()
-    task_input_zero = input_task_zero(sub_input_zero, task_input_zero)
+    task_input_zero = input_task_zero(sub_input_zero)
     input_results_zero()
-    input_task_zero()
-    data_uploaded_zero()
+    input_task_zero(sub_input_zero)
+    data_uploaded_zero(sub_input_zero, task_input_zero)
     
     input_results_one()
     input_task_one()
