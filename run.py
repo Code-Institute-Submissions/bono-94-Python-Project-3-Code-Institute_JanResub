@@ -201,7 +201,7 @@ def input_results_zero():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
     print("- Please capitalize each word of sub-categories and tasks. \n")
@@ -351,7 +351,7 @@ def input_results_one():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -502,7 +502,7 @@ def input_results_two():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -653,7 +653,7 @@ def input_results_three():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -804,7 +804,7 @@ def input_results_four():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -955,7 +955,7 @@ def input_results_five():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -1106,7 +1106,7 @@ def input_results_six():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -1257,7 +1257,7 @@ def input_results_seven():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -1408,7 +1408,7 @@ def input_results_eight():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -1541,25 +1541,22 @@ def input_results_nine():
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
     """  
-    print("What have you done today between 09:00 and 10:00?")
-
+    print("What have you done today between 09:00 and 10:00? \n")
     print("GROWTH")
     print("- Body System Care")
     print("- Soul & Spirit")
     print("- Fitness")
     print("- Meditation")
-
     print("PROGRESS")
     print("- Personal Progress")
     print("- Global Progress")
     print("- Education Progress")
     print("- Business Progress")
-
     print("FREEDOM")
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -1710,7 +1707,7 @@ def input_results_ten():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -1861,7 +1858,7 @@ def input_results_eleven():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -2012,7 +2009,7 @@ def input_results_twelve():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -2163,7 +2160,7 @@ def input_results_thirteen():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -2314,7 +2311,7 @@ def input_results_fourteen():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -2465,7 +2462,7 @@ def input_results_fifteen():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -2616,7 +2613,7 @@ def input_results_sixteen():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -2767,7 +2764,7 @@ def input_results_seventeen():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -2918,7 +2915,7 @@ def input_results_eighteen():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -3069,7 +3066,7 @@ def input_results_nineteen():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -3220,7 +3217,7 @@ def input_results_twenty():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -3371,7 +3368,7 @@ def input_results_twentyone():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -3522,7 +3519,7 @@ def input_results_twentytwo():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
@@ -3673,7 +3670,7 @@ def input_results_twentythree():
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
-    print("- Break")
+    print("- Break \n")
 
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
