@@ -122,9 +122,9 @@ def personal_info_name():
         name_input = input("Please enter your name: \n")
 
         if validate_name_data(name_input):
-            print(f"Thank you {name_input}! \n")
+            print(f"Thank you {name_input.capitalize()}! \n")
             break
-    
+
     return name_input
 
 
@@ -158,7 +158,7 @@ def personal_info_id():
     This function requests user to enter their unique identification number.
     """
     while True:
-        
+
         id_input = input("Please enter unique identification number: \n")
 
         if validate_id_data(id_input):
@@ -212,10 +212,11 @@ def input_results_zero():
     print("- Random Activity")
     print("- Rest")
     print("- Break \n")
-    print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity")
     print("- Please enter letters only, no numbers or symbols")
-    print("- Please capitalize first letter of each word inputted \n")
+    print("- Please select one sub-category from the list above")
+    print("- Please copy sub-categories exactly as they are written")
+    print("- Please enter a custom task that best desribes your activity")
+    print("- Please capitalize first letter of first task word inputted \n")
 
     while True:   
         zero_sub_input = input("Please enter your sub-category here: \n")
@@ -272,7 +273,7 @@ def input_task_zero(sub_input_zero):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {sub_input_zero} - {zero_task_input}")
+    print(f"Your input: {sub_input_zero} - {zero_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return zero_task_input
@@ -284,11 +285,21 @@ def validate_zero_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
+    if len(values) <= 40:
         return True
-    else: 
+    elif values.isdigit():
         raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
+            "Please do not include any digits in the tasks."
+        )
+        return False
+    elif len(values) <= 1:
+        raise ValueError(
+            "No input, enter the task with at least 1 letters and try again."
+        )
+        return False
+    else:
+        raise ValueError(
+            "Please enter tasks with maximum 40 characters."
         )
         return False
 
@@ -411,7 +422,7 @@ def validate_one_sub_data(values):
         return False
 
 
-def input_task_one():
+def input_task_one(sub_input_one):
 
     while True:   
         one_task_input = input("Please enter your task here: \n")
@@ -420,7 +431,7 @@ def input_task_one():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {one_sub_input} - {one_task_input}")
+    print(f"Your input: {sub_input_one} - {one_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return one_task_input
@@ -441,17 +452,17 @@ def validate_one_task_data(values):
         return False
 
 
-def data_uploaded_one():
+def data_uploaded_one(sub_input_one, task_input_one):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_one = SHEET.worksheet(tracker)
+    update_worksheet_one = SHEET.worksheet("tracker")
     
-    update_worksheet_one.update('B3', one_sub_input)
+    update_worksheet_one.update('B3', sub_input_one)
 
-    update_worksheet_one.update('C3', one_task_input)
+    update_worksheet_one.update('C3', task_input_one)
 
     print("Processing request...")
 
@@ -559,7 +570,7 @@ def validate_two_sub_data(values):
         return False
 
 
-def input_task_two():
+def input_task_two(sub_input_two):
 
     while True:   
         two_task_input = input("Please enter your task here: \n")
@@ -568,7 +579,7 @@ def input_task_two():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {two_sub_input} - {two_task_input}")
+    print(f"Your input: {sub_input_two} - {two_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return two_task_input
@@ -589,17 +600,17 @@ def validate_two_task_data(values):
         return False
 
 
-def data_uploaded_two():
+def data_uploaded_two(sub_input_two, task_input_two):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_two = SHEET.worksheet('tracker')
+    update_worksheet_two = SHEET.worksheet("tracker")
     
-    update_worksheet_two.update('B4', two_sub_input)
+    update_worksheet_two.update('B4', sub_input_two)
 
-    update_worksheet_two.update('C4', two_task_input)
+    update_worksheet_two.update('C4', task_input_two)
 
     print("Processing request...")
 
@@ -707,7 +718,7 @@ def validate_three_sub_data(values):
         return False
 
 
-def input_task_three():
+def input_task_three(sub_input_three):
 
     while True:   
         three_task_input = input("Please enter your task here: \n")
@@ -716,7 +727,7 @@ def input_task_three():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {three_sub_input} - {three_task_input}")
+    print(f"Your input: {sub_input_three} - {three_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return three_task_input
@@ -737,17 +748,17 @@ def validate_three_task_data(values):
         return False
 
 
-def data_uploaded_three():
+def data_uploaded_three(sub_input_three, task_input_three):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_three = SHEET.worksheet(tracker)
+    update_worksheet_three = SHEET.worksheet("tracker")
     
-    update_worksheet_three.update('B5', three_sub_input)
+    update_worksheet_three.update('B5', sub_input_three)
 
-    update_worksheet_three.update('C5', three_task_input)
+    update_worksheet_three.update('C5', task_input_three)
 
     print("Processing request...")
 
@@ -855,7 +866,7 @@ def validate_four_sub_data(values):
         return False
 
 
-def input_task_four():
+def input_task_four(sub_input_four):
 
     while True:   
         four_task_input = input("Please enter your task here: \n")
@@ -864,7 +875,7 @@ def input_task_four():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {four_sub_input} - {four_task_input}")
+    print(f"Your input: {sub_input_four} - {four_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return four_task_input
@@ -885,17 +896,17 @@ def validate_four_task_data(values):
         return False
 
 
-def data_uploaded_four():
+def data_uploaded_four(sub_input_four, task_input_four):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_four = SHEET.worksheet(tracker)
+    update_worksheet_four = SHEET.worksheet("tracker")
     
-    update_worksheet_four.update('B6', four_sub_input)
+    update_worksheet_four.update('B6', sub_input_four)
 
-    update_worksheet_four.update('C6', four_task_input)
+    update_worksheet_four.update('C6', task_input_four)
 
     print("Processing request...")
 
@@ -1003,7 +1014,7 @@ def validate_five_sub_data(values):
         return False
 
 
-def input_task_five():
+def input_task_five(sub_input_five):
 
     while True:   
         five_task_input = input("Please enter your task here: \n")
@@ -1012,7 +1023,7 @@ def input_task_five():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {five_sub_input} - {five_task_input}")
+    print(f"Your input: {sub_input_five} - {five_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return five_task_input
@@ -1033,17 +1044,17 @@ def validate_five_task_data(values):
         return False
 
 
-def data_uploaded_five():
+def data_uploaded_five(sub_input_five, task_input_five):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_five = SHEET.worksheet(tracker)
+    update_worksheet_five = SHEET.worksheet("tracker")
     
-    update_worksheet_five.update('B7', five_sub_input)
+    update_worksheet_five.update('B7', sub_input_five)
 
-    update_worksheet_five.update('C7', five_task_input)
+    update_worksheet_five.update('C7', task_input_five)
 
     print("Processing request...")
 
@@ -1151,7 +1162,7 @@ def validate_six_sub_data(values):
         return False
 
 
-def input_task_six():
+def input_task_six(sub_input_six):
 
     while True:   
         six_task_input = input("Please enter your task here: \n")
@@ -1160,7 +1171,7 @@ def input_task_six():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {six_sub_input} - {six_task_input}")
+    print(f"Your input: {sub_input_six} - {six_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return six_task_input
@@ -1181,17 +1192,17 @@ def validate_six_task_data(values):
         return False
 
 
-def data_uploaded_six():
+def data_uploaded_six(sub_input_six, task_input_six):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_six = SHEET.worksheet(tracker)
+    update_worksheet_six = SHEET.worksheet("tracker")
     
-    update_worksheet_six.update('B8', six_sub_input)
+    update_worksheet_six.update('B8', sub_input_six)
 
-    update_worksheet_six.update('C8', six_task_input)
+    update_worksheet_six.update('C8', task_input_six)
 
     print("Processing request...")
 
@@ -1299,7 +1310,7 @@ def validate_seven_sub_data(values):
         return False
 
 
-def input_task_seven():
+def input_task_seven(sub_input_seven):
 
     while True:   
         seven_task_input = input("Please enter your task here: \n")
@@ -1308,7 +1319,7 @@ def input_task_seven():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {seven_sub_input} - {seven_task_input}")
+    print(f"Your input: {sub_input_seven} - {seven_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return seven_task_input
@@ -1329,17 +1340,17 @@ def validate_seven_task_data(values):
         return False
 
 
-def data_uploaded_seven():
+def data_uploaded_seven(sub_input_seven, task_input_seven):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_seven = SHEET.worksheet(tracker)
+    update_worksheet_seven = SHEET.worksheet("tracker")
     
-    update_worksheet_seven.update('B9', seven_sub_input)
+    update_worksheet_seven.update('B9', sub_input_seven)
 
-    update_worksheet_seven.update('C9', seven_task_input)
+    update_worksheet_seven.update('C9', task_input_seven)
 
     print("Processing request...")
 
@@ -1447,7 +1458,7 @@ def validate_eight_sub_data(values):
         return False
 
 
-def input_task_eight():
+def input_task_eight(sub_input_eight):
 
     while True:   
         eight_task_input = input("Please enter your task here: \n")
@@ -1456,7 +1467,7 @@ def input_task_eight():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {eight_sub_input} - {eight_task_input}")
+    print(f"Your input: {sub_input_eight} - {eight_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return eight_task_input
@@ -1477,17 +1488,17 @@ def validate_eight_task_data(values):
         return False
 
 
-def data_uploaded_eight():
+def data_uploaded_eight(sub_input_eight, task_input_eight):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_eight = SHEET.worksheet(tracker)
+    update_worksheet_eight = SHEET.worksheet("tracker")
     
-    update_worksheet_eight.update('B10', eight_sub_input)
+    update_worksheet_eight.update('B10', sub_input_eight)
 
-    update_worksheet_eight.update('C10', eight_task_input)
+    update_worksheet_eight.update('C10', task_input_eight)
 
     print("Processing request...")
 
@@ -1595,7 +1606,7 @@ def validate_nine_sub_data(values):
         return False
 
 
-def input_task_nine():
+def input_task_nine(sub_input_nine):
 
     while True:   
         nine_task_input = input("Please enter your task here: \n")
@@ -1604,7 +1615,7 @@ def input_task_nine():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {nine_sub_input} - {nine_task_input}")
+    print(f"Your input: {sub_input_nine} - {nine_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return nine_task_input
@@ -1625,17 +1636,17 @@ def validate_nine_task_data(values):
         return False
 
 
-def data_uploaded_nine():
+def data_uploaded_nine(sub_input_nine, task_input_nine):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_nine = SHEET.worksheet(tracker)
+    update_worksheet_nine = SHEET.worksheet("tracker")
     
-    update_worksheet_nine.update('B11', nine_sub_input)
+    update_worksheet_nine.update('B11', sub_input_nine)
 
-    update_worksheet_nine.update('C11', nine_task_input)
+    update_worksheet_nine.update('C11', task_input_nine)
 
     print("Processing request...")
 
@@ -1743,7 +1754,7 @@ def validate_ten_sub_data(values):
         return False
 
 
-def input_task_ten():
+def input_task_ten(sub_input_ten):
 
     while True:   
         ten_task_input = input("Please enter your task here: \n")
@@ -1752,7 +1763,7 @@ def input_task_ten():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {ten_sub_input} - {ten_task_input}")
+    print(f"Your input: {sub_input_ten} - {ten_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return ten_task_input
@@ -1773,17 +1784,17 @@ def validate_ten_task_data(values):
         return False
 
 
-def data_uploaded_ten():
+def data_uploaded_ten(sub_input_ten, task_input_ten):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_ten = SHEET.worksheet(tracker)
+    update_worksheet_ten = SHEET.worksheet("tracker")
     
-    update_worksheet_ten.update('B12', ten_sub_input)
+    update_worksheet_ten.update('B12', sub_input_ten)
 
-    update_worksheet_ten.update('C12', ten_task_input)
+    update_worksheet_ten.update('C12', task_input_ten)
 
     print("Processing request...")
 
@@ -1891,7 +1902,7 @@ def validate_eleven_sub_data(values):
         return False
 
 
-def input_task_eleven():
+def input_task_eleven(sub_input_eleven):
 
     while True:   
         eleven_task_input = input("Please enter your task here: \n")
@@ -1900,7 +1911,7 @@ def input_task_eleven():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {eleven_sub_input} - {eleven_task_input}")
+    print(f"Your input: {sub_input_eleven} - {eleven_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return eleven_task_input
@@ -1921,17 +1932,17 @@ def validate_eleven_task_data(values):
         return False
 
 
-def data_uploaded_eleven():
+def data_uploaded_eleven(sub_input_zero, task_input_zero):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_eleven = SHEET.worksheet(tracker)
+    update_worksheet_eleven = SHEET.worksheet("tracker")
     
-    update_worksheet_eleven.update('B13', eleven_sub_input)
+    update_worksheet_eleven.update('B13', sub_input_zero)
 
-    update_worksheet_eleven.update('C13', eleven_task_input)
+    update_worksheet_eleven.update('C13', task_input_zero)
 
     print("Processing request...")
 
@@ -2039,7 +2050,7 @@ def validate_twelve_sub_data(values):
         return False
 
 
-def input_task_twelve():
+def input_task_twelve(sub_input_twelve):
 
     while True:   
         twelve_task_input = input("Please enter your task here: \n")
@@ -2048,7 +2059,7 @@ def input_task_twelve():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {twelve_sub_input} - {twelve_task_input}")
+    print(f"Your input: {sub_input_twelve} - {twelve_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return twelve_task_input
@@ -2069,17 +2080,17 @@ def validate_twelve_task_data(values):
         return False
 
 
-def data_uploaded_twelve():
+def data_uploaded_twelve(sub_input_twelve, task_input_twelve):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_twelve = SHEET.worksheet(tracker)
+    update_worksheet_twelve = SHEET.worksheet("tracker")
     
-    update_worksheet_twelve.update('B14', twelve_sub_input)
+    update_worksheet_twelve.update('B14', sub_input_twelve)
 
-    update_worksheet_twelve.update('C14', twelve_task_input)
+    update_worksheet_twelve.update('C14', task_input_twelve)
 
     print("Processing request...")
 
@@ -2187,7 +2198,7 @@ def validate_thirteen_sub_data(values):
         return False
 
 
-def input_task_thirteen():
+def input_task_thirteen(sub_input_thirteen):
 
     while True:   
         thirteen_task_input = input("Please enter your task here: \n")
@@ -2196,7 +2207,7 @@ def input_task_thirteen():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {thirteen_sub_input} - {thirteen_task_input}")
+    print(f"Your input: {sub_input_thirteen} - {thirteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return thirteen_task_input
@@ -2217,17 +2228,17 @@ def validate_thirteen_task_data(values):
         return False
 
 
-def data_uploaded_thirteen():
+def data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_thirteen = SHEET.worksheet(tracker)
+    update_worksheet_thirteen = SHEET.worksheet("tracker")
     
-    update_worksheet_thirteen.update('B15', thirteen_sub_input)
+    update_worksheet_thirteen.update('B15', sub_input_thirteen)
 
-    update_worksheet_thirteen.update('C15', thirteen_task_input)
+    update_worksheet_thirteen.update('C15', task_input_thirteen)
 
     print("Processing request...")
 
@@ -2335,7 +2346,7 @@ def validate_fourteen_sub_data(values):
         return False
 
 
-def input_task_fourteen():
+def input_task_fourteen(sub_input_fourteen):
 
     while True:   
         fourteen_task_input = input("Please enter your task here: \n")
@@ -2344,7 +2355,7 @@ def input_task_fourteen():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {fourteen_sub_input} - {fourteen_task_input}")
+    print(f"Your input: {sub_input_fourteen} - {fourteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return fourteen_task_input
@@ -2365,17 +2376,17 @@ def validate_fourteen_task_data(values):
         return False
 
 
-def data_uploaded_fourteen():
+def data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_fourteen = SHEET.worksheet(tracker)
+    update_worksheet_fourteen = SHEET.worksheet("tracker")
     
-    update_worksheet_fourteen.update('B16', fourteen_sub_input)
+    update_worksheet_fourteen.update('B16', sub_input_fourteen)
 
-    update_worksheet_fourteen.update('C16', fourteen_task_input)
+    update_worksheet_fourteen.update('C16', task_input_fourteen)
 
     print("Processing request...")
 
@@ -2483,7 +2494,7 @@ def validate_fifteen_sub_data(values):
         return False
 
 
-def input_task_fifteen():
+def input_task_fifteen(sub_input_fifteen):
 
     while True:   
         fifteen_task_input = input("Please enter your task here: \n")
@@ -2492,7 +2503,7 @@ def input_task_fifteen():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {fifteen_sub_input} - {fifteen_task_input}")
+    print(f"Your input: {sub_input_fifteen} - {fifteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return fifteen_task_input
@@ -2513,17 +2524,17 @@ def validate_fifteen_task_data(values):
         return False
 
 
-def data_uploaded_fifteen():
+def data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_fifteen = SHEET.worksheet(tracker)
+    update_worksheet_fifteen = SHEET.worksheet("tracker")
     
-    update_worksheet_fifteen.update('B17', fifteen_sub_input)
+    update_worksheet_fifteen.update('B17', sub_input_fifteen)
 
-    update_worksheet_fifteen.update('C17', fifteen_task_input)
+    update_worksheet_fifteen.update('C17', task_input_fifteen)
 
     print("Processing request...")
 
@@ -2631,7 +2642,7 @@ def validate_sixteen_sub_data(values):
         return False
 
 
-def input_task_sixteen():
+def input_task_sixteen(sub_input_sixteen):
 
     while True:   
         sixteen_task_input = input("Please enter your task here: \n")
@@ -2640,7 +2651,7 @@ def input_task_sixteen():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {sixteen_sub_input} - {sixteen_task_input}")
+    print(f"Your input: {sub_input_sixteen} - {sixteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return zero_task_input
@@ -2661,17 +2672,17 @@ def validate_sixteen_task_data(values):
         return False
 
 
-def data_uploaded_sixteen():
+def data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_sixteen = SHEET.worksheet(tracker)
+    update_worksheet_sixteen = SHEET.worksheet("tracker")
     
-    update_worksheet_sixteen.update('B18', sixteen_sub_input)
+    update_worksheet_sixteen.update('B18', sub_input_sixteen)
 
-    update_worksheet_sixteen.update('C18', sixteen_task_input)
+    update_worksheet_sixteen.update('C18', task_input_sixteen)
 
     print("Processing request...")
 
@@ -2779,7 +2790,7 @@ def validate_seventeen_sub_data(values):
         return False
 
 
-def input_task_seventeen():
+def input_task_seventeen(sub_input_seventeen):
 
     while True:   
         seventeen_task_input = input("Please enter your task here: \n")
@@ -2788,7 +2799,7 @@ def input_task_seventeen():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {seventeen_sub_input} - {seventeen_task_input}")
+    print(f"Your input: {sub_input_seventeen} - {seventeen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return seventeen_task_input
@@ -2809,17 +2820,17 @@ def validate_seventeen_task_data(values):
         return False
 
 
-def data_uploaded_seventeen():
+def data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_seventeen = SHEET.worksheet(tracker)
+    update_worksheet_seventeen = SHEET.worksheet("tracker")
     
-    update_worksheet_seventeen.update('B19', seventeen_sub_input)
+    update_worksheet_seventeen.update('B19', sub_input_seventeen)
 
-    update_worksheet_seventeen.update('C19', seventeen_task_input)
+    update_worksheet_seventeen.update('C19', task_input_seventeen)
 
     print("Processing request...")
 
@@ -2927,7 +2938,7 @@ def validate_eighteen_sub_data(values):
         return False
 
 
-def input_task_eighteen():
+def input_task_eighteen(sub_input_eighteen):
 
     while True:   
         eighteen_task_input = input("Please enter your task here: \n")
@@ -2936,7 +2947,7 @@ def input_task_eighteen():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {eighteen_sub_input} - {eighteen_task_input}")
+    print(f"Your input: {sub_input_eighteen} - {eighteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return eighteen_task_input
@@ -2957,17 +2968,17 @@ def validate_eighteen_task_data(values):
         return False
 
 
-def data_uploaded_eighteen():
+def data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_eighteen = SHEET.worksheet(tracker)
+    update_worksheet_eighteen = SHEET.worksheet("tracker")
     
-    update_worksheet_eighteen.update('B20', eighteen_sub_input)
+    update_worksheet_eighteen.update('B20', sub_input_eighteen)
 
-    update_worksheet_eighteen.update('C20', eighteen_task_input)
+    update_worksheet_eighteen.update('C20', task_input_eighteen)
 
     print("Processing request...")
 
@@ -3075,7 +3086,7 @@ def validate_nineteen_sub_data(values):
         return False
 
 
-def input_task_nineteen():
+def input_task_nineteen(sub_input_nineteen):
 
     while True:   
         nineteen_task_input = input("Please enter your task here: \n")
@@ -3084,7 +3095,7 @@ def input_task_nineteen():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {nineteen_sub_input} - {nineteen_task_input}")
+    print(f"Your input: {sub_input_nineteen} - {nineteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return nineteen_task_input
@@ -3105,17 +3116,17 @@ def validate_nineteen_task_data(values):
         return False
 
 
-def data_uploaded_nineteen():
+def data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_nineteen = SHEET.worksheet(tracker)
+    update_worksheet_nineteen = SHEET.worksheet("tracker")
     
-    update_worksheet_nineteen.update('B21', nineteen_sub_input)
+    update_worksheet_nineteen.update('B21', sub_input_nineteen)
 
-    update_worksheet_nineteen.update('C21', nineteen_task_input)
+    update_worksheet_nineteen.update('C21', task_input_nineteen)
 
     print("Processing request...")
 
@@ -3223,7 +3234,7 @@ def validate_twenty_sub_data(values):
         return False
 
 
-def input_task_twenty():
+def input_task_twenty(sub_input_twenty):
 
     while True:   
         twenty_task_input = input("Please enter your task here: \n")
@@ -3232,7 +3243,7 @@ def input_task_twenty():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {twenty_sub_input} - {twenty_task_input}")
+    print(f"Your input: {sub_input_twenty} - {twenty_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return twenty_task_input
@@ -3253,17 +3264,17 @@ def validate_twenty_task_data(values):
         return False
 
 
-def data_uploaded_twenty():
+def data_uploaded_twenty(sub_input_twenty, task_input_twenty):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_twenty = SHEET.worksheet(tracker)
+    update_worksheet_twenty = SHEET.worksheet("tracker")
     
-    update_worksheet_twenty.update('B22', twenty_sub_input)
+    update_worksheet_twenty.update('B22', sub_input_twenty)
 
-    update_worksheet_twenty.update('C22', twenty_task_input)
+    update_worksheet_twenty.update('C22', task_input_twenty)
 
     print("Processing request...")
 
@@ -3371,7 +3382,7 @@ def validate_twentyone_sub_data(values):
         return False
 
 
-def input_task_twentyone():
+def input_task_twentyone(sub_input_twentyone):
 
     while True:   
         twentyone_task_input = input("Please enter your task here: \n")
@@ -3380,7 +3391,7 @@ def input_task_twentyone():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {twentyone_sub_input} - {twentyone_task_input}")
+    print(f"Your input: {sub_input_twentyone} - {twentyone_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return twentyone_task_input
@@ -3401,17 +3412,17 @@ def validate_twentyone_task_data(values):
         return False
 
 
-def data_uploaded_twentyone():
+def data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_twentyone = SHEET.worksheet(tracker)
+    update_worksheet_twentyone = SHEET.worksheet("tracker")
     
-    update_worksheet_twentyone.update('B23', twentyone_sub_input)
+    update_worksheet_twentyone.update('B23', sub_input_twentyone)
 
-    update_worksheet_twentyone.update('C23', twentyone_task_input)
+    update_worksheet_twentyone.update('C23', task_input_twentyone)
 
     print("Processing request...")
 
@@ -3519,7 +3530,7 @@ def validate_twentytwo_sub_data(values):
         return False
 
 
-def input_task_twentytwo():
+def input_task_twentytwo(sub_input_twentytwo):
 
     while True:   
         twentytwo_task_input = input("Please enter your task here: \n")
@@ -3528,7 +3539,7 @@ def input_task_twentytwo():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {twentytwo_sub_input} - {twentytwo_task_input}")
+    print(f"Your input: {sub_input_twentytwo} - {twentytwo_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return twentytwo_task_input
@@ -3549,17 +3560,17 @@ def validate_twentytwo_task_data(values):
         return False
 
 
-def data_uploaded_twentytwo():
+def data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_twentytwo = SHEET.worksheet(tracker)
+    update_worksheet_twentytwo = SHEET.worksheet("tracker")
     
-    update_worksheet_twentytwo.update('B24', twentytwo_sub_input)
+    update_worksheet_twentytwo.update('B24', sub_input_twentytwo)
 
-    update_worksheet_twentytwo.update('C24', twentytwo_task_input)
+    update_worksheet_twentytwo.update('C24', task_input_twentytwo)
 
     print("Processing request...")
 
@@ -3667,7 +3678,7 @@ def validate_twentythree_sub_data(values):
         return False
 
 
-def input_task_twentythree():
+def input_task_twentythree(sub_input_twentythree):
 
     while True:   
         twentythree_task_input = input("Please enter your task here: \n")
@@ -3676,7 +3687,7 @@ def input_task_twentythree():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {twentythree_sub_input} - {twentythree_task_input}")
+    print(f"Your input: {sub_input_twentythree} - {twentythree_task_input.capitalize()}")
     print("------------------------------------------------------------------")
     
     return twentythree_task_input
@@ -3697,17 +3708,17 @@ def validate_twentythree_task_data(values):
         return False
 
 
-def data_uploaded_twentythree():
+def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the document upload screen.
     """
-    update_worksheet_twentythree = SHEET.worksheet(tracker)
+    update_worksheet_twentythree = SHEET.worksheet("tracker")
     
-    update_worksheet_twentythree.update('B25', twentythree_sub_input)
+    update_worksheet_twentythree.update('B25', sub_input_twentythree)
 
-    update_worksheet_twentythree.update('C25', twentythree_task_input)
+    update_worksheet_twentythree.update('C25', task_input_twentythree)
 
     print("Processing request...")
 
@@ -3938,101 +3949,76 @@ def run_data_inputs():
     """
     sub_input_zero = input_results_zero()
     task_input_zero = input_task_zero(sub_input_zero)
-    input_results_zero()
-    input_task_zero(sub_input_zero)
     data_uploaded_zero(sub_input_zero, task_input_zero)
-    
-    input_results_one()
-    input_task_one()
-    data_uploaded_one()
-
-    input_results_two()
-    input_task_two()
-    data_uploaded_two()
-
-    input_results_three()
-    input_task_three()
-    data_uploaded_three()
-
-    input_results_four()
-    input_task_four()
-    data_uploaded_four()
-
-    input_results_five()
-    input_task_five()
-    data_uploaded_five()
-
-    input_results_six()
-    input_task_six()
-    data_uploaded_six()
-
-    input_results_seven()
-    input_task_seven()
-    data_uploaded_seven()
-
-    input_results_eight()
-    input_task_eight()
-    data_uploaded_eight()
-
-    input_results_nine()
-    input_task_nine()
-    data_uploaded_nine()
-
-    input_results_ten()
-    input_task_ten()
-    data_uploaded_ten()
-
-    input_results_eleven()
-    input_task_eleven()
-    data_uploaded_eleven()
-
-    input_results_twelve()
-    input_task_twelve()
-    data_uploaded_twelve()
-
-    input_results_thirteen()
-    input_task_thirteen()
-    data_uploaded_thirteen()
-
-    input_results_fourteen()
-    input_task_fourteen()
-    data_uploaded_fourteen()
-
-    input_results_fifteen()
-    input_task_fifteen()
-    data_uploaded_fifteen()
-
-    input_results_sixteen()
-    input_task_sixteen()
-    data_uploaded_sixteen()
-
-    input_results_seventeen()
-    input_task_seventeen()
-    data_uploaded_seventeen()
-
-    input_results_eighteen()
-    input_task_eighteen()
-    data_uploaded_eighteen()
-
-    input_results_nineteen()
-    input_task_nineteen()
-    data_uploaded_nineteen()
-
-    input_results_twenty()
-    input_task_twenty()
-    data_uploaded_twenty()
-
-    input_results_twentyone()
-    input_task_twentyone()
-    data_uploaded_twentyone()
-
-    input_results_twentytwo()
-    input_task_twentytwo()
-    data_uploaded_twentytwo()
-
-    input_results_twentythree()
-    input_task_twentythree()
-    data_uploaded_twentythree()
+    sub_input_one = input_results_one()
+    task_input_one = input_task_one(sub_input_one)
+    data_uploaded_one(sub_input_one, task_input_one)
+    sub_input_two = input_results_two()
+    task_input_two = input_task_two(sub_input_two)
+    data_uploaded_two(sub_input_two, task_input_two)
+    sub_input_three = input_results_three()
+    task_input_three = input_task_three(sub_input_three)
+    data_uploaded_three(sub_input_three, task_input_three)
+    sub_input_four = input_results_four()
+    task_input_four = input_task_four(sub_input_four)
+    data_uploaded_four(sub_input_four, task_input_four)
+    sub_input_five = input_results_five()
+    task_input_five = input_task_five(sub_input_five)
+    data_uploaded_five(sub_input_five, task_input_five)
+    sub_input_six = input_results_six()
+    task_input_six = input_task_six(sub_input_six)
+    data_uploaded_six(sub_input_six, task_input_six)
+    sub_input_seven = input_results_seven()
+    task_input_seven = input_task_seven(sub_input_seven)
+    data_uploaded_seven(sub_input_seven, task_input_seven)
+    sub_input_eight = input_results_eight()
+    task_input_eight = input_task_eight(sub_input_eight)
+    data_uploaded_eight(sub_input_eight, task_input_eight)
+    sub_input_nine = input_results_nine()
+    task_input_nine = input_task_nine(sub_input_nine)
+    data_uploaded_nine(sub_input_nine, task_input_nine)
+    sub_input_ten = input_results_ten()
+    task_input_ten = input_task_ten(sub_input_ten)
+    data_uploaded_ten(sub_input_ten, task_input_ten)
+    sub_input_eleven = input_results_eleven()
+    task_input_eleven = input_task_eleven(sub_input_eleven)
+    data_uploaded_eleven(sub_input_eleven, task_input_eleven)
+    sub_input_twelve = input_results_twelve()
+    task_input_twelve = input_task_twelve(sub_input_twelve)
+    data_uploaded_twelve(sub_input_twelve, task_input_twelve)
+    sub_input_thirteen = input_results_thirteen()
+    task_input_thirteen = input_task_thirteen(sub_input_thirteen)
+    data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen)
+    sub_input_fourteen = input_results_fourteen()
+    task_input_fourteen = input_task_fourteen(sub_input_fourteen)
+    data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen)
+    sub_input_fifteen = input_results_fifteen()
+    task_input_fifteen = input_task_fifteen(sub_input_fifteen)
+    data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen)
+    sub_input_sixteen = input_results_sixteen()
+    task_input_sixteen = input_task_sixteen(sub_input_sixteen)
+    data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen)
+    sub_input_seventeen = input_results_seventeen()
+    task_input_seventeen = input_task_seventeen(sub_input_seventeen)
+    data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen)
+    sub_input_eighteen = input_results_eighteen()
+    task_input_eighteen = input_task_eighteen(sub_input_eighteen)
+    data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen)
+    sub_input_nineteen = input_results_nineteen()
+    task_input_nineteen = input_task_nineteen(sub_input_nineteen)
+    data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen)
+    sub_input_twenty = input_results_twenty()
+    task_input_twenty = input_task_twenty(sub_input_twenty)
+    data_uploaded_twenty(sub_input_twenty, task_input_twenty)
+    sub_input_twentyone = input_results_twentyone()
+    task_input_twentyone = input_task_twentyone(sub_input_twentyone)
+    data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone)
+    sub_input_twentytwo = input_results_twentytwo()
+    task_input_twentytwo = input_task_twentytwo(sub_input_twentytwo)
+    data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo)
+    sub_input_twentythree = input_results_twentythree()
+    task_input_twentythree = input_task_twentythree(sub_input_twentythree)
+    data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree)
 
 
 run_introduction()
