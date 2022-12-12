@@ -22,7 +22,7 @@ def introduction():
     Once user has finished reading section of how program works,
     input of letter x sends user to rules section.
     """
-    print("------------------------------------------------------------------")
+    print("----------------------------------------------------------------")
     live_timestamp = datetime.now()
     print(live_timestamp)
     print("Welcome to the ultimate Life Tracker! (Daily Tasklist)! [v.1] \n")
@@ -71,19 +71,20 @@ def rules():
     """
     print("------------------------------------------------------------------")
     print("RULES \n")
-    print("- In order for program to function correctly, please respect the instructions \n")
-    print("- When asked to input letter x to proceed, please do not enter any other letter")
-    print("- When asked to input letter x, please enter only one character \n")
-    print("- When inputting subcategories and tasks, please follow rules precisely")
+    print("- For program to function correctly, respect the instructions \n")
+    print("- When asked to input letter x, do not enter any other letters")
+    print("- When asked to input letter x, enter only one character \n")
+    print("- When inputting subcategories, please follow rules precisely")
+    print("- When inputting tasks, please follow rules precisely")
     print("- Do not enter any numbers or symbols, only letters are allowed")
     print("- Only enter values when asked for it")
-    print("- Only select sub-categories from given list")
+    print("- Only select sub-categories from provided list of options")
     print("- Tasks are custom by your experience with limit of 40 characters")
     print("- Please do not leave any fields empty")
-    print("- During reporting sub-categories and tasks, time is in 24-hour format \n")
+    print("- Each hour of a day is in 24-hour format \n")
 
     while True:
-        personal_info_input = input("Type in letter x and press enter to continue: \n")
+        personal_info_input = input("Please enter letter x to continue: \n")
 
         if validate_personal_data(personal_info_input):
             print("Loading...")
@@ -111,7 +112,7 @@ def validate_personal_data(values):
 
 def personal_info_name():
     """
-    This function requests user to enter their personal information starting with name.
+    This function requests user to enter their name.
     """
     print("------------------------------------------------------------------")
     print("Please enter your name and identification number.")
@@ -140,7 +141,7 @@ def validate_name_data(values):
         return False
     elif len(values) >= 50:
         raise ValueError(
-            "Too many letters, please enter the name under 50 letters and try again."
+            "Too many letters, enter the name under 50 letters and try again."
         )
         return False
     else:
@@ -283,7 +284,7 @@ def validate_zero_task_data(values):
 
 def data_uploaded_zero():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -434,7 +435,7 @@ def validate_one_task_data(values):
 
 def data_uploaded_one():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -585,7 +586,7 @@ def validate_two_task_data(values):
 
 def data_uploaded_two():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -736,7 +737,7 @@ def validate_three_task_data(values):
 
 def data_uploaded_three():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -887,7 +888,7 @@ def validate_four_task_data(values):
 
 def data_uploaded_four():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -1038,7 +1039,7 @@ def validate_five_task_data(values):
 
 def data_uploaded_five():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -1189,7 +1190,7 @@ def validate_six_task_data(values):
 
 def data_uploaded_six():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -1340,7 +1341,7 @@ def validate_seven_task_data(values):
 
 def data_uploaded_seven():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -1491,7 +1492,7 @@ def validate_eight_task_data(values):
 
 def data_uploaded_eight():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -1642,7 +1643,7 @@ def validate_nine_task_data(values):
 
 def data_uploaded_nine():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -1793,7 +1794,7 @@ def validate_ten_task_data(values):
 
 def data_uploaded_ten():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -1944,7 +1945,7 @@ def validate_eleven_task_data(values):
 
 def data_uploaded_eleven():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -2095,7 +2096,7 @@ def validate_twelve_task_data(values):
 
 def data_uploaded_twelve():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -2246,7 +2247,7 @@ def validate_thirteen_task_data(values):
 
 def data_uploaded_thirteen():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -2397,7 +2398,7 @@ def validate_fourteen_task_data(values):
 
 def data_uploaded_fourteen():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -2548,7 +2549,7 @@ def validate_fifteen_task_data(values):
 
 def data_uploaded_fifteen():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -2699,7 +2700,7 @@ def validate_sixteen_task_data(values):
 
 def data_uploaded_sixteen():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -2850,7 +2851,7 @@ def validate_seventeen_task_data(values):
 
 def data_uploaded_seventeen():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -3001,7 +3002,7 @@ def validate_eighteen_task_data(values):
 
 def data_uploaded_eighteen():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -3152,7 +3153,7 @@ def validate_nineteen_task_data(values):
 
 def data_uploaded_nineteen():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -3303,7 +3304,7 @@ def validate_twenty_task_data(values):
 
 def data_uploaded_twenty():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -3454,7 +3455,7 @@ def validate_twentyone_task_data(values):
 
 def data_uploaded_twentyone():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -3605,7 +3606,7 @@ def validate_twentytwo_task_data(values):
 
 def data_uploaded_twentytwo():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
@@ -3756,7 +3757,7 @@ def validate_twentythree_task_data(values):
 
 def data_uploaded_twentythree():
     """
-    Function uploads both inputs to the correct row and column of the excel document.
+    Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the document upload screen.
     """
