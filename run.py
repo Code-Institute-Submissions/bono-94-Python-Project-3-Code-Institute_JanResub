@@ -60,11 +60,6 @@ def validate_rules_data(values):
             "Invalid letter, please type letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please type letter x then and try again."
-        )
-        return False
     else:
         return True      
 
@@ -75,12 +70,10 @@ def rules():
     At the end, user is asked to input the letter x to start the program.
     """
     print("-------------------------------------------------------------------------------")
-    print("RULES")
-    
+    print("RULES \n")
     print("- In order for program to function correctly, please respect the instructions")
     print("- When asked to input letter x to proceed, please do not enter any other letter")
-    print("- When asked to input letter x, please enter only one character")
-    
+    print("- When asked to input letter x, please enter only one character /n")
     print("- When inputting subcategories and tasks, please follow rules precisely")
     print("- Do not enter any numbers or symbols, only letters are allowed")
     print("- Only enter values when asked for it")
@@ -110,11 +103,6 @@ def validate_personal_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -167,7 +155,7 @@ def personal_info_id():
     """
     while True:
         
-        id_input = input("Please enter identification number: \n")
+        id_input = input("Please enter unique identification number: \n")
 
         if validate_id_data(id_input):
             print("Data is valid!")
@@ -183,16 +171,10 @@ def validate_id_data(values):
     """
     Input validator function.
     Raises ValueError if ID number contains letters instead of numbers.
-    Raises ValueError if the number is less than 1000.
     """
     if values.isalpha():
         raise ValueError(
             "Invalid ID number, please only use numbers"
-        )
-        return False
-    elif values <= 1000:
-        raise ValueError(
-            "Please enter a number above 1000 and then try again."
         )
         return False
     else:
@@ -346,11 +328,6 @@ def validate_zero_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -500,11 +477,6 @@ def validate_one_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -658,11 +630,6 @@ def validate_two_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -812,11 +779,6 @@ def validate_three_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -970,11 +932,6 @@ def validate_four_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -1124,11 +1081,6 @@ def validate_five_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -1282,11 +1234,6 @@ def validate_six_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -1436,11 +1383,6 @@ def validate_seven_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -1594,11 +1536,6 @@ def validate_eight_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -1748,11 +1685,6 @@ def validate_nine_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -1906,11 +1838,6 @@ def validate_ten_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -2060,11 +1987,6 @@ def validate_eleven_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -2218,11 +2140,6 @@ def validate_twelve_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -2372,11 +2289,6 @@ def validate_thirteen_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -2530,11 +2442,6 @@ def validate_fourteen_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -2684,11 +2591,6 @@ def validate_fifteen_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -2842,11 +2744,6 @@ def validate_sixteen_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -2996,11 +2893,6 @@ def validate_seventeen_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -3154,11 +3046,6 @@ def validate_eighteen_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -3308,11 +3195,6 @@ def validate_nineteen_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -3466,11 +3348,6 @@ def validate_twenty_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -3620,11 +3497,6 @@ def validate_twentyone_next_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -3778,11 +3650,6 @@ def validate_twentytwo_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -3934,11 +3801,6 @@ def validate_twentythree_next_data(values):
             "Invalid data, please input letter x then and try again."
         )
         return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
-        )
-        return False
     else:
         return True
 
@@ -3975,11 +3837,6 @@ def validate_results_sub_data(values):
     if values != "x":
         raise ValueError(
             "Invalid data, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
@@ -4090,11 +3947,6 @@ def validate_exit_data(values):
     if values != "x":
         raise ValueError(
             "Invalid letter, please input letter x then and try again."
-        )
-        return False
-    elif len(values) != 1:
-        raise ValueError(
-            "Too many letters, please input letter x then and try again."
         )
         return False
     else:
