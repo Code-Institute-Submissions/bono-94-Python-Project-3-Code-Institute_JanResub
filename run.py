@@ -26,10 +26,10 @@ def introduction():
     live_timestamp = datetime.now()
     print(live_timestamp)
     print("Welcome to the ultimate Life Tracker! (Daily Tasklist)! [v.1] \n")
-    print("The program serves the purpose synchronizing your daily journal with schedule. \n")
+    print("The program synchronizes your daily journal with schedule. \n")
     print("How it works?")
-    print("- Following the introduction, you will proceed to the rules section")
-    print("- After covering the rules, you will be asked to enter personal identification")
+    print("- Following the introduction, you will proceed to rules section")
+    print("- After that, you will be asked to enter personal identification")
     print("- Next you will be asked to input your daily events per each hour")
     print("- Your data will be exported to an external online Google Sheet")
     print("- Once the data is in, program will retrieve your results")
@@ -39,7 +39,7 @@ def introduction():
     print("- You will be able to see visual analysis of your results. \n")
 
     while True:
-        rules_input = input("Please type letter x and press enter to continue: \n")
+        rules_input = input("Type in letter x and press enter to continue: \n")
 
         if validate_rules_data(rules_input):
             print("Loading...")
@@ -83,7 +83,7 @@ def rules():
     print("- During reporting sub-categories and tasks, time is in 24-hour format \n")
 
     while True:
-        personal_info_input = input("Please type letter x and press enter to continue: \n")
+        personal_info_input = input("Type in letter x and press enter to continue: \n")
 
         if validate_personal_data(personal_info_input):
             print("Loading...")
@@ -300,7 +300,7 @@ def data_uploaded_zero():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        zero_next_input = input("Please type in letter x and press enter to continue: \n")
+        zero_next_input = input("Please enter letter x to continue: \n")
 
         if validate_zero_next_data(zero_next_input):
             print("Loading...")
@@ -451,7 +451,7 @@ def data_uploaded_one():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        one_next_input = input("Please type in letter x and press enter to continue: \n")
+        one_next_input = input("Please enter letter x to continue: \n")
 
         if validate_one_next_data(one_next_input):
             print("Loading...")
@@ -602,7 +602,7 @@ def data_uploaded_two():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        two_next_input = input("Please type in letter x and press enter to continue: \n")
+        two_next_input = input("Please enter letter x to continue: \n")
 
         if validate_two_next_data(two_next_input):
             print("Loading...")
@@ -753,7 +753,7 @@ def data_uploaded_three():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        three_next_input = input("Please type in letter x and press enter to continue: \n")
+        three_next_input = input("Please enter letter x to continue: \n")
 
         if validate_three_next_data(three_next_input):
             print("Loading...")
@@ -904,7 +904,7 @@ def data_uploaded_four():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        four_next_input = input("Please type in letter x and press enter to continue: \n")
+        four_next_input = input("Please enter letter x to continue: \n")
 
         if validate_four_next_data(four_next_input):
             print("Loading...")
@@ -1055,7 +1055,7 @@ def data_uploaded_five():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        zero_next_input = input("Please type in letter x and press enter to continue: \n")
+        zero_next_input = input("Please enter letter x to continue: \n")
 
         if validate_zero_next_data(zero_next_input):
             print("Loading...")
@@ -1206,7 +1206,7 @@ def data_uploaded_six():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        six_next_input = input("Please type in letter x and press enter to continue: \n")
+        six_next_input = input("Please enter letter x to continue: \n")
 
         if validate_six_next_data(six_next_input):
             print("Loading...")
@@ -1357,7 +1357,7 @@ def data_uploaded_seven():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        seven_next_input = input("Please type in letter x and press enter to continue: \n")
+        seven_next_input = input("Please enter letter x to continue: \n")
 
         if validate_seven_next_data(seven_next_input):
             print("Loading...")
@@ -1508,7 +1508,7 @@ def data_uploaded_eight():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        eight_next_input = input("Please type in letter x and press enter to continue: \n")
+        eight_next_input = input("Please enter letter x to continue: \n")
 
         if validate_eight_next_data(eight_next_input):
             print("Loading...")
@@ -1659,7 +1659,7 @@ def data_uploaded_nine():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        nine_next_input = input("Please type in letter x and press enter to continue: \n")
+        nine_next_input = input("Please enter letter x to continue: \n")
 
         if validate_nine_next_data(nine_next_input):
             print("Loading...")
@@ -1810,7 +1810,7 @@ def data_uploaded_ten():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        ten_next_input = input("Please type in letter x and press enter to continue: \n")
+        ten_next_input = input("Please enter letter x to continue: \n")
 
         if validate_ten_next_data(ten_next_input):
             print("Loading...")
@@ -1961,7 +1961,7 @@ def data_uploaded_eleven():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        eleven_next_input = input("Please type in letter x and press enter to continue: \n")
+        eleven_next_input = input("Please enter letter x to continue: \n")
 
         if validate_eleven_next_data(eleven_next_input):
             print("Loading...")
@@ -2112,7 +2112,7 @@ def data_uploaded_twelve():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        twelve_next_input = input("Please type in letter x and press enter to continue: \n")
+        twelve_next_input = input("Please enter letter x to continue: \n")
 
         if validate_twelve_next_data(twelve_next_input):
             print("Loading...")
@@ -2263,7 +2263,7 @@ def data_uploaded_thirteen():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        thirteen_next_input = input("Please type in letter x and press enter to continue: \n")
+        thirteen_next_input = input("Please enter letter x to continue: \n")
 
         if validate_thirteen_next_data(thirteen_next_input):
             print("Loading...")
@@ -2414,7 +2414,7 @@ def data_uploaded_fourteen():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        fourteen_next_input = input("Please type in letter x and press enter to continue: \n")
+        fourteen_next_input = input("Please enter letter x to continue: \n")
 
         if validate_fourteen_next_data(fourteen_next_input):
             print("Loading...")
@@ -2565,7 +2565,7 @@ def data_uploaded_fifteen():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        fifteen_next_input = input("Please type in letter x and press enter to continue: \n")
+        fifteen_next_input = input("Please enter letter x to continue: \n")
 
         if validate_fifteen_next_data(fifteen_next_input):
             print("Loading...")
@@ -2716,7 +2716,7 @@ def data_uploaded_sixteen():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        sixteen_next_input = input("Please type in letter x and press enter to continue: \n")
+        sixteen_next_input = input("Please enter letter x to continue: \n")
 
         if validate_sixteen_next_data(sixteen_next_input):
             print("Loading...")
@@ -2867,7 +2867,7 @@ def data_uploaded_seventeen():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        seventeen_next_input = input("Please type in letter x and press enter to continue: \n")
+        seventeen_next_input = input("Please enter letter x to continue: \n")
 
         if validate_seventeen_next_data(seventeen_next_input):
             print("Loading...")
@@ -3018,7 +3018,7 @@ def data_uploaded_eighteen():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        eighteen_next_input = input("Please type in letter x and press enter to continue: \n")
+        eighteen_next_input = input("Please enter letter x to continue: \n")
 
         if validate_eighteen_next_data(eighteen_next_input):
             print("Loading...")
@@ -3169,7 +3169,7 @@ def data_uploaded_nineteen():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        nineteen_next_input = input("Please type in letter x and press enter to continue: \n")
+        nineteen_next_input = input("Please enter letter x to continue: \n")
 
         if validate_nineteen_next_data(nineteen_next_input):
             print("Loading...")
@@ -3320,7 +3320,7 @@ def data_uploaded_twenty():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        twenty_next_input = input("Please type in letter x and press enter to continue: \n")
+        twenty_next_input = input("Please enter letter x to continue: \n")
 
         if validate_twenty_next_data(twenty_next_input):
             print("Loading...")
@@ -3471,7 +3471,7 @@ def data_uploaded_twentyone():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        twentyone_next_input = input("Please type in letter x and press enter to continue: \n")
+        twentyone_next_input = input("Please enter letter x to continue: \n")
 
         if validate_twentyone_next_data(twentyone_next_input):
             print("Loading...")
@@ -3622,7 +3622,7 @@ def data_uploaded_twentytwo():
     print("Let's continue with the next hour of your day.")
 
     while True:
-        twentytwo_next_input = input("Please type in letter x and press enter to continue: \n")
+        twentytwo_next_input = input("Please enter letter x to continue: \n")
 
         if validate_twentytwo_next_data(twentytwo_next_input):
             print("Loading...")
@@ -3773,7 +3773,7 @@ def data_uploaded_twentythree():
     print("Let's continue to your daily results.")
 
     while True:
-        twentythree_next_input = input("Please type in letter x and press enter to continue: \n")
+        twentythree_next_input = input("Please enter letter x to continue: \n")
 
         if validate_twentythree_next_data(twentythree_next_input):
             print("Loading...")
@@ -3811,7 +3811,7 @@ def all_results_uploaded_successfully():
     print("Your daily chedule is now successfully updated!")
 
     while True:
-        results_sub_input = input("Please type in letter x and press enter to acess the results reports: \n")
+        results_sub_input = input("Please enter letter x to continue to results: \n")
 
         if validate_results_sub_data(results_sub_input):
             print("Loading...")
@@ -3923,7 +3923,7 @@ def export_results_analyzer():
     print("See you tomorrow at the next tracking and analyzing mission!")
 
     while True:
-        exit_input = input("Please input button x and press enter to exit: \n")
+        exit_input = input("Please enter letter x to exit: \n")
 
         if validate_exit_data(rules_input):
             print("Loading...")
