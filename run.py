@@ -22,7 +22,7 @@ def introduction():
     Once user has finished reading section of how program works,
     input of letter x sends user to rules section.
     """
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     live_timestamp = datetime.now()
     print(live_timestamp)
     print("Welcome to the ultimate Life Tracker! (Daily Tasklist)! [v.1] \n")
@@ -36,7 +36,7 @@ def introduction():
     print("- Those are noted as daily duration of each category and task")
     print("- Once that is reported to you, it will be exported again")
     print("- This time, to the second worksheet: analysis")
-    print("- You will be able to see visual analysis of your results \n")
+    print("- You will be able to see visual analysis of your results. \n")
 
     while True:
         rules_input = input("Please type letter x and press enter to continue: \n")
@@ -44,7 +44,7 @@ def introduction():
         if validate_rules_data(rules_input):
             print("Loading...")
             break
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
 
     return rules_input
 
@@ -69,9 +69,9 @@ def rules():
     Rules section allows users to get familiar with important rules.
     At the end, user is asked to input the letter x to start the program.
     """
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     print("RULES \n")
-    print("- In order for program to function correctly, please respect the instructions")
+    print("- In order for program to function correctly, please respect the instructions \n")
     print("- When asked to input letter x to proceed, please do not enter any other letter")
     print("- When asked to input letter x, please enter only one character \n")
     print("- When inputting subcategories and tasks, please follow rules precisely")
@@ -80,7 +80,7 @@ def rules():
     print("- Only select sub-categories from given list")
     print("- Tasks are custom by your experience with limit of 40 characters")
     print("- Please do not leave any fields empty")
-    print("- During reporting sub-categories and tasks, time is in 24-hour format /n")
+    print("- During reporting sub-categories and tasks, time is in 24-hour format \n")
 
     while True:
         personal_info_input = input("Please type letter x and press enter to continue: \n")
@@ -89,10 +89,10 @@ def rules():
             print("Loading...")
             break
 
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
 
     return personal_info_input
-   
+
 
 def validate_personal_data(values):
     """
@@ -113,7 +113,7 @@ def personal_info_name():
     """
     This function requests user to enter their personal information starting with name.
     """
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     print("Please enter your name and identification number.")
     print("If you did not request ID yet, you can enter any number. \n")
 
@@ -121,7 +121,7 @@ def personal_info_name():
         name_input = input("Please enter your name: \n")
 
         if validate_name_data(name_input):
-            print(f"Thank you {name_input}!")
+            print(f"Thank you {name_input}! \n")
             break
         
     return name_input
@@ -156,11 +156,11 @@ def personal_info_id():
         id_input = input("Please enter unique identification number: \n")
 
         if validate_id_data(id_input):
-            print("Data is valid!")
+            print(f"Thank you, your number {id_input} is valid!")
             break
 
     print("Starting the program...")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
 
     return id_input
 
@@ -261,7 +261,7 @@ def input_task_zero():
             break
 
     print(f"Your input was: {zero_sub_input} - {zero_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return zero_task_input
 
@@ -306,7 +306,7 @@ def data_uploaded_zero():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return zero_next_input
 
@@ -412,7 +412,7 @@ def input_task_one():
             break
 
     print(f"Your input was: {one_sub_input} - {one_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return one_task_input
 
@@ -457,7 +457,7 @@ def data_uploaded_one():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return one_next_input
 
@@ -563,7 +563,7 @@ def input_task_two():
             break
 
     print(f"Your input was: {two_sub_input} - {two_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return two_task_input
 
@@ -608,7 +608,7 @@ def data_uploaded_two():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return two_next_input
 
@@ -714,7 +714,7 @@ def input_task_three():
             break
 
     print(f"Your input was: {three_sub_input} - {three_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return three_task_input
 
@@ -759,7 +759,7 @@ def data_uploaded_three():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return three_next_input
 
@@ -865,7 +865,7 @@ def input_task_four():
             break
 
     print(f"Your input was: {four_sub_input} - {four_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return four_task_input
 
@@ -910,7 +910,7 @@ def data_uploaded_four():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return four_next_input
 
@@ -1016,7 +1016,7 @@ def input_task_five():
             break
 
     print(f"Your input was: {five_sub_input} - {five_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return five_task_input
 
@@ -1061,7 +1061,7 @@ def data_uploaded_five():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return zero_next_input
 
@@ -1167,7 +1167,7 @@ def input_task_six():
             break
 
     print(f"Your input was: {six_sub_input} - {six_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return six_task_input
 
@@ -1212,7 +1212,7 @@ def data_uploaded_six():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return six_next_input
 
@@ -1318,7 +1318,7 @@ def input_task_seven():
             break
 
     print(f"Your input was: {seven_sub_input} - {seven_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return seven_task_input
 
@@ -1363,7 +1363,7 @@ def data_uploaded_seven():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return seven_next_input
 
@@ -1469,7 +1469,7 @@ def input_task_eight():
             break
 
     print(f"Your input was: {eight_sub_input} - {eight_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return eight_task_input
 
@@ -1514,7 +1514,7 @@ def data_uploaded_eight():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return eight_next_input
 
@@ -1620,7 +1620,7 @@ def input_task_nine():
             break
 
     print(f"Your input was: {nine_sub_input} - {nine_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return nine_task_input
 
@@ -1665,7 +1665,7 @@ def data_uploaded_nine():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return nine_next_input
 
@@ -1771,7 +1771,7 @@ def input_task_ten():
             break
 
     print(f"Your input was: {ten_sub_input} - {ten_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return ten_task_input
 
@@ -1816,7 +1816,7 @@ def data_uploaded_ten():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return ten_next_input
 
@@ -1922,7 +1922,7 @@ def input_task_eleven():
             break
 
     print(f"Your input was: {eleven_sub_input} - {eleven_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return eleven_task_input
 
@@ -1967,7 +1967,7 @@ def data_uploaded_eleven():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return eleven_next_input
 
@@ -2073,7 +2073,7 @@ def input_task_twelve():
             break
 
     print(f"Your input was: {twelve_sub_input} - {twelve_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twelve_task_input
 
@@ -2118,7 +2118,7 @@ def data_uploaded_twelve():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twelve_next_input
 
@@ -2224,7 +2224,7 @@ def input_task_thirteen():
             break
 
     print(f"Your input was: {thirteen_sub_input} - {thirteen_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return thirteen_task_input
 
@@ -2269,7 +2269,7 @@ def data_uploaded_thirteen():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return thirteen_next_input
 
@@ -2375,7 +2375,7 @@ def input_task_fourteen():
             break
 
     print(f"Your input was: {fourteen_sub_input} - {fourteen_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return fourteen_task_input
 
@@ -2420,7 +2420,7 @@ def data_uploaded_fourteen():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return fourteen_next_input
 
@@ -2526,7 +2526,7 @@ def input_task_fifteen():
             break
 
     print(f"Your input was: {fifteen_sub_input} - {fifteen_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return fifteen_task_input
 
@@ -2571,7 +2571,7 @@ def data_uploaded_fifteen():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return fifteen_next_input
 
@@ -2677,7 +2677,7 @@ def input_task_sixteen():
             break
 
     print(f"Your input was: {sixteen_sub_input} - {sixteen_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return zero_task_input
 
@@ -2722,7 +2722,7 @@ def data_uploaded_sixteen():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return sixteen_next_input
 
@@ -2828,7 +2828,7 @@ def input_task_seventeen():
             break
 
     print(f"Your input was: {seventeen_sub_input} - {seventeen_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return seventeen_task_input
 
@@ -2873,7 +2873,7 @@ def data_uploaded_seventeen():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return seventeen_next_input
 
@@ -2979,7 +2979,7 @@ def input_task_eighteen():
             break
 
     print(f"Your input was: {eighteen_sub_input} - {eighteen_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return eighteen_task_input
 
@@ -3024,7 +3024,7 @@ def data_uploaded_eighteen():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return eighteen_next_input
 
@@ -3130,7 +3130,7 @@ def input_task_nineteen():
             break
 
     print(f"Your input was: {nineteen_sub_input} - {nineteen_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return nineteen_task_input
 
@@ -3175,7 +3175,7 @@ def data_uploaded_nineteen():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return nineteen_next_input
 
@@ -3281,7 +3281,7 @@ def input_task_twenty():
             break
 
     print(f"Your input was: {twenty_sub_input} - {twenty_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twenty_task_input
 
@@ -3326,7 +3326,7 @@ def data_uploaded_twenty():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twenty_next_input
 
@@ -3432,7 +3432,7 @@ def input_task_twentyone():
             break
 
     print(f"Your input was: {twentyone_sub_input} - {twentyone_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twentyone_task_input
 
@@ -3477,7 +3477,7 @@ def data_uploaded_twentyone():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twentyone_next_input
 
@@ -3583,7 +3583,7 @@ def input_task_twentytwo():
             break
 
     print(f"Your input was: {twentytwo_sub_input} - {twentytwo_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twentytwo_task_input
 
@@ -3628,7 +3628,7 @@ def data_uploaded_twentytwo():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twentytwo_next_input
 
@@ -3734,7 +3734,7 @@ def input_task_twentythree():
             break
 
     print(f"Your input was: {twentythree_sub_input} - {twentythree_task_input}")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twentythree_task_input
 
@@ -3779,7 +3779,7 @@ def data_uploaded_twentythree():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return twentythree_next_input
 
@@ -3817,7 +3817,7 @@ def all_results_uploaded_successfully():
             print("Loading...")
             break
     
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     
     return results_sub_input
 
@@ -3930,7 +3930,7 @@ def export_results_analyzer():
             break
 
     return rules_input
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
 
 
 def validate_exit_data(values):
@@ -3952,7 +3952,7 @@ def exit_screen():
     Informs the user that exit sequence is initiated.
     Countdown of 10 seconds ends with exit message.
     """
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
     print("Initiating Exit Sequence...")
 
     print("Loading...")
@@ -3964,7 +3964,7 @@ def exit_screen():
         countdown -= 1
 
     raise SystemExit("Exiting...")
-    print("-------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
 
 
 def main():
@@ -3994,11 +3994,8 @@ def data_inputs():
     Runs all data input functions inside the program.
     """
     input_results_zero()
-    validate_zero_sub_data(values)
     input_task_zero()
-    validate_zero_task_data(values)
     data_uploaded_zero()
-    validate_zero_next_data(values)
 
     input_results_one()
     validate_one_sub_data(values)
