@@ -73,14 +73,14 @@ def rules():
     print("RULES \n")
     print("- In order for program to function correctly, please respect the instructions")
     print("- When asked to input letter x to proceed, please do not enter any other letter")
-    print("- When asked to input letter x, please enter only one character /n")
+    print("- When asked to input letter x, please enter only one character \n")
     print("- When inputting subcategories and tasks, please follow rules precisely")
     print("- Do not enter any numbers or symbols, only letters are allowed")
     print("- Only enter values when asked for it")
     print("- Only select sub-categories from given list")
     print("- Tasks are custom by your experience with limit of 40 characters")
     print("- Please do not leave any fields empty")
-    print("- During reporting sub-categories and tasks, time is in 24-hour format")
+    print("- During reporting sub-categories and tasks, time is in 24-hour format /n")
 
     while True:
         personal_info_input = input("Please type letter x and press enter to continue: \n")
@@ -115,16 +115,14 @@ def personal_info_name():
     """
     print("-------------------------------------------------------------------------------")
     print("Please enter your name and identification number.")
-    print("If you did not request ID yet, you can enter any number above 1000.")
+    print("If you did not request ID yet, you can enter any number. \n")
 
     while True:
         name_input = input("Please enter your name: \n")
 
         if validate_name_data(name_input):
-            print("Data is valid!")
+            print(f"Thank you {name_input}!")
             break
-
-    print(f"Thank you {name_input}!")
         
     return name_input
 
@@ -187,29 +185,25 @@ def input_results_zero():
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
     """  
-    print("What have you done today between 00:00 and 01:00?")
-
+    print("What have you done today between 00:00 and 01:00? \n")
     print("GROWTH")
     print("- Body System Care")
     print("- Soul & Spirit")
     print("- Fitness")
     print("- Meditation")
-
     print("PROGRESS")
     print("- Personal Progress")
     print("- Global Progress")
     print("- Education Progress")
     print("- Business Progress")
-
     print("FREEDOM")
     print("- Adventures")
     print("- Random Activity")
     print("- Rest")
     print("- Break")
-
     print("- Please select one sub-category from the list above.")
     print("- Please enter a custom task that best desribes your activity.")
-    print("- Please capitalize each word of sub-categories and tasks.")
+    print("- Please capitalize each word of sub-categories and tasks. \n")
 
     while True:   
         zero_sub_input = input("Please enter your sub-category here: \n")
