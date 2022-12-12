@@ -61,7 +61,7 @@ def validate_rules_data(values):
         )
         return False
     else:
-        return True      
+        return True
 
 
 def rules():
@@ -124,7 +124,7 @@ def personal_info_name():
         if validate_name_data(name_input):
             print(f"Thank you {name_input}! \n")
             break
-        
+    
     return name_input
 
 
@@ -142,6 +142,11 @@ def validate_name_data(values):
     elif len(values) >= 50:
         raise ValueError(
             "Too many letters, enter the name under 50 letters and try again."
+        )
+        return False
+    elif len(values) <= 0:
+        raise ValueError(
+            "No input, enter the name with at least 1 letter and try again."
         )
         return False
     else:
@@ -174,6 +179,11 @@ def validate_id_data(values):
     if values.isalpha():
         raise ValueError(
             "Invalid ID number, please only use numbers"
+        )
+        return False
+    elif len(values) <= 0:
+        raise ValueError(
+            "No input, enter the number with at least 1 digit and try again."
         )
         return False
     else:
@@ -253,7 +263,7 @@ def validate_zero_sub_data(values):
         return False
 
 
-def input_task_zero():
+def input_task_zero(sub_input_zero, task_input_zero):
 
     while True:   
         zero_task_input = input("Please enter your task here: \n")
@@ -262,7 +272,7 @@ def input_task_zero():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input was: {zero_sub_input} - {zero_task_input}")
+    print(f"Your input was: {sub_input_zero} - {task_input_zero}")
     print("------------------------------------------------------------------")
     
     return zero_task_input
@@ -289,11 +299,11 @@ def data_uploaded_zero():
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_zero = SHEET.worksheet('tracker')
+    update_worksheet_zero = SHEET.worksheet("tracker")
     
     update_worksheet_zero.update('B2', zero_sub_input)
 
-    update_worksheet_zero.update('C2', zero_task_input)
+    update_worksheet_zero.update('C2', zero_task_zero)
 
     print("Processing request...")
 
@@ -3926,10 +3936,12 @@ def run_data_inputs():
     """
     Runs all data input functions inside the program.
     """
+    sub_input_zero = input_results_zero()
+    task_input_zero = input_task_zero(sub_input_zero, task_input_zero)
     input_results_zero()
     input_task_zero()
     data_uploaded_zero()
-
+    
     input_results_one()
     input_task_one()
     data_uploaded_one()
