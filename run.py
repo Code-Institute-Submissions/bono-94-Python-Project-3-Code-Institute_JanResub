@@ -195,7 +195,7 @@ def input_results_zero():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 00:00 and 01:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -218,7 +218,7 @@ def input_results_zero():
     print("- Please enter a custom task that best desribes your activity")
     print("- Please capitalize first letter of first task word inputted \n")
 
-    while True:   
+    while True:
         zero_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_zero_sub_data(zero_sub_input):
@@ -256,7 +256,7 @@ def validate_zero_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -266,7 +266,7 @@ def validate_zero_sub_data(values):
 
 def input_task_zero(sub_input_zero):
 
-    while True:   
+    while True:
         zero_task_input = input("Please enter your task here: \n")
 
         if validate_zero_task_data(zero_task_input):
@@ -275,7 +275,7 @@ def input_task_zero(sub_input_zero):
 
     print(f"Your input: {sub_input_zero} - {zero_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return zero_task_input
 
 
@@ -311,7 +311,7 @@ def data_uploaded_zero(sub_input_zero, task_input_zero):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_zero = SHEET.worksheet("tracker")
-    
+
     update_worksheet_zero.update('B2', sub_input_zero)
 
     update_worksheet_zero.update('C2', task_input_zero)
@@ -328,9 +328,9 @@ def data_uploaded_zero(sub_input_zero, task_input_zero):
         if validate_zero_next_data(zero_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return zero_next_input
 
 
@@ -354,7 +354,7 @@ def input_results_one():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 01:00 and 02:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -376,7 +376,7 @@ def input_results_one():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         one_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_one_sub_data(one_sub_input):
@@ -414,7 +414,7 @@ def validate_one_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -424,7 +424,7 @@ def validate_one_sub_data(values):
 
 def input_task_one(sub_input_one):
 
-    while True:   
+    while True:
         one_task_input = input("Please enter your task here: \n")
 
         if validate_one_task_data(one_task_input):
@@ -433,7 +433,7 @@ def input_task_one(sub_input_one):
 
     print(f"Your input: {sub_input_one} - {one_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return one_task_input
 
 
@@ -445,7 +445,7 @@ def validate_one_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -459,7 +459,7 @@ def data_uploaded_one(sub_input_one, task_input_one):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_one = SHEET.worksheet("tracker")
-    
+
     update_worksheet_one.update('B3', sub_input_one)
 
     update_worksheet_one.update('C3', task_input_one)
@@ -476,9 +476,9 @@ def data_uploaded_one(sub_input_one, task_input_one):
         if validate_one_next_data(one_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return one_next_input
 
 
@@ -502,7 +502,7 @@ def input_results_two():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 02:00 and 03:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -524,7 +524,7 @@ def input_results_two():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         two_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_two_sub_data(two_sub_input):
@@ -562,7 +562,7 @@ def validate_two_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -572,7 +572,7 @@ def validate_two_sub_data(values):
 
 def input_task_two(sub_input_two):
 
-    while True:   
+    while True:
         two_task_input = input("Please enter your task here: \n")
 
         if validate_two_task_data(two_task_input):
@@ -581,7 +581,7 @@ def input_task_two(sub_input_two):
 
     print(f"Your input: {sub_input_two} - {two_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return two_task_input
 
 
@@ -593,7 +593,7 @@ def validate_two_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -607,7 +607,7 @@ def data_uploaded_two(sub_input_two, task_input_two):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_two = SHEET.worksheet("tracker")
-    
+
     update_worksheet_two.update('B4', sub_input_two)
 
     update_worksheet_two.update('C4', task_input_two)
@@ -624,9 +624,9 @@ def data_uploaded_two(sub_input_two, task_input_two):
         if validate_two_next_data(two_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return two_next_input
 
 
@@ -650,7 +650,7 @@ def input_results_three():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 03:00 and 04:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -672,7 +672,7 @@ def input_results_three():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         three_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_three_sub_data(three_sub_input):
@@ -710,7 +710,7 @@ def validate_three_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -720,7 +720,7 @@ def validate_three_sub_data(values):
 
 def input_task_three(sub_input_three):
 
-    while True:   
+    while True:
         three_task_input = input("Please enter your task here: \n")
 
         if validate_three_task_data(three_task_input):
@@ -729,7 +729,7 @@ def input_task_three(sub_input_three):
 
     print(f"Your input: {sub_input_three} - {three_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return three_task_input
 
 
@@ -741,7 +741,7 @@ def validate_three_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -755,7 +755,7 @@ def data_uploaded_three(sub_input_three, task_input_three):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_three = SHEET.worksheet("tracker")
-    
+
     update_worksheet_three.update('B5', sub_input_three)
 
     update_worksheet_three.update('C5', task_input_three)
@@ -772,9 +772,9 @@ def data_uploaded_three(sub_input_three, task_input_three):
         if validate_three_next_data(three_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return three_next_input
 
 
@@ -798,7 +798,7 @@ def input_results_four():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 04:00 and 05:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -820,7 +820,7 @@ def input_results_four():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         four_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_four_sub_data(four_sub_input):
@@ -858,7 +858,7 @@ def validate_four_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -868,7 +868,7 @@ def validate_four_sub_data(values):
 
 def input_task_four(sub_input_four):
 
-    while True:   
+    while True:
         four_task_input = input("Please enter your task here: \n")
 
         if validate_four_task_data(four_task_input):
@@ -877,7 +877,7 @@ def input_task_four(sub_input_four):
 
     print(f"Your input: {sub_input_four} - {four_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return four_task_input
 
 
@@ -889,7 +889,7 @@ def validate_four_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -903,7 +903,7 @@ def data_uploaded_four(sub_input_four, task_input_four):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_four = SHEET.worksheet("tracker")
-    
+
     update_worksheet_four.update('B6', sub_input_four)
 
     update_worksheet_four.update('C6', task_input_four)
@@ -920,9 +920,9 @@ def data_uploaded_four(sub_input_four, task_input_four):
         if validate_four_next_data(four_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return four_next_input
 
 
@@ -946,7 +946,7 @@ def input_results_five():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 05:00 and 06:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -968,7 +968,7 @@ def input_results_five():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         five_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_five_sub_data(five_sub_input):
@@ -1006,7 +1006,7 @@ def validate_five_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -1016,7 +1016,7 @@ def validate_five_sub_data(values):
 
 def input_task_five(sub_input_five):
 
-    while True:   
+    while True:
         five_task_input = input("Please enter your task here: \n")
 
         if validate_five_task_data(five_task_input):
@@ -1025,7 +1025,7 @@ def input_task_five(sub_input_five):
 
     print(f"Your input: {sub_input_five} - {five_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return five_task_input
 
 
@@ -1037,7 +1037,7 @@ def validate_five_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -1051,7 +1051,7 @@ def data_uploaded_five(sub_input_five, task_input_five):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_five = SHEET.worksheet("tracker")
-    
+
     update_worksheet_five.update('B7', sub_input_five)
 
     update_worksheet_five.update('C7', task_input_five)
@@ -1068,9 +1068,9 @@ def data_uploaded_five(sub_input_five, task_input_five):
         if validate_zero_next_data(zero_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return zero_next_input
 
 
@@ -1094,7 +1094,7 @@ def input_results_six():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 06:00 and 07:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -1116,7 +1116,7 @@ def input_results_six():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         six_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_six_sub_data(six_sub_input):
@@ -1154,7 +1154,7 @@ def validate_six_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -1164,7 +1164,7 @@ def validate_six_sub_data(values):
 
 def input_task_six(sub_input_six):
 
-    while True:   
+    while True:
         six_task_input = input("Please enter your task here: \n")
 
         if validate_six_task_data(six_task_input):
@@ -1173,7 +1173,7 @@ def input_task_six(sub_input_six):
 
     print(f"Your input: {sub_input_six} - {six_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return six_task_input
 
 
@@ -1185,7 +1185,7 @@ def validate_six_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -1199,7 +1199,7 @@ def data_uploaded_six(sub_input_six, task_input_six):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_six = SHEET.worksheet("tracker")
-    
+
     update_worksheet_six.update('B8', sub_input_six)
 
     update_worksheet_six.update('C8', task_input_six)
@@ -1216,9 +1216,9 @@ def data_uploaded_six(sub_input_six, task_input_six):
         if validate_six_next_data(six_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return six_next_input
 
 
@@ -1242,7 +1242,7 @@ def input_results_seven():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 07:00 and 08:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -1264,7 +1264,7 @@ def input_results_seven():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         seven_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_seven_sub_data(seven_sub_input):
@@ -1302,7 +1302,7 @@ def validate_seven_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -1312,7 +1312,7 @@ def validate_seven_sub_data(values):
 
 def input_task_seven(sub_input_seven):
 
-    while True:   
+    while True:
         seven_task_input = input("Please enter your task here: \n")
 
         if validate_seven_task_data(seven_task_input):
@@ -1321,7 +1321,7 @@ def input_task_seven(sub_input_seven):
 
     print(f"Your input: {sub_input_seven} - {seven_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return seven_task_input
 
 
@@ -1333,7 +1333,7 @@ def validate_seven_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -1347,7 +1347,7 @@ def data_uploaded_seven(sub_input_seven, task_input_seven):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_seven = SHEET.worksheet("tracker")
-    
+
     update_worksheet_seven.update('B9', sub_input_seven)
 
     update_worksheet_seven.update('C9', task_input_seven)
@@ -1364,9 +1364,9 @@ def data_uploaded_seven(sub_input_seven, task_input_seven):
         if validate_seven_next_data(seven_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return seven_next_input
 
 
@@ -1390,7 +1390,7 @@ def input_results_eight():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 08:00 and 09:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -1412,7 +1412,7 @@ def input_results_eight():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         eight_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_eight_sub_data(eight_sub_input):
@@ -1450,7 +1450,7 @@ def validate_eight_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -1460,7 +1460,7 @@ def validate_eight_sub_data(values):
 
 def input_task_eight(sub_input_eight):
 
-    while True:   
+    while True:
         eight_task_input = input("Please enter your task here: \n")
 
         if validate_eight_task_data(eight_task_input):
@@ -1469,7 +1469,7 @@ def input_task_eight(sub_input_eight):
 
     print(f"Your input: {sub_input_eight} - {eight_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return eight_task_input
 
 
@@ -1481,7 +1481,7 @@ def validate_eight_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -1495,7 +1495,7 @@ def data_uploaded_eight(sub_input_eight, task_input_eight):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_eight = SHEET.worksheet("tracker")
-    
+
     update_worksheet_eight.update('B10', sub_input_eight)
 
     update_worksheet_eight.update('C10', task_input_eight)
@@ -1512,9 +1512,9 @@ def data_uploaded_eight(sub_input_eight, task_input_eight):
         if validate_eight_next_data(eight_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return eight_next_input
 
 
@@ -1538,7 +1538,7 @@ def input_results_nine():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 09:00 and 10:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -1560,7 +1560,7 @@ def input_results_nine():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         nine_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_nine_sub_data(nine_sub_input):
@@ -1598,7 +1598,7 @@ def validate_nine_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -1608,7 +1608,7 @@ def validate_nine_sub_data(values):
 
 def input_task_nine(sub_input_nine):
 
-    while True:   
+    while True:
         nine_task_input = input("Please enter your task here: \n")
 
         if validate_nine_task_data(nine_task_input):
@@ -1617,7 +1617,7 @@ def input_task_nine(sub_input_nine):
 
     print(f"Your input: {sub_input_nine} - {nine_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return nine_task_input
 
 
@@ -1629,7 +1629,7 @@ def validate_nine_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -1643,7 +1643,7 @@ def data_uploaded_nine(sub_input_nine, task_input_nine):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_nine = SHEET.worksheet("tracker")
-    
+
     update_worksheet_nine.update('B11', sub_input_nine)
 
     update_worksheet_nine.update('C11', task_input_nine)
@@ -1660,9 +1660,9 @@ def data_uploaded_nine(sub_input_nine, task_input_nine):
         if validate_nine_next_data(nine_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return nine_next_input
 
 
@@ -1686,7 +1686,7 @@ def input_results_ten():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 10:00 and 11:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -1708,7 +1708,7 @@ def input_results_ten():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         ten_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_ten_sub_data(ten_sub_input):
@@ -1746,7 +1746,7 @@ def validate_ten_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -1756,7 +1756,7 @@ def validate_ten_sub_data(values):
 
 def input_task_ten(sub_input_ten):
 
-    while True:   
+    while True:
         ten_task_input = input("Please enter your task here: \n")
 
         if validate_ten_task_data(ten_task_input):
@@ -1765,7 +1765,7 @@ def input_task_ten(sub_input_ten):
 
     print(f"Your input: {sub_input_ten} - {ten_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return ten_task_input
 
 
@@ -1777,7 +1777,7 @@ def validate_ten_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -1791,7 +1791,7 @@ def data_uploaded_ten(sub_input_ten, task_input_ten):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_ten = SHEET.worksheet("tracker")
-    
+
     update_worksheet_ten.update('B12', sub_input_ten)
 
     update_worksheet_ten.update('C12', task_input_ten)
@@ -1808,9 +1808,9 @@ def data_uploaded_ten(sub_input_ten, task_input_ten):
         if validate_ten_next_data(ten_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return ten_next_input
 
 
@@ -1834,7 +1834,7 @@ def input_results_eleven():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 11:00 and 12:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -1856,7 +1856,7 @@ def input_results_eleven():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         eleven_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_eleven_sub_data(eleven_sub_input):
@@ -1894,7 +1894,7 @@ def validate_eleven_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -1904,7 +1904,7 @@ def validate_eleven_sub_data(values):
 
 def input_task_eleven(sub_input_eleven):
 
-    while True:   
+    while True:
         eleven_task_input = input("Please enter your task here: \n")
 
         if validate_eleven_task_data(eleven_task_input):
@@ -1913,7 +1913,7 @@ def input_task_eleven(sub_input_eleven):
 
     print(f"Your input: {sub_input_eleven} - {eleven_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return eleven_task_input
 
 
@@ -1925,7 +1925,7 @@ def validate_eleven_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -1939,7 +1939,7 @@ def data_uploaded_eleven(sub_input_zero, task_input_zero):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_eleven = SHEET.worksheet("tracker")
-    
+
     update_worksheet_eleven.update('B13', sub_input_zero)
 
     update_worksheet_eleven.update('C13', task_input_zero)
@@ -1956,9 +1956,9 @@ def data_uploaded_eleven(sub_input_zero, task_input_zero):
         if validate_eleven_next_data(eleven_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return eleven_next_input
 
 
@@ -1982,7 +1982,7 @@ def input_results_twelve():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 12:00 and 13:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -2004,7 +2004,7 @@ def input_results_twelve():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         twelve_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_twelve_sub_data(twelve_sub_input):
@@ -2042,7 +2042,7 @@ def validate_twelve_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -2052,7 +2052,7 @@ def validate_twelve_sub_data(values):
 
 def input_task_twelve(sub_input_twelve):
 
-    while True:   
+    while True:
         twelve_task_input = input("Please enter your task here: \n")
 
         if validate_twelve_task_data(twelve_task_input):
@@ -2061,7 +2061,7 @@ def input_task_twelve(sub_input_twelve):
 
     print(f"Your input: {sub_input_twelve} - {twelve_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return twelve_task_input
 
 
@@ -2073,7 +2073,7 @@ def validate_twelve_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -2087,7 +2087,7 @@ def data_uploaded_twelve(sub_input_twelve, task_input_twelve):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_twelve = SHEET.worksheet("tracker")
-    
+
     update_worksheet_twelve.update('B14', sub_input_twelve)
 
     update_worksheet_twelve.update('C14', task_input_twelve)
@@ -2104,9 +2104,9 @@ def data_uploaded_twelve(sub_input_twelve, task_input_twelve):
         if validate_twelve_next_data(twelve_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return twelve_next_input
 
 
@@ -2130,7 +2130,7 @@ def input_results_thirteen():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 13:00 and 14:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -2152,7 +2152,7 @@ def input_results_thirteen():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         thirteen_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_thirteen_sub_data(thirteen_sub_input):
@@ -2190,7 +2190,7 @@ def validate_thirteen_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -2200,16 +2200,16 @@ def validate_thirteen_sub_data(values):
 
 def input_task_thirteen(sub_input_thirteen):
 
-    while True:   
+    while True:
         thirteen_task_input = input("Please enter your task here: \n")
 
         if validate_thirteen_task_data(thirteen_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_thirteen} - {thirteen_task_input.capitalize()}")
+    print(f"Input: {sub_input_thirteen} - {thirteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return thirteen_task_input
 
 
@@ -2221,7 +2221,7 @@ def validate_thirteen_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -2235,7 +2235,7 @@ def data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_thirteen = SHEET.worksheet("tracker")
-    
+
     update_worksheet_thirteen.update('B15', sub_input_thirteen)
 
     update_worksheet_thirteen.update('C15', task_input_thirteen)
@@ -2252,9 +2252,9 @@ def data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen):
         if validate_thirteen_next_data(thirteen_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return thirteen_next_input
 
 
@@ -2278,7 +2278,7 @@ def input_results_fourteen():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 14:00 and 15:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -2300,7 +2300,7 @@ def input_results_fourteen():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         fourteen_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_fourteen_sub_data(fourteen_sub_input):
@@ -2338,7 +2338,7 @@ def validate_fourteen_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -2348,16 +2348,16 @@ def validate_fourteen_sub_data(values):
 
 def input_task_fourteen(sub_input_fourteen):
 
-    while True:   
+    while True:
         fourteen_task_input = input("Please enter your task here: \n")
 
         if validate_fourteen_task_data(fourteen_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_fourteen} - {fourteen_task_input.capitalize()}")
+    print(f"Input: {sub_input_fourteen} - {fourteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return fourteen_task_input
 
 
@@ -2369,7 +2369,7 @@ def validate_fourteen_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -2383,7 +2383,7 @@ def data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_fourteen = SHEET.worksheet("tracker")
-    
+
     update_worksheet_fourteen.update('B16', sub_input_fourteen)
 
     update_worksheet_fourteen.update('C16', task_input_fourteen)
@@ -2400,9 +2400,9 @@ def data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen):
         if validate_fourteen_next_data(fourteen_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return fourteen_next_input
 
 
@@ -2426,7 +2426,7 @@ def input_results_fifteen():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 15:00 and 16:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -2448,7 +2448,7 @@ def input_results_fifteen():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         fifteen_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_fifteen_sub_data(fifteen_sub_input):
@@ -2486,7 +2486,7 @@ def validate_fifteen_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -2496,16 +2496,16 @@ def validate_fifteen_sub_data(values):
 
 def input_task_fifteen(sub_input_fifteen):
 
-    while True:   
+    while True:
         fifteen_task_input = input("Please enter your task here: \n")
 
         if validate_fifteen_task_data(fifteen_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_fifteen} - {fifteen_task_input.capitalize()}")
+    print(f"Input: {sub_input_fifteen} - {fifteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return fifteen_task_input
 
 
@@ -2517,7 +2517,7 @@ def validate_fifteen_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -2531,7 +2531,7 @@ def data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_fifteen = SHEET.worksheet("tracker")
-    
+
     update_worksheet_fifteen.update('B17', sub_input_fifteen)
 
     update_worksheet_fifteen.update('C17', task_input_fifteen)
@@ -2548,9 +2548,9 @@ def data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen):
         if validate_fifteen_next_data(fifteen_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return fifteen_next_input
 
 
@@ -2574,7 +2574,7 @@ def input_results_sixteen():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 16:00 and 17:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -2596,7 +2596,7 @@ def input_results_sixteen():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         sixteen_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_sixteen_sub_data(sixteen_sub_input):
@@ -2634,7 +2634,7 @@ def validate_sixteen_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -2644,17 +2644,17 @@ def validate_sixteen_sub_data(values):
 
 def input_task_sixteen(sub_input_sixteen):
 
-    while True:   
+    while True:
         sixteen_task_input = input("Please enter your task here: \n")
 
         if validate_sixteen_task_data(sixteen_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_sixteen} - {sixteen_task_input.capitalize()}")
+    print(f"Input: {sub_input_sixteen} - {sixteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
-    return zero_task_input
+
+    return sixteen_task_input
 
 
 def validate_sixteen_task_data(values):
@@ -2665,7 +2665,7 @@ def validate_sixteen_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -2679,7 +2679,7 @@ def data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_sixteen = SHEET.worksheet("tracker")
-    
+
     update_worksheet_sixteen.update('B18', sub_input_sixteen)
 
     update_worksheet_sixteen.update('C18', task_input_sixteen)
@@ -2696,9 +2696,9 @@ def data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen):
         if validate_sixteen_next_data(sixteen_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return sixteen_next_input
 
 
@@ -2722,7 +2722,7 @@ def input_results_seventeen():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 17:00 and 18:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -2744,7 +2744,7 @@ def input_results_seventeen():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         seventeen_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_seventeen_sub_data(seventeen_sub_input):
@@ -2782,7 +2782,7 @@ def validate_seventeen_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -2792,16 +2792,16 @@ def validate_seventeen_sub_data(values):
 
 def input_task_seventeen(sub_input_seventeen):
 
-    while True:   
+    while True:
         seventeen_task_input = input("Please enter your task here: \n")
 
         if validate_seventeen_task_data(seventeen_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_seventeen} - {seventeen_task_input.capitalize()}")
+    print(f"Data: {sub_input_seventeen} - {seventeen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return seventeen_task_input
 
 
@@ -2813,7 +2813,7 @@ def validate_seventeen_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -2827,7 +2827,7 @@ def data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_seventeen = SHEET.worksheet("tracker")
-    
+
     update_worksheet_seventeen.update('B19', sub_input_seventeen)
 
     update_worksheet_seventeen.update('C19', task_input_seventeen)
@@ -2844,9 +2844,9 @@ def data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen):
         if validate_seventeen_next_data(seventeen_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return seventeen_next_input
 
 
@@ -2870,7 +2870,7 @@ def input_results_eighteen():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 18:00 and 19:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -2892,7 +2892,7 @@ def input_results_eighteen():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         eighteen_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_eighteen_sub_data(eighteen_sub_input):
@@ -2930,7 +2930,7 @@ def validate_eighteen_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -2940,16 +2940,16 @@ def validate_eighteen_sub_data(values):
 
 def input_task_eighteen(sub_input_eighteen):
 
-    while True:   
+    while True:
         eighteen_task_input = input("Please enter your task here: \n")
 
         if validate_eighteen_task_data(eighteen_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_eighteen} - {eighteen_task_input.capitalize()}")
+    print(f"Input: {sub_input_eighteen} - {eighteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return eighteen_task_input
 
 
@@ -2961,7 +2961,7 @@ def validate_eighteen_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -2975,7 +2975,7 @@ def data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_eighteen = SHEET.worksheet("tracker")
-    
+
     update_worksheet_eighteen.update('B20', sub_input_eighteen)
 
     update_worksheet_eighteen.update('C20', task_input_eighteen)
@@ -2992,9 +2992,9 @@ def data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen):
         if validate_eighteen_next_data(eighteen_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return eighteen_next_input
 
 
@@ -3018,7 +3018,7 @@ def input_results_nineteen():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 19:00 and 20:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -3040,7 +3040,7 @@ def input_results_nineteen():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         nineteen_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_nineteen_sub_data(nineteen_sub_input):
@@ -3078,7 +3078,7 @@ def validate_nineteen_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -3088,16 +3088,16 @@ def validate_nineteen_sub_data(values):
 
 def input_task_nineteen(sub_input_nineteen):
 
-    while True:   
+    while True:
         nineteen_task_input = input("Please enter your task here: \n")
 
         if validate_nineteen_task_data(nineteen_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_nineteen} - {nineteen_task_input.capitalize()}")
+    print(f"Input: {sub_input_nineteen} - {nineteen_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return nineteen_task_input
 
 
@@ -3109,7 +3109,7 @@ def validate_nineteen_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -3123,7 +3123,7 @@ def data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_nineteen = SHEET.worksheet("tracker")
-    
+
     update_worksheet_nineteen.update('B21', sub_input_nineteen)
 
     update_worksheet_nineteen.update('C21', task_input_nineteen)
@@ -3140,9 +3140,9 @@ def data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen):
         if validate_nineteen_next_data(nineteen_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return nineteen_next_input
 
 
@@ -3166,7 +3166,7 @@ def input_results_twenty():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 20:00 and 21:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -3188,7 +3188,7 @@ def input_results_twenty():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         twenty_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_twenty_sub_data(twenty_sub_input):
@@ -3226,7 +3226,7 @@ def validate_twenty_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -3236,7 +3236,7 @@ def validate_twenty_sub_data(values):
 
 def input_task_twenty(sub_input_twenty):
 
-    while True:   
+    while True:
         twenty_task_input = input("Please enter your task here: \n")
 
         if validate_twenty_task_data(twenty_task_input):
@@ -3245,7 +3245,7 @@ def input_task_twenty(sub_input_twenty):
 
     print(f"Your input: {sub_input_twenty} - {twenty_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return twenty_task_input
 
 
@@ -3257,7 +3257,7 @@ def validate_twenty_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -3271,7 +3271,7 @@ def data_uploaded_twenty(sub_input_twenty, task_input_twenty):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_twenty = SHEET.worksheet("tracker")
-    
+
     update_worksheet_twenty.update('B22', sub_input_twenty)
 
     update_worksheet_twenty.update('C22', task_input_twenty)
@@ -3288,9 +3288,9 @@ def data_uploaded_twenty(sub_input_twenty, task_input_twenty):
         if validate_twenty_next_data(twenty_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return twenty_next_input
 
 
@@ -3314,7 +3314,7 @@ def input_results_twentyone():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 21:00 and 22:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -3336,7 +3336,7 @@ def input_results_twentyone():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         twentyone_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_twentyone_sub_data(twentyone_sub_input):
@@ -3374,7 +3374,7 @@ def validate_twentyone_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -3384,16 +3384,16 @@ def validate_twentyone_sub_data(values):
 
 def input_task_twentyone(sub_input_twentyone):
 
-    while True:   
+    while True:
         twentyone_task_input = input("Please enter your task here: \n")
 
         if validate_twentyone_task_data(twentyone_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_twentyone} - {twentyone_task_input.capitalize()}")
+    print(f"Data: {sub_input_twentyone} - {twentyone_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return twentyone_task_input
 
 
@@ -3405,7 +3405,7 @@ def validate_twentyone_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -3419,7 +3419,7 @@ def data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_twentyone = SHEET.worksheet("tracker")
-    
+
     update_worksheet_twentyone.update('B23', sub_input_twentyone)
 
     update_worksheet_twentyone.update('C23', task_input_twentyone)
@@ -3436,9 +3436,9 @@ def data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone):
         if validate_twentyone_next_data(twentyone_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return twentyone_next_input
 
 
@@ -3462,7 +3462,7 @@ def input_results_twentytwo():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 22:00 and 23:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -3484,7 +3484,7 @@ def input_results_twentytwo():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
+    while True:
         twentytwo_sub_input = input("Please enter your sub-category here: \n")
 
         if validate_twentytwo_sub_data(twentytwo_sub_input):
@@ -3522,7 +3522,7 @@ def validate_twentytwo_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -3532,16 +3532,16 @@ def validate_twentytwo_sub_data(values):
 
 def input_task_twentytwo(sub_input_twentytwo):
 
-    while True:   
+    while True:
         twentytwo_task_input = input("Please enter your task here: \n")
 
         if validate_twentytwo_task_data(twentytwo_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_twentytwo} - {twentytwo_task_input.capitalize()}")
+    print(f"Data: {sub_input_twentytwo} - {twentytwo_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return twentytwo_task_input
 
 
@@ -3553,7 +3553,7 @@ def validate_twentytwo_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -3567,7 +3567,7 @@ def data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo):
     User is asked to enter letter x to continue to the next hour of a day.
     """
     update_worksheet_twentytwo = SHEET.worksheet("tracker")
-    
+
     update_worksheet_twentytwo.update('B24', sub_input_twentytwo)
 
     update_worksheet_twentytwo.update('C24', task_input_twentytwo)
@@ -3584,9 +3584,9 @@ def data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo):
         if validate_twentytwo_next_data(twentytwo_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return twentytwo_next_input
 
 
@@ -3610,7 +3610,7 @@ def input_results_twentythree():
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category and input one task.
     Both of them will be requested for each hour of a day.
-    """  
+    """
     print("What have you done today between 23:00 and 00:00? \n")
     print("GROWTH")
     print("- Body System Care")
@@ -3632,8 +3632,8 @@ def input_results_twentythree():
     print("- Please enter letters only, no numbers or symbols")
     print("- Please capitalize first letter of each word inputted \n")
 
-    while True:   
-        twentythree_sub_input = input("Please enter your sub-category here: \n")
+    while True:
+        twentythree_sub_input = input("Enter your sub-category here: \n")
 
         if validate_twentythree_sub_data(twentythree_sub_input):
             print("Submission accepted! \n")
@@ -3670,7 +3670,7 @@ def validate_twentythree_sub_data(values):
     elif values == "Rest":
         return True
     elif values == "Break":
-        return True        
+        return True
     else:
         raise ValueError(
             "Please only enter sub-categories from the list of options."
@@ -3680,16 +3680,16 @@ def validate_twentythree_sub_data(values):
 
 def input_task_twentythree(sub_input_twentythree):
 
-    while True:   
+    while True:
         twentythree_task_input = input("Please enter your task here: \n")
 
         if validate_twentythree_task_data(twentythree_task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_twentythree} - {twentythree_task_input.capitalize()}")
+    print(f"{sub_input_twentythree} - {twentythree_task_input.capitalize()}")
     print("------------------------------------------------------------------")
-    
+
     return twentythree_task_input
 
 
@@ -3701,7 +3701,7 @@ def validate_twentythree_task_data(values):
     """
     if values.isalpha() and len(values) <= 40:
         return True
-    else: 
+    else:
         raise ValueError(
             "Please enter letters-only tasks with maximum 40 characters."
         )
@@ -3715,7 +3715,7 @@ def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
     User is asked to enter letter x to continue to the document upload screen.
     """
     update_worksheet_twentythree = SHEET.worksheet("tracker")
-    
+
     update_worksheet_twentythree.update('B25', sub_input_twentythree)
 
     update_worksheet_twentythree.update('C25', task_input_twentythree)
@@ -3732,9 +3732,9 @@ def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
         if validate_twentythree_next_data(twentythree_next_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return twentythree_next_input
 
 
@@ -3755,8 +3755,8 @@ def validate_twentythree_next_data(values):
 
 def all_results_uploaded_successfully():
     """
-    This function serves the purpose of updating user when all results are updated.
-    It is used as communicative transition to results report requesting user to typein letter 'x'.
+    This function informs user when all results are updated to the sheet.
+    It is a communicative transition to results report.
     """
     print("Updating sheet...")
 
@@ -3765,14 +3765,14 @@ def all_results_uploaded_successfully():
     print("Your daily chedule is now successfully updated!")
 
     while True:
-        results_sub_input = input("Please enter letter x to continue to results: \n")
+        results_sub_input = input("Please enter letter x to continue: \n")
 
         if validate_results_sub_data(results_sub_input):
             print("Loading...")
             break
-    
+
     print("------------------------------------------------------------------")
-    
+
     return results_sub_input
 
 
@@ -3795,28 +3795,28 @@ def retrieve_subcategories_results():
     """
     Function retrieves subcategories results and counts items repetitions.
     """
-    calculate_sub_data_first= SHEET.worksheet(tracker)
-    subcategories_list = worksheet.col_values(2)
+    calculate_sub_data_first= SHEET.worksheet("tracker")
+    subcategories_list = tracker.col_values(2)
 
     body_system_count = 0
     for item in subcategories_list:
         if item == 'Body System Care':
-            body_system_count +=1
+            body_system_count += 1
 
     soul_spirit_count = 0
     for item in subcategories_list:
         if item == 'Soul & Spirit':
-            soul_spirit_count +=1
+            soul_spirit_count += 1
 
     fitness_count = 0
     for item in subcategories_list:
         if item == 'Fitness':
-            fitness_count +=1
+            fitness_count += 1
 
     meditation_count = 0
     for item in subcategories_list:
         if item == 'Meditation':
-           meditation_count +=1
+            meditation_count += 1
 
     print(f"Body System Care - [{body_system_count}] hours")
     print(f"Soul & Spirit - [{soul_spirit_count}] hours")
@@ -3824,7 +3824,7 @@ def retrieve_subcategories_results():
     print(f"Meditation - [{meditation_count}] hours")
 
     return body_system_count
-    return soul_spirit_count        
+    return soul_spirit_count
     return fitness_count
     return meditation_count
 
@@ -3839,11 +3839,11 @@ def retrieve_tasks_results():
     for item in tasks_list:
         if item == zero_task_input:
             zero_row_count +=1
-    
+
     print(f"{zero_task_input.capitalize()} - [{zero_row_count}] hours")
 
-    return zero_row_count 
-    
+    return zero_row_count
+
 
 def report_tasks_results():
     """
@@ -3941,9 +3941,9 @@ def run_introduction():
     rules()
     personal_info_name()
     personal_info_id()
-    
-    
-def run_data_inputs():    
+
+
+def run_data_inputs():
     """
     Runs all data input functions inside the program.
     """
@@ -4023,5 +4023,3 @@ def run_data_inputs():
 
 run_introduction()
 run_data_inputs()
-
-
