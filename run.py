@@ -3795,8 +3795,8 @@ def retrieve_subcategories_results():
     """
     Function retrieves subcategories results and counts items repetitions.
     """
-    calculate_sub_data_first= SHEET.worksheet("tracker")
-    subcategories_list = tracker.col_values(2)
+    calculate_sub_data_first = SHEET.worksheet("tracker")
+    subcategories_list = calculate_sub_data_first.col_values(2)
 
     body_system_count = 0
     for item in subcategories_list:
@@ -3833,12 +3833,12 @@ def retrieve_tasks_results():
     """
     Function retrieves taks results and counts items repetitions.
     """
-    calculate_task_data_first= SHEET.worksheet('tracker').col_values(3)
+    calculate_task_data_first = SHEET.worksheet('tracker').col_values(3)
 
     zero_row_count = 0
     for item in tasks_list:
         if item == zero_task_input:
-            zero_row_count +=1
+            zero_row_count += 1
 
     print(f"{zero_task_input.capitalize()} - [{zero_row_count}] hours")
 
@@ -3856,9 +3856,11 @@ def report_tasks_results():
 
 def export_results_analyzer():
     """
-    Results gathered from the tracker and reported to program are being exported after processed.
+    Results are gathered from the tracker
+    They are reported to program are being exported after processed.
     Users receive a link to their sheet.
-    Users see outro message with input section that leads to exit the program sequence.
+    Users see outro message with input section 
+    Message leads to exit the program sequence.
     """
     print("Updating results to the analyzer...")
 
@@ -3868,9 +3870,9 @@ def export_results_analyzer():
 
     print(live_timestamp)
 
-    print("Now you can access your daily worksheet with detailed visual analysis.")
+    print("Now you can access your worksheet with detailed visual analysis.")
 
-    print("Please copy and follow this link: [https://bit.ly/life-tracker-sheet]")
+    print("Please follow this link: [https://bit.ly/life-tracker-sheet]")
 
     print("Thank you for participating.")
 
