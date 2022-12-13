@@ -56,10 +56,10 @@ def validate_rules_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        print("Invalid letter, please type letter x then and try again.")
+        print("Invalid letter, please type letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def rules():
@@ -100,10 +100,10 @@ def validate_personal_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        print("Invalid data, please input letter x then and try again.")
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def personal_info_name():
@@ -115,7 +115,7 @@ def personal_info_name():
     print("- If you did not request ID yet, you can enter any number. \n")
 
     while True:
-        name_input = input("Please enter your name: \n")
+        name_input = input("Please enter your username: \n")
 
         if validate_name_data(name_input):
             print(f"Thank you {name_input.capitalize()}! \n")
@@ -130,16 +130,16 @@ def validate_name_data(values):
     Raises ValueError if name is a number instead of letters.
     Raises ValueError if name is longer than 50 characters.
     """
-    if values.isdigit():
-        print("Invalid name, please do not use any numbers and try again.")
-        return False
-
     if len(values) >= 50:
-        print("Too many letters, enter the name under 50 letters and try again.")
+        print("Too many letters, enter name under 50 letters. \n")
         return False
 
     if len(values) <= 0:
-        print("No input, enter the name with at least 1 letter and try again.")
+        print("No input, enter name with above 1 letter and try again. \n")
+        return False
+
+    if values.isdigit():
+        print("Please use letters, not numbers. \n")
         return False
 
     return True
@@ -169,14 +169,11 @@ def validate_id_data(values):
     Raises ValueError if ID number contains letters instead of numbers.
     """
     if values.isalpha():
-        print("Invalid ID number, please only use numbers")
+        print("Invalid ID number, please only use numbers \n")
         return False
 
-    if values.isdigit():
-        return True
-
     if len(values) <= 0:
-        print("No input, enter the number with at least 1 digit and try again.")
+        print("No input, enter number with at least 1 digit and try again. \n")
         return False
 
     return True
@@ -225,35 +222,26 @@ def validate_zero_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_zero(sub_input_zero):
@@ -277,23 +265,19 @@ def validate_zero_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if len(values) <= 40:
-        return True
-    elif values.isdigit():
-        raise ValueError(
-            "Please do not include any digits in the tasks."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
-    elif len(values) <= 1:
-        raise ValueError(
-            "No input, enter the task with at least 1 letters and try again."
-        )
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
         return False
-    else:
-        raise ValueError(
-            "Please enter tasks with maximum 40 characters."
-        )
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
         return False
+
+    return True
 
 
 def data_uploaded_zero(sub_input_zero, task_input_zero):
@@ -333,12 +317,10 @@ def validate_zero_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_one():
@@ -383,35 +365,26 @@ def validate_one_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_one(sub_input_one):
@@ -435,13 +408,19 @@ def validate_one_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_one(sub_input_one, task_input_one):
@@ -481,12 +460,10 @@ def validate_one_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_two():
@@ -531,35 +508,26 @@ def validate_two_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_two(sub_input_two):
@@ -583,13 +551,19 @@ def validate_two_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_two(sub_input_two, task_input_two):
@@ -629,12 +603,10 @@ def validate_two_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_three():
@@ -679,35 +651,26 @@ def validate_three_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_three(sub_input_three):
@@ -731,13 +694,19 @@ def validate_three_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_three(sub_input_three, task_input_three):
@@ -777,12 +746,10 @@ def validate_three_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_four():
@@ -827,35 +794,26 @@ def validate_four_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_four(sub_input_four):
@@ -879,13 +837,19 @@ def validate_four_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_four(sub_input_four, task_input_four):
@@ -925,12 +889,10 @@ def validate_four_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_five():
@@ -975,35 +937,26 @@ def validate_five_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_five(sub_input_five):
@@ -1027,13 +980,19 @@ def validate_five_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_five(sub_input_five, task_input_five):
@@ -1073,12 +1032,10 @@ def validate_five_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_six():
@@ -1123,35 +1080,26 @@ def validate_six_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_six(sub_input_six):
@@ -1175,13 +1123,19 @@ def validate_six_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_six(sub_input_six, task_input_six):
@@ -1221,12 +1175,10 @@ def validate_six_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_seven():
@@ -1271,35 +1223,26 @@ def validate_seven_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_seven(sub_input_seven):
@@ -1323,13 +1266,19 @@ def validate_seven_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_seven(sub_input_seven, task_input_seven):
@@ -1369,12 +1318,10 @@ def validate_seven_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_eight():
@@ -1419,35 +1366,26 @@ def validate_eight_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_eight(sub_input_eight):
@@ -1471,13 +1409,19 @@ def validate_eight_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_eight(sub_input_eight, task_input_eight):
@@ -1517,12 +1461,10 @@ def validate_eight_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_nine():
@@ -1567,35 +1509,26 @@ def validate_nine_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_nine(sub_input_nine):
@@ -1619,13 +1552,19 @@ def validate_nine_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_nine(sub_input_nine, task_input_nine):
@@ -1665,12 +1604,10 @@ def validate_nine_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_ten():
@@ -1715,35 +1652,26 @@ def validate_ten_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_ten(sub_input_ten):
@@ -1767,13 +1695,19 @@ def validate_ten_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_ten(sub_input_ten, task_input_ten):
@@ -1813,12 +1747,10 @@ def validate_ten_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_eleven():
@@ -1863,35 +1795,26 @@ def validate_eleven_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_eleven(sub_input_eleven):
@@ -1915,13 +1838,19 @@ def validate_eleven_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_eleven(sub_input_zero, task_input_zero):
@@ -1961,12 +1890,10 @@ def validate_eleven_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_twelve():
@@ -2011,35 +1938,26 @@ def validate_twelve_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_twelve(sub_input_twelve):
@@ -2063,13 +1981,19 @@ def validate_twelve_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_twelve(sub_input_twelve, task_input_twelve):
@@ -2109,12 +2033,10 @@ def validate_twelve_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_thirteen():
@@ -2159,35 +2081,26 @@ def validate_thirteen_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_thirteen(sub_input_thirteen):
@@ -2211,13 +2124,19 @@ def validate_thirteen_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen):
@@ -2257,12 +2176,10 @@ def validate_thirteen_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_fourteen():
@@ -2307,35 +2224,26 @@ def validate_fourteen_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_fourteen(sub_input_fourteen):
@@ -2359,13 +2267,19 @@ def validate_fourteen_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen):
@@ -2405,12 +2319,10 @@ def validate_fourteen_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_fifteen():
@@ -2455,35 +2367,26 @@ def validate_fifteen_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_fifteen(sub_input_fifteen):
@@ -2507,13 +2410,19 @@ def validate_fifteen_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen):
@@ -2553,12 +2462,10 @@ def validate_fifteen_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_sixteen():
@@ -2603,35 +2510,26 @@ def validate_sixteen_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_sixteen(sub_input_sixteen):
@@ -2655,13 +2553,19 @@ def validate_sixteen_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen):
@@ -2701,12 +2605,10 @@ def validate_sixteen_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_seventeen():
@@ -2751,35 +2653,26 @@ def validate_seventeen_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_seventeen(sub_input_seventeen):
@@ -2803,13 +2696,19 @@ def validate_seventeen_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen):
@@ -2849,12 +2748,10 @@ def validate_seventeen_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_eighteen():
@@ -2899,35 +2796,26 @@ def validate_eighteen_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_eighteen(sub_input_eighteen):
@@ -2951,13 +2839,19 @@ def validate_eighteen_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen):
@@ -2997,12 +2891,10 @@ def validate_eighteen_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_nineteen():
@@ -3047,35 +2939,26 @@ def validate_nineteen_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_nineteen(sub_input_nineteen):
@@ -3099,13 +2982,19 @@ def validate_nineteen_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen):
@@ -3145,12 +3034,10 @@ def validate_nineteen_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_twenty():
@@ -3195,35 +3082,26 @@ def validate_twenty_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_twenty(sub_input_twenty):
@@ -3247,13 +3125,19 @@ def validate_twenty_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_twenty(sub_input_twenty, task_input_twenty):
@@ -3293,12 +3177,10 @@ def validate_twenty_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_twentyone():
@@ -3343,35 +3225,26 @@ def validate_twentyone_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_twentyone(sub_input_twentyone):
@@ -3395,13 +3268,19 @@ def validate_twentyone_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone):
@@ -3441,12 +3320,10 @@ def validate_twentyone_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_twentytwo():
@@ -3491,35 +3368,26 @@ def validate_twentytwo_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_twentytwo(sub_input_twentytwo):
@@ -3543,13 +3411,19 @@ def validate_twentytwo_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo):
@@ -3589,12 +3463,10 @@ def validate_twentytwo_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def input_results_twentythree():
@@ -3639,35 +3511,26 @@ def validate_twentythree_sub_data(values):
     Input validator function.
     Raises ValueError if sub-categories do not match options.
     """
-    if values == "Body System Care":
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
         return True
-    elif values == "Soul & Spirit":
-        return True
-    elif values == "Fitness":
-        return True
-    elif values == "Meditation":
-        return True
-    elif values == "Personal Progress":
-        return True
-    elif values == "Global Progress":
-        return True
-    elif values == "Education Progress":
-        return True
-    elif values == "Business Progress":
-        return True
-    elif values == "Adventures":
-        return True
-    elif values == "Random Activity":
-        return True
-    elif values == "Rest":
-        return True
-    elif values == "Break":
-        return True
-    else:
-        raise ValueError(
-            "Please only enter sub-categories from the list of options."
-        )
-        return False
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
 
 
 def input_task_twentythree(sub_input_twentythree):
@@ -3691,13 +3554,19 @@ def validate_twentythree_task_data(values):
     Raises ValueError if task has more than 40 characters.
     Raises ValueError if task contains any numbers.
     """
-    if values.isalpha() and len(values) <= 40:
-        return True
-    else:
-        raise ValueError(
-            "Please enter letters-only tasks with maximum 40 characters."
-        )
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
         return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
 
 
 def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
@@ -3737,12 +3606,10 @@ def validate_twentythree_next_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def all_results_uploaded_successfully():
@@ -3775,12 +3642,10 @@ def validate_results_sub_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def retrieve_subcategories_results():
@@ -3877,22 +3742,23 @@ def export_results_analyzer():
             print("Loading...")
             break
 
+    print("------------------------------------------------------------------")        
+    
     return rules_input
-    print("------------------------------------------------------------------")
+    
 
 
 def validate_exit_data(values):
     """
-    Raises ValueError if string does not match letter "x".
+    Input validator function.
+    Raises ValueError if user input does not match letter "x".
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid letter, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again. \n")
         return False
-    else:
-        return True
+
+    return True
 
 
 def exit_screen():
@@ -3911,8 +3777,10 @@ def exit_screen():
         print(f"{countdown} seconds...")
         countdown -= 1
 
-    raise SystemExit("Exiting...")
     print("------------------------------------------------------------------")
+
+    raise SystemExit("Exiting...")
+    
 
 
 def main():
