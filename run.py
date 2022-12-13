@@ -56,9 +56,7 @@ def validate_rules_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid letter, please type letter x then and try again."
-        )
+        print("Invalid letter, please type letter x then and try again.")
         return False
     else:
         return True
@@ -102,9 +100,7 @@ def validate_personal_data(values):
     Raises ValueError if user has inputted more than one letter.
     """
     if values != "x":
-        raise ValueError(
-            "Invalid data, please input letter x then and try again."
-        )
+        print("Invalid data, please input letter x then and try again.")
         return False
     else:
         return True
@@ -135,22 +131,18 @@ def validate_name_data(values):
     Raises ValueError if name is longer than 50 characters.
     """
     if values.isdigit():
-        raise ValueError(
-            "Invalid name, please do not use any numbers and try again."
-        )
+        print("Invalid name, please do not use any numbers and try again.")
         return False
-    elif len(values) >= 50:
-        raise ValueError(
-            "Too many letters, enter the name under 50 letters and try again."
-        )
+
+    if len(values) >= 50:
+        print("Too many letters, enter the name under 50 letters and try again.")
         return False
-    elif len(values) <= 0:
-        raise ValueError(
-            "No input, enter the name with at least 1 letter and try again."
-        )
+
+    if len(values) <= 0:
+        print("No input, enter the name with at least 1 letter and try again.")
         return False
-    else:
-        return True
+
+    return True
 
 
 def personal_info_id():
@@ -177,17 +169,17 @@ def validate_id_data(values):
     Raises ValueError if ID number contains letters instead of numbers.
     """
     if values.isalpha():
-        raise ValueError(
-            "Invalid ID number, please only use numbers"
-        )
+        print("Invalid ID number, please only use numbers")
         return False
-    elif len(values) <= 0:
-        raise ValueError(
-            "No input, enter the number with at least 1 digit and try again."
-        )
-        return False
-    else:
+
+    if values.isdigit():
         return True
+
+    if len(values) <= 0:
+        print("No input, enter the number with at least 1 digit and try again.")
+        return False
+
+    return True
 
 
 def input_results_zero():

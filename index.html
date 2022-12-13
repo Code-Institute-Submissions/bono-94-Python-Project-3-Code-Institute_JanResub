@@ -167,9 +167,17 @@ Please press _____ to exit
 
 https://docs.gspread.org/en/v5.7.0/user-guide.html#getting-all-values-from-a-row-or-a-column
 
+my_var = 'bono'
+try:
+    my_var / 3
+except ValueError as e:
+    print(e)
+That will print what the error is, without throwing it, or breaking the chain of executions.
 
 
 
+
+Why is return code unreacheable?
 
 check stacked returns on the counters for subcategories
 
@@ -191,6 +199,16 @@ check why isdigit and isnumber doesnt work when you type in B2
 
 
 clear the sheet for every new start of the function before 00:00 hour
+
+
+
+I would look into regex patterns if you really wanted to get into input validation. What your validator does at the moment is check if the entire input is a number, over 49 chars, or blank.
+For the blank one you might want to use values.strip() so that they can't enter 49 spaces
+
+
+
+What about Elon Musks kids? Have you considered them?
+- add into readme for name why it is allowed to have numbers
 
 ------------------------------------------------------------------
 done
