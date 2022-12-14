@@ -4044,9 +4044,9 @@ def run_introduction():
     personal_info_id()
 
 
-def run_data_inputs():
+def run_data_inputs_first():
     """
-    Runs all data input functions inside the program.
+    Runs first quarter of input functions inside the program.
     """
     sub_input_zero = input_results_zero()
     task_input_zero = input_task_zero(sub_input_zero)
@@ -4069,6 +4069,12 @@ def run_data_inputs():
     sub_input_six = input_results_six()
     task_input_six = input_task_six(sub_input_six)
     data_uploaded_six(sub_input_six, task_input_six)
+
+
+def run_data_inputs_second():
+    """
+    Runs second quarter of input functions inside the program.
+    """
     sub_input_seven = input_results_seven()
     task_input_seven = input_task_seven(sub_input_seven)
     data_uploaded_seven(sub_input_seven, task_input_seven)
@@ -4090,6 +4096,12 @@ def run_data_inputs():
     sub_input_thirteen = input_results_thirteen()
     task_input_thirteen = input_task_thirteen(sub_input_thirteen)
     data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen)
+
+
+def run_data_inputs_third():
+    """
+    Runs third quarter of input functions inside the program.
+    """
     sub_input_fourteen = input_results_fourteen()
     task_input_fourteen = input_task_fourteen(sub_input_fourteen)
     data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen)
@@ -4105,6 +4117,12 @@ def run_data_inputs():
     sub_input_eighteen = input_results_eighteen()
     task_input_eighteen = input_task_eighteen(sub_input_eighteen)
     data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen)
+
+
+def run_data_inputs_fourth():
+    """
+    Runs fourth quarter of input functions inside the program.
+    """
     sub_input_nineteen = input_results_nineteen()
     task_input_nineteen = input_task_nineteen(sub_input_nineteen)
     data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen)
@@ -4123,4 +4141,7 @@ def run_data_inputs():
 
 
 run_introduction()
-run_data_inputs()
+run_data_inputs_first()
+run_data_inputs_second()
+run_data_inputs_third()
+run_data_inputs_fourth()
