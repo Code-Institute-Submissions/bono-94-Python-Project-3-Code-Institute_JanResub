@@ -3724,8 +3724,8 @@ def count_sub_results_one():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     """
-    retrieve_sub_data_first = SHEET.worksheet("tracker")
-    sub_column_one = retrieve_sub_data_first.col_values(2)
+    retrieve_sub_data_one = SHEET.worksheet("tracker")
+    sub_column_one = retrieve_sub_data_one.col_values(2)
 
     body_system_count = 0
     for item in sub_column_one:
@@ -3733,23 +3733,170 @@ def count_sub_results_one():
             body_system_count += 1
     return body_system_count
 
-    soul_spirit_count = 0
-    for item in subcategories_list:
+
+def count_sub_results_two():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_two = SHEET.worksheet("tracker")
+    sub_column_two = retrieve_sub_data_two.col_values(2)
+
+    ss_count = 0
+    for item in sub_column_two:
         if item == 'Soul & Spirit':
-            soul_spirit_count += 1
-    return soul_spirit_count
+            ss_count += 1
+    return ss_count
+
+
+def count_sub_results_three():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_three = SHEET.worksheet("tracker")
+    sub_column_three = retrieve_sub_data_three.col_values(2)
 
     fitness_count = 0
-    for item in subcategories_list:
+    for item in sub_column_three:
         if item == 'Fitness':
             fitness_count += 1
     return fitness_count
 
+
+def count_sub_results_four():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_four = SHEET.worksheet("tracker")
+    sub_column_four = retrieve_sub_data_four.col_values(2)
+
     meditation_count = 0
-    for item in subcategories_list:
+    for item in sub_column_four:
         if item == 'Meditation':
             meditation_count += 1
     return meditation_count
+
+
+def count_sub_results_five():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_five = SHEET.worksheet("tracker")
+    sub_column_five = retrieve_sub_data_five.col_values(2)
+
+    personal_count = 0
+    for item in sub_column_five:
+        if item == 'Personal Progress':
+            personal_count += 1
+    return personal_count
+
+
+def count_sub_results_six():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_six = SHEET.worksheet("tracker")
+    sub_column_six = retrieve_sub_data_six.col_values(2)
+
+    global_count = 0
+    for item in sub_column_six:
+        if item == 'Global Progress':
+            global_count += 1
+    return global_count
+
+
+def count_sub_results_seven():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_seven = SHEET.worksheet("tracker")
+    sub_column_seven = retrieve_sub_data_seven.col_values(2)
+
+    education_count = 0
+    for item in sub_column_seven:
+        if item == 'Education Progress':
+            education_count += 1
+    return education_count
+
+
+def count_sub_results_eight():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_eight = SHEET.worksheet("tracker")
+    sub_column_eight = retrieve_sub_data_eight.col_values(2)
+
+    business_count = 0
+    for item in sub_column_eight:
+        if item == 'Business Progress':
+            business_count += 1
+    return business_count
+
+
+def count_sub_results_nine():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_nine = SHEET.worksheet("tracker")
+    sub_column_nine = retrieve_sub_data_nine.col_values(2)
+
+    adventures_count = 0
+    for item in sub_column_nine:
+        if item == 'Adventures':
+            adventures_count += 1
+    return adventures_count
+
+
+def count_sub_results_ten():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_ten = SHEET.worksheet("tracker")
+    sub_column_ten = retrieve_sub_data_ten.col_values(2)
+
+    random_count = 0
+    for item in sub_column_ten:
+        if item == 'Random Activity':
+            random_count += 1
+    return random_count
+
+
+def count_sub_results_eleven():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_eleven = SHEET.worksheet("tracker")
+    sub_column_eleven = retrieve_sub_data_eleven.col_values(2)
+
+    rest_count = 0
+    for item in sub_column_eleven:
+        if item == 'Rest':
+            rest_count += 1
+    return rest_count
+
+
+def count_sub_results_twelve():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    """
+    retrieve_sub_data_twelve = SHEET.worksheet("tracker")
+    sub_column_twelve = retrieve_sub_data_twelve.col_values(2)
+
+    break_count = 0
+    for item in sub_column_twelve:
+        if item == 'Break':
+            break_count += 1
+    return break_count
 
 
 def report_sub_results():
