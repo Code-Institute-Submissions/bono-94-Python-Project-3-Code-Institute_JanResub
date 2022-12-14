@@ -3696,7 +3696,7 @@ def all_results_uploaded_successfully():
     print("Your daily chedule is now successfully updated! \n")
 
     while True:
-        results_sub_input = input("Please enter letter x to continue: \n")
+        results_sub_input = input("Please enter letter x to acess results: \n")
 
         if validate_results_sub_data(results_sub_input):
             print("Loading...")
@@ -3721,15 +3721,14 @@ def validate_results_sub_data(values):
 
 def count_sub_results_one():
     """
-    Function requests list of all tasks inputted in the column.
-    Then it converts it in the alphabetically ordered list with hours spent.
-    Hours spent are calculated by how many times task strings repeat itself.
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
     """
-    calculate_sub_data_first = SHEET.worksheet("tracker")
-    subcategories_list = calculate_sub_data_first.col_values(2)
+    retrieve_sub_data_first = SHEET.worksheet("tracker")
+    sub_column_one = retrieve_sub_data_first.col_values(2)
 
     body_system_count = 0
-    for item in subcategories_list:
+    for item in sub_column_one:
         if item == 'Body System Care':
             body_system_count += 1
     return body_system_count
