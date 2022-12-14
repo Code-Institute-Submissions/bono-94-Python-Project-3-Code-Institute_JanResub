@@ -1,6 +1,6 @@
+from datetime import datetime
 import gspread
 from google.oauth2.service_account import Credentials
-from datetime import datetime
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -4010,18 +4010,6 @@ def exit_screen():
     print("------------------------------------------------------------------")
 
     raise SystemExit("Exiting...")
-
-
-def main():
-    """
-    Runs all functions inside the program.
-    """
-    data = get_main_data()
-    print(data)
-    sales_data = [int(num) for num in data]
-    update_sales_worksheet(sales_data)
-    new_surplus_data = calculate_surplus_data(sales_data)
-    update_surplus_worksheet(new_surplus_data)
 
 
 def run_introduction():

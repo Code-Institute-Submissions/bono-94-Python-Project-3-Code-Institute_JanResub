@@ -169,12 +169,25 @@ https://docs.gspread.org/en/v5.7.0/user-guide.html#getting-all-values-from-a-row
 
 
 
+clear the sheet for every new start of the function before 00:00 hour
+
+
+send tasks as .capitalized
+
+
+update results to correct cells to the analyzer page when reporting to terminal
+
+
+complete retrieve and report tasks results
+
+
+
 For the blank one you might want to use values.strip() so that they can't enter 49 spaces
 remove spaces for username and ID
 - fix values.strip
 
 
-clear the sheet for every new start of the function before 00:00 hour
+
 
 
 I would look into regex patterns if you really wanted to get into input validation. What your validator does at the moment is check if the entire input is a number, over 49 chars, or blank.
