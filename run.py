@@ -3690,11 +3690,10 @@ def all_results_uploaded_successfully():
     This function informs user when all results are updated to the sheet.
     It is a communicative transition to results report.
     """
+    print("------------------------------------------------------------------")
     print("Updating sheet...")
-
     print("Upload completed.")
-
-    print("Your daily chedule is now successfully updated!")
+    print("Your daily chedule is now successfully updated! \n")
 
     while True:
         results_sub_input = input("Please enter letter x to continue: \n")
@@ -3720,9 +3719,11 @@ def validate_results_sub_data(values):
     return True
 
 
-def retrieve_subcategories_results():
+def count_sub_results_one():
     """
-    Function retrieves subcategories results and counts items repetitions.
+    Function requests list of all tasks inputted in the column.
+    Then it converts it in the alphabetically ordered list with hours spent.
+    Hours spent are calculated by how many times task strings repeat itself.
     """
     calculate_sub_data_first = SHEET.worksheet("tracker")
     subcategories_list = calculate_sub_data_first.col_values(2)
@@ -3731,31 +3732,71 @@ def retrieve_subcategories_results():
     for item in subcategories_list:
         if item == 'Body System Care':
             body_system_count += 1
+    return body_system_count
 
     soul_spirit_count = 0
     for item in subcategories_list:
         if item == 'Soul & Spirit':
             soul_spirit_count += 1
+    return soul_spirit_count
 
     fitness_count = 0
     for item in subcategories_list:
         if item == 'Fitness':
             fitness_count += 1
+    return fitness_count
 
     meditation_count = 0
     for item in subcategories_list:
         if item == 'Meditation':
             meditation_count += 1
-
-    print(f"Body System Care - [{body_system_count}] hours")
-    print(f"Soul & Spirit - [{soul_spirit_count}] hours")
-    print(f"Fitness - [{fitness_count}] hours")
-    print(f"Meditation - [{meditation_count}] hours")
-
-    return body_system_count
-    return soul_spirit_count
-    return fitness_count
     return meditation_count
+
+
+def report_sub_results():
+    """
+    Function retrieves subcategories results and counts items repetitions.
+    """
+    print("------------------------------------------------------------------")
+    print("These are your daily task results in hours spent: \n")
+    print("GROWTH")
+    print(f"Body System Care - [{count_body_system}]")
+    print(f"Soul & Spirit - [{count_soul_spirit}]")
+    print(f"Fitness - [{count_fitness}]")
+    print(f"Meditation - [{count_meditation}] \n")
+    print("PROGRESS")
+    print(f"Personal Progress - [{count_personal}]")
+    print(f"Global Progress - [{count_global}]")
+    print(f"Education Progress - [{count_education}]")
+    print(f"Business Progress - [{count_business}] \n")
+    print("FREEDOM")
+    print(f"Adventures - [{count_body_system}]")
+    print(f"Random Activity - [{count_soul_spirit}]")
+    print(f"Rest - [{count_fitness}]")
+    print(f"Break - [{count_meditation}] \n")
+
+    while True:
+        task_results_input = input("Please enter letter x to continue: \n")
+
+        if validate_task_results_input(task_results_input):
+            print("Loading...")
+            break
+
+    print("------------------------------------------------------------------")
+
+    return task_results_input
+
+
+def validate_task_results_input(values):
+    """
+    Input validator function.
+    Prints error message if user input does not match letter "x".
+    """
+    if values != "x":
+        print("Invalid data, please input letter x then and try again. \n")
+        return False
+
+    return True
 
 
 def retrieve_tasks_results():
@@ -3774,37 +3815,21 @@ def retrieve_tasks_results():
     return zero_row_count
 
 
-def report_tasks_results():
-    """
-    Function requests list of all tasks inputted in the column.
-    Then it converts it in the alphabetically ordered list with hours spent.
-    Hours spent are calculated by how many times task strings repeat itself.
-    """
-    print("These are your daily results in hours spent ")
-
-
 def export_results_analyzer():
     """
-    Results are gathered from the tracker
+    Results are gathered from the tracker.
     They are reported to program are being exported after processed.
     Users receive a link to their sheet.
     Users see outro message with input section.
     Message leads to exit the program sequence.
     """
     print("Updating results to the analyzer...")
-
     print("Daily results have been successfully sent to the analyzer.")
-
     live_timestamp = datetime.now()
-
     print(live_timestamp)
-
     print("Now you can access your worksheet with detailed visual analysis.")
-
     print("Please follow this link: [https://bit.ly/life-tracker-sheet]")
-
     print("Thank you for participating.")
-
     print("See you tomorrow at the next tracking and analyzing mission!")
 
     while True:
