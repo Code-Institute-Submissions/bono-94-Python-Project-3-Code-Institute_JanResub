@@ -52,8 +52,7 @@ def introduction():
 def validate_rules_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid letter, please type letter x then and try again. \n")
@@ -96,8 +95,7 @@ def rules():
 def validate_personal_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -108,7 +106,7 @@ def validate_personal_data(values):
 
 def personal_info_name():
     """
-    This function requests user to enter their name.
+    This function requests user to enter their username.
     """
     print("------------------------------------------------------------------")
     print("Personal identification: name and ID number.")
@@ -127,8 +125,9 @@ def personal_info_name():
 def validate_name_data(values):
     """
     Input validator function.
-    Raises ValueError if name is a number instead of letters.
-    Raises ValueError if name is longer than 50 characters.
+    Prints error message if name is a number instead of letters.
+    Prints error message if name is longer than 50 characters.
+    Prints error message if name has no input of min 1 characters.
     """
     if len(values) >= 50:
         print("Too many letters, enter name under 50 letters. \n")
@@ -148,6 +147,7 @@ def validate_name_data(values):
 def personal_info_id():
     """
     This function requests user to enter their unique identification number.
+    Also, it prints the verified input back so user can know it was successful.
     """
     while True:
 
@@ -166,7 +166,8 @@ def personal_info_id():
 def validate_id_data(values):
     """
     Input validator function.
-    Raises ValueError if ID number contains letters instead of numbers.
+    Prints error message if ID number contains letters instead of numbers.
+    Prints error message if ID number input doesn't have at least 1 character.
     """
     if values.isalpha():
         print("Invalid ID number, please only use numbers \n")
@@ -182,8 +183,7 @@ def validate_id_data(values):
 def input_results_zero():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 00:00 and 01:00? \n")
     print("GROWTH")
@@ -220,7 +220,7 @@ def input_results_zero():
 def validate_zero_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -245,7 +245,11 @@ def validate_zero_sub_data(values):
 
 
 def input_task_zero(sub_input_zero):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         zero_task_input = input("Please enter your task here: \n")
 
@@ -262,8 +266,9 @@ def input_task_zero(sub_input_zero):
 def validate_zero_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -313,8 +318,7 @@ def data_uploaded_zero(sub_input_zero, task_input_zero):
 def validate_zero_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -326,8 +330,7 @@ def validate_zero_next_data(values):
 def input_results_one():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 01:00 and 02:00? \n")
     print("GROWTH")
@@ -363,7 +366,7 @@ def input_results_one():
 def validate_one_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -388,7 +391,11 @@ def validate_one_sub_data(values):
 
 
 def input_task_one(sub_input_one):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         one_task_input = input("Please enter your task here: \n")
 
@@ -405,8 +412,9 @@ def input_task_one(sub_input_one):
 def validate_one_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -456,8 +464,7 @@ def data_uploaded_one(sub_input_one, task_input_one):
 def validate_one_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -469,8 +476,7 @@ def validate_one_next_data(values):
 def input_results_two():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 02:00 and 03:00? \n")
     print("GROWTH")
@@ -506,7 +512,7 @@ def input_results_two():
 def validate_two_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -531,7 +537,11 @@ def validate_two_sub_data(values):
 
 
 def input_task_two(sub_input_two):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         two_task_input = input("Please enter your task here: \n")
 
@@ -548,8 +558,9 @@ def input_task_two(sub_input_two):
 def validate_two_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -599,8 +610,7 @@ def data_uploaded_two(sub_input_two, task_input_two):
 def validate_two_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -612,8 +622,7 @@ def validate_two_next_data(values):
 def input_results_three():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 03:00 and 04:00? \n")
     print("GROWTH")
@@ -649,7 +658,7 @@ def input_results_three():
 def validate_three_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -674,7 +683,11 @@ def validate_three_sub_data(values):
 
 
 def input_task_three(sub_input_three):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         three_task_input = input("Please enter your task here: \n")
 
@@ -691,8 +704,9 @@ def input_task_three(sub_input_three):
 def validate_three_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -742,8 +756,7 @@ def data_uploaded_three(sub_input_three, task_input_three):
 def validate_three_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -755,8 +768,7 @@ def validate_three_next_data(values):
 def input_results_four():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 04:00 and 05:00? \n")
     print("GROWTH")
@@ -792,7 +804,7 @@ def input_results_four():
 def validate_four_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -817,7 +829,11 @@ def validate_four_sub_data(values):
 
 
 def input_task_four(sub_input_four):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         four_task_input = input("Please enter your task here: \n")
 
@@ -834,8 +850,9 @@ def input_task_four(sub_input_four):
 def validate_four_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -885,8 +902,7 @@ def data_uploaded_four(sub_input_four, task_input_four):
 def validate_four_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -898,8 +914,7 @@ def validate_four_next_data(values):
 def input_results_five():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 05:00 and 06:00? \n")
     print("GROWTH")
@@ -935,7 +950,7 @@ def input_results_five():
 def validate_five_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -960,7 +975,11 @@ def validate_five_sub_data(values):
 
 
 def input_task_five(sub_input_five):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         five_task_input = input("Please enter your task here: \n")
 
@@ -977,8 +996,9 @@ def input_task_five(sub_input_five):
 def validate_five_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -1028,8 +1048,7 @@ def data_uploaded_five(sub_input_five, task_input_five):
 def validate_five_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -1041,8 +1060,7 @@ def validate_five_next_data(values):
 def input_results_six():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 06:00 and 07:00? \n")
     print("GROWTH")
@@ -1078,7 +1096,7 @@ def input_results_six():
 def validate_six_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -1103,7 +1121,11 @@ def validate_six_sub_data(values):
 
 
 def input_task_six(sub_input_six):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         six_task_input = input("Please enter your task here: \n")
 
@@ -1120,8 +1142,9 @@ def input_task_six(sub_input_six):
 def validate_six_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -1171,8 +1194,7 @@ def data_uploaded_six(sub_input_six, task_input_six):
 def validate_six_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -1184,8 +1206,7 @@ def validate_six_next_data(values):
 def input_results_seven():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 07:00 and 08:00? \n")
     print("GROWTH")
@@ -1221,7 +1242,7 @@ def input_results_seven():
 def validate_seven_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -1246,7 +1267,11 @@ def validate_seven_sub_data(values):
 
 
 def input_task_seven(sub_input_seven):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         seven_task_input = input("Please enter your task here: \n")
 
@@ -1263,8 +1288,9 @@ def input_task_seven(sub_input_seven):
 def validate_seven_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -1314,8 +1340,7 @@ def data_uploaded_seven(sub_input_seven, task_input_seven):
 def validate_seven_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -1327,8 +1352,7 @@ def validate_seven_next_data(values):
 def input_results_eight():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 08:00 and 09:00? \n")
     print("GROWTH")
@@ -1364,7 +1388,7 @@ def input_results_eight():
 def validate_eight_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -1389,7 +1413,11 @@ def validate_eight_sub_data(values):
 
 
 def input_task_eight(sub_input_eight):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         eight_task_input = input("Please enter your task here: \n")
 
@@ -1406,8 +1434,9 @@ def input_task_eight(sub_input_eight):
 def validate_eight_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -1457,8 +1486,7 @@ def data_uploaded_eight(sub_input_eight, task_input_eight):
 def validate_eight_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -1470,8 +1498,7 @@ def validate_eight_next_data(values):
 def input_results_nine():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 09:00 and 10:00? \n")
     print("GROWTH")
@@ -1507,7 +1534,7 @@ def input_results_nine():
 def validate_nine_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -1532,7 +1559,11 @@ def validate_nine_sub_data(values):
 
 
 def input_task_nine(sub_input_nine):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         nine_task_input = input("Please enter your task here: \n")
 
@@ -1549,8 +1580,9 @@ def input_task_nine(sub_input_nine):
 def validate_nine_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -1600,8 +1632,7 @@ def data_uploaded_nine(sub_input_nine, task_input_nine):
 def validate_nine_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -1613,8 +1644,7 @@ def validate_nine_next_data(values):
 def input_results_ten():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 10:00 and 11:00? \n")
     print("GROWTH")
@@ -1650,7 +1680,7 @@ def input_results_ten():
 def validate_ten_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -1675,7 +1705,11 @@ def validate_ten_sub_data(values):
 
 
 def input_task_ten(sub_input_ten):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         ten_task_input = input("Please enter your task here: \n")
 
@@ -1692,8 +1726,9 @@ def input_task_ten(sub_input_ten):
 def validate_ten_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -1743,8 +1778,7 @@ def data_uploaded_ten(sub_input_ten, task_input_ten):
 def validate_ten_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -1756,8 +1790,7 @@ def validate_ten_next_data(values):
 def input_results_eleven():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 11:00 and 12:00? \n")
     print("GROWTH")
@@ -1793,7 +1826,7 @@ def input_results_eleven():
 def validate_eleven_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -1818,7 +1851,11 @@ def validate_eleven_sub_data(values):
 
 
 def input_task_eleven(sub_input_eleven):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         eleven_task_input = input("Please enter your task here: \n")
 
@@ -1835,8 +1872,9 @@ def input_task_eleven(sub_input_eleven):
 def validate_eleven_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -1886,8 +1924,7 @@ def data_uploaded_eleven(sub_input_zero, task_input_zero):
 def validate_eleven_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -1899,8 +1936,7 @@ def validate_eleven_next_data(values):
 def input_results_twelve():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 12:00 and 13:00? \n")
     print("GROWTH")
@@ -1936,7 +1972,7 @@ def input_results_twelve():
 def validate_twelve_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -1961,7 +1997,11 @@ def validate_twelve_sub_data(values):
 
 
 def input_task_twelve(sub_input_twelve):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         twelve_task_input = input("Please enter your task here: \n")
 
@@ -1978,8 +2018,9 @@ def input_task_twelve(sub_input_twelve):
 def validate_twelve_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -2029,8 +2070,7 @@ def data_uploaded_twelve(sub_input_twelve, task_input_twelve):
 def validate_twelve_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -2042,8 +2082,7 @@ def validate_twelve_next_data(values):
 def input_results_thirteen():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 13:00 and 14:00? \n")
     print("GROWTH")
@@ -2079,7 +2118,7 @@ def input_results_thirteen():
 def validate_thirteen_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -2104,7 +2143,11 @@ def validate_thirteen_sub_data(values):
 
 
 def input_task_thirteen(sub_input_thirteen):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         thirteen_task_input = input("Please enter your task here: \n")
 
@@ -2121,8 +2164,9 @@ def input_task_thirteen(sub_input_thirteen):
 def validate_thirteen_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -2172,8 +2216,7 @@ def data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen):
 def validate_thirteen_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -2185,8 +2228,7 @@ def validate_thirteen_next_data(values):
 def input_results_fourteen():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 14:00 and 15:00? \n")
     print("GROWTH")
@@ -2222,7 +2264,7 @@ def input_results_fourteen():
 def validate_fourteen_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -2247,7 +2289,11 @@ def validate_fourteen_sub_data(values):
 
 
 def input_task_fourteen(sub_input_fourteen):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         fourteen_task_input = input("Please enter your task here: \n")
 
@@ -2264,8 +2310,9 @@ def input_task_fourteen(sub_input_fourteen):
 def validate_fourteen_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -2315,8 +2362,7 @@ def data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen):
 def validate_fourteen_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -2328,8 +2374,7 @@ def validate_fourteen_next_data(values):
 def input_results_fifteen():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 15:00 and 16:00? \n")
     print("GROWTH")
@@ -2365,7 +2410,7 @@ def input_results_fifteen():
 def validate_fifteen_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -2390,7 +2435,11 @@ def validate_fifteen_sub_data(values):
 
 
 def input_task_fifteen(sub_input_fifteen):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         fifteen_task_input = input("Please enter your task here: \n")
 
@@ -2407,8 +2456,9 @@ def input_task_fifteen(sub_input_fifteen):
 def validate_fifteen_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -2458,8 +2508,7 @@ def data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen):
 def validate_fifteen_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -2471,8 +2520,7 @@ def validate_fifteen_next_data(values):
 def input_results_sixteen():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 16:00 and 17:00? \n")
     print("GROWTH")
@@ -2508,7 +2556,7 @@ def input_results_sixteen():
 def validate_sixteen_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -2533,7 +2581,11 @@ def validate_sixteen_sub_data(values):
 
 
 def input_task_sixteen(sub_input_sixteen):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         sixteen_task_input = input("Please enter your task here: \n")
 
@@ -2550,8 +2602,9 @@ def input_task_sixteen(sub_input_sixteen):
 def validate_sixteen_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -2601,8 +2654,7 @@ def data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen):
 def validate_sixteen_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -2614,8 +2666,7 @@ def validate_sixteen_next_data(values):
 def input_results_seventeen():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 17:00 and 18:00? \n")
     print("GROWTH")
@@ -2651,7 +2702,7 @@ def input_results_seventeen():
 def validate_seventeen_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -2676,7 +2727,11 @@ def validate_seventeen_sub_data(values):
 
 
 def input_task_seventeen(sub_input_seventeen):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         seventeen_task_input = input("Please enter your task here: \n")
 
@@ -2693,8 +2748,9 @@ def input_task_seventeen(sub_input_seventeen):
 def validate_seventeen_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -2744,8 +2800,7 @@ def data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen):
 def validate_seventeen_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -2757,8 +2812,7 @@ def validate_seventeen_next_data(values):
 def input_results_eighteen():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 18:00 and 19:00? \n")
     print("GROWTH")
@@ -2794,7 +2848,7 @@ def input_results_eighteen():
 def validate_eighteen_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -2819,7 +2873,11 @@ def validate_eighteen_sub_data(values):
 
 
 def input_task_eighteen(sub_input_eighteen):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         eighteen_task_input = input("Please enter your task here: \n")
 
@@ -2836,8 +2894,9 @@ def input_task_eighteen(sub_input_eighteen):
 def validate_eighteen_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -2887,8 +2946,7 @@ def data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen):
 def validate_eighteen_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -2900,8 +2958,7 @@ def validate_eighteen_next_data(values):
 def input_results_nineteen():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 19:00 and 20:00? \n")
     print("GROWTH")
@@ -2937,7 +2994,7 @@ def input_results_nineteen():
 def validate_nineteen_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -2962,7 +3019,11 @@ def validate_nineteen_sub_data(values):
 
 
 def input_task_nineteen(sub_input_nineteen):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         nineteen_task_input = input("Please enter your task here: \n")
 
@@ -2979,8 +3040,9 @@ def input_task_nineteen(sub_input_nineteen):
 def validate_nineteen_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -3030,8 +3092,7 @@ def data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen):
 def validate_nineteen_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -3043,8 +3104,7 @@ def validate_nineteen_next_data(values):
 def input_results_twenty():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 20:00 and 21:00? \n")
     print("GROWTH")
@@ -3080,7 +3140,7 @@ def input_results_twenty():
 def validate_twenty_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -3105,7 +3165,11 @@ def validate_twenty_sub_data(values):
 
 
 def input_task_twenty(sub_input_twenty):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         twenty_task_input = input("Please enter your task here: \n")
 
@@ -3122,8 +3186,9 @@ def input_task_twenty(sub_input_twenty):
 def validate_twenty_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -3173,8 +3238,7 @@ def data_uploaded_twenty(sub_input_twenty, task_input_twenty):
 def validate_twenty_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -3186,8 +3250,7 @@ def validate_twenty_next_data(values):
 def input_results_twentyone():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 21:00 and 22:00? \n")
     print("GROWTH")
@@ -3223,7 +3286,7 @@ def input_results_twentyone():
 def validate_twentyone_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -3248,7 +3311,11 @@ def validate_twentyone_sub_data(values):
 
 
 def input_task_twentyone(sub_input_twentyone):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         twentyone_task_input = input("Please enter your task here: \n")
 
@@ -3265,8 +3332,9 @@ def input_task_twentyone(sub_input_twentyone):
 def validate_twentyone_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -3316,8 +3384,7 @@ def data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone):
 def validate_twentyone_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -3329,8 +3396,7 @@ def validate_twentyone_next_data(values):
 def input_results_twentytwo():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 22:00 and 23:00? \n")
     print("GROWTH")
@@ -3366,7 +3432,7 @@ def input_results_twentytwo():
 def validate_twentytwo_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -3391,7 +3457,11 @@ def validate_twentytwo_sub_data(values):
 
 
 def input_task_twentytwo(sub_input_twentytwo):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         twentytwo_task_input = input("Please enter your task here: \n")
 
@@ -3408,8 +3478,9 @@ def input_task_twentytwo(sub_input_twentytwo):
 def validate_twentytwo_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -3459,8 +3530,7 @@ def data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo):
 def validate_twentytwo_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -3472,8 +3542,7 @@ def validate_twentytwo_next_data(values):
 def input_results_twentythree():
     """
     Requests direct input from the user about their daily events.
-    User is requested to select one sub-category and input one task.
-    Both of them will be requested for each hour of a day.
+    User is requested to select one sub-category from the list of options.
     """
     print("What have you done today between 23:00 and 00:00? \n")
     print("GROWTH")
@@ -3509,7 +3578,7 @@ def input_results_twentythree():
 def validate_twentythree_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if sub-categories do not match options.
+    Prints error message if sub-category input doesn't match options.
     """
     subcategories = [
         'Body System Care',
@@ -3534,7 +3603,11 @@ def validate_twentythree_sub_data(values):
 
 
 def input_task_twentythree(sub_input_twentythree):
-
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
     while True:
         twentythree_task_input = input("Please enter your task here: \n")
 
@@ -3551,8 +3624,9 @@ def input_task_twentythree(sub_input_twentythree):
 def validate_twentythree_task_data(values):
     """
     Input validator function.
-    Raises ValueError if task has more than 40 characters.
-    Raises ValueError if task contains any numbers.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
@@ -3602,8 +3676,7 @@ def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
 def validate_twentythree_next_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -3638,8 +3711,7 @@ def all_results_uploaded_successfully():
 def validate_results_sub_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -3716,7 +3788,7 @@ def export_results_analyzer():
     Results are gathered from the tracker
     They are reported to program are being exported after processed.
     Users receive a link to their sheet.
-    Users see outro message with input section 
+    Users see outro message with input section.
     Message leads to exit the program sequence.
     """
     print("Updating results to the analyzer...")
@@ -3738,21 +3810,18 @@ def export_results_analyzer():
     while True:
         exit_input = input("Please enter letter x to exit: \n")
 
-        if validate_exit_data(rules_input):
+        if validate_exit_data(exit_input):
             print("Loading...")
             break
 
-    print("------------------------------------------------------------------")        
-    
-    return rules_input
-    
+    print("------------------------------------------------------------------")
+    return exit_input
 
 
 def validate_exit_data(values):
     """
     Input validator function.
-    Raises ValueError if user input does not match letter "x".
-    Raises ValueError if user has inputted more than one letter.
+    Prints error message if user input does not match letter "x".
     """
     if values != "x":
         print("Invalid data, please input letter x then and try again. \n")
@@ -3780,7 +3849,6 @@ def exit_screen():
     print("------------------------------------------------------------------")
 
     raise SystemExit("Exiting...")
-    
 
 
 def main():
