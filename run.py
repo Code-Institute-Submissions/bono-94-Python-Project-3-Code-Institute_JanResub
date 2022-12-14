@@ -3643,8 +3643,8 @@ def all_results_uploaded_successfully():
     It is a communicative transition to results report.
     """
     print("------------------------------------------------------------------")
-    print("Updating sheet...")
-    print("Upload completed.")
+    print("Updating sheet... \n")
+    print("Upload completed. \n")
     print("Your daily chedule is now successfully updated! \n")
 
     while True:
@@ -3684,6 +3684,12 @@ def count_sub_results_one():
     for item in sub_column_one:
         if item == 'Body System Care':
             body_system_count += 1
+
+    print("------------------------------------------------------------------")
+    print("These are your daily task results in hours spent: \n")
+    print("GROWTH")
+    print(f"Body System Care - [{body_system_count}]")
+
     return body_system_count
 
 
@@ -3700,6 +3706,9 @@ def count_sub_results_two():
     for item in sub_column_two:
         if item == 'Soul & Spirit':
             ss_count += 1
+
+    print(f"Soul & Spirit - [{ss_count}]")
+
     return ss_count
 
 
@@ -3716,6 +3725,9 @@ def count_sub_results_three():
     for item in sub_column_three:
         if item == 'Fitness':
             fitness_count += 1
+
+    print(f"Fitness - [{fitness_count}]")
+
     return fitness_count
 
 
@@ -3732,6 +3744,9 @@ def count_sub_results_four():
     for item in sub_column_four:
         if item == 'Meditation':
             meditation_count += 1
+
+    print(f"Meditation - [{meditation_count}] \n")
+
     return meditation_count
 
 
@@ -3748,6 +3763,10 @@ def count_sub_results_five():
     for item in sub_column_five:
         if item == 'Personal Progress':
             personal_count += 1
+
+    print("PROGRESS")
+    print(f"Personal Progress - [{personal_count}]")
+
     return personal_count
 
 
@@ -3764,6 +3783,9 @@ def count_sub_results_six():
     for item in sub_column_six:
         if item == 'Global Progress':
             global_count += 1
+
+    print(f"Global Progress - [{global_count}]")
+
     return global_count
 
 
@@ -3780,6 +3802,9 @@ def count_sub_results_seven():
     for item in sub_column_seven:
         if item == 'Education Progress':
             education_count += 1
+
+    print(f"Education Progress - [{education_count}]")
+
     return education_count
 
 
@@ -3796,6 +3821,9 @@ def count_sub_results_eight():
     for item in sub_column_eight:
         if item == 'Business Progress':
             business_count += 1
+
+    print(f"Business Progress - [{business_count}] \n")
+
     return business_count
 
 
@@ -3812,6 +3840,10 @@ def count_sub_results_nine():
     for item in sub_column_nine:
         if item == 'Adventures':
             adventures_count += 1
+
+    print("FREEDOM")
+    print(f"Adventures - [{adventures_count}]")
+
     return adventures_count
 
 
@@ -3828,6 +3860,9 @@ def count_sub_results_ten():
     for item in sub_column_ten:
         if item == 'Random Activity':
             random_count += 1
+
+    print(f"Random Activity - [{random_count}]")
+
     return random_count
 
 
@@ -3844,6 +3879,9 @@ def count_sub_results_eleven():
     for item in sub_column_eleven:
         if item == 'Rest':
             rest_count += 1
+
+    print(f"Rest - [{rest_count}]")
+
     return rest_count
 
 
@@ -3860,30 +3898,18 @@ def count_sub_results_twelve():
     for item in sub_column_twelve:
         if item == 'Break':
             break_count += 1
+
+    print(f"Break - [{break_count}]")
+    print("------------------------------------------------------------------")
+
     return break_count
 
 
-def report_sub_results():
+def report_continue():
     """
-    Function retrieves subcategories results and counts items repetitions.
+    Function prompts user to press x to access tasks results.
     """
     print("------------------------------------------------------------------")
-    print("These are your daily task results in hours spent: \n")
-    print("GROWTH")
-    print(f"Body System Care - [{count_body_system}]")
-    print(f"Soul & Spirit - [{count_soul_spirit}]")
-    print(f"Fitness - [{count_fitness}]")
-    print(f"Meditation - [{count_meditation}] \n")
-    print("PROGRESS")
-    print(f"Personal Progress - [{count_personal}]")
-    print(f"Global Progress - [{count_global}]")
-    print(f"Education Progress - [{count_education}]")
-    print(f"Business Progress - [{count_business}] \n")
-    print("FREEDOM")
-    print(f"Adventures - [{count_body_system}]")
-    print(f"Random Activity - [{count_soul_spirit}]")
-    print(f"Rest - [{count_fitness}]")
-    print(f"Break - [{count_meditation}] \n")
 
     while True:
         task_results_input = input("Please enter letter x to continue: \n")
@@ -4104,8 +4130,29 @@ def run_data_inputs_fourth():
     data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree)
 
 
+def run_sub_report():
+    """
+    Runs all the subcategories functions that count and report results.
+    """
+    count_sub_results_one()
+    count_sub_results_two()
+    count_sub_results_three()
+    count_sub_results_four()
+    count_sub_results_five()
+    count_sub_results_six()
+    count_sub_results_seven()
+    count_sub_results_eight()
+    count_sub_results_nine()
+    count_sub_results_ten()
+    count_sub_results_eleven()
+    count_sub_results_twelve()
+
+
 run_introduction()
 run_data_inputs_first()
 run_data_inputs_second()
 run_data_inputs_third()
 run_data_inputs_fourth()
+all_results_uploaded_successfully()
+run_sub_report()
+report_continue()
