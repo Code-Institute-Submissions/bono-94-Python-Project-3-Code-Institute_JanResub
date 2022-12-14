@@ -167,56 +167,52 @@ Please press _____ to exit
 
 https://docs.gspread.org/en/v5.7.0/user-guide.html#getting-all-values-from-a-row-or-a-column
 
-my_var = 'bono'
-try:
-    my_var / 3
-except ValueError as e:
-    print(e)
-That will print what the error is, without throwing it, or breaking the chain of executions.
+
+
+For the blank one you might want to use values.strip() so that they can't enter 49 spaces
+remove spaces for username and ID
+- fix values.strip
+
+
+clear the sheet for every new start of the function before 00:00 hour
+
+
+I would look into regex patterns if you really wanted to get into input validation. What your validator does at the moment is check if the entire input is a number, over 49 chars, or blank.
+
+
+Fix grammar
+- fix grammar on rules under the options list for desribes word
+
+
+README:
+What about Elon Musks kids? Have you considered them?
+- add into readme for name why it is allowed to have numbers
+
+send good email about Ed
+
+------------------------------------------------------------------
+done
+
+check letter lenght not string length
+- lines: 65, 118, 158, 303, 352, all hours of a day
+
+change double inputs to single inputs
+
+You could test it by just running that one function, to see how it goes:
+print(validate_personal_data('x'))
+print(validate_personal_data('xx'))
+print(validate_personal_data('x x x'))
+
 
 remove spacing in the all uploaded input functions between prints
 
-
-fix grammar on rules under the options list for desribes word
-
-
 Why is return code unreacheable?
-
-check stacked returns on the counters for subcategories
-
 
 
 check if input results allow to read variables across different functions
 
 
 deal with empty inputs for tasks
-
-
-
-
-Check why is.lower doesnt work
-
-check why isdigit and isnumber doesnt work when you type in B2
-
-
-fix values.strip
-
-
-
-clear the sheet for every new start of the function before 00:00 hour
-
-
-
-I would look into regex patterns if you really wanted to get into input validation. What your validator does at the moment is check if the entire input is a number, over 49 chars, or blank.
-For the blank one you might want to use values.strip() so that they can't enter 49 spaces
-
-
-
-What about Elon Musks kids? Have you considered them?
-- add into readme for name why it is allowed to have numbers
-
-
-
 
 
 allowed = ['Example 1', 'Example 2', 'Example 3',]
@@ -232,19 +228,3 @@ if values in allowed:
 
     if values in allowed:
     return True
-
-
-    send good email about Ed
-
-------------------------------------------------------------------
-done
-
-check letter lenght not string length
-- lines: 65, 118, 158, 303, 352, all hours of a day
-
-change double inputs to single inputs
-
-You could test it by just running that one function, to see how it goes:
-print(validate_personal_data('x'))
-print(validate_personal_data('xx'))
-print(validate_personal_data('x x x'))
