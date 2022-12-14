@@ -295,7 +295,7 @@ def data_uploaded_zero(sub_input_zero, task_input_zero):
 
     update_worksheet_zero.update('B2', sub_input_zero)
 
-    update_worksheet_zero.update('C2', task_input_zero)
+    update_worksheet_zero.update('C2', task_input_zero.capitalize())
 
     print("Processing request... \n")
     print("00:00 - 01:00 hour has been successfully uploaded! \n")
@@ -439,7 +439,7 @@ def data_uploaded_one(sub_input_one, task_input_one):
 
     update_worksheet_one.update('B3', sub_input_one)
 
-    update_worksheet_one.update('C3', task_input_one)
+    update_worksheet_one.update('C3', task_input_one.capitalize())
 
     print("Processing request... \n")
     print("01:00 - 02:00 hour has been successfully uploaded! \n")
@@ -583,7 +583,7 @@ def data_uploaded_two(sub_input_two, task_input_two):
 
     update_worksheet_two.update('B4', sub_input_two)
 
-    update_worksheet_two.update('C4', task_input_two)
+    update_worksheet_two.update('C4', task_input_two.capitalize())
 
     print("Processing request... \n")
     print("02:00 - 03:00 hour has been successfully uploaded! \n")
@@ -727,7 +727,7 @@ def data_uploaded_three(sub_input_three, task_input_three):
 
     update_worksheet_three.update('B5', sub_input_three)
 
-    update_worksheet_three.update('C5', task_input_three)
+    update_worksheet_three.update('C5', task_input_three.capitalize())
 
     print("Processing request... \n")
     print("03:00 - 04:00 hour has been successfully uploaded! \n")
@@ -871,7 +871,7 @@ def data_uploaded_four(sub_input_four, task_input_four):
 
     update_worksheet_four.update('B6', sub_input_four)
 
-    update_worksheet_four.update('C6', task_input_four)
+    update_worksheet_four.update('C6', task_input_four.capitalize())
 
     print("Processing request... \n")
     print("04:00 - 05:00 hour has been successfully uploaded! \n")
@@ -1015,7 +1015,7 @@ def data_uploaded_five(sub_input_five, task_input_five):
 
     update_worksheet_five.update('B7', sub_input_five)
 
-    update_worksheet_five.update('C7', task_input_five)
+    update_worksheet_five.update('C7', task_input_five.capitalize())
 
     print("Processing request... \n")
     print("05:00 - 06:00 hour has been successfully uploaded! \n")
@@ -1159,7 +1159,7 @@ def data_uploaded_six(sub_input_six, task_input_six):
 
     update_worksheet_six.update('B8', sub_input_six)
 
-    update_worksheet_six.update('C8', task_input_six)
+    update_worksheet_six.update('C8', task_input_six.capitalize())
 
     print("Processing request... \n")
     print("06:00 - 07:00 hour has been successfully uploaded! \n")
@@ -1303,7 +1303,7 @@ def data_uploaded_seven(sub_input_seven, task_input_seven):
 
     update_worksheet_seven.update('B9', sub_input_seven)
 
-    update_worksheet_seven.update('C9', task_input_seven)
+    update_worksheet_seven.update('C9', task_input_seven.capitalize())
 
     print("Processing request... \n")
     print("07:00 - 08:00 hour has been successfully uploaded! \n")
@@ -1447,7 +1447,7 @@ def data_uploaded_eight(sub_input_eight, task_input_eight):
 
     update_worksheet_eight.update('B10', sub_input_eight)
 
-    update_worksheet_eight.update('C10', task_input_eight)
+    update_worksheet_eight.update('C10', task_input_eight.capitalize())
 
     print("Processing request... \n")
     print("08:00 - 09:00 hour has been successfully uploaded! \n")
@@ -1591,7 +1591,7 @@ def data_uploaded_nine(sub_input_nine, task_input_nine):
 
     update_worksheet_nine.update('B11', sub_input_nine)
 
-    update_worksheet_nine.update('C11', task_input_nine)
+    update_worksheet_nine.update('C11', task_input_nine.capitalize())
 
     print("Processing request... \n")
     print("09:00 - 10:00 hour has been successfully uploaded! \n")
@@ -1735,7 +1735,7 @@ def data_uploaded_ten(sub_input_ten, task_input_ten):
 
     update_worksheet_ten.update('B12', sub_input_ten)
 
-    update_worksheet_ten.update('C12', task_input_ten)
+    update_worksheet_ten.update('C12', task_input_ten.capitalize())
 
     print("Processing request... \n")
     print("10:00 - 11:00 hour has been successfully uploaded! \n")
@@ -1869,7 +1869,7 @@ def validate_eleven_task_data(values):
     return True
 
 
-def data_uploaded_eleven(sub_input_zero, task_input_zero):
+def data_uploaded_eleven(sub_input_eleven, task_input_eleven):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
@@ -1877,9 +1877,9 @@ def data_uploaded_eleven(sub_input_zero, task_input_zero):
     """
     update_worksheet_eleven = SHEET.worksheet("tracker")
 
-    update_worksheet_eleven.update('B13', sub_input_zero)
+    update_worksheet_eleven.update('B13', sub_input_eleven)
 
-    update_worksheet_eleven.update('C13', task_input_zero)
+    update_worksheet_eleven.update('C13', task_input_eleven.capitalize())
 
     print("Processing request... \n")
     print("11:00 - 12:00 hour has been successfully uploaded! \n")
@@ -2023,7 +2023,7 @@ def data_uploaded_twelve(sub_input_twelve, task_input_twelve):
 
     update_worksheet_twelve.update('B14', sub_input_twelve)
 
-    update_worksheet_twelve.update('C14', task_input_twelve)
+    update_worksheet_twelve.update('C14', task_input_twelve.capitalize())
 
     print("Processing request... \n")
     print("12:00 - 13:00 hour has been successfully uploaded! \n")
@@ -2167,7 +2167,7 @@ def data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen):
 
     update_worksheet_thirteen.update('B15', sub_input_thirteen)
 
-    update_worksheet_thirteen.update('C15', task_input_thirteen)
+    update_worksheet_thirteen.update('C15', task_input_thirteen.capitalize())
 
     print("Processing request... \n")
     print("13:00 - 14:00 hour has been successfully uploaded! \n")
@@ -2311,7 +2311,7 @@ def data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen):
 
     update_worksheet_fourteen.update('B16', sub_input_fourteen)
 
-    update_worksheet_fourteen.update('C16', task_input_fourteen)
+    update_worksheet_fourteen.update('C16', task_input_fourteen.capitalize())
 
     print("Processing request... \n")
     print("14:00 - 15:00 hour has been successfully uploaded! \n")
@@ -2455,7 +2455,7 @@ def data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen):
 
     update_worksheet_fifteen.update('B17', sub_input_fifteen)
 
-    update_worksheet_fifteen.update('C17', task_input_fifteen)
+    update_worksheet_fifteen.update('C17', task_input_fifteen.capitalize())
 
     print("Processing request... \n")
     print("15:00 - 16:00 hour has been successfully uploaded! \n")
@@ -2599,7 +2599,7 @@ def data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen):
 
     update_worksheet_sixteen.update('B18', sub_input_sixteen)
 
-    update_worksheet_sixteen.update('C18', task_input_sixteen)
+    update_worksheet_sixteen.update('C18', task_input_sixteen.capitalize())
 
     print("Processing request... \n")
     print("16:00 - 17:00 hour has been successfully uploaded! \n")
@@ -2743,7 +2743,7 @@ def data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen):
 
     update_worksheet_seventeen.update('B19', sub_input_seventeen)
 
-    update_worksheet_seventeen.update('C19', task_input_seventeen)
+    update_worksheet_seventeen.update('C19', task_input_seventeen.capitalize())
 
     print("Processing request... \n")
     print("17:00 - 18:00 hour has been successfully uploaded! \n")
@@ -2887,7 +2887,7 @@ def data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen):
 
     update_worksheet_eighteen.update('B20', sub_input_eighteen)
 
-    update_worksheet_eighteen.update('C20', task_input_eighteen)
+    update_worksheet_eighteen.update('C20', task_input_eighteen.capitalize())
 
     print("Processing request... \n")
     print("18:00 - 19:00 hour has been successfully uploaded! \n")
@@ -3031,7 +3031,7 @@ def data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen):
 
     update_worksheet_nineteen.update('B21', sub_input_nineteen)
 
-    update_worksheet_nineteen.update('C21', task_input_nineteen)
+    update_worksheet_nineteen.update('C21', task_input_nineteen.capitalize())
 
     print("Processing request... \n")
     print("19:00 - 20:00 hour has been successfully uploaded! \n")
@@ -3175,7 +3175,7 @@ def data_uploaded_twenty(sub_input_twenty, task_input_twenty):
 
     update_worksheet_twenty.update('B22', sub_input_twenty)
 
-    update_worksheet_twenty.update('C22', task_input_twenty)
+    update_worksheet_twenty.update('C22', task_input_twenty.capitalize())
 
     print("Processing request... \n")
     print("20:00 - 21:00 hour has been successfully uploaded! \n")
@@ -3319,7 +3319,7 @@ def data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone):
 
     update_worksheet_twentyone.update('B23', sub_input_twentyone)
 
-    update_worksheet_twentyone.update('C23', task_input_twentyone)
+    update_worksheet_twentyone.update('C23', task_input_twentyone.capitalize())
 
     print("Processing request... \n")
     print("21:00 - 22:00 hour has been successfully uploaded! \n")
@@ -3463,7 +3463,7 @@ def data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo):
 
     update_worksheet_twentytwo.update('B24', sub_input_twentytwo)
 
-    update_worksheet_twentytwo.update('C24', task_input_twentytwo)
+    update_worksheet_twentytwo.update('C24', task_input_twentytwo.capitalize())
 
     print("Processing request... \n")
     print("22:00 - 23:00 hour has been successfully uploaded! \n")
@@ -3607,7 +3607,7 @@ def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
 
     update_worksheet_twentythree.update('B25', sub_input_twentythree)
 
-    update_worksheet_twentythree.update('C25', task_input_twentythree)
+    update_worksheet_twentythree.update('C25', task_input_twentythree.capitalize())
 
     print("Processing request... \n")
     print("23:00 - 00:00 hour has been successfully uploaded! \n")
