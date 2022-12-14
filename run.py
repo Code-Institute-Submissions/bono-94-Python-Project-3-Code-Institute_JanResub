@@ -3723,6 +3723,7 @@ def count_sub_results_one():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_one = SHEET.worksheet("tracker")
     sub_column_one = retrieve_sub_data_one.col_values(2)
@@ -3738,6 +3739,7 @@ def count_sub_results_two():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_two = SHEET.worksheet("tracker")
     sub_column_two = retrieve_sub_data_two.col_values(2)
@@ -3753,6 +3755,7 @@ def count_sub_results_three():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_three = SHEET.worksheet("tracker")
     sub_column_three = retrieve_sub_data_three.col_values(2)
@@ -3768,6 +3771,7 @@ def count_sub_results_four():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_four = SHEET.worksheet("tracker")
     sub_column_four = retrieve_sub_data_four.col_values(2)
@@ -3783,6 +3787,7 @@ def count_sub_results_five():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_five = SHEET.worksheet("tracker")
     sub_column_five = retrieve_sub_data_five.col_values(2)
@@ -3798,6 +3803,7 @@ def count_sub_results_six():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_six = SHEET.worksheet("tracker")
     sub_column_six = retrieve_sub_data_six.col_values(2)
@@ -3813,6 +3819,7 @@ def count_sub_results_seven():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_seven = SHEET.worksheet("tracker")
     sub_column_seven = retrieve_sub_data_seven.col_values(2)
@@ -3828,6 +3835,7 @@ def count_sub_results_eight():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_eight = SHEET.worksheet("tracker")
     sub_column_eight = retrieve_sub_data_eight.col_values(2)
@@ -3843,6 +3851,7 @@ def count_sub_results_nine():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_nine = SHEET.worksheet("tracker")
     sub_column_nine = retrieve_sub_data_nine.col_values(2)
@@ -3858,6 +3867,7 @@ def count_sub_results_ten():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_ten = SHEET.worksheet("tracker")
     sub_column_ten = retrieve_sub_data_ten.col_values(2)
@@ -3873,6 +3883,7 @@ def count_sub_results_eleven():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_eleven = SHEET.worksheet("tracker")
     sub_column_eleven = retrieve_sub_data_eleven.col_values(2)
@@ -3888,6 +3899,7 @@ def count_sub_results_twelve():
     """
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
     """
     retrieve_sub_data_twelve = SHEET.worksheet("tracker")
     sub_column_twelve = retrieve_sub_data_twelve.col_values(2)
