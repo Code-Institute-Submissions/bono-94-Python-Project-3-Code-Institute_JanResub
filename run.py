@@ -4751,26 +4751,20 @@ def run_task_report_first():
     """
     Runs first quarter of tasks functions that count and report results.
     """
-    get_task_data_zero = SHEET.worksheet('tracker')
-    task_input_zero = get_task_data_zero.acell('C2').value
+    get_task_data_first = SHEET.worksheet('tracker')
+    task_input_zero = get_task_data_first.acell('C2').value
     count_tasks_results_zero(task_input_zero)
-    get_task_data_one = SHEET.worksheet('tracker')
-    task_input_one = get_task_data_one.acell('C2').value
+    task_input_one = get_task_data_first.acell('C3').value
     count_tasks_results_one(task_input_one)
-    get_task_data_two = SHEET.worksheet('tracker')
-    task_input_two = get_task_data_two.acell('C2').value
+    task_input_two = get_task_data_first.acell('C4').value
     count_tasks_results_two(task_input_two)
-    get_task_data_three = SHEET.worksheet('tracker')
-    task_input_three = get_task_data_three.acell('C2').value
+    task_input_three = get_task_data_first.acell('C5').value
     count_tasks_results_three(task_input_three)
-    get_task_data_four = SHEET.worksheet('tracker')
-    task_input_four = get_task_data_four.acell('C2').value
+    task_input_four = get_task_data_first.acell('C6').value
     count_tasks_results_four(task_input_four)
-    get_task_data_five = SHEET.worksheet('tracker')
-    task_input_five = get_task_data_five.acell('C2').value
+    task_input_five = get_task_data_first.acell('C7').value
     count_tasks_results_five(task_input_five)
-    get_task_data_six = SHEET.worksheet('tracker')
-    task_input_six = get_task_data_six.acell('C2').value
+    task_input_six = get_task_data_first.acell('C8').value
     count_tasks_results_six(task_input_six)
 
 
@@ -4778,26 +4772,20 @@ def run_task_report_second():
     """
     Runs second quarter of tasks functions that count and report results.
     """
-    get_task_data_seven = SHEET.worksheet('tracker')
-    task_input_seven = get_task_data_seven.acell('C2').value
+    get_task_data_second = SHEET.worksheet('tracker')
+    task_input_seven = get_task_data_second.acell('C9').value
     count_tasks_results_seven(task_input_seven)
-    get_task_data_eight = SHEET.worksheet('tracker')
-    task_input_eight = get_task_data_eight.acell('C2').value
+    task_input_eight = get_task_data_second.acell('C10').value
     count_tasks_results_eight(task_input_eight)
-    get_task_data_nine = SHEET.worksheet('tracker')
-    task_input_nine = get_task_data_nine.acell('C2').value
+    task_input_nine = get_task_data_second.acell('C11').value
     count_tasks_results_nine(task_input_nine)
-    get_task_data_ten = SHEET.worksheet('tracker')
-    task_input_ten = get_task_data_ten.acell('C2').value
+    task_input_ten = get_task_data_second.acell('C12').value
     count_tasks_results_ten(task_input_ten)
-    get_task_data_eleven = SHEET.worksheet('tracker')
-    task_input_eleven = get_task_data_eleven.acell('C2').value
+    task_input_eleven = get_task_data_second.acell('C13').value
     count_tasks_results_eleven(task_input_eleven)
-    get_task_data_twelve = SHEET.worksheet('tracker')
-    task_input_twelve = get_task_data_twelve.acell('C2').value
+    task_input_twelve = get_task_data_second.acell('C14').value
     count_tasks_results_twelve(task_input_twelve)
-    get_task_data_thirteen = SHEET.worksheet('tracker')
-    task_input_thirteen = get_task_data_thirteen.acell('C2').value
+    task_input_thirteen = get_task_data_second.acell('C15').value
     count_tasks_results_thirteen(task_input_thirteen)
 
 
@@ -4805,20 +4793,16 @@ def run_task_report_third():
     """
     Runs third quarter of tasks functions that count and report results.
     """
-    get_task_data_fourteen = SHEET.worksheet('tracker')
-    task_input_fourteen = get_task_data_fourteen.acell('C2').value
+    get_task_data_third = SHEET.worksheet('tracker')
+    task_input_fourteen = get_task_data_third.acell('C16').value
     count_tasks_results_fourteen(task_input_fourteen)
-    get_task_data_fifteen = SHEET.worksheet('tracker')
-    task_input_fifteen = get_task_data_fifteen.acell('C2').value
+    task_input_fifteen = get_task_data_third.acell('C17').value
     count_tasks_results_fifteen(task_input_fifteen)
-    get_task_data_sixteen = SHEET.worksheet('tracker')
-    task_input_sixteen = get_task_data_sixteen.acell('C2').value
+    task_input_sixteen = get_task_data_third.acell('C18').value
     count_tasks_results_sixteen(task_input_sixteen)
-    get_task_data_svnteen = SHEET.worksheet('tracker')
-    task_input_svnteen = get_task_data_svnteen.acell('C2').value
+    task_input_svnteen = get_task_data_third.acell('C19').value
     count_tasks_results_svnteen(task_input_svnteen)
-    get_task_data_eghtteen = SHEET.worksheet('tracker')
-    task_input_eghtteen = get_task_data_eghtteen.acell('C2').value
+    task_input_eghtteen = get_task_data_third.acell('C20').value
     count_tasks_results_eghtteen(task_input_eghtteen)
 
 
@@ -4826,20 +4810,16 @@ def run_task_report_fourth():
     """
     Runs final quarter of tasks functions that count and report results.
     """
-    get_task_data_nineteen = SHEET.worksheet('tracker')
-    task_input_nineteen = get_task_data_nineteen.acell('C2').value
+    get_task_data_fourth = SHEET.worksheet('tracker')
+    task_input_nineteen = get_task_data_fourth.acell('C21').value
     count_tasks_results_nineteen(task_input_nineteen)
-    get_task_data_twenty = SHEET.worksheet('tracker')
-    task_input_twenty = get_task_data_twenty.acell('C2').value
+    task_input_twenty = get_task_data_fourth.acell('C22').value
     count_tasks_results_twenty(task_input_twenty)
-    get_task_data_twentyone = SHEET.worksheet('tracker')
-    task_input_twentyone = get_task_data_twentyone.acell('C2').value
+    task_input_twentyone = get_task_data_fourth.acell('C23').value
     count_tasks_results_twentyone(task_input_twentyone)
-    get_task_data_twntytwo = SHEET.worksheet('tracker')
-    task_input_twntytwo = get_task_data_twntytwo.acell('C2').value
+    task_input_twntytwo = get_task_data_fourth.acell('C24').value
     count_tasks_results_twntytwo(task_input_twntytwo)
-    get_task_data_twntythree = SHEET.worksheet('tracker')
-    task_input_twntythree = get_task_data_twntythree.acell('C2').value
+    task_input_twntythree = get_task_data_fourth.acell('C25').value
     count_tasks_results_twntythree(task_input_twntythree)
 
 
