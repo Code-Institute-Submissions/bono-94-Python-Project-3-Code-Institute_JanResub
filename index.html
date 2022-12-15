@@ -171,23 +171,10 @@ https://docs.gspread.org/en/v5.7.0/user-guide.html#getting-all-values-from-a-row
 check too many lines
 -The way that you would get around this is to split your run into module and then import them.
 
-
 check weird errors
 
 
-
-I would look into regex patterns if you really wanted to get into input validation. What your validator does at the moment is check if the entire input is a number, over 49 chars, or blank.
-
-
-
-
-
-
 complete retrieve and report tasks results
-
-For the blank one you might want to use values.strip() so that they can't enter 49 spaces
-remove spaces for username and ID
-- fix values.strip
 
 
 Fix grammar
@@ -225,6 +212,8 @@ check if input results allow to read variables across different functions
 deal with empty inputs for tasks
 
 
+
+
 allowed = ['Example 1', 'Example 2', 'Example 3',]
 
 if values in allowed:
@@ -249,3 +238,14 @@ if values in allowed:
 
     check missing docsrtring for imports
 - describe the run.py
+
+-----------------------------------------------------------------------------------------------------
+Not done:
+
+
+I would look into regex patterns if you really wanted to get into input validation. What your validator does at the moment is check if the entire input is a number, over 49 chars, or blank.
+
+
+For the blank one you might want to use values.strip() so that they can't enter 49 spaces
+remove spaces for username and ID
+- fix values.strip
