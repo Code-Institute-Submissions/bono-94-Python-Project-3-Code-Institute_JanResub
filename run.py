@@ -30,6 +30,8 @@ def introduction():
     print("How it works?")
     print("- Following the introduction, you will proceed to rules section")
     print("- After that, you will be asked to enter personal identification")
+    print("- With starting a program, previous cell values will clear")
+    print("- Your results sheet access: [https://bit.ly/life-tracker-sheet]")
     print("- Next you will be asked to input your daily events per each hour")
     print("- Your data will be exported to an external online Google Sheet")
     print("- Once the data is in, program will retrieve your results")
@@ -178,6 +180,20 @@ def validate_id_data(values):
         return False
 
     return True
+
+
+def clear_previous_inputs():
+    """
+    Function clears all tasks and subcategories inputs on the tracker sheet.
+    Function clears all tasks and subcategories inputs on the analyzer sheet.
+    """
+    clear_tracker = SHEET.worksheet("tracker")
+    clear_analyzer = SHEET.worksheet("analyzer")
+
+    clear_tracker.batch_clear(["B2:B25", "C2:C25"])
+    clear_analyzer.batch_clear(["B4:B7", "B10:B13"])
+    clear_analyzer.batch_clear(["B16:B19", "B24:B47"])
+    clear_analyzer.batch_clear(["A24:A47"])
 
 
 def input_results_zero():
@@ -4020,6 +4036,7 @@ def run_introduction():
     rules()
     personal_info_name()
     personal_info_id()
+    clear_previous_inputs()
 
 
 def run_data_inputs_first():
