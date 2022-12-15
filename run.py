@@ -3613,7 +3613,7 @@ def validate_twentythree_task_data(values):
     return True
 
 
-def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
+def data_uploaded_twentythree(sub_input_twentythree, task_input_twthree):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
@@ -3623,7 +3623,7 @@ def data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree):
 
     update_worksheet_twentythree.update('B25', sub_input_twentythree)
 
-    update_worksheet_twentythree.update('C25', task_input_twentythree.capitalize())
+    update_worksheet_twentythree.update('C25', task_input_twthree.capitalize())
 
     print("Processing request... \n")
     print("23:00 - 00:00 hour has been successfully uploaded! \n")
@@ -4131,8 +4131,8 @@ def run_data_inputs_fourth():
     task_input_twentytwo = input_task_twentytwo(sub_input_twentytwo)
     data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo)
     sub_input_twentythree = input_results_twentythree()
-    task_input_twentythree = input_task_twentythree(sub_input_twentythree)
-    data_uploaded_twentythree(sub_input_twentythree, task_input_twentythree)
+    task_input_twthree = input_task_twentythree(sub_input_twentythree)
+    data_uploaded_twentythree(sub_input_twentythree, task_input_twthree)
 
 
 def run_sub_report():
