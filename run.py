@@ -176,7 +176,7 @@ def personal_info_id():
         id_input = input("Please enter unique identification number: \n")
 
         if validate_id_data(id_input):
-            print(f"Thank you, your ID number {id_input} is valid!")
+            print(f"Thank you, your ID number {id_input} is valid! \n")
             break
 
     print("Starting the program...")
@@ -3988,6 +3988,12 @@ def report_continue():
     Function prompts user to press x to access tasks results.
     """
     print("------------------------------------------------------------------")
+    print("Please wait 1 minuts until the program loads the tasks results. \n")
+    print("Loading... \n")
+
+    time.sleep(65)
+
+    print("Loading complete! \n")
 
     while True:
         task_results_input = input("Please enter letter x to continue: \n")
@@ -4549,12 +4555,6 @@ def tasks_report_exit():
     Function prompts user to press x to access tasks results.
     """
     print("------------------------------------------------------------------")
-    print("Please wait 1 minuts until the program loads the tasks results. \n")
-    print("Loading... \n")
-
-    time.sleep(65)
-
-    print("Loading complete! \n")
 
     while True:
         tasks_exit_input = input("Please enter letter x to continue: \n")
