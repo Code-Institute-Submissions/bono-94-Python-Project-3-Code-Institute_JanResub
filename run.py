@@ -1,3 +1,13 @@
+"""
+'run.py' is a python-based file that executes code for Life Tracker [v.1]
+It is synchronized with google sheets through Zapier.
+Final code with accompanying files will be deployed on the Heroku.
+Users input their daily activities per hour in the runned code.
+Results then get transferred to the tracker sheet.
+Those results get counted and reported back to the user in the code.
+Counted results of input results then get updated to the analyzer sheet.
+At the end of program, it automatically exits through raise SystemExit.
+"""
 from datetime import datetime
 import gspread
 from google.oauth2.service_account import Credentials

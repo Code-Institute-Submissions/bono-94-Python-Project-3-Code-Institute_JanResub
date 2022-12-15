@@ -168,21 +168,26 @@ Please press _____ to exit
 https://docs.gspread.org/en/v5.7.0/user-guide.html#getting-all-values-from-a-row-or-a-column
 
 
-
-update results to correct cells to the analyzer sheet when reporting results to terminal
-
-
-complete retrieve and report tasks results
+check too many lines
+-The way that you would get around this is to split your run into module and then import them.
 
 
-
-For the blank one you might want to use values.strip() so that they can't enter 49 spaces
-remove spaces for username and ID
-- fix values.strip
+check weird errors
 
 
 
 I would look into regex patterns if you really wanted to get into input validation. What your validator does at the moment is check if the entire input is a number, over 49 chars, or blank.
+
+
+
+
+
+
+complete retrieve and report tasks results
+
+For the blank one you might want to use values.strip() so that they can't enter 49 spaces
+remove spaces for username and ID
+- fix values.strip
 
 
 Fix grammar
@@ -193,7 +198,7 @@ README:
 What about Elon Musks kids? Have you considered them?
 - add into readme for name why it is allowed to have numbers
 
-send good email about Ed
+send good email about Ed and to manager about others
 
 ------------------------------------------------------------------
 done
@@ -238,3 +243,9 @@ if values in allowed:
     send tasks as .capitalized
 
     clear the sheet for every new start of the function before 00:00 hour
+
+
+    update results to correct cells to the analyzer sheet when reporting results to terminal
+
+    check missing docsrtring for imports
+- describe the run.py
