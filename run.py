@@ -38,7 +38,7 @@ def introduction():
     print(live_timestamp)
     print("Welcome to the ultimate Life Tracker! (Daily Tasklist)! [v.1] \n")
     print("The program synchronizes your daily journal with schedule. \n")
-    print("How it works?")
+    print("HOW IT WORKS? \n")
     print("- Following the introduction, you will proceed to rules section")
     print("- After that, you will be asked to enter personal identification")
     print("- With starting a program, previous cell values will clear")
@@ -3988,10 +3988,12 @@ def report_continue():
     Function prompts user to press x to access tasks results.
     """
     print("------------------------------------------------------------------")
-    print("Please wait 1 minuts until the program loads the tasks results. \n")
+    print("Please wait 1 minute until the program loads the tasks results. \n")
+    print("In the meantime you can view first part of your results below: \n")
+    print("[https://bit.ly/life-tracker-sheet] \n")
     print("Loading... \n")
 
-    time.sleep(65)
+    time.sleep(70)
 
     print("Loading complete! \n")
 
@@ -4327,6 +4329,44 @@ def count_tasks_results_thirteen(task_input_thirteen):
     push_task_analyzer_thirteen.update('B37', thirteen_row_count)
 
     return thirteen_row_count
+
+
+def tasks_report_upload():
+    """
+    Function prompts user to press x to upload tasks results.
+    """
+    print("------------------------------------------------------------------")
+    print("Please wait 1 minute until program loads more tasks results. \n")
+    print("In the meantime you can view first part of your results below: \n")
+    print("[https://bit.ly/life-tracker-sheet] \n")
+    print("Loading... \n")
+
+    time.sleep(70)
+
+    print("Loading complete! \n")
+
+    while True:
+        tasks_upload_input = input("Please enter letter x to continue: \n")
+
+        if validate_tasks_upload_input(tasks_upload_input):
+            print("Loading...")
+            break
+
+    print("------------------------------------------------------------------")
+
+    return tasks_upload_input
+
+
+def validate_tasks_upload_input(values):
+    """
+    Input validator function.
+    Prints error message if user input does not match letter "x".
+    """
+    if values != "x":
+        print("Invalid data, please input letter x then and try again. \n")
+        return False
+
+    return True
 
 
 def count_tasks_results_fourteen(task_input_fourteen):
@@ -4859,6 +4899,7 @@ run_sub_report()
 report_continue()
 run_task_report_first()
 run_task_report_second()
+tasks_report_upload()
 run_task_report_third()
 run_task_report_fourth()
 run_program_exit()
