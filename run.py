@@ -9,6 +9,7 @@ Counted results of input results then get updated to the analyzer sheet.
 At the end of program, it automatically exits through raise SystemExit.
 """
 from datetime import datetime
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -49,6 +50,8 @@ def introduction():
     print("- Once that is reported to you, it will be exported again")
     print("- This time, to the second worksheet: analysis")
     print("- You will be able to see visual analysis of your results. \n")
+
+    time.sleep(10)
 
     while True:
         rules_input = input("Type in letter x and press enter to continue: \n")
@@ -92,6 +95,8 @@ def rules():
     print("- Please do not leave any fields empty")
     print("- Each hour of a day is in 24-hour format \n")
 
+    time.sleep(10)
+
     while True:
         personal_info_input = input("Please enter letter x to continue: \n")
 
@@ -123,9 +128,11 @@ def personal_info_name():
     print("------------------------------------------------------------------")
     print("Personal identification: username and ID number.")
     print("- Please try to keep username letters-only")
-    print("- Please try to keep ID digits-only")
-    print("- If you did not request ID yet, you can enter any number. \n")
-    print("- Please do not enter any spaces")
+    print("- Please try to keep ID digits-only.")
+    print("- If you did not request ID yet, you can enter any number.")
+    print("- Please do not enter any blank spaces. \n")
+
+    time.sleep(5)
 
     while True:
         name_input = input("Please enter your username: \n")
@@ -173,6 +180,9 @@ def personal_info_id():
             break
 
     print("Starting the program...")
+
+    time.sleep(5)
+
     print("------------------------------------------------------------------")
 
     return id_input
@@ -3673,6 +3683,9 @@ def all_results_uploaded_successfully():
     """
     print("------------------------------------------------------------------")
     print("Updating sheet... \n")
+
+    time.sleep(5)
+
     print("Upload completed. \n")
     print("Your daily chedule is now successfully updated! \n")
 
@@ -4536,6 +4549,12 @@ def tasks_report_exit():
     Function prompts user to press x to access tasks results.
     """
     print("------------------------------------------------------------------")
+    print("Please wait 1 minuts until the program loads the tasks results. \n")
+    print("Loading... \n")
+
+    time.sleep(65)
+
+    print("Loading complete! \n")
 
     while True:
         tasks_exit_input = input("Please enter letter x to continue: \n")
