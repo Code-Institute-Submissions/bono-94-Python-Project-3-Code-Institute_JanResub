@@ -4068,488 +4068,497 @@ def count_tasks_results_two(task_input_two):
     return two_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_three(task_input_three):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_three = SHEET.worksheet('tracker')
+    task_column_three = retrieve_task_data_three.col_values(3)
+    push_task_analyzer_three = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    three_row_count = 0
+    for item in task_column_three:
+        if item == task_input_three:
+            three_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_three} - [{three_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_three.update('A27', task_input_three)
+    push_task_analyzer_three.update('B27', three_row_count)
 
-    return one_row_count
+    return three_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_four(task_input_four):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_four = SHEET.worksheet('tracker')
+    task_column_four = retrieve_task_data_four.col_values(3)
+    push_task_analyzer_four = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    four_row_count = 0
+    for item in task_column_four:
+        if item == task_input_four:
+            four_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_four} - [{four_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_four.update('A28', task_input_four)
+    push_task_analyzer_four.update('B28', four_row_count)
 
-    return one_row_count
+    return four_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_five(task_input_five):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_five = SHEET.worksheet('tracker')
+    task_column_five = retrieve_task_data_five.col_values(3)
+    push_task_analyzer_five = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    five_row_count = 0
+    for item in task_column_five:
+        if item == task_input_five:
+            five_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_five} - [{five_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_five.update('A29', task_input_five)
+    push_task_analyzer_five.update('B29', five_row_count)
 
-    return one_row_count
+    return five_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_six(task_input_six):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_six = SHEET.worksheet('tracker')
+    task_column_six = retrieve_task_data_six.col_values(3)
+    push_task_analyzer_six = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    six_row_count = 0
+    for item in task_column_six:
+        if item == task_input_six:
+            six_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_six} - [{six_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_six.update('A30', task_input_six)
+    push_task_analyzer_six.update('B30', six_row_count)
 
-    return one_row_count
+    return six_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_seven(task_input_seven):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_seven = SHEET.worksheet('tracker')
+    task_column_seven = retrieve_task_data_seven.col_values(3)
+    push_task_analyzer_seven = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    seven_row_count = 0
+    for item in task_column_seven:
+        if item == task_input_seven:
+            seven_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_seven} - [{seven_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_seven.update('A31', task_input_seven)
+    push_task_analyzer_seven.update('B31', seven_row_count)
 
-    return one_row_count
+    return seven_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_eight(task_input_eight):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_eight = SHEET.worksheet('tracker')
+    task_column_eight = retrieve_task_data_eight.col_values(3)
+    push_task_analyzer_eight = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    eight_row_count = 0
+    for item in task_column_eight:
+        if item == task_input_eight:
+            eight_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_eight} - [{eight_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_eight.update('A32', task_input_eight)
+    push_task_analyzer_eight.update('B32', eight_row_count)
 
-    return one_row_count
+    return eight_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_nine(task_input_nine):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_nine = SHEET.worksheet('tracker')
+    task_column_nine = retrieve_task_data_nine.col_values(3)
+    push_task_analyzer_nine = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    nine_row_count = 0
+    for item in task_column_nine:
+        if item == task_input_nine:
+            nine_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_nine} - [{nine_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_nine.update('A33', task_input_nine)
+    push_task_analyzer_nine.update('B33', nine_row_count)
 
-    return one_row_count
+    return nine_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_ten(task_input_ten):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_ten = SHEET.worksheet('tracker')
+    task_column_ten = retrieve_task_data_ten.col_values(3)
+    push_task_analyzer_ten = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    ten_row_count = 0
+    for item in task_column_ten:
+        if item == task_input_ten:
+            ten_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_ten} - [{ten_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_ten.update('A34', task_input_ten)
+    push_task_analyzer_ten.update('B34', ten_row_count)
 
-    return one_row_count
+    return ten_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_eleven(task_input_eleven):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_eleven = SHEET.worksheet('tracker')
+    task_column_eleven = retrieve_task_data_eleven.col_values(3)
+    push_task_analyzer_eleven = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    eleven_row_count = 0
+    for item in task_column_eleven:
+        if item == task_input_eleven:
+            eleven_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_eleven} - [{eleven_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_eleven.update('A35', task_input_eleven)
+    push_task_analyzer_eleven.update('B35', eleven_row_count)
 
-    return one_row_count
+    return eleven_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_twelve(task_input_twelve):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_twelve = SHEET.worksheet('tracker')
+    task_column_twelve = retrieve_task_data_twelve.col_values(3)
+    push_task_analyzer_twelve = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    twelve_row_count = 0
+    for item in task_column_twelve:
+        if item == task_input_twelve:
+            twelve_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_twelve} - [{twelve_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_twelve.update('A36', task_input_twelve)
+    push_task_analyzer_twelve.update('B36', twelve_row_count)
 
-    return one_row_count
+    return twelve_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_thirteen(task_input_thirteen):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_thirteen = SHEET.worksheet('tracker')
+    task_column_thirteen = retrieve_task_data_thirteen.col_values(3)
+    push_task_analyzer_thirteen = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    thirteen_row_count = 0
+    for item in task_column_thirteen:
+        if item == task_input_thirteen:
+            thirteen_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_thirteen} - [{thirteen_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_thirteen.update('A37', task_input_thirteen)
+    push_task_analyzer_thirteen.update('B37', thirteen_row_count)
 
-    return one_row_count
+    return thirteen_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_fourteen(task_input_fourteen):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_fourteen = SHEET.worksheet('tracker')
+    task_column_fourteen = retrieve_task_data_fourteen.col_values(3)
+    push_task_analyzer_fourteen = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    fourteen_row_count = 0
+    for item in task_column_fourteen:
+        if item == task_input_fourteen:
+            fourteen_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_fourteen} - [{fourteen_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_fourteen.update('A38', task_input_fourteen)
+    push_task_analyzer_fourteen.update('B38', fourteen_row_count)
 
-    return one_row_count
+    return fourteen_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_fifteen(task_input_fifteen):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_fifteen = SHEET.worksheet('tracker')
+    task_column_fifteen = retrieve_task_data_fifteen.col_values(3)
+    push_task_analyzer_fifteen = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    fifteen_row_count = 0
+    for item in task_column_fifteen:
+        if item == task_input_fifteen:
+            fifteen_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_fifteen} - [{fifteen_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_fifteen.update('A39', task_input_fifteen)
+    push_task_analyzer_fifteen.update('B39', fifteen_row_count)
 
-    return one_row_count
+    return fifteen_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_sixteen(task_input_sixteen):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_sixteen = SHEET.worksheet('tracker')
+    task_column_sixteen = retrieve_task_data_sixteen.col_values(3)
+    push_task_analyzer_sixteen = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    sixteen_row_count = 0
+    for item in task_column_sixteen:
+        if item == task_input_sixteen:
+            sixteen_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_sixteen} - [{sixteen_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_sixteen.update('A40', task_input_sixteen)
+    push_task_analyzer_sixteen.update('B40', sixteen_row_count)
 
-    return one_row_count
+    return sixteen_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_svnteen(task_input_svnteen):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_svnteen = SHEET.worksheet('tracker')
+    task_column_svnteen = retrieve_task_data_svnteen.col_values(3)
+    push_task_analyzer_svnteen = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    svnteen_row_count = 0
+    for item in task_column_svnteen:
+        if item == task_input_svnteen:
+            svnteen_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_svnteen} - [{svnteen_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_svnteen.update('A41', task_input_svnteen)
+    push_task_analyzer_svnteen.update('B41', svnteen_row_count)
 
-    return one_row_count
+    return svnteen_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_eghtteen(task_input_eghtteen):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_eghtteen = SHEET.worksheet('tracker')
+    task_column_eghtteen = retrieve_task_data_eghtteen.col_values(3)
+    push_task_analyzer_eghtteen = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    eghtteen_row_count = 0
+    for item in task_column_eghtteen:
+        if item == task_input_eghtteen:
+            eghtteen_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_eghtteen} - [{eghtteen_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_eghtteen.update('A42', task_input_eghtteen)
+    push_task_analyzer_eghtteen.update('B42', eghtteen_row_count)
 
-    return one_row_count
+    return eghtteen_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_nineteen(task_input_nineteen):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_nineteen = SHEET.worksheet('tracker')
+    task_column_nineteen = retrieve_task_data_nineteen.col_values(3)
+    push_task_analyzer_nineteen = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    nineteen_row_count = 0
+    for item in task_column_nineteen:
+        if item == task_input_nineteen:
+            nineteen_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_nineteen} - [{nineteen_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_nineteen.update('A43', task_input_nineteen)
+    push_task_analyzer_nineteen.update('B43', nineteen_row_count)
 
-    return one_row_count
+    return nineteen_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_twenty(task_input_twenty):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_twenty = SHEET.worksheet('tracker')
+    task_column_twenty = retrieve_task_data_twenty.col_values(3)
+    push_task_analyzer_twenty = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    twenty_row_count = 0
+    for item in task_column_twenty:
+        if item == task_input_twenty:
+            twenty_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_twenty} - [{twenty_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_twenty.update('A44', task_input_twenty)
+    push_task_analyzer_twenty.update('B44', twenty_row_count)
 
-    return one_row_count
+    return twenty_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_twentyone(task_input_twentyone):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_twentyone = SHEET.worksheet('tracker')
+    task_column_twentyone = retrieve_task_data_twentyone.col_values(3)
+    push_task_analyzer_twentyone = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    twentyone_row_count = 0
+    for item in task_column_twentyone:
+        if item == task_input_twentyone:
+            twentyone_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_twentyone} - [{twentyone_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_twentyone.update('A45', task_input_twentyone)
+    push_task_analyzer_twentyone.update('B45', twentyone_row_count)
 
-    return one_row_count
+    return twentyone_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_twntytwo(task_input_twntytwo):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_twntytwo = SHEET.worksheet('tracker')
+    task_column_twntytwo = retrieve_task_data_twntytwo.col_values(3)
+    push_task_analyzer_twntytwo = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    twntytwo_row_count = 0
+    for item in task_column_twntytwo:
+        if item == task_input_twntytwo:
+            twntytwo_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_twntytwo} - [{twntytwo_row_count}]")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_twntytwo.update('A46', task_input_twntytwo)
+    push_task_analyzer_twntytwo.update('B46', twntytwo_row_count)
 
-    return one_row_count
+    return twntytwo_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def count_tasks_results_twntythree(task_input_twntythree):
     """
     Function retrieves tasks results and counts items repetitions.
     After reporting to the user, it updates analyzer sheet.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    retrieve_task_data_twntythree = SHEET.worksheet('tracker')
+    task_column_twntythree = retrieve_task_data_twntythree.col_values(3)
+    push_task_analyzer_twntythree = SHEET.worksheet("analyzer")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    twntythree_row_count = 0
+    for item in task_column_twntythree:
+        if item == task_input_twntythree:
+            twntythree_row_count += 1
 
-    print(f"{task_input_one} - [{one_row_count}]")
+    print(f"{task_input_twntythree} - [{twntythree_row_count}]")
+    print("------------------------------------------------------------------")
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    push_task_analyzer_twntythree.update('A47', task_input_twntythree)
+    push_task_analyzer_twntythree.update('B47', twntythree_row_count)
 
-    return one_row_count
+    return twntythree_row_count
 
 
-def count_tasks_results_one(task_input_one):
+def tasks_report_exit():
     """
-    Function retrieves tasks results and counts items repetitions.
-    After reporting to the user, it updates analyzer sheet.
+    Function prompts user to press x to access tasks results.
     """
-    retrieve_task_data_one = SHEET.worksheet('tracker')
-    task_column_one = retrieve_task_data_one.col_values(3)
-    push_task_analyzer_one = SHEET.worksheet("analyzer")
+    print("------------------------------------------------------------------")
 
-    one_row_count = 0
-    for item in task_column_one:
-        if item == task_input_one:
-            one_row_count += 1
+    while True:
+        tasks_exit_input = input("Please enter letter x to continue: \n")
 
-    print(f"{task_input_one} - [{one_row_count}]")
+        if validate_tasks_exit_input(tasks_exit_input):
+            print("Loading...")
+            break
 
-    push_task_analyzer_one.update('A25', task_input_one)
-    push_task_analyzer_one.update('B25', one_row_count)
+    print("------------------------------------------------------------------")
 
-    return one_row_count
+    return tasks_exit_input
+
+
+def validate_tasks_exit_input(values):
+    """
+    Input validator function.
+    Prints error message if user input does not match letter "x".
+    """
+    if values != "x":
+        print("Invalid data, please input letter x then and try again. \n")
+        return False
+
+    return True
 
 
 def export_results_analyzer():
@@ -4738,13 +4747,107 @@ def run_sub_report():
     count_sub_results_twelve()
 
 
-def run_task_report():
+def run_task_report_first():
     """
-    Runs all the tasks functions that count and report results.
+    Runs first quarter of tasks functions that count and report results.
     """
     get_task_data_zero = SHEET.worksheet('tracker')
     task_input_zero = get_task_data_zero.acell('C2').value
     count_tasks_results_zero(task_input_zero)
+    get_task_data_one = SHEET.worksheet('tracker')
+    task_input_one = get_task_data_one.acell('C2').value
+    count_tasks_results_one(task_input_one)
+    get_task_data_two = SHEET.worksheet('tracker')
+    task_input_two = get_task_data_two.acell('C2').value
+    count_tasks_results_two(task_input_two)
+    get_task_data_three = SHEET.worksheet('tracker')
+    task_input_three = get_task_data_three.acell('C2').value
+    count_tasks_results_three(task_input_three)
+    get_task_data_four = SHEET.worksheet('tracker')
+    task_input_four = get_task_data_four.acell('C2').value
+    count_tasks_results_four(task_input_four)
+    get_task_data_five = SHEET.worksheet('tracker')
+    task_input_five = get_task_data_five.acell('C2').value
+    count_tasks_results_five(task_input_five)
+    get_task_data_six = SHEET.worksheet('tracker')
+    task_input_six = get_task_data_six.acell('C2').value
+    count_tasks_results_six(task_input_six)
+
+
+def run_task_report_second():
+    """
+    Runs second quarter of tasks functions that count and report results.
+    """
+    get_task_data_seven = SHEET.worksheet('tracker')
+    task_input_seven = get_task_data_seven.acell('C2').value
+    count_tasks_results_seven(task_input_seven)
+    get_task_data_eight = SHEET.worksheet('tracker')
+    task_input_eight = get_task_data_eight.acell('C2').value
+    count_tasks_results_eight(task_input_eight)
+    get_task_data_nine = SHEET.worksheet('tracker')
+    task_input_nine = get_task_data_nine.acell('C2').value
+    count_tasks_results_nine(task_input_nine)
+    get_task_data_ten = SHEET.worksheet('tracker')
+    task_input_ten = get_task_data_ten.acell('C2').value
+    count_tasks_results_ten(task_input_ten)
+    get_task_data_eleven = SHEET.worksheet('tracker')
+    task_input_eleven = get_task_data_eleven.acell('C2').value
+    count_tasks_results_eleven(task_input_eleven)
+    get_task_data_twelve = SHEET.worksheet('tracker')
+    task_input_twelve = get_task_data_twelve.acell('C2').value
+    count_tasks_results_twelve(task_input_twelve)
+    get_task_data_thirteen = SHEET.worksheet('tracker')
+    task_input_thirteen = get_task_data_thirteen.acell('C2').value
+    count_tasks_results_thirteen(task_input_thirteen)
+
+
+def run_task_report_third():
+    """
+    Runs third quarter of tasks functions that count and report results.
+    """
+    get_task_data_fourteen = SHEET.worksheet('tracker')
+    task_input_fourteen = get_task_data_fourteen.acell('C2').value
+    count_tasks_results_fourteen(task_input_fourteen)
+    get_task_data_fifteen = SHEET.worksheet('tracker')
+    task_input_fifteen = get_task_data_fifteen.acell('C2').value
+    count_tasks_results_fifteen(task_input_fifteen)
+    get_task_data_sixteen = SHEET.worksheet('tracker')
+    task_input_sixteen = get_task_data_sixteen.acell('C2').value
+    count_tasks_results_sixteen(task_input_sixteen)
+    get_task_data_svnteen = SHEET.worksheet('tracker')
+    task_input_svnteen = get_task_data_svnteen.acell('C2').value
+    count_tasks_results_svnteen(task_input_svnteen)
+    get_task_data_eghtteen = SHEET.worksheet('tracker')
+    task_input_eghtteen = get_task_data_eghtteen.acell('C2').value
+    count_tasks_results_eghtteen(task_input_eghtteen)
+
+
+def run_task_report_fourth():
+    """
+    Runs final quarter of tasks functions that count and report results.
+    """
+    get_task_data_nineteen = SHEET.worksheet('tracker')
+    task_input_nineteen = get_task_data_nineteen.acell('C2').value
+    count_tasks_results_nineteen(task_input_nineteen)
+    get_task_data_twenty = SHEET.worksheet('tracker')
+    task_input_twenty = get_task_data_twenty.acell('C2').value
+    count_tasks_results_twenty(task_input_twenty)
+    get_task_data_twentyone = SHEET.worksheet('tracker')
+    task_input_twentyone = get_task_data_twentyone.acell('C2').value
+    count_tasks_results_twentyone(task_input_twentyone)
+    get_task_data_twntytwo = SHEET.worksheet('tracker')
+    task_input_twntytwo = get_task_data_twntytwo.acell('C2').value
+    count_tasks_results_twntytwo(task_input_twntytwo)
+    get_task_data_twntythree = SHEET.worksheet('tracker')
+    task_input_twntythree = get_task_data_twntythree.acell('C2').value
+    count_tasks_results_twntythree(task_input_twntythree)
+
+
+def run_program_exit():
+    """
+    Function that runs all final exiting functions of the program.
+    """
+    tasks_report_exit()
 
 
 run_introduction()
@@ -4755,4 +4858,8 @@ run_data_inputs_fourth()
 all_results_uploaded_successfully()
 run_sub_report()
 report_continue()
-run_task_report()
+run_task_report_first()
+run_task_report_second()
+run_task_report_third()
+run_task_report_fourth()
+run_program_exit()
