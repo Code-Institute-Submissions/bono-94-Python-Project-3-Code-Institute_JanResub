@@ -3695,6 +3695,7 @@ def count_sub_results_one():
     """
     retrieve_sub_data_one = SHEET.worksheet("tracker")
     sub_column_one = retrieve_sub_data_one.col_values(2)
+    push_sub_analyzer_one = SHEET.worksheet("analyzer")
 
     body_system_count = 0
     for item in sub_column_one:
@@ -3705,6 +3706,8 @@ def count_sub_results_one():
     print("These are your daily task results in hours spent: \n")
     print("GROWTH")
     print(f"Body System Care - [{body_system_count}]")
+
+    push_sub_analyzer_one.update('B4', body_system_count)
 
     return body_system_count
 
@@ -3717,6 +3720,7 @@ def count_sub_results_two():
     """
     retrieve_sub_data_two = SHEET.worksheet("tracker")
     sub_column_two = retrieve_sub_data_two.col_values(2)
+    push_sub_analyzer_two = SHEET.worksheet("analyzer")
 
     ss_count = 0
     for item in sub_column_two:
@@ -3724,6 +3728,8 @@ def count_sub_results_two():
             ss_count += 1
 
     print(f"Soul & Spirit - [{ss_count}]")
+
+    push_sub_analyzer_two.update('B5', ss_count)
 
     return ss_count
 
@@ -3736,6 +3742,7 @@ def count_sub_results_three():
     """
     retrieve_sub_data_three = SHEET.worksheet("tracker")
     sub_column_three = retrieve_sub_data_three.col_values(2)
+    push_sub_analyzer_three = SHEET.worksheet("analyzer")
 
     fitness_count = 0
     for item in sub_column_three:
@@ -3743,6 +3750,8 @@ def count_sub_results_three():
             fitness_count += 1
 
     print(f"Fitness - [{fitness_count}]")
+
+    push_sub_analyzer_three.update('B6', fitness_count)
 
     return fitness_count
 
@@ -3755,6 +3764,7 @@ def count_sub_results_four():
     """
     retrieve_sub_data_four = SHEET.worksheet("tracker")
     sub_column_four = retrieve_sub_data_four.col_values(2)
+    push_sub_analyzer_four = SHEET.worksheet("analyzer")
 
     meditation_count = 0
     for item in sub_column_four:
@@ -3762,6 +3772,8 @@ def count_sub_results_four():
             meditation_count += 1
 
     print(f"Meditation - [{meditation_count}] \n")
+
+    push_sub_analyzer_four.update('B7', meditation_count)
 
     return meditation_count
 
@@ -3774,6 +3786,7 @@ def count_sub_results_five():
     """
     retrieve_sub_data_five = SHEET.worksheet("tracker")
     sub_column_five = retrieve_sub_data_five.col_values(2)
+    push_sub_analyzer_five = SHEET.worksheet("analyzer")
 
     personal_count = 0
     for item in sub_column_five:
@@ -3782,6 +3795,8 @@ def count_sub_results_five():
 
     print("PROGRESS")
     print(f"Personal Progress - [{personal_count}]")
+
+    push_sub_analyzer_five.update('B10', personal_count)
 
     return personal_count
 
@@ -3794,6 +3809,7 @@ def count_sub_results_six():
     """
     retrieve_sub_data_six = SHEET.worksheet("tracker")
     sub_column_six = retrieve_sub_data_six.col_values(2)
+    push_sub_analyzer_six = SHEET.worksheet("analyzer")
 
     global_count = 0
     for item in sub_column_six:
@@ -3801,6 +3817,8 @@ def count_sub_results_six():
             global_count += 1
 
     print(f"Global Progress - [{global_count}]")
+
+    push_sub_analyzer_six.update('B11', global_count)
 
     return global_count
 
@@ -3813,6 +3831,7 @@ def count_sub_results_seven():
     """
     retrieve_sub_data_seven = SHEET.worksheet("tracker")
     sub_column_seven = retrieve_sub_data_seven.col_values(2)
+    push_sub_analyzer_seven = SHEET.worksheet("analyzer")
 
     education_count = 0
     for item in sub_column_seven:
@@ -3820,6 +3839,8 @@ def count_sub_results_seven():
             education_count += 1
 
     print(f"Education Progress - [{education_count}]")
+
+    push_sub_analyzer_seven.update('B12', education_count)
 
     return education_count
 
@@ -3832,6 +3853,7 @@ def count_sub_results_eight():
     """
     retrieve_sub_data_eight = SHEET.worksheet("tracker")
     sub_column_eight = retrieve_sub_data_eight.col_values(2)
+    push_sub_analyzer_eight = SHEET.worksheet("analyzer")
 
     business_count = 0
     for item in sub_column_eight:
@@ -3839,6 +3861,8 @@ def count_sub_results_eight():
             business_count += 1
 
     print(f"Business Progress - [{business_count}] \n")
+
+    push_sub_analyzer_eight.update('B12', business_count)
 
     return business_count
 
@@ -3851,6 +3875,7 @@ def count_sub_results_nine():
     """
     retrieve_sub_data_nine = SHEET.worksheet("tracker")
     sub_column_nine = retrieve_sub_data_nine.col_values(2)
+    push_sub_analyzer_nine = SHEET.worksheet("analyzer")
 
     adventures_count = 0
     for item in sub_column_nine:
@@ -3859,6 +3884,8 @@ def count_sub_results_nine():
 
     print("FREEDOM")
     print(f"Adventures - [{adventures_count}]")
+
+    push_sub_analyzer_nine.update('B16', adventures_count)
 
     return adventures_count
 
@@ -3871,6 +3898,7 @@ def count_sub_results_ten():
     """
     retrieve_sub_data_ten = SHEET.worksheet("tracker")
     sub_column_ten = retrieve_sub_data_ten.col_values(2)
+    push_sub_analyzer_ten = SHEET.worksheet("analyzer")
 
     random_count = 0
     for item in sub_column_ten:
@@ -3878,6 +3906,8 @@ def count_sub_results_ten():
             random_count += 1
 
     print(f"Random Activity - [{random_count}]")
+
+    push_sub_analyzer_ten.update('B17', random_count)
 
     return random_count
 
@@ -3890,6 +3920,7 @@ def count_sub_results_eleven():
     """
     retrieve_sub_data_eleven = SHEET.worksheet("tracker")
     sub_column_eleven = retrieve_sub_data_eleven.col_values(2)
+    push_sub_analyzer_eleven = SHEET.worksheet("analyzer")
 
     rest_count = 0
     for item in sub_column_eleven:
@@ -3897,6 +3928,8 @@ def count_sub_results_eleven():
             rest_count += 1
 
     print(f"Rest - [{rest_count}]")
+
+    push_sub_analyzer_eleven.update('B18', rest_count)
 
     return rest_count
 
@@ -3909,6 +3942,7 @@ def count_sub_results_twelve():
     """
     retrieve_sub_data_twelve = SHEET.worksheet("tracker")
     sub_column_twelve = retrieve_sub_data_twelve.col_values(2)
+    push_sub_analyzer_twelve = SHEET.worksheet("analyzer")
 
     break_count = 0
     for item in sub_column_twelve:
@@ -3917,6 +3951,8 @@ def count_sub_results_twelve():
 
     print(f"Break - [{break_count}]")
     print("------------------------------------------------------------------")
+
+    push_sub_analyzer_twelve.update('B19', break_count)
 
     return break_count
 
