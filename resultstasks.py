@@ -586,7 +586,8 @@ def count_tasks_results_twntythree(task_input_twntythree):
         if item == task_input_twntythree:
             twntythree_row_count += 1
 
-    print(f"{task_input_twntythree} - [{twntythree_row_count}]")
+    print(f"{task_input_twntythree} - [{twntythree_row_count}] \n")
+    print("Congratulations!")
     print("------------------------------------------------------------------")
 
     push_task_analyzer_twntythree.update('A47', task_input_twntythree)

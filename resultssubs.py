@@ -332,7 +332,8 @@ def count_sub_results_twelve():
         if item == 'Break':
             break_count += 1
 
-    print(f"Break - [{break_count}]")
+    print(f"Break - [{break_count}] \n")
+    print("Congratulations!")
     print("------------------------------------------------------------------")
 
     push_sub_analyzer_twelve.update('B19', break_count)
