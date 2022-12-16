@@ -4625,7 +4625,7 @@ def validate_tasks_exit_input(values):
 def export_results_analyzer():
     """
     User is informed that all reporting and uploading is complete.
-    User is infromed on date and time of completion 
+    User is infromed on date and time of completion.
     Users receives a final link to their sheet.
     Users can see outro messages.
     Input of letter x leads user to the sequence of exiting the program.
