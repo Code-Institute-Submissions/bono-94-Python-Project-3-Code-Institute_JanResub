@@ -632,9 +632,9 @@ def export_results_analyzer():
     Input of letter x leads user to the sequence of exiting the program.
     """
     print("------------------------------------------------------------------")
-    print("Daily results have been successfully sent to the analyzer. \n")
     live_timestamp = datetime.now()
-    print(live_timestamp)
+    print(f"{live_timestamp} \n")
+    print("Daily results have been successfully sent to the analyzer. \n")
     print("Now you can access your sheet with detailed visual analysis. \n")
     print("Please follow this link: [https://bit.ly/life-tracker-sheet] \n")
     print("Thank you for participating. \n")
