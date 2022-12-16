@@ -3985,6 +3985,7 @@ def count_sub_results_twelve():
 
 def report_continue():
     """
+    Functions forces user to wait 1 minute before proceeding.
     Function prompts user to press x to access tasks results.
     """
     print("------------------------------------------------------------------")
@@ -4333,6 +4334,7 @@ def count_tasks_results_thirteen(task_input_thirteen):
 
 def tasks_report_upload():
     """
+    Functions forces user to wait 1 minute before proceeding.
     Function prompts user to press x to upload tasks results.
     """
     print("------------------------------------------------------------------")
@@ -4592,7 +4594,7 @@ def count_tasks_results_twntythree(task_input_twntythree):
 
 def tasks_report_exit():
     """
-    Function prompts user to press x to access tasks results.
+    Function prompts user to press x to access the final update messages.
     """
     print("------------------------------------------------------------------")
 
@@ -4622,20 +4624,20 @@ def validate_tasks_exit_input(values):
 
 def export_results_analyzer():
     """
-    Results are gathered from the tracker.
-    They are reported to program are being exported after processed.
-    Users receive a link to their sheet.
-    Users see outro message with input section.
-    Message leads to exit the program sequence.
+    User is informed that all reporting and uploading is complete.
+    User is infromed on date and time of completion 
+    Users receives a final link to their sheet.
+    Users can see outro messages.
+    Input of letter x leads user to the sequence of exiting the program.
     """
-    print("Updating results to the analyzer...")
-    print("Daily results have been successfully sent to the analyzer.")
+    print("------------------------------------------------------------------")
+    print("Daily results have been successfully sent to the analyzer. \n")
     live_timestamp = datetime.now()
     print(live_timestamp)
-    print("Now you can access your worksheet with detailed visual analysis.")
-    print("Please follow this link: [https://bit.ly/life-tracker-sheet]")
-    print("Thank you for participating.")
-    print("See you tomorrow at the next tracking and analyzing mission!")
+    print("Now you can access your sheet with detailed visual analysis. \n")
+    print("Please follow this link: [https://bit.ly/life-tracker-sheet] \n")
+    print("Thank you for participating. \n")
+    print("See you tomorrow at the next tracking and analyzing mission! \n")
 
     while True:
         exit_input = input("Please enter letter x to exit: \n")
@@ -4664,17 +4666,21 @@ def exit_screen():
     """
     Informs the user that exit sequence is initiated.
     Countdown of 10 seconds ends with exit message.
+    Function raises SystemExit to leave the program.
     """
     print("------------------------------------------------------------------")
     print("Initiating Exit Sequence...")
 
     print("Loading...")
 
+    time.sleep(3)
+
     countdown = 10
 
     while countdown >= 0:
         print(f"{countdown} seconds...")
         countdown -= 1
+        time.sleep(1)
 
     print("------------------------------------------------------------------")
 
@@ -4887,6 +4893,8 @@ def run_program_exit():
     Function that runs all final exiting functions of the program.
     """
     tasks_report_exit()
+    export_results_analyzer()
+    exit_screen()
 
 
 run_introduction()
