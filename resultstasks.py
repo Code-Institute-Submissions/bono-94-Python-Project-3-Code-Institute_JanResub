@@ -670,9 +670,9 @@ def exit_screen():
     Function raises SystemExit to leave the program.
     """
     print("------------------------------------------------------------------")
-    print("Initiating Exit Sequence...")
+    print("Initiating Exit Sequence... \n")
 
-    print("Loading...")
+    print("Loading... \n")
 
     time.sleep(3)
 
