@@ -882,3 +882,27 @@ def validate_seventeen_next_data(values):
         return False
 
     return True
+
+
+def run_data_inputs_third():
+    """
+    Runs third quarter of input functions inside the program.
+    """
+    sub_input_twelve = input_results_twelve()
+    task_input_twelve = input_task_twelve(sub_input_twelve)
+    data_uploaded_twelve(sub_input_twelve, task_input_twelve)
+    sub_input_thirteen = input_results_thirteen()
+    task_input_thirteen = input_task_thirteen(sub_input_thirteen)
+    data_uploaded_thirteen(sub_input_thirteen, task_input_thirteen)
+    sub_input_fourteen = input_results_fourteen()
+    task_input_fourteen = input_task_fourteen(sub_input_fourteen)
+    data_uploaded_fourteen(sub_input_fourteen, task_input_fourteen)
+    sub_input_fifteen = input_results_fifteen()
+    task_input_fifteen = input_task_fifteen(sub_input_fifteen)
+    data_uploaded_fifteen(sub_input_fifteen, task_input_fifteen)
+    sub_input_sixteen = input_results_sixteen()
+    task_input_sixteen = input_task_sixteen(sub_input_sixteen)
+    data_uploaded_sixteen(sub_input_sixteen, task_input_sixteen)
+    sub_input_seventeen = input_results_seventeen()
+    task_input_seventeen = input_task_seventeen(sub_input_seventeen)
+    data_uploaded_seventeen(sub_input_seventeen, task_input_seventeen)

@@ -883,3 +883,27 @@ def validate_five_next_data(values):
         return False
 
     return True
+
+
+def run_data_inputs_first():
+    """
+    Runs first quarter of input functions inside the program.
+    """
+    sub_input_zero = input_results_zero()
+    task_input_zero = input_task_zero(sub_input_zero)
+    data_uploaded_zero(sub_input_zero, task_input_zero)
+    sub_input_one = input_results_one()
+    task_input_one = input_task_one(sub_input_one)
+    data_uploaded_one(sub_input_one, task_input_one)
+    sub_input_two = input_results_two()
+    task_input_two = input_task_two(sub_input_two)
+    data_uploaded_two(sub_input_two, task_input_two)
+    sub_input_three = input_results_three()
+    task_input_three = input_task_three(sub_input_three)
+    data_uploaded_three(sub_input_three, task_input_three)
+    sub_input_four = input_results_four()
+    task_input_four = input_task_four(sub_input_four)
+    data_uploaded_four(sub_input_four, task_input_four)
+    sub_input_five = input_results_five()
+    task_input_five = input_task_five(sub_input_five)
+    data_uploaded_five(sub_input_five, task_input_five)

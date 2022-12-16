@@ -882,3 +882,27 @@ def validate_twentythree_next_data(values):
         return False
 
     return True
+
+
+def run_data_inputs_fourth():
+    """
+    Runs fourth quarter of input functions inside the program.
+    """
+    sub_input_eighteen = input_results_eighteen()
+    task_input_eighteen = input_task_eighteen(sub_input_eighteen)
+    data_uploaded_eighteen(sub_input_eighteen, task_input_eighteen)
+    sub_input_nineteen = input_results_nineteen()
+    task_input_nineteen = input_task_nineteen(sub_input_nineteen)
+    data_uploaded_nineteen(sub_input_nineteen, task_input_nineteen)
+    sub_input_twenty = input_results_twenty()
+    task_input_twenty = input_task_twenty(sub_input_twenty)
+    data_uploaded_twenty(sub_input_twenty, task_input_twenty)
+    sub_input_twentyone = input_results_twentyone()
+    task_input_twentyone = input_task_twentyone(sub_input_twentyone)
+    data_uploaded_twentyone(sub_input_twentyone, task_input_twentyone)
+    sub_input_twentytwo = input_results_twentytwo()
+    task_input_twentytwo = input_task_twentytwo(sub_input_twentytwo)
+    data_uploaded_twentytwo(sub_input_twentytwo, task_input_twentytwo)
+    sub_input_twentythree = input_results_twentythree()
+    task_input_twthree = input_task_twentythree(sub_input_twentythree)
+    data_uploaded_twentythree(sub_input_twentythree, task_input_twthree)

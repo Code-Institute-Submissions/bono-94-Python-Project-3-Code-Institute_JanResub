@@ -377,3 +377,23 @@ def validate_task_results_input(values):
         return False
 
     return True
+
+
+def run_sub_report():
+    """
+    Runs all the subcategories functions that count and report results.
+    """
+    all_results_uploaded_successfully()
+    count_sub_results_one()
+    count_sub_results_two()
+    count_sub_results_three()
+    count_sub_results_four()
+    count_sub_results_five()
+    count_sub_results_six()
+    count_sub_results_seven()
+    count_sub_results_eight()
+    count_sub_results_nine()
+    count_sub_results_ten()
+    count_sub_results_eleven()
+    count_sub_results_twelve()
+    report_continue()
