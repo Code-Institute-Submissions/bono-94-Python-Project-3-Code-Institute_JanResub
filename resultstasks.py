@@ -282,6 +282,7 @@ def count_tasks_results_eleven(task_input_eleven):
             eleven_row_count += 1
 
     print(f"{task_input_eleven} - [{eleven_row_count}]")
+    print("------------------------------------------------------------------")
 
     push_task_analyzer_eleven.update('A35', task_input_eleven)
     push_task_analyzer_eleven.update('B35', eleven_row_count)
@@ -342,6 +343,7 @@ def count_tasks_results_twelve(task_input_twelve):
         if item == task_input_twelve:
             twelve_row_count += 1
 
+    print("------------------------------------------------------------------")
     print(f"{task_input_twelve} - [{twelve_row_count}]")
 
     push_task_analyzer_twelve.update('A36', task_input_twelve)
