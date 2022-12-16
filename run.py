@@ -37,14 +37,14 @@ def introduction():
     print("HOW IT WORKS? \n")
     print("- Following the introduction, you will proceed to rules section")
     print("- After that, you will be asked to enter personal identification")
-    print("- With starting a program, previous cell values will clear")
+    print("- With starting a program, previous cell values will be cleared")
     print("- Your results sheet access: [https://bit.ly/life-tracker-sheet]")
     print("- Next you will be asked to input your daily events per each hour")
-    print("- Your data will be exported to an external online Google Sheet")
+    print("- Your data will be exported to an external Google Sheet: tracker")
     print("- Once the data is in, program will retrieve your results")
     print("- Those are noted as daily duration of each category and task")
     print("- Once that is reported to you, it will be exported again")
-    print("- This time, to the second worksheet: analysis")
+    print("- This time, to the second Google worksheet: analysis")
     print("- You will be able to see visual analysis of your results. \n")
 
     time.sleep(10)
@@ -84,7 +84,7 @@ def rules():
     print("- When asked to input letter x, enter only one character \n")
     print("- When inputting subcategories, please follow rules precisely")
     print("- When inputting tasks, please follow rules precisely")
-    print("- Do not enter any numbers or symbols, only letters are allowed")
+    print("- Do not enter any numbers or symbols, only letters ")
     print("- Only enter values when asked for it")
     print("- Only select sub-categories from provided list of options")
     print("- Tasks are custom by your experience with limit of 40 characters")
@@ -3714,6 +3714,7 @@ def count_sub_results_one():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_one = SHEET.worksheet("tracker")
     sub_column_one = retrieve_sub_data_one.col_values(2)
@@ -3739,6 +3740,7 @@ def count_sub_results_two():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_two = SHEET.worksheet("tracker")
     sub_column_two = retrieve_sub_data_two.col_values(2)
@@ -3761,6 +3763,7 @@ def count_sub_results_three():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_three = SHEET.worksheet("tracker")
     sub_column_three = retrieve_sub_data_three.col_values(2)
@@ -3783,6 +3786,7 @@ def count_sub_results_four():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_four = SHEET.worksheet("tracker")
     sub_column_four = retrieve_sub_data_four.col_values(2)
@@ -3805,6 +3809,7 @@ def count_sub_results_five():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_five = SHEET.worksheet("tracker")
     sub_column_five = retrieve_sub_data_five.col_values(2)
@@ -3828,6 +3833,7 @@ def count_sub_results_six():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_six = SHEET.worksheet("tracker")
     sub_column_six = retrieve_sub_data_six.col_values(2)
@@ -3850,6 +3856,7 @@ def count_sub_results_seven():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_seven = SHEET.worksheet("tracker")
     sub_column_seven = retrieve_sub_data_seven.col_values(2)
@@ -3872,6 +3879,7 @@ def count_sub_results_eight():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_eight = SHEET.worksheet("tracker")
     sub_column_eight = retrieve_sub_data_eight.col_values(2)
@@ -3894,6 +3902,7 @@ def count_sub_results_nine():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_nine = SHEET.worksheet("tracker")
     sub_column_nine = retrieve_sub_data_nine.col_values(2)
@@ -3917,6 +3926,7 @@ def count_sub_results_ten():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_ten = SHEET.worksheet("tracker")
     sub_column_ten = retrieve_sub_data_ten.col_values(2)
@@ -3939,6 +3949,7 @@ def count_sub_results_eleven():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_eleven = SHEET.worksheet("tracker")
     sub_column_eleven = retrieve_sub_data_eleven.col_values(2)
@@ -3961,6 +3972,7 @@ def count_sub_results_twelve():
     Function retrieves list of all subcategories inputs from the column.
     Then it calculates how many times certain subcategory occurs.
     Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
     """
     retrieve_sub_data_twelve = SHEET.worksheet("tracker")
     sub_column_twelve = retrieve_sub_data_twelve.col_values(2)
@@ -4622,7 +4634,7 @@ def export_results_analyzer():
     """
     User is informed that all reporting and uploading is complete.
     User is infromed on date and time of completion.
-    Users receives a final link to their sheet.
+    Users receives again a final link to their sheet.
     Users can see outro messages.
     Input of letter x leads user to the sequence of exiting the program.
     """
