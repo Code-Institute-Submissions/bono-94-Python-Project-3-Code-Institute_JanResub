@@ -642,6 +642,7 @@ def export_results_analyzer():
     print("Please follow this link: [https://bit.ly/life-tracker-sheet] \n")
     print("Thank you for participating. \n")
     print("See you tomorrow at the next tracking and analyzing mission! \n")
+    print("After exiting program, you can press 'RUN PROGRAM' to restart \n")
 
     while True:
         exit_input = input("Please enter letter x to exit: \n")
