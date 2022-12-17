@@ -42,9 +42,7 @@ def input_results_six():
     print("- Rest")
     print("- Break \n")
     print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity")
-    print("- Please enter letters only, no numbers or symbols")
-    print("- Please capitalize first letter of each word inputted \n")
+    print("- Please enter a custom task that best desribes your activity \n")
 
     while True:
         six_sub_input = input("Please enter your sub-category here: \n")
@@ -186,9 +184,7 @@ def input_results_seven():
     print("- Rest")
     print("- Break \n")
     print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity")
-    print("- Please enter letters only, no numbers or symbols")
-    print("- Please capitalize first letter of each word inputted \n")
+    print("- Please enter a custom task that best desribes your activity \n")
 
     while True:
         seven_sub_input = input("Please enter your sub-category here: \n")
@@ -330,9 +326,7 @@ def input_results_eight():
     print("- Rest")
     print("- Break \n")
     print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity")
-    print("- Please enter letters only, no numbers or symbols")
-    print("- Please capitalize first letter of each word inputted \n")
+    print("- Please enter a custom task that best desribes your activity \n")
 
     while True:
         eight_sub_input = input("Please enter your sub-category here: \n")
@@ -474,9 +468,7 @@ def input_results_nine():
     print("- Rest")
     print("- Break \n")
     print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity")
-    print("- Please enter letters only, no numbers or symbols")
-    print("- Please capitalize first letter of each word inputted \n")
+    print("- Please enter a custom task that best desribes your activity \n")
 
     while True:
         nine_sub_input = input("Please enter your sub-category here: \n")
@@ -618,9 +610,7 @@ def input_results_ten():
     print("- Rest")
     print("- Break \n")
     print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity")
-    print("- Please enter letters only, no numbers or symbols")
-    print("- Please capitalize first letter of each word inputted \n")
+    print("- Please enter a custom task that best desribes your activity \n")
 
     while True:
         ten_sub_input = input("Please enter your sub-category here: \n")
@@ -762,9 +752,7 @@ def input_results_eleven():
     print("- Rest")
     print("- Break \n")
     print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity")
-    print("- Please enter letters only, no numbers or symbols")
-    print("- Please capitalize first letter of each word inputted \n")
+    print("- Please enter a custom task that best desribes your activity \n")
 
     while True:
         eleven_sub_input = input("Please enter your sub-category here: \n")
