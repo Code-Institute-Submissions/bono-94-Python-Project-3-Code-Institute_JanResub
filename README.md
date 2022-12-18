@@ -1,4 +1,4 @@
-# [LIFE TRACKER](https://life-tracker.herokuapp.com/) 
+# [Life Tracker](https://life-tracker.herokuapp.com/) 
 
 Life tracker is a Phyton-based terminal program that runs in the Code Institute mock terminal deployed on Heroku.
 
@@ -32,7 +32,133 @@ Users input their events per each hour of the day inside the terminal that autom
 
 ### Existing Features
 
-![Feature](./assets/media/images/extra/.jpg)
+![Options](./assets/media/images/features/options.jpg)
+- text
+- text
+
+
+![Tracker](./assets/media/images/features/tracker.jpg)
+- text
+- text
+
+![Analyzer](./assets/media/images/features/analyzer.jpg)
+- text
+- text
+
+![Analyzer Tasks](./assets/media/images/features/analyzer-task.jpg)
+- text
+- text
+
+![Intro](./assets/media/images/features/intro.jpg)
+- text
+- text
+
+![Intro Two](./assets/media/images/features/intro-two.jpg)
+- text
+- text
+
+![rules](./assets/media/images/features/rules.jpg)
+- text
+- text
+
+![ID](./assets/media/images/features/id.jpg)
+- text
+- text
+
+![ID Two](./assets/media/images/features/id-two.jpg)
+- text
+- text
+
+![Subcategory](./assets/media/images/features/sub.jpg)
+- text
+- text
+
+![Subcategroy Two](./assets/media/images/features/sub-two.jpg)
+- text
+- text
+
+![Subcategory Three](./assets/media/images/features/sub-three.jpg)
+- text
+- text
+
+![Input](./assets/media/images/features/input.jpg)
+- text
+- text
+
+![Input Process](./assets/media/images/features/input-process.jpg)
+- text
+- text
+
+![Input Track](./assets/media/images/features/input-track.jpg)
+- text
+- text
+
+![Input Process Two](./assets/media/images/features/input-process-two.jpg)
+- text
+- text
+
+![Inputs Completed](./assets/media/images/features/inputs-completed.jpg)
+- text
+- text
+
+![Sub Results](./assets/media/images/features/sub-results.jpg)
+- text
+- text
+
+![Sub Results Two](./assets/media/images/features/sub-results-two.jpg)
+- text
+- text
+
+![Sub Analysis](./assets/media/images/features/sub-analysis.jpg)
+- text
+- text
+
+![Sub Results Three](./assets/media/images/features/sub-results-three.jpg)
+- text
+- text
+
+![Sub Results Four](./assets/media/images/features/sub-results-four.jpg)
+- text
+- text
+
+
+
+![Task Results](./assets/media/images/features/task-results.jpg)
+- text
+- text
+
+![Task Results Two](./assets/media/images/features/task-results-two.jpg)
+- text
+- text
+
+![Task Results Three](./assets/media/images/features/task-results-three.jpg)
+- text
+- text
+
+![Task Results Four](./assets/media/images/features/task-results-four.jpg)
+- text
+- text
+
+![Task Analysis](./assets/media/images/features/task-analysis.jpg)
+- text
+- text
+
+![Task Analysis Two](./assets/media/images/features/task-analysis-two.jpg)
+- text
+- text
+
+![Outro](./assets/media/images/features/outro.jpg)
+- text
+- text
+
+![Exit](./assets/media/images/features/exit.jpg)
+- text
+- text
+
+![Exit Two](./assets/media/images/features/exit-two.jpg)
+- text
+- text
+
 
 
 
@@ -64,17 +190,22 @@ This project was manually tested with following procedures:
 - Code was passed through a PEP8 linter inside gitpod without any errors returned
 - Program was tested with correct and incorrect inputs in the both gitpod and Heroku terminals
 
-### Bugs
-
-#### Solved Bugs
-
+![Feature](./assets/media/images/features/.jpg)
 - text
 
-#### Unsolved Bugs
+### Bugs
+
+__Solved Bugs__
+
+
+![Feature](./assets/media/images/features/.jpg)
+- text
+
+__Unsolved Bugs__
 
 - All bugs were solved
 
-#### Validator Testing
+__Validator Testing__
 
 - PEP8
     - No errors found when validating all 5000 lines of code from ____________(website) 
