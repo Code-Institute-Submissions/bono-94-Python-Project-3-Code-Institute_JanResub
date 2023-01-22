@@ -211,8 +211,8 @@ def run_inputs():
 
     hour = -1
     while hour < 24:
-        input_subcategory(hour)
         hour += 1
+        input_subcategory()
 
 
 def input_subcategory(hour):
@@ -220,33 +220,32 @@ def input_subcategory(hour):
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category from the list of options.
     """
-    print("What have you done today between 00:00 and 01:00? \n")
+    print(f"What have you done today between {hour}:00 and 01:00? \n")
     print("GROWTH")
-    print("- Body System Care")
-    print("- Soul & Spirit")
-    print("- Fitness")
-    print("- Meditation")
+    print("1) Body System Care")
+    print("2) Soul & Spirit")
+    print("3) Fitness")
+    print("4) Meditation")
     print("PROGRESS")
-    print("- Personal Progress")
-    print("- Global Progress")
-    print("- Education Progress")
-    print("- Business Progress")
+    print("5) Personal Progress")
+    print("6) Global Progress")
+    print("7) Education Progress")
+    print("8) Business Progress")
     print("FREEDOM")
-    print("- Adventures")
-    print("- Random Activity")
-    print("- Rest")
+    print("9) Adventures")
+    print("10) Random Activity")
+    print("11) Rest")
     print("- Break \n")
     print("- Please select one sub-category from the list above")
-    print("- Please enter a custom task that best desribes your activity \n")
 
     while True:
-        zero_sub_input = input("Please enter your sub-category here: \n")
+        sub_input = input("Please enter your sub-category here: \n")
 
-        if validate_zero_sub_data(zero_sub_input):
+        if validate_sub_data(sub_input):
             print("Submission accepted! \n")
             break
 
-    return zero_sub_input
+    return sub_input
 
 
 def validate_zero_sub_data(values):
