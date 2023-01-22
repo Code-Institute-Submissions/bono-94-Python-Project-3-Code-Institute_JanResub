@@ -126,8 +126,6 @@ def personal_info_name():
     print("- If you did not request ID yet, you can enter any number.")
     print("- Please do not enter any blank spaces. \n")
 
-    time.sleep(5)
-
     while True:
         name_input = input("Please enter your username: \n")
 
