@@ -207,7 +207,15 @@ def clear_previous_inputs():
     clear_analyzer.batch_clear(["A24:A47"])
 
 
-def input_results_zero():
+def run_inputs():
+
+    hour = -1
+    while hour < 24:
+        input_subcategory(hour)
+        hour += 1
+
+
+def input_subcategory(hour):
     """
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category from the list of options.
