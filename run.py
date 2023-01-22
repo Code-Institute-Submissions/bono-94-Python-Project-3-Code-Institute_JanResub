@@ -47,8 +47,6 @@ def introduction():
     print("- This time, to the second Google worksheet: analysis")
     print("- You will be able to see visual analysis of your results. \n")
 
-    time.sleep(10)
-
     while True:
         rules_input = input("Type in letter x and press enter to continue: \n")
 
