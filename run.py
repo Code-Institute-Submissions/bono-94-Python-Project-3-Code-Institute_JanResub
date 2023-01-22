@@ -206,6 +206,7 @@ def clear_previous_inputs():
     clear_analyzer.batch_clear(["B16:B19", "B24:B47"])
     clear_analyzer.batch_clear(["A24:A47"])
 
+
 def input_results_zero():
     """
     Requests direct input from the user about their daily events.
