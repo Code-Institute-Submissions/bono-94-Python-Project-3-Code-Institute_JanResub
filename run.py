@@ -248,31 +248,17 @@ def input_subcategory(hour):
     return sub_input
 
 
-def validate_zero_sub_data(values):
+def validate_sub_data(values):
     """
     Input validator function.
     Prints error message if sub-category input doesn't match options.
     """
-    subcategories = [
-        'Body System Care',
-        'Soul & Spirit',
-        'Fitness',
-        'Meditation',
-        'Personal Progress',
-        'Global Progress',
-        'Education Progress',
-        'Business Progress',
-        'Adventures',
-        'Random Activity',
-        'Rest',
-        'Break',
-    ]
 
-    if values in subcategories:
+    if values <= 11:
         return True
-
-    print("Please only enter sub-categories from the list of options. \n")
-    return False
+    else:
+        print("Please only enter sub-categories from the list of options. \n")
+        return False
 
 
 def input_task_zero(sub_input_zero):
