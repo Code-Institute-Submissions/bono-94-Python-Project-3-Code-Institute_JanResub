@@ -362,6 +362,67 @@ def validate_zero_next_data(values):
     return True
 
 
+def all_results_uploaded_successfully():
+    """
+    This function informs user when all results are updated to the sheet.
+    It is a communicative transition to results report.
+    """
+    print("------------------------------------------------------------------")
+    print("Updating sheet... \n")
+
+    time.sleep(5)
+
+    print("Upload completed. \n")
+    print("Your daily chedule is now successfully updated! \n")
+
+    while True:
+        results_sub_input = input("Please enter letter x to acess results: \n")
+
+        if validate_results_sub_data(results_sub_input):
+            print("Loading...")
+            break
+
+    print("------------------------------------------------------------------")
+
+    return results_sub_input
+
+
+def validate_results_sub_data(values):
+    """
+    Input validator function.
+    Prints error message if user input does not match letter "x".
+    """
+    if values != "x":
+        print("Invalid data, please input letter x then and try again. \n")
+        return False
+
+    return True
+
+
+def count_sub_results_one():
+    """
+    Function retrieves list of all subcategories inputs from the column.
+    Then it calculates how many times certain subcategory occurs.
+    Also reports relevant subcategory consumption results to the user.
+    Finally, it pushes users results to the analyzer sheet.
+    """
+    retrieve_sub_data_one = SHEET.worksheet("tracker")
+    sub_column_one = retrieve_sub_data_one.col_values(2)
+    push_sub_analyzer_one = SHEET.worksheet("analyzer")
+
+    body_system_count = 0
+    for item in sub_column_one:
+        if item == 'Body System Care':
+            body_system_count += 1
+
+    print("------------------------------------------------------------------")
+    print("These are your daily subcategories results in hours spent: \n")
+    print("GROWTH")
+    print(f"Body System Care - [{body_system_count}]")
+
+    push_sub_analyzer_one.update('B4', body_system_count)
+
+    return body_system_count
 
 
 
