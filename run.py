@@ -89,8 +89,6 @@ def rules():
     print("- Please do not leave any fields empty")
     print("- Each hour of a day is in 24-hour format \n")
 
-    time.sleep(10)
-
     while True:
         personal_info_input = input("Please enter letter x to continue: \n")
 
