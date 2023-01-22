@@ -547,14 +547,11 @@ def run_introduction():
     clear_previous_inputs()
 
 
+def run_inputs():
+
+    run_inputs()
+    input_subcategory(hour)
+
+
 run_introduction()
-inputone.run_data_inputs_first()
-inputtwo.run_data_inputs_second()
-inputthree.run_data_inputs_third()
-inputfour.run_data_inputs_fourth()
-resultssubs.run_sub_report()
-resultstasks.run_task_report_first()
-resultstasks.run_task_report_second()
-resultstasks.run_task_report_third()
-resultstasks.run_task_report_fourth()
-resultstasks.run_program_exit()
+run_inputs()
