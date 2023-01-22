@@ -517,8 +517,6 @@ def exit_screen():
 
     print("Loading... \n")
 
-    time.sleep(3)
-
     countdown = 10
 
     while countdown >= 0:
