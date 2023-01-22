@@ -449,6 +449,103 @@ def count_tasks_results_zero(task_input_zero):
     return zero_row_count
 
 
+def tasks_report_exit():
+    """
+    Function prompts user to press x to access the final update messages.
+    """
+    print("------------------------------------------------------------------")
+
+    while True:
+        tasks_exit_input = input("Please enter letter x to continue: \n")
+
+        if validate_tasks_exit_input(tasks_exit_input):
+            print("Loading...")
+            break
+
+    print("------------------------------------------------------------------")
+
+    return tasks_exit_input
+
+
+def validate_tasks_exit_input(values):
+    """
+    Input validator function.
+    Prints error message if user input does not match letter "x".
+    """
+    if values != "x":
+        print("Invalid data, please input letter x then and try again. \n")
+        return False
+
+    return True
+
+
+def export_results_analyzer():
+    """
+    User is informed that all reporting and uploading is complete.
+    User is infromed on date and time of completion.
+    Users receives again a final link to their sheet.
+    Users can see outro messages.
+    Input of letter x leads user to the sequence of exiting the program.
+    """
+    print("------------------------------------------------------------------")
+    live_timestamp = datetime.now()
+    print(f"{live_timestamp} \n")
+    print("Daily results have been successfully sent to the analyzer. \n")
+    print("Now you can access your sheet with detailed visual analysis. \n")
+    print("Please follow this link: [https://bit.ly/life-tracker-sheet] \n")
+    print("Thank you for participating. \n")
+    print("See you tomorrow at the next tracking and analyzing mission! \n")
+    print("After exiting program, you can press 'RUN PROGRAM' to restart \n")
+
+    while True:
+        exit_input = input("Please enter letter x to exit: \n")
+
+        if validate_exit_data(exit_input):
+            print("Loading...")
+            break
+
+    print("------------------------------------------------------------------")
+    return exit_input
+
+
+def validate_exit_data(values):
+    """
+    Input validator function.
+    Prints error message if user input does not match letter "x".
+    """
+    if values != "x":
+        print("Invalid data, please input letter x then and try again. \n")
+        return False
+
+    return True
+
+
+def exit_screen():
+    """
+    Informs the user that exit sequence is initiated.
+    Countdown of 10 seconds ends with exit message.
+    Function raises SystemExit to leave the program.
+    """
+    print("------------------------------------------------------------------")
+    print("Initiating Exit Sequence... \n")
+
+    print("Loading... \n")
+
+    time.sleep(3)
+
+    countdown = 10
+
+    while countdown >= 0:
+        print(f"{countdown} seconds...")
+        countdown -= 1
+        time.sleep(1)
+
+    print("------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
+
+    raise SystemExit("Exiting...")
+
+
 def run_introduction():
     """
     Runs all introductory functions inside the program.
