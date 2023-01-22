@@ -355,9 +355,6 @@ def all_results_uploaded_successfully():
     """
     print("------------------------------------------------------------------")
     print("Updating sheet... \n")
-
-    time.sleep(5)
-
     print("Upload completed. \n")
     print("Your daily chedule is now successfully updated! \n")
 
