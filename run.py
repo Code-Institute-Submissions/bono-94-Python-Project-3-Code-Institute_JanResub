@@ -8,12 +8,6 @@ from datetime import datetime
 import time
 import gspread
 from google.oauth2.service_account import Credentials
-import inputone
-import inputtwo
-import inputthree
-import inputfour
-import resultssubs
-import resultstasks
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
