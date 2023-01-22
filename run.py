@@ -220,7 +220,8 @@ def input_subcategory(hour):
     Requests direct input from the user about their daily events.
     User is requested to select one sub-category from the list of options.
     """
-    print(f"What have you done today between {hour}:00 and 01:00? \n")
+    hour_end = hour + 1
+    print(f"What have you done today between {hour}:00 and {hour_end}:00? \n")
     print("GROWTH")
     print("1) Body System Care")
     print("2) Soul & Spirit")
