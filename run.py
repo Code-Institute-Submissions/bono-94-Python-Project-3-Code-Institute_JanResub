@@ -425,7 +425,28 @@ def count_sub_results_one():
     return body_system_count
 
 
+def count_tasks_results_zero(task_input_zero):
+    """
+    Function retrieves tasks results and counts items repetitions.
+    After reporting to user, it updates analyzer sheet.
+    """
+    retrieve_task_data_zero = SHEET.worksheet('tracker')
+    task_column_zero = retrieve_task_data_zero.col_values(3)
+    push_task_analyzer_zero = SHEET.worksheet("analyzer")
 
+    zero_row_count = 0
+    for item in task_column_zero:
+        if item == task_input_zero:
+            zero_row_count += 1
+
+    print("------------------------------------------------------------------")
+    print("These are your daily tasks results in hours spent: \n")
+    print(f"{task_input_zero} - [{zero_row_count}]")
+
+    push_task_analyzer_zero.update('A24', task_input_zero)
+    push_task_analyzer_zero.update('B24', zero_row_count)
+
+    return zero_row_count
 
 
 def run_introduction():
