@@ -173,8 +173,6 @@ def personal_info_id():
 
     print("Starting the program...")
 
-    time.sleep(5)
-
     print("------------------------------------------------------------------")
 
     return id_input
