@@ -220,6 +220,152 @@ def clear_previous_inputs():
     clear_analyzer.batch_clear(["B16:B19", "B24:B47"])
     clear_analyzer.batch_clear(["A24:A47"])
 
+def input_results_zero():
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to select one sub-category from the list of options.
+    """
+    print("What have you done today between 00:00 and 01:00? \n")
+    print("GROWTH")
+    print("- Body System Care")
+    print("- Soul & Spirit")
+    print("- Fitness")
+    print("- Meditation")
+    print("PROGRESS")
+    print("- Personal Progress")
+    print("- Global Progress")
+    print("- Education Progress")
+    print("- Business Progress")
+    print("FREEDOM")
+    print("- Adventures")
+    print("- Random Activity")
+    print("- Rest")
+    print("- Break \n")
+    print("- Please select one sub-category from the list above")
+    print("- Please enter a custom task that best desribes your activity \n")
+
+    while True:
+        zero_sub_input = input("Please enter your sub-category here: \n")
+
+        if validate_zero_sub_data(zero_sub_input):
+            print("Submission accepted! \n")
+            break
+
+    return zero_sub_input
+
+
+def validate_zero_sub_data(values):
+    """
+    Input validator function.
+    Prints error message if sub-category input doesn't match options.
+    """
+    subcategories = [
+        'Body System Care',
+        'Soul & Spirit',
+        'Fitness',
+        'Meditation',
+        'Personal Progress',
+        'Global Progress',
+        'Education Progress',
+        'Business Progress',
+        'Adventures',
+        'Random Activity',
+        'Rest',
+        'Break',
+    ]
+
+    if values in subcategories:
+        return True
+
+    print("Please only enter sub-categories from the list of options. \n")
+    return False
+
+
+def input_task_zero(sub_input_zero):
+    """
+    Requests direct input from the user about their daily events.
+    User is requested to enter one custom task for specific hour.
+    At the end, user can see both subcategories and task inputs.
+    """
+    while True:
+        zero_task_input = input("Please enter your task here: \n")
+
+        if validate_zero_task_data(zero_task_input):
+            print("Submission accepted! \n")
+            break
+
+    print(f"Your input: {sub_input_zero} - {zero_task_input.capitalize()}")
+    print("------------------------------------------------------------------")
+
+    return zero_task_input
+
+
+def validate_zero_task_data(values):
+    """
+    Input validator function.
+    Prints error message if task has more than 40 characters.
+    Prints error message if task input is a number.
+    Prints error message if task contains any numbers.
+    """
+    if len(values) >= 40:
+        print("Please enter tasks with maximum 40 characters. \n")
+        return False
+
+    if values.isdigit():
+        print("Please do not include any digits in the tasks. \n")
+        return False
+
+    if len(values) <= 2:
+        print("No input, enter at least 3 letters and try again. \n")
+        return False
+
+    return True
+
+
+def data_uploaded_zero(sub_input_zero, task_input_zero):
+    """
+    Function uploads both inputs to the correct cell of the excel document.
+    Upload status is discosed to user.
+    User is asked to enter letter x to continue to the next hour of a day.
+    """
+    update_worksheet_zero = SHEET.worksheet("tracker")
+
+    update_worksheet_zero.update('B2', sub_input_zero)
+
+    update_worksheet_zero.update('C2', task_input_zero.capitalize())
+
+    print("Processing request... \n")
+    print("00:00 - 01:00 hour has been successfully uploaded! \n")
+    print("Let's continue with the next hour of your day. \n")
+
+    while True:
+        zero_next_input = input("Please enter letter x to continue: \n")
+
+        if validate_zero_next_data(zero_next_input):
+            print("Loading...")
+            break
+
+    print("------------------------------------------------------------------")
+
+    return zero_next_input
+
+
+def validate_zero_next_data(values):
+    """
+    Input validator function.
+    Prints error message if user input does not match letter "x".
+    """
+    if values != "x":
+        print("Invalid data, please input letter x then and try again. \n")
+        return False
+
+    return True
+
+
+
+
+
+
 
 def run_introduction():
     """
