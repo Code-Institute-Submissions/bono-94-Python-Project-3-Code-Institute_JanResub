@@ -434,8 +434,8 @@ def export_results_analyzer():
     print("------------------------------------------------------------------")
     live_timestamp = datetime.now()
     print(f"{live_timestamp} \n")
-    print("Daily results have been successfully sent to the analyzer. \n")
-    print("Now you can access your sheet with detailed visual analysis. \n")
+    print("Daily results have been successfully sent to analyzer sheet. \n")
+    print("Now you can access your detailed visual analysis. \n")
     print("Please follow this link: [https://bit.ly/life-tracker-sheet] \n")
     print("Thank you for participating. \n")
     print("See you tomorrow at the next tracking and analyzing mission! \n")
@@ -444,15 +444,17 @@ def export_results_analyzer():
     while True:
         exit_input = input("Please enter letter x to exit: \n")
 
-        if validate_exit_data(exit_input):
+        if validate_exit_input(exit_input):
+            print("")
             print("Loading...")
             break
 
     print("------------------------------------------------------------------")
+
     return exit_input
 
 
-def validate_exit_data(values):
+def validate_exit_input(values):
     """
     Input validator function.
     Prints error message if user input does not match letter "x".
