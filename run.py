@@ -207,12 +207,11 @@ def clear_previous_inputs():
     clear_analyzer.batch_clear(["A24:A47"])
 
 
-def run_inputs():
+def all_inputs():
 
-    hour = -1
-    while hour < 24:
+    for hour in range(24):
         hour += 1
-        input_subcategory()
+        input_subcategory(hour)
 
 
 def input_subcategory(hour):
@@ -535,8 +534,7 @@ def run_introduction():
 
 def run_inputs():
 
-    run_inputs()
-    input_subcategory(hour)
+    all_inputs()
 
 
 run_introduction()
