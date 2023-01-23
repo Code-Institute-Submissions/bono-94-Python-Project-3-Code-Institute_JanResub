@@ -244,7 +244,8 @@ def input_subcategory(hour):
         sub_input = input("Please enter the number of sub-category here: \n")
 
         if validate_sub_data(sub_input):
-            print("Submission accepted! \n")
+            print("")
+            print("Submission accepted!")
             break
 
     print("------------------------------------------------------------------")
@@ -289,7 +290,8 @@ def task_input():
         task_input = input("Please enter your task here: \n")
 
         if validate_task_input(task_input):
-            print("Submission accepted! \n")
+            print("")
+            print("Submission accepted!")
             break
 
     print("------------------------------------------------------------------")
