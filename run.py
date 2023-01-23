@@ -393,7 +393,6 @@ def all_results_uploaded():
     This function informs user when all results are updated to the sheet.
     It is a communicative transition to results report.
     """
-    print("------------------------------------------------------------------")
     print("Updating sheet... \n")
     print("Upload completed. \n")
     print("Your daily schedule is now successfully updated! \n")
