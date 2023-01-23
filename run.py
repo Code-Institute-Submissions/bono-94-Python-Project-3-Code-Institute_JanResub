@@ -501,6 +501,8 @@ def run_program():
     clear_previous_inputs()
     all_inputs()
     all_results_uploaded()
+    export_results_analyzer()
+    exit_screen()
 
 
 run_program()
