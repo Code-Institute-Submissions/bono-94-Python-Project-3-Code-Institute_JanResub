@@ -357,10 +357,8 @@ def data_uploader(sub_name, task, hour):
     hour_end = hour + 1
 
     update_worksheet = SHEET.worksheet("tracker")
-
-    update_worksheet.update('B2', sub_name)
-
-    update_worksheet.update('C2', task.capitalize())
+    update_worksheet.update(f"B{hour+2}", sub_name)
+    update_worksheet.update(f"C{hour+2}", task.capitalize())
 
     print("Processing request... \n")
     print(f"{hour}:00 - {hour_end}:00 hour has been successfully uploaded! \n")
@@ -371,6 +369,7 @@ def data_uploader(sub_name, task, hour):
         next_input = input("Please enter letter x to continue: \n")
 
         if validate_next_input(next_input):
+            print("")
             print("Loading...")
             break
 
