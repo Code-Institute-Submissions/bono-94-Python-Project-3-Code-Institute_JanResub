@@ -347,7 +347,7 @@ def data_uploaded_zero(sub_input, task_input, hour):
     return next_input
 
 
-def validate_zero_next_data(values):
+def validate_next_input(values):
     """
     Input validator function.
     Prints error message if user input does not match letter "x".
