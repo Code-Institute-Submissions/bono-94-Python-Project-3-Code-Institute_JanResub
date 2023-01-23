@@ -202,9 +202,6 @@ def clear_previous_inputs():
     clear_analyzer = SHEET.worksheet("analyzer")
 
     clear_tracker.batch_clear(["B2:B25", "C2:C25"])
-    clear_analyzer.batch_clear(["B4:B7", "B10:B13"])
-    clear_analyzer.batch_clear(["B16:B19", "B24:B47"])
-    clear_analyzer.batch_clear(["A24:A47"])
 
 
 def all_inputs():
