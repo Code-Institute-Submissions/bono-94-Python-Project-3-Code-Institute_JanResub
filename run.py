@@ -223,6 +223,7 @@ def input_subcategory(hour):
     """
     hour_end = hour + 1
     print(f"What have you done today between {hour}:00 and {hour_end}:00? \n")
+    print("- Please select one sub-category from the list below: \n")
     print("GROWTH")
     print("1) Body System Care")
     print("2) Soul & Spirit")
@@ -238,14 +239,15 @@ def input_subcategory(hour):
     print("10) Random Activity")
     print("11) Rest")
     print("12) Break \n")
-    print("- Please select one sub-category from the list above")
 
     while True:
-        sub_input = input("Please enter your sub-category here: \n")
+        sub_input = input("Please enter the number of sub-category here: \n")
 
         if validate_sub_data(sub_input):
             print("Submission accepted! \n")
             break
+
+    print("------------------------------------------------------------------")
 
     return sub_input
 
