@@ -289,7 +289,6 @@ def task_input():
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input} - {task_input.capitalize()}")
     print("------------------------------------------------------------------")
 
     return task_input
@@ -317,7 +316,7 @@ def validate_task_input(values):
     return True
 
 
-def data_uploaded_zero(sub_input_zero, task_input_zero):
+def data_uploaded_zero(sub_input, task_input):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
@@ -331,6 +330,7 @@ def data_uploaded_zero(sub_input_zero, task_input_zero):
 
     print("Processing request... \n")
     print("00:00 - 01:00 hour has been successfully uploaded! \n")
+    print(f"Your input: {sub_input} - {task_input.capitalize()}")
     print("Let's continue with the next hour of your day. \n")
 
     while True:
