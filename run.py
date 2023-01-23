@@ -317,6 +317,33 @@ def validate_task_input(values):
     return True
 
 
+def subcategory_rename(sub):
+    if sub == '1':
+        return 'Body System Care'
+    if sub == '2':
+        return 'Soul & Spirit'
+    if sub == '3':
+        return 'Fitness'
+    if sub == '4':
+        return 'Meditation'
+    if sub == '5':
+        return 'Personal Progress'
+    if sub == '6':
+        return 'Global Progress'
+    if sub == '7':
+        return 'Education Progress'
+    if sub == '8':
+        return 'Business Progress'
+    if sub == '9':
+        return 'Adventures'
+    if sub == '10':
+        return 'Random Activity'
+    if sub == '11':
+        return 'Rest'
+    if sub == '12':
+        return 'Break'
+
+
 def data_uploader(sub, task, hour):
     """
     Function uploads both inputs to the correct cell of the excel document.
