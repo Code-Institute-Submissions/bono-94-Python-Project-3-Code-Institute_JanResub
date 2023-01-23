@@ -275,23 +275,23 @@ def validate_sub_data(values):
         return False
 
 
-def input_task_zero(sub_input_zero):
+def task_input(sub_input):
     """
     Requests direct input from the user about their daily events.
     User is requested to enter one custom task for specific hour.
     At the end, user can see both subcategories and task inputs.
     """
     while True:
-        zero_task_input = input("Please enter your task here: \n")
+        task_input = input("Please enter your task here: \n")
 
-        if validate_zero_task_data(zero_task_input):
+        if validate_task_input(task_input):
             print("Submission accepted! \n")
             break
 
-    print(f"Your input: {sub_input_zero} - {zero_task_input.capitalize()}")
+    print(f"Your input: {sub_input} - {task_input.capitalize()}")
     print("------------------------------------------------------------------")
 
-    return zero_task_input
+    return task_input
 
 
 def validate_zero_task_data(values):
