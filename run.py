@@ -294,7 +294,7 @@ def task_input(sub_input):
     return task_input
 
 
-def validate_zero_task_data(values):
+def validate_task_input(values):
     """
     Input validator function.
     Prints error message if task has more than 40 characters.
