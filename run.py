@@ -212,7 +212,8 @@ def all_inputs():
     for hour in range(0, 24):
         sub = input_subcategory(hour)
         task = task_input()
-        data_uploader(sub, task, hour)
+        sub_name = subcategory_rename(sub)
+        data_uploader(sub_name, task, hour)
 
 
 def input_subcategory(hour):
