@@ -389,7 +389,7 @@ def validate_next_input(values):
     return True
 
 
-def all_results_uploaded_successfully():
+def all_results_uploaded():
     """
     This function informs user when all results are updated to the sheet.
     It is a communicative transition to results report.
@@ -397,21 +397,22 @@ def all_results_uploaded_successfully():
     print("------------------------------------------------------------------")
     print("Updating sheet... \n")
     print("Upload completed. \n")
-    print("Your daily chedule is now successfully updated! \n")
+    print("Your daily schedule is now successfully updated! \n")
 
     while True:
-        results_sub_input = input("Please enter letter x to acess results: \n")
+        all_results_input = input("Please enter letter x to get results: \n")
 
-        if validate_results_sub_data(results_sub_input):
+        if validate_all_results(all_results_input):
+            print("")
             print("Loading...")
             break
 
     print("------------------------------------------------------------------")
 
-    return results_sub_input
+    return all_results_input
 
 
-def validate_results_sub_data(values):
+def validate_all_results(values):
     """
     Input validator function.
     Prints error message if user input does not match letter "x".
