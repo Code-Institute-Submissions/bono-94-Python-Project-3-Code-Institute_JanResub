@@ -212,6 +212,7 @@ def all_inputs():
     for hour in range(-1, 24):
         hour += 1
         input_subcategory(hour)
+        task_input()
 
 
 def input_subcategory(hour):
@@ -275,7 +276,7 @@ def validate_sub_data(values):
         return False
 
 
-def task_input(sub_input):
+def task_input():
     """
     Requests direct input from the user about their daily events.
     User is requested to enter one custom task for specific hour.
