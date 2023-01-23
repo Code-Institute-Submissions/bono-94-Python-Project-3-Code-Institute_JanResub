@@ -568,7 +568,7 @@ def exit_screen():
     raise SystemExit("Exiting...")
 
 
-def run_introduction():
+def run_program():
     """
     Runs all introductory functions inside the program.
     """
@@ -577,12 +577,8 @@ def run_introduction():
     personal_info_name()
     personal_info_id()
     clear_previous_inputs()
-
-
-def run_inputs():
-
     all_inputs()
+    all_results_uploaded()
 
 
-run_introduction()
-run_inputs()
+run_program()
