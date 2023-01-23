@@ -235,7 +235,7 @@ def input_subcategory(hour):
     print("9) Adventures")
     print("10) Random Activity")
     print("11) Rest")
-    print("- Break \n")
+    print("12) Break \n")
     print("- Please select one sub-category from the list above")
 
     while True:
@@ -253,8 +253,22 @@ def validate_sub_data(values):
     Input validator function.
     Prints error message if sub-category input doesn't match options.
     """
+    subcategories = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+    ]
 
-    if values <= 11:
+    if values in subcategories:
         return True
     else:
         print("Please only enter sub-categories from the list of options. \n")
