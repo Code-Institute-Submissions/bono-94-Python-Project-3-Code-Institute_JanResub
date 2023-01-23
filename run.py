@@ -316,33 +316,35 @@ def validate_task_input(values):
     return True
 
 
-def data_uploaded_zero(sub_input, task_input):
+def data_uploaded_zero(sub_input, task_input, hour):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
     User is asked to enter letter x to continue to the next hour of a day.
     """
-    update_worksheet_zero = SHEET.worksheet("tracker")
+    hour_end = hour + 1
 
-    update_worksheet_zero.update('B2', sub_input_zero)
+    update_worksheet = SHEET.worksheet("tracker")
 
-    update_worksheet_zero.update('C2', task_input_zero.capitalize())
+    update_worksheet.update('B2', sub_input)
+
+    update_worksheet.update('C2', task_input.capitalize())
 
     print("Processing request... \n")
-    print("00:00 - 01:00 hour has been successfully uploaded! \n")
-    print(f"Your input: {sub_input} - {task_input.capitalize()}")
+    print(f"{hour}:00 - {hour_end}:00 hour has been successfully uploaded! \n")
+    print(f"Your input was: {sub_input} - {task_input.capitalize()}")
     print("Let's continue with the next hour of your day. \n")
 
     while True:
-        zero_next_input = input("Please enter letter x to continue: \n")
+        next_input = input("Please enter letter x to continue: \n")
 
-        if validate_zero_next_data(zero_next_input):
+        if validate_next_input(next_input):
             print("Loading...")
             break
 
     print("------------------------------------------------------------------")
 
-    return zero_next_input
+    return next_input
 
 
 def validate_zero_next_data(values):
