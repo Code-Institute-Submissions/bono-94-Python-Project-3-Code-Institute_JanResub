@@ -209,10 +209,10 @@ def clear_previous_inputs():
 
 def all_inputs():
 
-    for hour in range(-1, 24):
-        hour += 1
-        input_subcategory(hour)
-        task_input()
+    for hour in range(0, 24):
+        sub = input_subcategory(hour)
+        task = task_input()
+        data_uploader(sub, task, hour)
 
 
 def input_subcategory(hour):
@@ -316,7 +316,7 @@ def validate_task_input(values):
     return True
 
 
-def data_uploaded_zero(sub_input, task_input, hour):
+def data_uploader(sub, task, hour):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
@@ -326,13 +326,13 @@ def data_uploaded_zero(sub_input, task_input, hour):
 
     update_worksheet = SHEET.worksheet("tracker")
 
-    update_worksheet.update('B2', sub_input)
+    update_worksheet.update('B2', sub)
 
-    update_worksheet.update('C2', task_input.capitalize())
+    update_worksheet.update('C2', task.capitalize())
 
     print("Processing request... \n")
     print(f"{hour}:00 - {hour_end}:00 hour has been successfully uploaded! \n")
-    print(f"Your input was: {sub_input} - {task_input.capitalize()}")
+    print(f"Your input was: {sub} - {task.capitalize()}")
     print("Let's continue with the next hour of your day. \n")
 
     while True:
