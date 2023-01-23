@@ -209,7 +209,7 @@ def clear_previous_inputs():
 
 def all_inputs():
 
-    for hour in range(24):
+    for hour in range(-1, 24):
         hour += 1
         input_subcategory(hour)
 
