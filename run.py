@@ -168,7 +168,6 @@ def personal_info_id():
             break
 
     print("Starting the program...")
-
     print("------------------------------------------------------------------")
 
     return id_input
@@ -177,7 +176,7 @@ def personal_info_id():
 def validate_id_data(values):
     """
     Input validator function.
-    Prints error message if ID number contains letters instead of numbers.
+    Prints error message if ID number is letters-only instead of numbers.
     Prints error message if ID number input doesn't have at least 1 character.
     """
     if values.isalpha():
