@@ -272,7 +272,7 @@ def validate_sub_data(values):
     if values in subcategories:
         return True
     else:
-        print("Please only enter sub-categories from the list of options. \n")
+        print("Please enter sub-categories number from list of options. \n")
         return False
 
 
