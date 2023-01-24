@@ -299,18 +299,18 @@ def validate_task_input(values):
     Input validator function.
     Prints error message if task has more than 40 characters.
     Prints error message if task input is a number.
-    Prints error message if task contains any numbers.
+    Prints error message if task has less than 3 letters.
     """
     if len(values) >= 40:
         print("Please enter tasks with maximum 40 characters. \n")
         return False
 
     if values.isdigit():
-        print("Please do not include any digits in the tasks. \n")
+        print("Please do not include numbers in the tasks. \n")
         return False
 
     if len(values) <= 2:
-        print("No input, enter at least 3 letters and try again. \n")
+        print("Failed input, enter at least 3 letters and try again. \n")
         return False
 
     return True
