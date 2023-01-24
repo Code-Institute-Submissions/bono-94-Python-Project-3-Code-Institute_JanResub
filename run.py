@@ -1,8 +1,6 @@
 """
 This is a python-based file that executes code for Life Tracker [v.1]
 Final code with accompanying files is deployed on the Heroku.
-This segment introduces user to the program.
-It also discloses rules and requests personal information.
 """
 from datetime import datetime
 import time
