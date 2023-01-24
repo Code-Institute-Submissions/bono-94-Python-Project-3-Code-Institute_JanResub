@@ -351,7 +351,7 @@ def data_uploader(sub_name, task, hour):
     """
     Function uploads both inputs to the correct cell of the excel document.
     Upload status is discosed to user.
-    User is asked to enter letter x to continue to the next hour of a day.
+    User is asked to enter letter x to continue.
     """
     hour_end = hour + 1
 
