@@ -199,7 +199,11 @@ def clear_previous_inputs():
 
 
 def all_inputs():
-
+    """
+    Function that loops all subcategories and tasks inputs for all hours.
+    After both inputs, subcategories get renamed.
+    Both inputs get pushed to tracker worksheet before looping again.
+    """
     for hour in range(0, 24):
         sub = input_subcategory(hour)
         task = task_input()
