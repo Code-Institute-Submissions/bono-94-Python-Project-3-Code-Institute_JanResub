@@ -69,26 +69,28 @@ def validate_rules_data(values):
 def rules():
     """
     Rules section allows users to get familiar with important rules.
-    At the end, user is asked to input the letter x to start the program.
+    At the end, user is asked to input the letter x to start identification.
     """
     print("------------------------------------------------------------------")
     print("RULES: \n")
+    print("- Each hour of a day is in 24-hour format \n")
     print("For program to function correctly, respect the instructions \n")
     print("- When asked to input letter x, do not enter any other letters")
     print("- When asked to input letter x, enter only one character \n")
     print("- When inputting subcategories, please follow rules precisely")
-    print("- When inputting tasks, please follow rules precisely")
-    print("- Do not enter any numbers or symbols, only letters ")
     print("- Only enter values when asked for it")
-    print("- Only select sub-categories from provided list of options")
+    print("- Select subcategories number from provided list of options \n")
+    print("- When inputting tasks, please follow rules precisely")
+    print("- Only enter values when asked for it")
+    print("- Do not enter numbers or symbols, only letters for top experience")
     print("- Tasks are custom by your experience with limit of 40 characters")
-    print("- Please do not leave any fields empty")
-    print("- Each hour of a day is in 24-hour format \n")
+    print("- Please do not leave any fields empty \n")
 
     while True:
         personal_info_input = input("Please enter letter x to continue: \n")
 
         if validate_personal_data(personal_info_input):
+            print("")
             print("Loading...")
             break
 
