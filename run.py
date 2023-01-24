@@ -280,7 +280,6 @@ def task_input():
     """
     Requests direct input from the user about their daily events.
     User is requested to enter one custom task for specific hour.
-    At the end, user can see both subcategories and task inputs.
     """
     while True:
         task_input = input("Please enter your task here: \n")
