@@ -35,20 +35,18 @@ def introduction():
     print("HOW IT WORKS? \n")
     print("- Following the introduction, you will proceed to rules section")
     print("- After that, you will be asked to enter personal identification")
-    print("- With starting a program, previous cell values will be cleared")
-    print("- Your results sheet access: [https://bit.ly/life-tracker-sheet]")
-    print("- Next you will be asked to input your daily events per each hour")
-    print("- Your data will be exported to an external Google Sheet: tracker")
-    print("- Once the data is in, program will retrieve your results")
-    print("- Those are noted as daily duration of each category and task")
-    print("- Once that is reported to you, it will be exported again")
-    print("- This time, to the second Google worksheet: analysis")
-    print("- You will be able to see visual analysis of your results. \n")
+    print("- When starting a program, previous cell values will be cleared")
+    print("- Your inputs and results can be found on Google Sheet below:")
+    print("- [LINK]")
+    print("- You will be asked to input your daily events per each hour")
+    print("- Your data will be exported to the worksheet: tracker")
+    print("- You can see visual analysis on the worksheet: analysis \n")
 
     while True:
         rules_input = input("Type in letter x and press enter to continue: \n")
 
         if validate_rules_data(rules_input):
+            print("")
             print("Loading...")
             break
     print("------------------------------------------------------------------")
