@@ -317,6 +317,10 @@ def validate_task_input(values):
 
 
 def subcategory_rename(sub):
+    """
+    Subcategories input renaming function.
+    Converts number input to specific linked option from list of options.
+    """
     if sub == '1':
         return 'Body System Care'
     if sub == '2':
