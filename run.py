@@ -217,6 +217,7 @@ def input_subcategory(hour):
     User is requested to select one sub-category from the list of options.
     """
     hour_end = hour + 1
+
     print(f"What have you done today between {hour}:00 and {hour_end}:00? \n")
     print("- Please select one sub-category from the list below: \n")
     print("GROWTH")
@@ -251,7 +252,7 @@ def input_subcategory(hour):
 def validate_sub_data(values):
     """
     Input validator function.
-    Prints error message if sub-category input doesn't match options.
+    Prints error message if sub-category input doesn't match given numbers.
     """
     subcategories = [
         '1',
