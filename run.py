@@ -193,11 +193,8 @@ def validate_id_data(values):
 def clear_previous_inputs():
     """
     Function clears all tasks and subcategories inputs on the tracker sheet.
-    Function clears all tasks and subcategories inputs on the analyzer sheet.
     """
     clear_tracker = SHEET.worksheet("tracker")
-    clear_analyzer = SHEET.worksheet("analyzer")
-
     clear_tracker.batch_clear(["B2:B25", "C2:C25"])
 
 
