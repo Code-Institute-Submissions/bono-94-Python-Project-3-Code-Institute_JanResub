@@ -489,7 +489,7 @@ def exit_screen():
 
 def run_program():
     """
-    Runs all introductory functions inside the program.
+    Runs all functions inside the program in correct order.
     """
     introduction()
     rules()
