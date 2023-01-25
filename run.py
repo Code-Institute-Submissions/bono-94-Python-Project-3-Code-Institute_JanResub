@@ -116,7 +116,7 @@ def personal_info_name():
     This function requests user to enter their username.
     """
     print("------------------------------------------------------------------")
-    print("PERSONAL IDENTIFICATION: username and ID number.")
+    print("PERSONAL IDENTIFICATION: username and ID number. \n")
     print("- Please try to keep username letters-only")
     print("- Please try to keep ID number to digits-only.")
     print("- If you did not request ID yet, you can enter any number.")
