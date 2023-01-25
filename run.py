@@ -40,7 +40,8 @@ def introduction():
     print("- [LINK]")
     print("- You will be asked to input your daily events per each hour")
     print("- Your data will be exported to the worksheet: tracker")
-    print("- You can see visual analysis on the worksheet: analysis \n")
+    print("- You can see visual analysis on the worksheet: analysis")
+    print("- Each hour of a day is in 24-hour format \n")
 
     while True:
         rules_input = input("Type in letter x and press enter to continue: \n")
@@ -73,7 +74,6 @@ def rules():
     """
     print("------------------------------------------------------------------")
     print("RULES: \n")
-    print("- Each hour of a day is in 24-hour format \n")
     print("For program to function correctly, respect the instructions \n")
     print("- When asked to input letter x, do not enter any other letters")
     print("- When asked to input letter x, enter only one character \n")
