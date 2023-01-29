@@ -39,157 +39,91 @@ Users input their events per each hour of the day inside the terminal that autom
 
 ![Options](./assets/media/images/features/options.jpg)
 - First sheet that visually shows user examples that they can use for their custom tasks
+
 ---
 
 
 ![Tracker](./assets/media/images/features/tracker.jpg)
 - Second sheet where users' input get uploaded as per example in the row [2]
+
 ---
 
 
 ![Analyzer](./assets/media/images/features/analyzer.jpg)
 - Third sheet where all calculated users' subcategories results of time consumption get uploaded
+
 ---
 
 ![Analyzer Tasks](./assets/media/images/features/analyzer-task.jpg)
 - Third sheet where all calculated users' tasks results of time consumption get uploaded
+
 ---
 
 ![Intro](./assets/media/images/features/intro.jpg)
-- Introduction to the program starts with the current date and time
+- Introduction to the program with the current date and time
 - General steps of how the program works are disclosed to users
-- Input is delayed by 10 seconds so the user is subliminally guided to read the content without skipping
-- If the user inputs ANYTHING besides the letter "x" and presses enter, it will show an error 
----
+- Includes a link to external Google Sheet where user can track results
 
-![Intro Two](./assets/media/images/features/intro-two.jpg)
-- Input button loads after 10 seconds of delay
 ---
 
 ![rules](./assets/media/images/features/rules.jpg)
 - General rules that should be respected in the program are disclosed to users
-- Input is delayed by 10 seconds so the user is subliminally guided to read the content without skipping
-- If the user inputs ANYTHING besides the letter "x" and presses enter, the program will show an error 
+
 ---
 
 ![ID](./assets/media/images/features/id.jpg)
 - Users are informed on what is needed for personal identification and what are the rules for inputting them
-- Input is delayed by 5 seconds so the user is subliminally guided to read the content without skipping
----
+- When message "Starting the program..." is printed, all previously inputted date in Google Sheet gets deleted
 
-![ID Two](./assets/media/images/features/id-two.jpg)
-- Input button loads after 5 seconds of delay
-- If the user inputs a username above 50 characters or only numbers, the program will show an error 
 ---
 
 ![Subcategory](./assets/media/images/features/sub.jpg)
 - Main inputting function segment where the user is given the relevant time frame of a past event
-- Function displays options for the user's convenience not having to constantly look at the options sheet
-- If the inputted value does not match exactly to option provided with the same symbols and blank spaces, it will show an error
+- It repeats 24 times as for 24 hours in user's day
+- Function displays numerical options for the user's convenience not having to constantly look at the options sheet or constantly retype options
+
 ---
 
-![Subcategroy Two](./assets/media/images/features/sub-two.jpg)
-- Subcategory inputting function occurs for each of the 24 hours of a day
-
-![Subcategory Three](./assets/media/images/features/sub-three.jpg)
-- The same function repeats but user's inputs can be different all the way until the 23rd hour of a day
----
-
-![Input](./assets/media/images/features/input.jpg)
+![Subcategory Input](./assets/media/images/features/input.jpg)
 - When sub-category input satisfies criteria being identical to the options, the code returns confirmation of success
-- When task input is not shorter than 3 and longer than 40 letters, and isn't a number, task input is successful 
-- Finally, the function returns the exact sub-category input and capitalized task event which gets uploaded to the correct cells
+
 ---
 
-![Input Process](./assets/media/images/features/input-process.jpg)
-- This part of the code serves the purpose to divide 24 similar groups of functions 
-- Also to inform the user when each hour is successfully updated
+![Tasks](./assets/media/images/features/tasks.jpg)
+- Additional input function that captures custom task from user and expands general subcategory input to unique daily event 
+- It repeats 24 times as for 24 hours in user's day
+- User can input anything meaningful or detailed as they wish
+
 ---
 
 ![Input Track](./assets/media/images/features/input-track.jpg)
-- As each function per hour of the day is processed, this is how it uploads the values to the sheet
----
-
-![Input Process Two](./assets/media/images/features/input-process-two.jpg)
-- Once the last sub-category is inputted, the program does not continue running the same input functions
-- Instead, it informs the user what is upcoming, then sends the user to the section with more details
+- As each function per hour of the day is processed, this is when it uploads the values to the Google Sheet tracker
+- Once the last sub-category and tasks are inputted, the program does not continue running the same input functions again but sends the user to the next outro section of program
 ---
 
 ![Inputs Completed](./assets/media/images/features/inputs-completed.jpg)
-- Informative break from longer periods of input that allows users to gather themselves and take a break before proceeding
-- When all values are inside of the tracker sheet, a user is informed that the whole process occurred without a mistake
----
-
-![Sub Results](./assets/media/images/features/sub-results.jpg)
-- Once user continues to the results segment of the entire code, subcategories results are automatically listed one by one
----
-
-![Sub Results Two](./assets/media/images/features/sub-results-two.jpg)
-- Functions calculate how often each sub-category occurs in the tracker results and reports back to the user's terminal, not only sheets
-- As counted repetitions per hour in a 24-hour day are being disclosed, each value gets updated to the analyzer sheet's cells correctly where those cells are pre-linked with graphs for visual reporting purposes
----
-
-![Sub Analysis](./assets/media/images/features/sub-analysis.jpg)
-- Example of successfully processed sub-categories results
-- Main 3 categories: Growth, Progress and Freedom are calculated by the sheet's equations
-- Users can see a visual representation of those categories and the ration of time consumption between them
-- Also, the user has access to vertical boxes of sub-categories to represent how often each task has appeared
----
-
-![Sub Results Three](./assets/media/images/features/sub-results-three.jpg)
-- Due to the structure of the code, a timer of delay/sleep slightly over 1 minute is introduced.
-- The reason is that the current version of Python languages can only read about 60 "read" values each minute
-- Therefore a delay in accessing the results of the remaining tasks, creates enough time to read the second half of the results of the task per hour
-- User is reminded of the sheet link where they can spend this minute monitoring and analyzing their own inputs
----
-
-![Sub Results Four](./assets/media/images/features/sub-results-four.jpg)
-- 1 minute long waiting period is completed
-- The user has to enter the letter "x" to proceed, any other value will show an error as for all same required input across the code
----
-
-![Task Results](./assets/media/images/features/task-results.jpg)
-- The first half of task results of consumption per hour automatically prints the first batch of results per task when the 1-minute waiting break is finished for the user. Without any input required
-- All task results as they are individually processed, they are sent to the analyzer sheet and appropriate cells
-
-![Task Results Two](./assets/media/images/features/task-results-two.jpg)
-- Another 1 minute wait is inititated because functions that produce first half of tasks results consumes entire limit of (read) variables
----
-
-![Task Results Three](./assets/media/images/features/task-results-three.jpg)
-- Once that 1 minute is finished, this time, user is requeired to input x to continue when ready for next phase
-- This allows user to set their own tempo since their brains have processed a lot of incoming information
----
-
-![Task Results Four](./assets/media/images/features/task-results-four.jpg)
-- Once user chooses to retrieve the remaining second part of tasks results, they get reported in the terminal and simultaneously updated to the analyzer sheet on the correct cells
-- User can again press x to continue once they check the results in analyzer on their own pace
----
-
-![Task Analysis](./assets/media/images/features/task-analysis.jpg)
-- Updated first batch of tasks time consumption results to the analyzer sheet before 1 minute loading break
-- Users have visual aid of comparison of duration of each task
----
-
-![Task Analysis Two](./assets/media/images/features/task-analysis-two.jpg)
-- Final tasks results once second round of tasks calculation, reporting and uploading is complete
-- Users can compare how much time they spent on each task and compare to others
+- Informative break from longer periods of input
+- When all values are inside of the tracker sheet, a user is informed that the whole process of updating tracker has occurred without an issue
 ---
 
 ![Outro](./assets/media/images/features/outro.jpg)
 - After completing all the inputs and receiving reports, the user is presented with an outro message
 - First, there is a time and date for each program completion
-- Also user is reminded of the Google Sheets in case they have not opened them yet to check the results
+- Also user is reminded of the Google Sheets link in case they have not opened them yet to check the results
 - After farewell with the user, the program informs the user how to start it again upon finishing the exiting sequence
+- Inputting letter 'x' starts exiting sequence
+
+---
 
 ![Exit](./assets/media/images/features/exit.jpg)
-- Once that user presses x to continue, the extiting sequence is initiated
 - The countdown from 10 seconds to 0 seconds starts
+
+---
 
 ![Exit Two](./assets/media/images/features/exit-two.jpg)
 - Countdown variable has inside 1 second waiting time so it creates the effect of and actual countdown
-- Each seconds row is posted with a small delay for maximum user experience
-- Once the countdown reaches 0, the user receives a message that the program is exiting and raises system exit instruction
+- Once the countdown reaches 0, the user receives a message that the program is exiting and raises system exit task
+
 ---
 
 ![Zapier](./assets/media/images/extra/zapier.jpg)
@@ -235,6 +169,8 @@ This project was manually tested with following procedures:
 
 - Code was passed through a PEP8 linter inside gitpod without any errors returned
 - Program was tested with correct and incorrect inputs in the both gitpod and Heroku terminals
+
+- If the user inputs ANYTHING besides the letter "x" and presses enter, it will show an error 
 
 ![Test X](./assets/media/images/testing/x.jpg)
 - Inputting letter x, and all of it's repetitive functions under different name functions does not allow any other letters or multiple characters across all the files
