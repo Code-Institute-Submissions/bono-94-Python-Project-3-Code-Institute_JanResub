@@ -27,6 +27,8 @@ def introduction():
     Once user has finished reading section of how program works,
     input of letter x sends user to rules section.
     """
+    link = 'https://docs.google.com/spreadsheets/d/' \
+        '1Aor1pnHZAsdRJ-0Xf9tE4DMeHSl8xU3oo7BUAC_Qz18/edit?usp=sharing'
     print("----------------------------------------------------------------")
     live_timestamp = datetime.now()
     print(live_timestamp)
@@ -37,7 +39,7 @@ def introduction():
     print("- After that, you will be asked to enter personal identification")
     print("- When starting a program, previous cell values will be cleared")
     print("- Your inputs and results can be found on Google Sheet below:")
-    print("- [LINK]")
+    print(link)
     print("- You will be asked to input your daily events per each hour")
     print("- Your data will be exported to the worksheet: tracker")
     print("- You can see visual analysis on the worksheet: analysis")
