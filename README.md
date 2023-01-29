@@ -97,6 +97,8 @@ Users input their events per each hour of the day inside the terminal that autom
 ---
 
 ![Input Track](./assets/media/images/features/input-track.jpg)
+- User is presented with results for their previous 2 inputs for specific hour of a day
+- Each number chosen by relevant subcategory gets converted to actual belonging Subcategory label
 - As each function per hour of the day is processed, this is when it uploads the values to the Google Sheet tracker
 - Once the last sub-category and tasks are inputted, the program does not continue running the same input functions again but sends the user to the next outro section of program
 ---
@@ -125,9 +127,15 @@ Users input their events per each hour of the day inside the terminal that autom
 - Once the countdown reaches 0, the user receives a message that the program is exiting and raises system exit task
 
 ---
+![Tracker Results](./assets/media/images/extra/analyzer-results-one.jpg)
+![Analyzer Results](./assets/media/images/extra/analyzer-results.jpg)
+- Once user has all inputs sent to the tracking worksheet, analyzer worksheet additionally reports consumption with graphic support
+
+---
 
 ![Zapier](./assets/media/images/extra/zapier.jpg)
 - After every upload of inputs or results to any sheet updates, Zapier sends and email alert of new input on the Google Sheets
+
 ---
 
 
