@@ -138,8 +138,6 @@ Users input their events per each hour of the day inside the terminal that autom
 
 ---
 
-
-
 ### Upcoming Features
 
 - Allow users to choose a 12-hour or 24-hour format
@@ -155,8 +153,9 @@ Users input their events per each hour of the day inside the terminal that autom
 
 ----
 
-## Data Model
+## Data Structure Model
 
+### Version 1
 - Due to the code total length of approximately 5000 lines, it needed to be fractioned and spread across 7 Python files.
 - Those files are all imported to the main file run.py
 - Once they were imported all functions including "running functions" were synchronized so the code can run.
@@ -168,6 +167,14 @@ Users input their events per each hour of the day inside the terminal that autom
 - Only at the main run.py all of their "calling" pr "running functions" were introduced to and organized at the bottom of the code ensuring that the code actually runs
 - Each function has been made under 80 characters horizontally and 24 rows vertically
 
+### Version 2
+- Major adjustments in the data structure model for Version 2 have been implemented
+- Instead of extremely long project counting 5000+ lines of code, DRY method has been implemented to the fullest
+- Creating advanced looping function allowed the total code to be reduced to under 600 lines
+- Instead of repetitive functions for each of 24 hours per day, one architecural adjustment has converted those repetitive functions to a template that gets run for each 24 hours of a day
+- Not only this reduces the gspread requests limit per minute but makes code much easier to read and evaluate
+- When there is a change or addition it is easier to adjust one template function instead of doing it 24 times for each hour of a day
+- This also reduces pressure on hardware and increases overall productivity and smooth user interaction
 
 ----
 
