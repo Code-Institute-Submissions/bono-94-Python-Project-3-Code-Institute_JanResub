@@ -180,33 +180,112 @@ Users input their events per each hour of the day inside the terminal that autom
 
 ## Testing
 
+### Manual Testing
+
 This project was manually tested with following procedures:
 
 - Code was passed through a PEP8 linter inside gitpod without any errors returned
 - Program was tested with correct and incorrect inputs in the both gitpod and Heroku terminals
 
+---
+
+![Test Intro](./assets/media/images/testing/intro-t.jpg)
 - If the user inputs ANYTHING besides the letter "x" and presses enter, it will show an error 
+- This applies to using any other letter besides "x", for example: "y"
+- This applies to using any numbers istead of "x"
+- This applies for using more than 1 letter "x" for example: "xxx" or "x"
+- Testing only passes for single input: "x" and nothing else
+- Test SUCCESSFUL!
 
-![Test X](./assets/media/images/testing/x.jpg)
-- Inputting letter x, and all of it's repetitive functions under different name functions does not allow any other letters or multiple characters across all the files
 ---
 
-![Test Info](./assets/media/images/testing/info.jpg)
-- Inputting username, the program does not allow numbers as value, and successfully returns lowercase names to first letter capitalized
+![Test rules](./assets/media/images/testing/rules-t.jpg)
+- If the user inputs ANYTHING besides the letter "x" and presses enter, it will show an error 
+- This applies to using any other letter besides "x", for example: "z"
+- This applies to using any numbers istead of "x"
+- This applies for using more than 1 letter "x" for example: "xxx" or "x"
+- Testing only passes for single input: "x" and nothing else
+- Test SUCCESSFUL!
+
+---
+
+![Test Username](./assets/media/images/testing/username-t.jpg)
+- Inputting username, the program does not allow numbers as value
+- It also successfully rejects empty inputs
+- Username is successfully programmed to not alow user to enter more than 50 characters
+- After correct input, the program successfully returns lowercase names to first letter capitalized
+- Test SUCCESSFUL!
+
+---
+
+![Test ID](./assets/media/images/testing/id-t.jpg)
 - Inputting ID number, the program does not allow letters only as the value as intended
-- Starting the program line clears all values from the sheet as intended
----
+- Program successfully rejects empty inputs
+- Starting the program line clears all values from the Google sheet as intended
+- Test SUCCESSFUL!
 
-![Test Info Two](./assets/media/images/testing/info-two.jpg)
-- Username is successfully programmed to not alow user to leave it empty or enter more than 50 characters
----
-
-![Test Sub](./assets/media/images/testing/sub.jpg)
-- Sub-categories input successfully does not allow empty fields, lowercase, spaces, not identical values util input is identical to one from list of options
 --- 
 
-![Test Task](./assets/media/images/testing/task.jpg)
-- Tasks input successfully does not allow empty fields, or inputs over 50 characters and under 3 letters
+![Test Subcategory Input](./assets/media/images/testing/sub-t.jpg)
+- Sub-categories input successfully does not allow empty fields or letters as inputs
+- Only identical value to numbers 1-12 without punctuation or "1)" are allowed as the valid input
+- Test SUCCESSFUL!
+
+--- 
+
+![Test Task Input](./assets/media/images/testing/task-t.jpg)
+- Tasks input successfully does not allow empty fields or numerical values
+- It also does not allow as intended inputs over 50 characters and under 3 letters
+- Test SUCCESSFUL!
+
+--- 
+
+![Test Inputs](./assets/media/images/testing/input-t.jpg)
+- If the user inputs ANYTHING besides the letter "x" and presses enter, it will show an error 
+- This applies to using any other letter besides "x", for example: "y"
+- This applies to using any numbers istead of "x"
+- This applies for using more than 1 letter "x" for example: "xxx" or "x"
+- Testing only passes for single input: "x" and nothing else
+- Test SUCCESSFUL!
+
+--- 
+
+![Test Subcategory Hour](./assets/media/images/testing/sub-t-one.jpg)
+- For every looped main function that repeats 24 times for each hour, it correctly increases the relevant hour every time it runs a new loop as intended
+- Test SUCCESSFUL!
+
+--- 
+
+![Test Subcategory Results](./assets/media/images/testing/sub-t-two.jpg)
+- For every looped main function that repeats 24 times for each hour, it correctly increases the relevant hour every time it runs a new loop as intended
+- It converts user's numerical choice to the relevant label for easier understanding for example choice "8) Business Progress". User inputs number 8 but when reported results back it converts user's input to: "Business Progress" as intended
+- Test SUCCESSFUL!
+
+--- 
+
+![Test Completed](./assets/media/images/testing/completed-t.jpg)
+- If the user inputs ANYTHING besides the letter "x" and presses enter, it will show an error 
+- This applies to using any other letter besides "x", for example: "y"
+- This applies to using any numbers istead of "x"
+- This applies for using more than 1 letter "x" for example: "xxx" or "x"
+- Testing only passes for single input: "x" and nothing else
+- Test SUCCESSFUL!
+--- 
+
+![Test Outro](./assets/media/images/testing/outro-t.jpg)
+- If the user inputs ANYTHING besides the letter "x" and presses enter, it will show an error 
+- This applies to using any other letter besides "x", for example: "w"
+- This applies to using any numbers istead of "x"
+- This applies for using more than 1 letter "x" for example: "xxx" or "x"
+- Testing only passes for single input: "x" and nothing else
+- Test SUCCESSFUL!
+--- 
+
+![Test Exit](./assets/media/images/testing/exit-t.jpg)
+- Exitting sequence correctly runs countdown loop from 10 seconds to 0
+- Each countdown row correctly occurs for 1 second as intended and coded 
+- System Exit sequence correctly exits the program
+- Test SUCCESSFUL!
 --- 
 
 ### Bugs
