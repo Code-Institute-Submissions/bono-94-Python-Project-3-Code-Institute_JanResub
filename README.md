@@ -127,8 +127,8 @@ Users input their events per each hour of the day inside the terminal that autom
 - Once the countdown reaches 0, the user receives a message that the program is exiting and raises system exit task
 
 ---
-![Tracker Results](./assets/media/images/extra/analyzer-results-one.jpg)
-![Analyzer Results](./assets/media/images/extra/analyzer-results.jpg)
+![Tracker Results](./assets/media/images/features/analyzer-results-one.jpg)
+![Analyzer Results](./assets/media/images/features/analyzer-results.jpg)
 - Once user has all inputs sent to the tracking worksheet, analyzer worksheet additionally reports consumption with graphic support
 
 ---
