@@ -39,12 +39,13 @@ def introduction():
     print("- Following the introduction, you will proceed to rules section")
     print("- After that, you will be asked to enter personal identification")
     print("- When starting a program, previous cell values will be cleared")
-    print("- Your inputs and results can be found on Google Sheet below:")
-    print(link)
     print("- You will be asked to input your daily events per each hour")
     print("- Your data will be exported to the worksheet: tracker")
     print("- You can see visual analysis on the worksheet: analysis")
-    print("- Each hour of a day is in 24-hour format \n")
+    print("- Each hour of a day is in 24-hour format")
+    print("- Your inputs and results can be found on Google Sheet below:")
+    print(link)
+    print("")
 
     while True:
         rules_input = input("Type in letter x and press enter to continue: \n")
