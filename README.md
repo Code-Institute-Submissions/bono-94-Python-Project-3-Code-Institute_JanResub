@@ -410,7 +410,7 @@ __Code References:__
 
 ---
 
-- [gspread](https://www.freecodecamp.org/news/python-datetime-now-how-to-get-todays-date-and-time/)
+- [gspread](https://docs.gspread.org/en/latest/user-guide.html/)
         - how to upload user's inputs to external Google Sheet
 
         worksheet.update('B1', 'Bingo!')
