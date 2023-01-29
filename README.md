@@ -317,10 +317,10 @@ __Unsolved Bugs__
 __Validator Testing__
 
 PEP8
-- No errors found when validating all 5000 lines of code from:
+- No errors found when validating all 519 lines of code from:
 - [Code Institute CI Python Linter](https://pep8ci.herokuapp.com)
 
-![Validator](./assets/media/images/extra/validator.jpg)
+![Validator](./assets/media/images/extra/ci-linter.jpg)
 
 --- 
 
