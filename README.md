@@ -18,13 +18,12 @@ Users input their events per each hour of the day inside the terminal that autom
 - Life tracker is created to be the starting point in the ultimate processing of all aspects of life
 - In this version user is presented first with an introduction, instructions, and rules
 - User is requested to enter their personal information (username + ID number)
-- Each time that program starts, it clears previous values in Excel
+- Each time that program starts, it clears previous values in Google Sheet
 - The program requests user to enter their daily events in the format of subcategories and custom tasks
-- All inputs are exported to the tracking sheet divided per 24 hours of a day
-- Total time consumption per subcategories and tasks are reported back to the user in the terminal
-- Reported results get exported to the analysis sheet
+- All inputs are exported to the tracking sheet
+- Total time consumption per subcategories and tasks are presented in the analyzer worksheet
 - It is where the user can see a visual representation of time consumption
-- Users can save or share their results
+- Users can save or share their results and start the program again
 
 ----
 
