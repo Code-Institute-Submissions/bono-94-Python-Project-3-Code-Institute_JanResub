@@ -29,6 +29,7 @@ def introduction():
     """
     link = 'https://docs.google.com/spreadsheets/d/' \
         '1Aor1pnHZAsdRJ-0Xf9tE4DMeHSl8xU3oo7BUAC_Qz18/edit?usp=sharing'
+
     print("----------------------------------------------------------------")
     live_timestamp = datetime.now()
     print(live_timestamp)
@@ -434,12 +435,17 @@ def export_results_analyzer():
     Users can see outro messages.
     Input of letter x leads user to the sequence of exiting the program.
     """
+    link = 'https://docs.google.com/spreadsheets/d/' \
+        '1Aor1pnHZAsdRJ-0Xf9tE4DMeHSl8xU3oo7BUAC_Qz18/edit?usp=sharing'
+
     print("------------------------------------------------------------------")
     live_timestamp = datetime.now()
     print(f"{live_timestamp} \n")
     print("Daily results have been successfully sent to analyzer sheet. \n")
     print("Now you can access your detailed visual analysis. \n")
-    print("Please follow this link: [https://bit.ly/life-tracker-sheet] \n")
+    print("Please follow this link:")
+    print(link)
+    print("")
     print("Thank you for participating. \n")
     print("See you tomorrow at the next tracking and analyzing mission! \n")
     print("After exiting program, you can press 'RUN PROGRAM' to restart \n")
