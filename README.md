@@ -27,6 +27,12 @@ Users input their events per each hour of the day inside the terminal that autom
 
 ----
 
+## Flowchart
+
+![Flowchart](./assets/media/images/extra/flow.jpg)
+
+----
+
 ## Features
 
 ### Existing Features
