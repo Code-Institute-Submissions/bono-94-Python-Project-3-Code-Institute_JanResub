@@ -364,17 +364,18 @@ This project was deployed using Code Institute's mock terminal for Heroku websit
   
 - All content and code are 100% unique and custom-made per request for a client in order to prevent any legal issues in the future and to provide full control over an optimized experience
 
-- All content, concepts, and visuals have been exclusively written for this site and to solve specific problem for any user without any external inspiration
+- All content, concepts, and visuals have been exclusively created for this site and to solve specific problem for any user without any external inspiration
 
-- Code structure is also 100% original and completely created by a developer. A developer has followed HTML, CSS, JavaScript and Python courses at [Code Institute](https://codeinstitute.net/global/) where theory on building blocks has been taught. After reading through knowledge materials to see what are possibilities of creating this site are, general blocks have been put together separately to create original work. Given completed examples have not been plagiarized but served as a general guide from a client for a developer from project examles such as: love-sandwiches and battleships. Finally, the README structure has been used by Code Institute's template and example in this project in order to be created under industry standards and expectations. A general python template for repository created for students before commencing their project for convenience has been imported before the first coding lines. Project requirements have been used as secondary rough guidelines for the content structure. Consultations with Student Care, Tutors, and Personal Mentor Rowan were provided by them as well which was crucial in this project creation by providing support, motivation, and mistakes indications
+- Code structure is also 100% original and completely created by a developer. A developer has followed HTML, CSS, JavaScript and Python courses at [Code Institute](https://codeinstitute.net/global/) where theory on building blocks has been taught. After reading through knowledge materials to see what are possibilities of creating this site are, general blocks have been put together separately to create original work. Given completed examples have not been plagiarized but served as a general guide from a client for a developer from project examles such as: love-sandwiches and battleships. Finally, the README structure has been used by Code Institute's template and example in this project in order to be created under industry standards and expectations. A general python template for repository created for students before commencing their project for convenience has been imported before the first coding lines. Project requirements have been used as secondary rough guidelines for the content structure. Consultations with Student Care, Tutors, and Personal Mentor Rowan were provided by them as well which was crucial in this project creation by providing support, motivation, and any mistakes indications and guidance to own problem-solving
 
-- All debugging and problem-solving has been done strictly by the developer trying different combinations with known and unknown elements and attributes. No external sources and no professional help just tutors for complex problems and developer's imagination and creativity
+- All debugging and problem-solving has been done strictly by the developer trying different combinations with known and unknown elements and attributes. No external sources and no professional help just Code Institute's tutors for elaboration on theory and advices dealing with complex problems
 
 - [Code Institute Python Template](https://github.com/Code-Institute-Org/python-essentials-template)
 
 __Code References:__
 
 - [Free Code Camp](https://www.freecodecamp.org/news/python-datetime-now-how-to-get-todays-date-and-time/)
+        - how to import date-time elements
 
         from datetime import datetime
 
@@ -383,30 +384,51 @@ __Code References:__
         print(current_dateTime)
         # 2022-09-20 10:27:21.240752
 
+- USED HERE:
+![Date-Time Usage](./assets/media/images/extra/date-time.jpg)
+
+---
 
 - [Real Python](https://realpython.com/python-modules-packages/)
+        - how to import external libraries
 
         import mod
 
+- USED HERE:
+![Import Usage](./assets/media/images/extra/import.jpg)
+
+---
 
 - [Real Python](https://realpython.com/python-sleep/)
+        - how to include 1 second delay to countdown function 
 
         >>> import time
         >>> time.sleep(3) # Sleep for 3 seconds
 
+- USED HERE:
+![Time Sleep Usage](./assets/media/images/extra/time-sleep.jpg)
 
-- [gspread](https://docs.gspread.org/en/v5.7.0/user-guide.html#clear-a-worksheet)
-
-        worksheet.batch_clear(["A1:B1", "C2:E2", "my_named_range"])
-
-
-- [gspread](https://docs.gspread.org/en/v5.7.0/user-guide.html#getting-a-cell-value)
-
-        val = worksheet.acell('B1').value
+---
 
 - [gspread](https://www.freecodecamp.org/news/python-datetime-now-how-to-get-todays-date-and-time/)
+        - how to upload user's inputs to external Google Sheet
 
         worksheet.update('B1', 'Bingo!')
+
+- USED HERE:
+![Uploader Usage](./assets/media/images/extra/uploader.jpg)
+
+---
+
+- [W3B Schools](https://www.w3schools.com/python/gloss_python_for_range.asp#:~:text=To%20loop%20through%20a%20set,ends%20at%20a%20specified%20number/)
+        - how to create looped funtion that occurs 24 times for each hour of a day
+
+        for x in range(2, 6):
+          print(x)
+
+- USED HERE:
+![Range Usage](./assets/media/images/extra/range.jpg)
+
 ---
 
 ### Media
@@ -421,7 +443,7 @@ __Code References:__
 
 - [Zapier](https://zapier.com/) - online automation website that is used to send emails every time new user enters a new imput
 
-- [Bitly](https://app.bitly.com/Bmbr0grLTGI/bitlinks/3gHaGFi/details) - online website that shorted the link to access the Google Sheet
+- [Draw.io](https://app.diagrams.net/) - online website that was used to create Flowchart for README
 
 ---
 Thank you for READING ME!
